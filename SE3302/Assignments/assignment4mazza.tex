@@ -1,0 +1,129 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand{\Mct}{\overline{\mbox{M}}\mbox{ct}}
+
+%opening
+\title{Assignment 4}
+\author{Steve Mazza}
+\date{November 4, 2011}
+
+% Complete problems 14.7, 14.10, & 14.13 in B&F.
+\begin{document}
+\maketitle
+
+\section{Problems from \emph{B\&F}}
+\begin{description}
+\item[14.7]\ Comfort, fatigue, human error, and productivity are all aspects of human design that should be accounted for in design-to requirements.  Measures that I might apply as design-to requirements for the human elements of a system might be divided into broad categories based on \emph{Duty}.  The most obvious \emph{Duty} categories heavilty affected by human factors arer \emph{operation} and \emph{maintenance}.  The operator should fit comfortably within the designated space allocated for operation of the system.  Screens and controls should be placed in such a way as to facilitate their location and visibility.  While controls and control monitors (gauges, dials, and digital meters) should be grouped logically to reduce confusion and error, every effort should be made to position those most frequently used at the operator's easy reach.  The operator's comfort and performance (productivity and error rate) are predicated on a reasonable accomodation of size and weight as well as viewing angle of screens, color and placement of other feedback mechanisms, environmental factors such as temperature, vibration, and noise and psychological factors such as stress.
+\par Specific examples of design-to requirements might include
+\begin{itemize}
+\item The console operator's chair shall be height-adjustable within a range of 15 - 22 inches from the floor of the console. 
+\item The console operations room shall be maintained at a temperature of at least 60 but not to exceed 80 degrees Farenheit.
+\item The console operations room shall be insulated from machine noise, limiting volume to no more than 50 decebles.
+\item The console chassis shall be hinged and hydraulically operated to provide access to internal wiring and electronics by maintenance personnel between the 95th percentile of men and the 5th percentile of women.
+\item The cosole chassis shall include interior lighting to improve visibility diring maintenance.
+\end{itemize}
+\par Specifically with respect to a laptop computer, the system of consideration, the major subsystems include the screen, the keyboard, power, and chassis.\footnote{This is not intended to be a complete list of the subsystems of a laptop, rather it is limited to items with which the end user will regularly interact.}  Example allocation of design-to requirements to the major subsystems might look like:
+\begin{itemize}
+\item Screen
+	\begin{itemize}
+	\item The screen illumination shall be sufficient to allow viewing without the aid of external lighting.
+	\item The screen shall be mounted on hinges such that the operator can adjust the vertical viewing angle from 90 - 130 degrees.
+	\item The screen shall be polarized to facilitate viewing in direct sunlight.
+	\end{itemize}
+\item Keyboard
+	\begin{itemize}
+	\item The keyboard layout shall follow the industry established QWERTY/US 101 layout.
+	\item To reduce operator fatigue and repetitive stress injury, pressure required to depress a key shall not exceed $x$.
+	\end{itemize}
+\item Power
+	\begin{itemize}
+	\item Voltage and current shall be sufficient to accomodate peak system load.
+	\item Battery life shall be sufficient to sustain 75\% of peak operational load for 4 hours continuously.
+	\item Head dissipatoin of the power module shall not exceed 110 degrees Farenheit.
+	\end{itemize}
+\item Chassis
+	\begin{itemize}
+	\item The chassis shall be impact resistent to 10 foot-pounds of force.
+	\item All right angles on the chassis shall be rounded with a 3mm radius curve.
+	\end{itemize}
+\end{itemize}
+\item[14.10]\ The system I will consider is a basic single-speed bicycle.  The heirarchy of human activities is as follows:
+\begin{center}
+	\begin{tabular}{lllll}
+	\hline
+	\textbf{Job Operations} & \textbf{Duties} & \textbf{Tasks} & \textbf{Subtasks} & \textbf{Task Elements} \\
+	\hline
+	Ride the bicycle & & & & \\
+	& Steer the bicycle & & & \\
+	& & Turn handlebars & & \\
+	& & & Grasp handlebars & \\
+	& & & Manipulate handlebars & \\
+	& & Lean weight & & \\
+	& Motivate the bicycle & & & \\
+	& & Operate pedals & & \\
+	& & & Rotate pedals forward & \\
+	& & & & Bend knees \\
+	& & & & Press pedals \\
+	& Stop the bicycle & & & \\
+	& & Apply brakes & & \\
+	& & & Rotate pedals backward & \\
+	& & & & Bend knees \\
+	& & & & Press pedals \\
+	\hline
+	\end{tabular}
+\end{center}
+I will focus on \emph{Motivate the bicycle} in the development of the OTA.
+\begin{description}
+	\item[(1) Function] Motivate the bicycle
+	\item[(2) Task] Operate pedals
+	\item[(3) Subtask] Rotate pedals forward
+	\item[(4) Action stimulus] Rotational force on drive train
+	\item[(5) Required action] Apply rotational force to pedals
+	\item[(6) Feedback] Notice movement relative to the ground
+	\item[(7) Task classification] Operator task, rider
+	\item[(8) Potential errors] Fail to apply sufficient pressure to pedals; apply pressure in the wrong direction
+	\item[(9) Time] Dependant on skill level and environmental circumstances
+	\item[(10) Work station] Bicycle seat
+	\item[(11) Skill levle] Low
+\end{description}
+\item[14.13]\ According to the text, "the safety/hazard analysis is closely aligned with the FMECA.\footnote{B\&F pp. 491.}  The following table depicts the relationship between the two.
+\begin{center}
+	\begin{tabular}{ll}
+	\hline
+	\textbf{FMECA} & \textbf{Safety/Hazard Analysis} \\
+	\hline
+	Define System Requirements & \\
+	Accomlish Functional Analysis & \\
+	Accomplish Requirements Allocation & \\
+	Identify Failure Modes & Description of Hazard \\
+	Determine Causes of Failure & Cause of Hazard \\
+	Determine Effects of Failure & Identification of Hazard Effects \\
+	Identify Failure Detection Means & \\
+	Rate Failure Mode Severity & Hazard Classification \\
+	Rate Failure Mode Frequency & \\
+	Rate Failure Mode Detection probability & \\
+	Analyze Failure Mode Critically & Anticipated Probability of Hazard Occurrence\\
+	& Corrective Action of Preventative Measures \\
+	\hline
+	\end{tabular}
+\end{center}
+\end {description}
+\section{5 usability requirements for the ACIDS system}
+\begin {description} % anthropmetric, human sensory, physiolocial, psychological, and personnel/training
+\item[Anthropmetric:] The MVS storage container shall require no more than two persons to transport on solid level ground for a distance no greater than 15 meters.
+\item[Human Sensory:] The feedback controls on the MVS Remote Controller shall be daylight visible and have a viewing angle of at least 30 degrees both horizontal and vertical from center.
+\item[Physiolocial:] The Metal-V Subsystem shall produce noise not to exceed 50 decebels during normal operation.
+\item[Psychological:] The system shall require that the Vehicle Operator attend to no more than one (1) task at a time in order to facilitate distraction-free performance at critical mission components.
+\item[Personnel/Training:] The system shall require no more than 150 hours of classroom and hands-on training by the Vehicle Operator to achieve certification for his/her job.
+\end {description}
+\end{document}

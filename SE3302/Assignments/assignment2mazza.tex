@@ -1,0 +1,105 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+
+%opening
+\title{Assignment 2}
+\author{Steve Mazza}
+\date{October 14, 2011}
+
+% Complete problems 12.10, 12.11, 12.12, 12.13 and 12.14 in B&F.
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[12.10]\ 
+To calculate this answer, I will assume that the devices fail independently.  I begin by calculating the MTBF for one device.
+\begin{align*}
+\lambda &= \frac{22}{1,000,000} \\
+&= 0.000022 \\
+\mbox{MTBF} &= \frac{1}{0.000022} \\
+&= 54,545.\overline{54}
+\end{align*}
+And now I calculate the MTBF for three devices.
+\begin{align*}
+\mbox{MTBF} &= 3\times 54,545.\overline{54} \\
+\mbox{MTBF} &= 136,363.\overline{63} \mbox{\ hours.}
+\end{align*}
+
+\item[12.11]\ 
+To calculate \emph{reliability}, I will use the following function: \[R(t) = 1-F(t)\] And I will calculate $f(t)$ as: \[f(t)=\frac{1}{\theta}e^{\frac{-t}{\theta}}\]  Values for $t=200$ and $\lambda=0.003$ are given.
+\begin{align*}
+f(t) &= 0.003\times e^{\frac{-200}{333\overline{33}}} \\
+&= 0.003\times e^{-0.6} \\
+&\approx 0.003\times 0.548811636 \\
+&\approx 0.001646435 \\
+R(t) &\approx 1-0.001646435 \\
+&\approx 0.998353565
+\end{align*}
+
+\item[12.12]\ 
+I begin by calculating the failure rate, $\lambda$ for each of the five systems over 1000 hours using the method applied in 12.11.
+\begin{align*}
+f(t(\mbox{Subsystem A})) &= \frac{1}{10540} \approx 0.000094877 \\
+f(t(\mbox{Subsystem B})) &= \frac{1}{16220} \approx 0.000061652 \\
+f(t(\mbox{Subsystem C})) &= \frac{1}{9500} \approx 0.000105263 \\
+f(t(\mbox{Subsystem D})) &= \frac{1}{12100} \approx 0.000082645 \\
+f(t(\mbox{Subsystem E})) &= \frac{1}{3600} \approx 0.0002\overline{77} 
+\end{align*}
+Since the subsystems are connected in series, I calculate the probability of survival as follows:
+\[
+R = e^{\frac{-1000}{0.000622215}} \approx 0.5368
+\]
+
+\item[12.13]\ 
+I begin by calculating the individual $\lambda$ for each component.
+\begin{align*}
+\lambda_{1} &= \frac{1}{30} = 0.0\overline{33} \\
+\lambda_{2} &= \frac{1}{85} = 0.011764706 \\
+\lambda_{3} &= \frac{1}{220} = 0.00\overline{45} \\
+\lambda_{4} &= \frac{1}{435} = 0.002298851 \\
+\lambda_{5} &= \frac{0}{500} = 0.0 \\
+\lambda_{6} &= \frac{0}{500} = 0.0 \\
+\lambda_{7} &= \frac{0}{500} = 0.0 \\
+\lambda_{8} &= \frac{0}{500} = 0.0 \\
+\lambda_{9} &= \frac{0}{500} = 0.0 \\
+\lambda_{10} &= \frac{0}{500} = 0.0
+\end{align*}
+The composite failure rate is given as the sum of the individual failure rates: 0.051613557.
+
+\item[12.14]\ 
+\begin{table}[htdp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{l.r.}
+\hline
+\textbf{Component} & \textbf{Failure Rate} & \textbf{Quantity} & \textbf{Extension} \\
+\hline\hline
+A & 0.135 & 16 & 2.16 \\
+B & 0.121 & 75 & 9.075 \\
+C & 0.225 & 32 & 7.2 \\
+D & 0.323 & 44 & 14.212 \\
+E & 0.12 & 60 & 7.2 \\
+F & 0.118 & 15 & 1.77 \\
+G & 0.092 & 28 & 2.576 \\
+\hline
+$\lambda$ = 44.193\% / 1000 hours & & & $$\sum$$ = 44.193 \\
+MTBF = $\frac{1000}{0.44193}$ = 2,262.80 hours. & & & \\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
+\end {description}
+\end{document}

@@ -1,0 +1,151 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 3}
+\author{Steve Mazza}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[2.5.9] \ 
+\begin{enumerate}[a)]
+\item 0.80
+\item 0.3676
+\item \begin{align*}E(X) &= 2.94\\ \mbox{Var}(X) &= 0.942 - (2.94)^{2}\\ &= -7.7016\end{align*}
+\item \begin{align*}E(4) &= 2.86\\ \mbox{Var}(4) &= -7.3118\end{align*}
+\item Yes. Yes. I don't know.
+\item 0.3
+\item \begin{align*}
+\mbox{Cov}(X, Y) &= E(XY) - E(X)E(Y) \\
+&= 9.29 - 8.4084 \\
+&= 0.8816
+\end{align*}
+\item \begin{align*}
+\mbox{Cor}(X, Y) &= \frac{0.8816}{\sqrt{-7.7016\times -7.3118}} \\
+&\approx 0.1175
+\end{align*}
+\end{enumerate}
+
+\item[2.8.19] \ 
+\begin{enumerate}[a)]
+\item True
+\item False
+\item True
+\item True
+\item True
+\item False
+\end{enumerate}
+
+\item[3.1.1] \ 
+\begin{enumerate}[a)]
+\item \begin{align*}
+P(X=3) &= {10\choose 3}0.12^{3}(1-0.12)^{10-3} \\
+&\approx 0.084743
+\end{align*}
+\item  \begin{align*}
+P(X=6) &= {10\choose 63}0.12^{6}(1-0.12)^{10-6} \\
+&\approx 0.000376043
+\end{align*}
+\item  \begin{align*}
+P(X\leq 2) &= P(X=2)+P(X=1)+P(X=0) \\
+&\approx 0.233043+0.379774+0.278501 \\
+&\approx 0.891318
+\end{align*}
+\item  \begin{align*}
+P(X\geq 7) &= 1-P(X\leq 6) \\
+&= 1 &- P(X=6)+P(X=5)+P(X=4)+P(X=3)+P(X=2)+P(X=1)+P(X=0) \\
+&\approx 1-0.999969023 \\
+&\approx 0.000030977
+\end{align*}
+\item  \begin{align*}
+E(X) &= p \\
+&= 0.12
+\end{align*}
+\item  \begin{align*}
+\mbox{Var}(X) &= p(1-p) \\
+&= 0.12(1-0.12) \\
+&= 0.1056
+\end{align*}
+\end{enumerate}
+
+\item[3.1.5] \ 
+\begin{enumerate}[a)]
+\item \[P(X=5) \mbox{for} X\sim B(8, 0.5)\approx 0.021875\]
+\item \[P(X=1) \mbox{for} X\sim B(8, \frac{1}{6})\approx 0.3721\]
+\item \[P(X=0) \mbox{for} X\sim B(8, \frac{1}{6})\approx 0.2326\]
+\item\begin{align*}
+P(X\geq 6) \mbox{for} X\sim B(8, \frac{2}{3}) &= 1-P(X\leq 5) \\
+&\approx 1-0.273129+0.170706+0.0682823+0.0170706+0.00243865+0.000152416 \\
+&\approx 1-0.531778966 \\
+&\approx 0.468221034
+\end{align*}
+\end{enumerate}
+
+\item[3.2.1] \ 
+\begin{enumerate}[a)]
+\item \[P(X=4)\approx 0.018\]
+\item \[P(X=1)=0.7\]
+\item \[P(X\leq 5)\approx 0.99757\]
+\item\begin{align*}
+P(X\geq 8) &= 1-P(X\leq 7) \\
+&\approx 0.9999781
+\end{align*}
+\end{enumerate}
+
+\item[3.4.5] \ 
+\begin{enumerate}[a)]
+\item \[P(X=0)\approx 0.778801\]
+\item\begin{align*}
+P(X\leq 1) &= P(X=1)+P(X=0) \\
+&\approx 0.778801+0.1947 \\
+&\approx 0.973501
+\end{align*}
+\end{enumerate}
+
+\item[3.4.7] \ 
+\begin{enumerate}[a)]
+\item \ 
+Using the formulas $\frac{e^{-\lambda}\lambda^{x}}{x!}$ and $\lambda = np\approx B(n, p)$, I tried to calculate as follows for $p=0.005$:
+\[ P(X\leq 3) = P(X=3)+P(X=2)+P(X=1)+P(X=0) \]
+Calculating each of the equations as follows:
+\begin{align*}
+\frac{e^{-3\times 0.005}(3\times 0.005)^{3}}{3!} &\approx 5.54125\times 10^{-7} \\
+\frac{e^{-2\times 0.005}(2\times 0.005)^{2}}{2!} &\approx 0.0000495025 \\
+\frac{e^{-1\times 0.005}(1\times 0.005)^{1}}{1!} &\approx 0.00497506 \\
+\frac{e^{-0\times 0.005}(0\times 0.005)^{0}}{0!} &= \mbox{indeterminate}
+\end{align*}
+So I don't know what to do now.
+\end{enumerate}
+
+\item[3.5.1] \ 
+\begin{enumerate}[a)]
+\item\ 
+\[ \frac{11!}{4!5!2!}\times 0.23^{4}\times 0.48^{5}\times 0.29^{2} \approx 0.0415572 \]
+\item\ 
+\begin{align*} 
+\frac{7!}{2!5!}\times 0.23^{2}\times 0.77^{5} &\approx 0.300697 \\
+\frac{7!}{1!6!}\times 0.23^{1}\times 0.77^{6} &\approx 0.335560 \\
+\frac{7!}{0!7!}\times 0.23^{0}\times 0.77^{7} &\approx 0.160485
+\end{align*}
+And then sum\dots
+\[ 0.300697+0.335560+0.160485\approx 0.796742\]
+\end{enumerate}
+
+\item[3.5.3] \ 
+\begin{enumerate}[a)]
+\item\ \[ \frac{8!}{2!1!5!}\times 0.09^{2}\times 0.12^{1} \times 0.79^{5} \approx 0.0502471 \]
+\item\ \[ \frac{8!}{1!2!5!}\times 0.09^{1}\times 0.12^{2} \times 0.79^{5} \approx 0.0669961 \]
+\item 0.96
+\end{enumerate}
+
+\end {description}
+\end{document}

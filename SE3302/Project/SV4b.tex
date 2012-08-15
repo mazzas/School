@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\title{Functional Flow Diagram}
+\date{}
+
+\begin{document}
+\pagestyle{empty}
+
+\maketitle
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{center}
+\begin{tikzpicture}[node distance=2cm, auto] 
+	% Place nodes
+	\node [cloud] (user1) {User};
+	\node [block, right of=user1] (init) {Initialize ACIDS};
+	\node [block, right of=init, node distance=3cm] (position) {Position METAL-V In Search Space};
+	\node [block, below of=position] (search) {Identify FOI};
+	\node [block, below of=search] (approach) {Safely Approach FOI};
+	\node [decision, below of=approach] (hpi) {Is FOI an HPI?};
+	\node [block, right of=approach, node distance=4cm] (report) {Report HPI to ACIDS Operator};
+	\node [block, right of=hpi, node distance=4cm] (update) {Update ACIDS HPI Record};
+	\node [decision, below of= hpi] (time) {Is Time Up?};
+	\node [block, below of=time, node distance=3cm] (return) {Return ACIDS to Ready State};
+	
+	% Draw edges
+	\path [line] (user1) -- (init);
+	\path [line] (init) -- (position);
+	\path [line] (position) -- (search);
+	\path [line] (search) -- (approach);
+	\path [line] (approach) -- (hpi);
+	\path [line] (hpi) -- node [near start] {no} (time);
+	\path [line] (time) -- node [near start] {yes} (return);
+	\path [line] (time) -| ++(-2,3) |- node [near start] {no} (search);
+	\path [line] (report) -| ++(2,-2) |- (time);
+	\path [line] (update) -| ++(2,-2) |- (time);
+	\path [line] (hpi) -- node [near start] {yes} (update);
+	\path [line] (hpi) -| ++(2,2) |- (report);
+\end{tikzpicture}
+\end{center}
+
+\end{document}

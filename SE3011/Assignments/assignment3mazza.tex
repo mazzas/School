@@ -1,0 +1,58 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+
+%opening
+\title{Assignment 3}
+\author{Steve Mazza}
+\date{November 2, 2011}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item
+	\begin{enumerate}
+		\item\ 
+			\begin{align*}
+			\mbox{Effort} &= 0.254\times 500^{1.06}\times 0.8 \\
+			&= 0.254\times 725.95\times 0.8 \\
+			&= 184.39\times 0.8 \\
+			&= 147.51 \mbox{ person-months} \\ \\
+			\mbox{Schedule} &= 1.5\times 147.51^{0.33} \\
+			&= 1.5\times 5.20 \\
+			&= 7.79\mbox{ months} \\ \\
+			\mbox{Staff} &= \frac{147.51}{7.79} \\
+			&= 18.94\mbox{ people}
+			\end{align*}
+		\item\ 
+			\begin{table}[htdp]
+				\begin{center}
+					\begin{tabular}{lccc}
+						\textbf{Activities} & \textbf{Effort \%} & \textbf{Effort} & \textbf{Staff} \\
+						\hline
+						Acquisition and Supply & 7\% & 10.33 & 1.33 \\
+						Technical Management & 17\% & 25.08 & 3.22 \\
+						System Design & 30\% & 44.25 & 5.68 \\
+						Product Realization & 15\% & 22.13 & 2.84 \\
+						Product Evaluation & 31\% & 45.73 & 5.87 \\
+						\hline
+					\end{tabular}
+				\end{center}
+			\end{table}
+	\end{enumerate}
+	\item Using a labor cost of \$10,000/Person-Month and the spreadsheet named academicCOSYSMO\_2.0.xls,  I project the total labor to be 192.4 systems engineering person months for a total estimated cost of \$1,924,000.00.
+	\item The three multiplicative cost drivers in COSYSMO that account for the largest variation in productivity in order are \emph{Requirements Understanding}, \emph{Level of Service Requirements}, and \emph{Technology Risk}.
+	\par For one (1) nominal requirement, \emph{Requirements Understanding} has a productivity range of 0.2 - 0.5.  \emph{Level of Service Requirements} has a productivity range of 0.2 - 0.4.  \emph{Technology Risk} has a productivity range of 0.7 - 1.74.
+	\item Changing \emph{Migration Complexity} from High to Nominal results in a 1.785\% change in systems engineering effort.
+\end {enumerate}
+\end{document}

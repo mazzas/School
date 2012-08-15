@@ -1,0 +1,148 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+\usepackage{lastpage} % for the number of the last page in the document
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{Project Team 5 (Gildea, Mazza, Peters): Assignment 8}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+%opening
+\title{Assignment 8}
+\author{Project Team 5 \\ { \small (Gregg Gildea, Steve Mazza, Brent Peters)}}
+\date{June 1, 2012}
+
+\begin{document}
+\maketitle
+
+\section*{15-28}
+\begin{align*}
+\mbox{BCWS} &= \$2000+\$2000+\$2000 = \$6000 \\
+\mbox{BCWP} &= \$2000+\$2000+\$1000 = \$5000 \\
+\mbox{ACWP} &= \$2000+\$2400+\$1000 = \$5400 \\
+\mbox{BAC} &= \$2000+\$2000+\$2000+\$2000 = \$8000 \\
+\mbox{SV}(\$) &= \mbox{BCWP} - \mbox{BCWS} = \$5000 - \$6000 = -\$1000 \\
+\mbox{CV}(\$) &= \mbox{BCWP} - \mbox{ACWP} = \$5000 - \$5400 = -\$400 \\
+\mbox{EAC} &= (\mbox{ACWP}/\mbox{BCWP}) \times \mbox{BAC} = (\$5400/\$5000) \times \$8000 = \$8640 \\
+\mbox{ETC} &= \mbox{EAC} - \mbox{ACWP} = \$8640 - \$5400 = \$3240 \\
+\mbox{VAC} &= \mbox{BAC} - \mbox{EAC} = \$8000 - \$8640 = -\$640 \\
+\mbox{\% Complete} &= \mbox{BCWP}/\mbox{BAC} \times 100 = \$5000/\$8000 \times 100 = 62.5\% \\
+\mbox{\% Money Spent} &= \mbox{ACWP}/\mbox{BAC} = \$5400/\$8000 = 67.5\% \\
+\mbox{CPI} &= \mbox{BCWP}/\mbox{ACWP} = \$5000/\$5400 = 0.926 \\
+\mbox{SPI} &= \mbox{BCWP}/\mbox{BCWS} = \$5000/\$6000 = 0.833
+\end{align*}
+
+\section*{Case Study: Franklin Electronics}
+\begin{enumerate}
+\item \emph{Are the vice president's comments about cost and schedule variance correct?}
+\par The vice president's comments about cost and schedule are, in fact, not correct based on the information given.  While Franklin Electronics is behind schedule and over budget, they are on a trend toward significant improvement in both areas.  In fact, a quick calculation\footnote{We are using a budgeted cost at completion (BAC) of \$2.8M calculated as the base contract cost of \$2.66M + the fixed fee of 6.75\%} of their estimated cost at completion (EAC) shows that they were on target for a 15\% overage at the end of month 2 and only an 10\% overage at the end of month 3.
+\par Estimates at the end of month 2:
+\begin{align*}
+\mbox{EAC} &= (\mbox{AC}/\mbox{EV})\times \mbox{BAC} \\
+&= (104,000 / 90,000)\times 2,800,000 \\
+&= 1.1556\times 2,800,000 \\
+&= 3,235,556 \\
+\mbox{VAC} &= 3,235,556 - 2,800,000 \\
+&= 435,556 \\
+&= \mbox{\ 116\%}
+\end{align*}
+Estimates at the end of month 3:
+\begin{align*}
+\mbox{EAC} &= (\mbox{AC}/\mbox{EV})\times \mbox{BAC} \\
+&= (279,000 / 254,000)\times 2,800,000 \\
+&= 1.0984\times 2,800,000 \\
+&= 3,075,591 \\
+\mbox{VAC} &= 3,075,591 - 2,800,000 \\
+&= 275,591 \\
+&= \mbox{\ 110\%}
+\end{align*}
+
+\item \emph{What information did the vice president fail to analyze?}
+\par The vice president failed to at least take into account the estimated budget at completion.  In the process of analyzing a schedule based on earned value, it is also reasonable to calculate the cost performance index and schedule performance index.  Developing a trend from period-to-period helps to evaluate the schedule.
+\par Variances at the end of month 2:
+\begin{align*}
+\mbox{CPI} &= \frac{\mbox{EV}}{\mbox{AC}} \\
+&= \frac{90,000}{104,000} \\
+&= 0.8654 \\
+\mbox{SPI} &= \frac{\mbox{EV}}{\mbox{PV}} \\
+&= \frac{90,000}{121,000} \\
+&= 0.7438
+\end{align*}
+Variances at the end of month 3:
+\begin{align*}
+\mbox{CPI} &= \frac{\mbox{EV}}{\mbox{AC}} \\
+&= \frac{254,000}{279,000} \\
+&= 0.9104 \\
+\mbox{SPI} &= \frac{\mbox{EV}}{\mbox{PV}} \\
+&= \frac{254,000}{299,000} \\
+&= 0.8495
+\end{align*}
+The trend clearly indicates a significant improvement in both schedule and cost.
+
+\item \emph{What additional information should have been included in the status report?}
+\par A proactive manager would have included EAC and VAC values as well as possibly including CPI and SPI calculations.
+
+\item \emph{Does Franklin Electronics understand earned value measurement?  If not, then what went wrong?}
+\par Franklin fell just short of providing the information that may have circumvented this misunderstanding between them and Spokane Industries.  We know that management at Franklin understands enough to provide a comparative analysis of cost and schedule relative to the projected baseline.  Some further analysis including cost and schedule performance index along with an evaluation of the resulting trends would have demonstrated a more thorough understanding of earned value management.  It is difficult to say, given the information provided, if Franklin expected Spokane to interpret the data correctly, or if Franklin failed to grasp what was necessary to adequately convey their position.
+
+\item \emph{Does Spokane Industries understand project management?}
+\par We aren't given enough information to know with certainty if Spokane Industries understands project management in the general case.  What we can say is that the vice president of Spokane was given minimally sufficient information to draw adequate conclusions regarding the project schedule and budget and failed to come to the correct analysis.  Despite the fact that management from Franklin Electronics failed to provide the complete analysis, enough information was given to adequately inform Spokane who drew incorrect conclusions from the data provided.
+
+\item \emph{Does proper earned value measurement serve as a replacement for interchange meetings?}
+\par Proper earned value measurement provides all of the following benefits:\footnote{Harold Kerzner, Ph.D., ``Project Management,'' (New York: Wiley, 2009) 646}
+\begin{itemize}
+	\item Accurate display of project status
+	\item Early and accurate identification of trends
+	\item Early and accurate identification of problems
+	\item Basis for course corrections
+\end{itemize}
+
+According to Kerzner, it also answers the following questions:\footnote{Ibid. 646}
+\begin{itemize}
+	\item What is the true status of the project?
+	\item What are the problems?
+	\item What can be done to fix the problems?
+	\item What is the impact of each problem?
+	\item What are the present and future risks?
+\end{itemize}
+
+Inasmuch we would say that proper earned value measurement serves as a replacement for interchange meetings.
+
+\item \emph{What should the project manager from Franklin say in his defense?}
+\par The project manager from Franklin can say with confidence that the schedule is not currently off by more than 10\% and that both schedule and cost are trending favorably.
+\end{enumerate}
+
+\section*{EVM Problem}
+\begin{enumerate}
+\item\emph{Are you ahead or behind on schedule? Why do you think this may have happened?}
+\par We are behind schedule the schedule is 64\% complete and the project is only 56\% built.  This might have happened because there was no plan implemented to get back on schedule; telling the foreman to ``step it up'' is not a plan.  Another possibility could be that the schedule does not represent the work being completed, if there is a lot of preparation work completed for sections that have not been completed yet we may not be as far behind schedule (or possibly behind at all).
+
+\item\emph{Are you under or over budget? What could have caused this? Is there a chance you could finish on or under budget? What would have to be changed for this to happen?}
+\par We are over budget, 71\% spent verses 56\% of work completed and 64\% schedule completed.  Telling the foreman to step it up might have made him assume that they could work more overtime which would lead to increased costs.  There is a chance that this could be completed on or under budget but it will be difficult as costs will need to be controlled very tightly.  If a cost control plan can be developed to get costs under control then you could still complete on budget.  This will be difficult because this means that the costs initially planned for were either not well developed or the schedule will have to take a large impact to recoup the costs, if possible.
+\par If the schedule was changed by the foreman to perform preparation work to more efficiently complete sections that have not been completed yet at a greater cost now and a lower cost now then we still might not be as bad off as this budget looks (this would involve greater spending now so that we can complete more at a lower cost later, possibly by pre-purchasing and positioning supplies).
+
+\item\emph{Will your team get a bonus for completing on time and under budget? Based on your position right now, what changes will you make in the plan for the remaining 51 days?}
+\par It seems unlikely that this will be able to complete on time and under budget (this assumes no preparation work has been completed and the initial schedule is still accurate).  For this to change there will need to be a cost and schedule recuperation plan implemented that will control and manage all risks to the cost and schedule.  This seems unlikely because if it was easily implemented why wouldn't this have been included in the initial project plan.  We won't be able to take a hit in one area (cost or schedule) to improve the other since both are behind.
+
+\item\emph{If your team continues at this rate, when do you expect to have the wall completed, and at what cost?}
+\par With the current project completion at 56\%, the budget at 71\% spent and the schedule at 64\% complete we are on track to be at 114\% schedule (160 days) and 126\% budget (\$1.71 million) at the current rate).
+
+\item\emph{If completing on time is mandatory, and you must make appropriate changes to accomplish this deadline, what will it cost you, and how will you get this done?}
+\par Using the cost and schedule values listed above and assuming that this can be completed with overtime work with all overtime costing an additional 50\%, effectively 20 days worth of overtime will cost \$321,000.00 which will increase the cost by \$107,000.00 to a total of \$1.82 million.
+\[1 \mbox{day cost} = \frac{\$1,710,000.00}{160} = \$10,687.50\]
+\[1 \mbox{day overtime} = \$10,687.50\times 1.5= \$16,031.35\]
+\end{enumerate}
+
+\end{document}

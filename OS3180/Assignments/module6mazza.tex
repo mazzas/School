@@ -1,0 +1,84 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 2}
+\author{Steve Mazza}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[8.1.1]\ Using $n=31$, $\bar{x}=53.42$, $\sigma=s=3.05$, $t=0.025,30$
+\begin{align*}
+(\bar{x}-\frac{t_{\frac{\alpha}{2},n-1^{s}}}{\sqrt{n}} &,\bar{x}+\frac{t_{\frac{\alpha}{2},n-1^{s}}}{\sqrt{n}}) \\
+(53.42-\frac{2.042\times 3.05}{\sqrt{31}}&,53.42+\frac{2.042\times 3.05}{\sqrt{31}}) \\
+&=(52.3135, 54.5386)
+\end{align*}
+
+\item[8.1.9]\ Using $n=31$, $\bar{x}=53.42$, $\sigma=s=3.05$
+\begin{align*}
+%L&=\frac{2t_{\frac{\alpha}{2},n-1^{s}}}{\sqrt{n}} \\
+n&\geq 4\times(\frac{t_{\frac{\alpha}{2},n-1^{s}}}{L_{0}})^{2} \\
+&\geq 4\times(\frac{2.042\times 3.05}{2})^{2} \\
+&\geq 38.7892 \\
+&= 39-31 \\
+&= 8 \mbox{more}
+\end{align*}
+
+\item[8.1.5] Using $n=29$, $\bar{x}=415.7$, $\sigma=10.0$, find $c$ for $\mu\in(-\infty, c)$ with 1-sided 99\% confidence interval.
+\begin{align*}
+c&=\bar{x}+\frac{z_{\alpha}\sigma}{\sqrt{29}} \\
+&=415.7+\frac{2.326\times10}{\sqrt{29}} \\
+&=420.0193
+\end{align*}
+This is plausible since the result is less than 418.0.
+
+\item[10.1.1]\ 
+\begin{enumerate}
+\item Using $z_{0.005} = 2.576$
+\begin{align*}
+(\frac{11}{32}-\frac{2.576}{32}\times\sqrt{\frac{11\times(32-11)}{32}}&,
+\frac{11}{32}+\frac{2.576}{32}\times\sqrt{\frac{11\times(32-11)}{32}}) \\
+(0.1275 &, 0.5601)
+\end{align*}
+
+\item Using $z_{0.025} = 1.960$
+\begin{align*}
+(\frac{11}{32}-\frac{1.960}{32}\times\sqrt{\frac{11\times(32-11)}{32}}&,
+\frac{11}{32}+\frac{1.960}{32}\times\sqrt{\frac{11\times(32-11)}{32}}) \\
+(0.1792 &, 0.5084)
+\end{align*}
+
+\item Using $z_{0.001} = 2.326$
+\begin{align*}
+(\frac{11}{32}-\frac{2.326}{32}\times\sqrt{\frac{11\times(32-11)}{32}}&,
+\frac{11}{32}+\frac{2.326}{32}\times\sqrt{\frac{11\times(32-11)}{32}}) \\
+(0.1792 &, 0.5084)
+\end{align*}
+\end{enumerate}
+
+\item[EX DL1]\ 
+\begin{center}
+\begin{table}[ht]
+\caption{95\% Confidence Interval} % title of Table
+\centering  % used for centering table
+\begin{tabular}{r l} % centered columns (2 columns)
+\hline\hline                   %inserts double horizontal lines
+First half of the year: & 15.5245 \\ % inserting body of the table
+Second half of the year: & 14.6553 \\ [1ex]      % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\end{center}
+
+\end {description}
+\end{document}

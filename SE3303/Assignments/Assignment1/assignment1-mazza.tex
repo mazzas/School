@@ -1,0 +1,51 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+
+%opening
+\title{Assignment 1}
+\author{Steve Mazza}
+\date{January 20, 2012}
+
+\begin{document}
+\maketitle
+
+\section*{Methodology}
+For this exercise I treated the three cases as discrete, each being an individual modification of the original spreadsheet.
+
+\section*{Results}
+The OMOE of the baseline case (original, unaltered spreadsheet) is the lowest at 0.589.  Case A came in third with an OMOE of 0.594.  Case C was second with an OMOE of 0.614.  And the best overall model as measured by OMOE was Case B at 0.749, a better than 27\% improvement over the original model.  The results are summarized below.
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{l.}
+\hline
+\myalign{c}{\textbf{Case}} & \myalign{c}{\textbf{OMOE}} \\
+\hline\hline
+Baseline & 0.589 \\
+Case A & 0.594 \\
+Case B & 0.749 \\
+Case C & 0.614 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\section*{Conclusion}
+If cost were not a consideration, Case B represents the best selection of the new SLC shop configuration.
+
+It seems that the higher score of Case B is due to the relatively high value of the three affected attributes.  On the QFD1, \emph{Endurance} is 4$^{th}$ most heavily weighted.  And on QFD3, \emph{CIC}, \emph{Stores}, and \emph{Fuel Storage} (related to \emph{Endurance Range}) are the three most significant attributes.
+
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 7}
+\author{Steve Mazza}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[8.2.3]\ 
+\begin{enumerate}[a)]
+\item Using $n=13$, $\bar{x}=2.879$, $\sigma=0.325$, and $\mu=3.0$ and applying the 2-sided $z$-test from page 369,
+\begin{align*}
+z &= \frac{\sqrt{n}(\bar{x}-\mu_{0})}{\sigma} \\
+&= \frac{\sqrt{13}(2.879-3.0)}{0.325} \\
+&= -1.3424
+\end{align*}
+and then applying $p$-value $=2\times\Phi(-\mid z\mid)$,
+\[
+p\mbox{-value} = 0.180
+\]
+
+\item Using $n=13$, $\bar{x}=2.879$, $\sigma=0.325$, and $\mu\geq3.1$ and applying the 2-sided $z$-test from page 369,
+\begin{align*}
+z &= \frac{\sqrt{n}(\bar{x}-\mu_{0})}{\sigma} \\
+&= \frac{\sqrt{13}(2.879-3.1)}{0.325} \\
+&= -2.4518
+\end{align*}
+and then applying $p$-value $=2\times\Phi(-\mid z\mid)$,
+\[
+p\mbox{-value} = 0.007
+\]
+\end{enumerate}
+
+\item[8.2.9]\ 
+\begin{enumerate}[a)]
+\item\ $t_{0.05,60}=1.671$ so the experimenter \emph{accepts} the null hypothesis $\forall t\mid t\leq 1.671$.
+\item\ $t_{0.005,60}=2.660$ so the experimenter \emph{accepts} the null hypothesis $\forall t\mid t > 2.660$.
+\item\ Reject at both $\alpha=0.1$ and $\alpha=0.01$.
+\item\ 
+\begin{align*}
+t&=\frac{\sqrt{61}(0.0768-0.065)}{0.0231} \\
+&= 3.9897 \\
+P(t_{60}\geq 3.9897)&=0.0001
+\end{align*}
+\end{enumerate}
+
+\item[8.2.11]\ 
+\begin{align*}
+t&= \frac{\sqrt{24}(44.364-44.30)}{0.019} \\
+&= 3.6098 \\
+2\times P(t_{23}\geq 3.6098)&= 0.0014
+\end{align*}
+Miscalibrated.
+
+\item[8.2.21]\ 
+\begin{align*}
+t&= \frac{\sqrt{16}(239.13-238.5)}{2.8} \\
+&= 0.9 \\
+P(t_{15} > 0.9) &= 0.191
+\end{align*}
+There is not sufficient evidence.
+
+\item[10.1.1(d)]\ \\
+Normal approximation:
+\begin{align*}
+z&= \frac{11-(32\times0.5)}{\sqrt{32\times0.5\times(1-0.5)}} \\
+&= -1.7678 \\
+p\mbox{-value}&= 2\times\Phi(-1.7678) \\
+&= 0.077
+\end{align*}
+Exact $p$-value:
+\[
+2\times P(B(32, 0.5))=0.110
+\]
+
+\item[10.1.7]\ I have a \emph{cop-out} answer for this question which is, \textbf{no}, this is not sufficient evidence.  I base this on the technicality that the question states, ``over the past five years only 122 out of the 1386 jurors \emph{used}\footnote{Italics added by me for emphasis.} by the court reside in her county.''  The method of solving the problem \textbf{not stated} in problem 10.1.7 would be to calculate the $z$-value and compare it against the $p$-value in a manner similar to above.
+
+\end {description}
+\end{document}

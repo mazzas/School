@@ -1,0 +1,45 @@
+> summary(Data1)
+     Model   Operating.Capacity       HP              WT       
+ A      :1   Min.   :5000       Min.   : 54.0   Min.   :10000  
+ B      :1   1st Qu.:5500       1st Qu.: 64.0   1st Qu.:10072  
+ C      :1   Median :5500       Median : 82.0   Median :10823  
+ D      :1   Mean   :5550       Mean   : 77.8   Mean   :11404  
+ E      :1   3rd Qu.:5875       3rd Qu.: 84.0   3rd Qu.:12861  
+ F      :1   Max.   :6000       Max.   :101.0   Max.   :13496  
+ (Other):4                                                     
+   Unit.Price   
+ Min.   :60560  
+ 1st Qu.:68690  
+ Median :70845  
+ Mean   :70575  
+ 3rd Qu.:72490  
+ Max.   :78870  
+                
+> summary(LM)
+
+Call:
+lm(formula = Unit.Price ~ Operating.Capacity + WT + HP)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5178.6 -1165.3  -343.6  1529.7  4379.8 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)  
+(Intercept)        39366.9207 18341.2672   2.146   0.0755 .
+Operating.Capacity     6.8496     4.3968   1.558   0.1703  
+WT                     0.8667     1.4832   0.584   0.5803  
+HP                  -214.5313   105.4082  -2.035   0.0880 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 3349 on 6 degrees of freedom
+Multiple R-squared: 0.6729,	Adjusted R-squared: 0.5094 
+F-statistic: 4.115 on 3 and 6 DF,  p-value: 0.06643 
+
+> newOC=c(5700)
+> newHP=c(83)
+> newWT=c(13500)
+> predict(LM,data.frame(Operating.Capacity=newOC, HP=newHP, WT=newWT), level=0.95, interval="confidence")
+       fit      lwr      upr
+1 72303.49 66123.85 78483.14

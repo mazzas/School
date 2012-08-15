@@ -1,0 +1,23 @@
+Capability Needs:
+
+FUNCTIONAL:
+The system shall detect all objects of interest
+	The system shall sense objects within a given area
+	The system shall determine the initial position of objects within a given area
+	The system shall track objects within a given area
+The system shall assess relevant data
+	The system shall continually evaluate all threat vectors (direction and velocity of tracked threats)
+	The system shall continually classify object based on their perceived threat
+The system shall communicate with appropriate personnel and systems
+	The system shall warn appropriate personnel of pending threat
+	The system shall record all activities for future evaluation
+	The system shall feed data as necessary to other systems
+The system shall defend personnel, facilities, and equipment
+	The system shall engage threat
+	The system shall neutralize the threat
+
+NON-FUNCTIONAL:
+Transportability of system
+Reliability of system
+Supportability of system
+Maintainability of system

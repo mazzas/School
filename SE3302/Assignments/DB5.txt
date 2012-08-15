@@ -1,0 +1,27 @@
+We will consider a System to be any program that is useful at the atomic level, that is, in-and-of iteself.  A System of Systems is a compposition of Systems that results in a whole that is greater than the sum of its parts.  Collaboratin is the ability to share data and services among Systems and Interoperability is the ability to aggregate Systems into Systems of Systems.
+
+Among the points brought out in the article are the difficulties or organizing and managing the System of Systems effort.  Factors cited include the individual management and appropriation of cost, schedule, and performance measures.  When these are specific to individual programs as opposed to shared goals across an organization, department, or even the DoD they becove out of necessity stove piped efforts and result in a high degree of duplication of effort and a low degree of system collaboration and interoperability.
+
+As Gregg Gildea points out in his review of the article, "These individual, independent system specifications address a specific need and are funded and managed to meet the cost, schedule and performance of its useful purpose only."  I see this as a systemic problem resulting from the cultural and programmatic necessity to always anser the question, "What requirements does your program satisfy?"  While the origins of this question are well intentioned, a dogged insistence in adherence to a policy of specifically answering this question for each program hints at the necessity to redifine our requirements.
+
+I would like to propose an alternate way forward that trades management oversight for vision by addressing the following points.
+
+1) Do away with, "What requirements does your program satisfy?" or redefine the requirements.  While our development should always be Warfighter focused we cannot tie every program requirement to Warfighter outcomes.  To do so ignores the benefits of infrastructure that facilitates collaboration and interoperability.
+
+2) Reward adoption of standards.  Standard are the facilitators of Interoperability of which proprietary protocols, transports, and cryptic interfaces are the antithesis.
+	
+3) Encourrage consumption of services.  This plays directly into the Collaboration wheel house.  If my program requires a concurrence of data across multiple instantiations then I am better off to leverage existing synchronization services than to reinvent that facility.
+	
+4) Ask, "Has this problem been solved before?"  Look for existing solutions before implamenting your own.
+	
+5) Ask, "Is mine the only problem that requires a solution to this problem?"  When encountering a problem, do not assume that it is unique to your program.  A robust implementation of a solution is likely to benefit a broad audience and provide a key point of Interoperability and Collaboratin.
+	
+6) Ask, "Does the solution to this problem warrant a separate development effort and budget?"
+	
+7) Determine the effort required to provide a generalized solution to a problem and weigh that effort against potential benefits.
+	
+8) Determine the cost of not providing a generalized solution to a problem.  Consider communication (Collaboration), data sharing (Interoperability), and the costs of stove pipe re-invention as key drivers.
+	
+9) Draw clear boundaries based on functional goals.  Clearly deliniate your system so that others know what to expect.  Architect concise and robust soltuions that don't over reach.
+	
+10) Clearly define and publish points of Interoperability.  Publication of interfaces is the easiest way to facilitate Collaboration and Interoperability.

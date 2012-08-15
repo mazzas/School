@@ -1,0 +1,148 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 1}
+\author{Steve Mazza}
+
+\begin{document}
+
+\maketitle
+
+\begin{description}
+\item[1.1.10] 
+The probability values of the three outcomes are as follows:
+\begin{align*}
+P(I) &= 0.6 \\ 
+P(II) &= 0.3 \\ 
+P(III) &= 0.1
+\end{align*}
+
+\item[1.2.6]
+The probability that the red die will have a score that is \emph{strictly greater} than the blue die is $15/36$.  The probability is $< 0.05$ because of the requirement that the value of the second die be \emph{strictly greater} than value of the first.  The compliment of this event is $21/36$.
+
+\item[1.3.2]
+The probabilities of the events are as follows:
+\begin{align*}
+P(B) &= 0.08 + 0.13 + 0.06 + 0.01 + 0.11 + 0.05 + 0.02 \\
+&= 0.46 \\
+P(B\cap C) &=  0.02 + 0.05 + 0.11 \\
+&= 0.18 \\
+P(A \cup C) &= 0.07 + 0.05 + 0.01 + 0.02 + 0.05 + 0.08 + 0.04 + 0.11 + 0.11 + 0.07 \\
+&= 0.61 \\
+P(A \cap B \cap C) &= 0.02 + 0.05 \\
+&= 0.07
+\end{align*}
+	
+\item[1.4.14]
+For the following $S =$ size, $T =$ taste, and $A =$ appearance.
+\begin{enumerate}[a)]
+\item 
+\begin{align*}
+P(S\mid T) &= \frac{P(S\cap T)}{P(T)} \\
+&= \frac{0.69}{0.78} \\
+&= 0.88
+\end{align*}
+\item 
+From what was given in the text we can derive that
+\begin{align*}
+0.84 &= 1 - P(S'\cap A') \\
+0.16 &= P(S'\cap A')
+\end{align*}
+And substituting back into the original equation we get
+\begin{align*}
+P(T\mid (S'\cap A')) &= P(0.78\mid 0.16) \\
+&= \frac{P(T\cap S'\cap A')}{P(S'\cap A')} \\
+&= \frac{0.04}{0.16} \\
+&= 0.25
+\end{align*}
+\end{enumerate}
+
+\item[1.5.7]
+For clarity we will refer to switch \#1 as $S_{1}$, switch \#2 as $S_{2}$, and switch \#3 as $S_{3}$. \\ Calculating the combined probability for $S_{1}$ and $S_{2}$ we get $$S_{1+2} = 0.81$$ and we can infer the following
+\begin{align*}
+S_{1+2}' &= 0.19 \\
+S_{3}' &= 0.1
+\end{align*}
+and so 
+\begin{align*}
+P(S_{1+2}\cup S_{3}) &= P(S_{1+2}'\cap S_{3}') \\
+&= 1 - (0.19\times 0.1) \\
+&= 0.98
+\end{align*}
+
+\item[1.5.8]
+The general formula for determining the probability of a concurrent birthday ($P_{CB}$) given $n$ people is
+$$P_{CB} = 1 - \frac{365!}{365^{n}(365 - n)}$$
+The following values were obtained using this formula:
+\begin{align*}
+n &= 10 \\
+&= 0.116 \\
+n &= 15 \\
+&= 0.252 \\
+n &= 20 \\
+&= 0.411 \\
+n &= 25 \\
+&= 0.569 \\
+n &= 30 \\
+&= 0.706 \\
+n &= 35 \\
+&= 0.814
+\end{align*}
+Twenty-three (23) people is the smallest value for which the probability is larger than a half.
+\par Given that all dates are equally likely (i.e., ignoring February 29) I believe that birthdays are equally likely to be on any day of the year.
+
+\item[1.6.4]
+For the following exercise species 1 $= S_{1}$, species 2 $= S_{2}$, species 3 $= S_{3}$, and $T$ is the probability any given species is tagged.
+\begin{align*}
+P(S_{1}\mid T) &= \frac{P(S_{1}) P(T_{1}\mid S_{1})}{P(T)} \\
+&= \frac{0.45\times 0.1}{0.187} \\
+&= 0.24 \\
+P(S_{3}\mid T) &= \frac{P(S_{2}) P(T_{2}\mid S_{2})}{P(T)} \\
+&= \frac{0.38\times }{0.187} \\
+&= 0.30 \\
+P(S_{2}\mid T) &= \frac{P(S_{3}) P(T_{3}\mid S_{3})}{P(T)} \\
+&= \frac{0.17\times 0.5}{0.187} \\
+&= 0.45
+\end{align*}
+
+\item[1.7.4]
+$$(5+3)\times 7\times 6\times8 = 2688$$
+
+\item[1.7.10] \ 
+\begin{enumerate}[a)]
+\item
+\begin{align*}
+C_{52,5}  &= \frac{52!}{5!\times 47!} \\
+&= 2598960
+\end{align*}
+\item
+\begin{align*}
+C_{13,5}  &= \frac{13!}{5!\times 8!} \\
+&= 1287
+\end{align*}
+\end{enumerate}
+
+\item[1.7.12]
+\begin{align*}
+P_{6,6} &= \frac{6!}{(6-6)!} \\
+&= 720
+\end{align*}
+
+\item[1.9.33]
+For the following exercise a lit warning light will be represented by $W$ and a fault will be represented by $F$.
+\begin{align*}
+P(F\mid W) &= \frac{P(F) P(W\mid F)}{P(F) P(W\mid F) + P(F') P(W\mid F')} \\
+&= \frac{0.004\times 0.992}{(0.004\times 0.992) + (0.996\times 0.003)} \\
+&= 0.57
+\end{align*}
+
+\end {description}
+
+\end{document}

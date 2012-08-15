@@ -1,0 +1,80 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+
+%opening
+\title{Assignment 5}
+\author{Steve Mazza}
+\date{November 23, 2011}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item Using the USC COCOMO Suite along with the accompanying spreadsheet I determine the grand total cost of labor to be \$4,806,237.00.  The values calculated using COCOMO are expanded in the spreadsheet and total to \$4,609,613.00 due to rounding errors.  See the spreadsheet for explanation and monthly totals.
+	\item Savings on the \emph{development} effort is a one-shot calculation.  Using the USC COCOMO model to first determine a baseline with \emph{Nominal} inputs yields the following:
+	\begin{center}
+		\begin{tabular}{l.}
+			\hline \\
+			Effort & 465.3 \\
+			Schedule & 27.9 \\
+			Cost & \$3,722,522.00 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	Then I run the calculation again with the adjusted values for \emph{Use of Software Tools} and \emph{Language and Toolset Experience}, the former set to \emph{High} and the latter set to \emph{Low} as prescribed.
+	\begin{center}
+		\begin{tabular}{l.}
+			\hline \\
+			Effort & 465.5 \\
+			Schedule & 27.7 \\
+			Cost & \$3,651,794.00 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	From these I determine the one-shot savings based on the development effort to be \$70,728.00.
+	\par
+	Then, using the numbers supplied in the lecture as the basis of calculation, I determine a baseline annual \emph{maintenance} effort as follows:
+	\begin{center}
+		\begin{tabular}{l.}
+			\hline \\
+			Effort & 79.3 \\
+			Schedule & 15.5 \\
+			Cost & \$634,132.00 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	Then I run the calculation again with the adjusted values for \emph{Use of Software Tools} and \emph{Language and Toolset Experience}, the former set to \emph{High} and the latter set to \emph{Nominal} as prescribed.
+	\begin{center}
+		\begin{tabular}{l.}
+			\hline \\
+			Effort & 71.3 \\
+			Schedule & 15 \\
+			Cost & \$570,719.00 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	This represents an annual savings of \$63,413.  Following the example in the lecture I multiply this savings over five (5) years and get an aggregate savings of \$317,065.00 based on maintenance.
+	\par
+	The total savings considering \emph{development} and \emph{maintenance} is \$387,793.00.  Taking into account the values supplied for investment cost (\$250,000.00) and total acquisition costs (\$4,400,000.00) ROI is calculated as follows:
+	\begin{align*}
+	ROI &= (387793 - 250000) / 4400000 \\
+	&= 137793 / 4400000 \\
+	&= 0.03
+	\end{align*}
+	This represents a little better than 3.1\% savings over five (5) years and so I find the investment worthwhile.
+	\par
+	Note: while the problem suggests a calculation of savings based on 4.4M for development and 8.8M for maintenance, we do not appear to have access to \emph{maintenance effort multipliers} which appear to differ from the \emph{development effort multipliers}, hence my use of COCOMO and the calculation above.  This may be slightly unorthodox but I believe is justified in that the savings attributable to maintenance is calculated as the difference in the maintenance costs which inherently takes those costs into account.
+	\par
+	Using an alternate calculation similar to that on slide \#9 of our lecture I determine the 5-year ROI to be approximately 5\% and so I still find the investment worthwhile.\footnote{See the accompanying spreadsheet for calculations and explanation.}
+\end {enumerate}
+\end{document}

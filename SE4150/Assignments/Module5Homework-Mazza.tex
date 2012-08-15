@@ -1,0 +1,35 @@
+\documentclass[letterpaper,12pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+
+\title{Module 5 Homework}
+\author{Steve Mazza}
+\date{May 18, 2012}
+
+\begin{document}
+\maketitle
+
+% Homework:  Could we simplify Zachman's Framework?  That is, of his 36 views, what would you consider the "bare minimum" set of views for architecture descriptions that could support DoD Acquisition?  Or, should we keep them all?  Why?  Two or three pages should be enough.
+
+Zachman lays out an architecture framework as a six-by-six thirty-six tile grid where each tile addresses \emph{what, how, where, who, when,} and \emph{why} at various places within the organization.  These places within the organization align with corresponding levels of detail in the architecture process moving from \emph{scope} all the way down through \emph{operations}.  The applicability of each tile in the general case cannot be fully determined independent of a sufficient understanding of the details of the project, the organization, and the desired outcomes.  
+
+When Zachman presents his architecture framework he suggests that each tile can be indexed by its appropriate row and column.  While this is true, it belies the usefulness of considering each column in the framework as a continuum of understanding of each of six pillars of the whole architectural framework.  On the one hand, viewing each tile as a discrete step may inform a work product whose applicability to a given project may be differentially necessary (possibly not at all).  On the other hand, this simplification creates a misunderstanding of the iterative nature of problem solving which occurs throughout the entire process of any nontrivial project.
+
+Therefore, the \emph{bare minimum} set of views for architecture descriptions that could support DoD acquisition would be those that support the given project, the organization, and the desired outcomes.  While this statement is intentionally vague, it is not intended to be tongue-in-cheek.  It is, rather, intended to illuminate the illusion of a prescriptive, one-size-fits-all solution to DoD acquisition.
+
+Consider a project to develop a new jet fighter.  This is a huge, multi-billion dollar, multi-year acquisition project requiring the contribution and involvement of many (possibly joint) government and DoD agencies, funding appropriation from Congress, contractor support, and ultimately taxpayer buy-in.  Contrast that with a project to implement an existing unclassified paper process on a commercial hand held portable device (e.g., iPad or Android tablet).  All of the \emph{where, who, when,} and probably most of the \emph{why} have likely been previously answered. After all, they are part of an existing process. Project scope is sufficiently small as to be funded by \emph{mission money} and total implementation is likely to take less than six months.  If development is completed in-house then there isn't even any contractor involvement and money can be MIPRd between organizations.  There may be some augmentation to the understanding of \emph{what} and \emph{how} as the new process is integrated into the old.
+
+Arguably I have loaded the deck with my two examples but it should help illustrate the necessity of considering project details, organizational needs, and desired outcomes in the appropriate application of Zachman's architecture framework to the DoD acquisition process.
+
+\end{document}

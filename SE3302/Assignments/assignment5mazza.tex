@@ -1,0 +1,71 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand{\Mct}{\overline{\mbox{M}}\mbox{ct}}
+
+%opening
+\title{Assignment 5}
+\author{Steve Mazza}
+\date{November 11, 2011}
+
+% Complete problems 15.12, 15.13, 15.14, 15.15, & 15.16 in B&F.
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[15.12]\ Given $\lambda t=0.163$,
+\begin{align*}
+P &= e^{-0.163}+(0.163)e^{-0.163} \\
+&= 0.85+(0.163)(0.85) \\
+&= 0.98855
+\end{align*}
+\item[15.13]\ 
+\begin{align*}
+P &= 0.85\left( 1+0.163+\frac{(0.163)^{2}}{2!}\right) \\
+&= 0.85(1.163+0.0133) \\
+&= 0.85\times 1.176 \\
+&= 0.9998
+\end{align*}
+\item[15.14]\ Given $\lambda t=0.1335$,
+\begin{align*}
+P &= e^{-0.267}\left( 1+0.267+\frac{(0.267)^{2}}{2!} \right) \\
+&= 0.7656(1.267+0.0356) \\
+&= 0.997
+\end{align*}
+\item[15.15]\ Given $=0$, $\lambda=0.01$, $t=20$,
+\begin{align*}
+n\lambda t &= (10)(0.01)(20) \\
+&= 2.0
+\end{align*}
+Using the value $r=2$ and \emph{Figure 15.7} on page 517 we find that $P=0.9999$.
+\item[15.16]\ Given $K=30$, $\lambda=0.0001$, $T=90$, $P=0.95$, we determine that
+\begin{align*}
+K\lambda T &= 30\times 0.0001\times 90\times 24 \\
+&= 6.48
+\end{align*}
+Using \emph{Figure 15.8b} on page 519 we find that the number of spares, $s$, required is approximately 11.  This is supported by use of the formula (\emph{15.8}) given on page 518 which yields the following table of values:
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{cc}
+\hline
+Number Of Spares & Probability Of Success \\
+\hline
+10 & 0.934271 \\
+11 & 0.966775 \\
+12 & 0.984327 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+
+\end {description}
+\end{document}

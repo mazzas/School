@@ -1,0 +1,92 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+
+%opening
+\title{Homework 2}
+\author{Steve Mazza}
+\date{October 26, 2011}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item The conversion factor from capabilities to requirements is $1/0.077059$ or 12.9702 as demonstrated by the following model:
+\begin{verbatim}
+> fit1 <- lm(capabilities ~ requirements, data=dataFile1)
+> summary(fit1)
+
+Call:
+lm(formula = capabilities ~ requirements, data = dataFile1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.5803 -1.3406 -0.6886  1.0469  4.2185 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.916200   0.957642   0.957    0.351    
+requirements 0.077059   0.005099  15.112 1.14e-11 ***
+---
+Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 
+
+Residual standard error: 2.089 on 18 degrees of freedom
+Multiple R-squared: 0.9269,	Adjusted R-squared: 0.9229 
+F-statistic: 228.4 on 1 and 18 DF,  p-value: 1.138e-11 
+\end{verbatim}
+Using the CER given to derive an 80\% confidence interval estimate of effort for 22 capabilities with my conversion factor:
+\begin{center}
+\begin{align*}
+\mbox{effort(person months)} &= 38.55 \times (12.902\times 22)^{1.06} \\
+&= 38.55 \times 285.3840^{1.06} \\
+&= 38.55\times 400.6410 \\
+&= 15444.71
+\end{align*}
+\end{center}
+\item The covariance matrix and model parameters for the three CER's are:
+\begin{verbatim}
+> vcov(fit2)
+            (Intercept)      Weight     DataRate
+(Intercept) 14125099.33 -94781.4510 -13233.38143
+Weight        -94781.45   1745.7161   -105.60854
+DataRate      -13233.38   -105.6085     55.13398
+
+> vcov(fit2a)
+            (Intercept)     Weight
+(Intercept)  73320342.0 -804468.66
+Weight        -804468.7   10335.79
+
+> vcov(fit2b)
+            (Intercept)     DataRate
+(Intercept) 12281183.22 -25942.62991
+DataRate      -25942.63     66.67152
+
+\end{verbatim}
+The ANOVA table for the three models is given as:
+\begin{verbatim}
+> anova(fit2, fit2a, fit2b)
+Analysis of Variance Table
+
+Model 1: Cost ~ Weight + DataRate
+Model 2: Cost ~ Weight
+Model 3: Cost ~ DataRate
+  Res.Df        RSS Df   Sum of Sq      F    Pr(>F)    
+1     15  431645574                                    
+2     16 3083288942 -1 -2651643368 92.147 8.535e-08 ***
+3     16  629745888  0  2453543054                     
+---
+Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1
+\end{verbatim}
+Based on my analysis I would say that Data Rate is a much better predictor for Cost than Weight.
+\end {enumerate}
+\end{document}

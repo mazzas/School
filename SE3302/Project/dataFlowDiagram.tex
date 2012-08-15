@@ -1,0 +1,73 @@
+\documentclass[landscape, letterpaper]{article}
+
+\title{Data Flow Diagram}
+\date{}
+\author{}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+\pagestyle{empty}
+%\maketitle
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{center}\tiny
+\noindent\makebox[\textwidth]{
+\begin{tikzpicture}[node distance=1.5cm] 
+	% Place nodes
+	\node [block] (vehop) {Vehicle Operator};
+	\node [block, below right of=vehop] (puo) {Program-ming Unit Operator};
+	\node [block, below right of=puo] (pu) {Program-ming Unit};
+	\node [block, below right of=pu] (diag) {ACIDS Diagnostic Subsystem};
+	
+	\node [block, below right of=diag] (storcon) {MVS Storage Container};
+	\node [block, below right of=storcon] (remcon) {MVS Remote Controller};
+	\node [block, below right of=remcon] (firm) {Firmware};
+	\node [block, below right of=firm] (opsoft) {MVS Operational Software};
+	
+	\node [block, below right of=opsoft] (compcont) {Computer Controller};
+	\node [block, below right of=compcont] (chassis) {Chasis};
+	\node [block, below right of=chassis] (motors) {Motor Set};
+	\node [block, below right of=motors] (drive) {Drive Train};
+	\node [block, below right of=drive] (comms) {Communi-cations Set};
+	\node [block, below right of=comms] (ied) {IED Sensors};
+	\node [block, below right of=ied] (power) {Power Supply};
+	
+	% Draw edges
+	\path [line] (vehop) -| (remcon);
+	\path [line] (puo) -| (pu);
+	\path [line] (pu) -| (firm);
+	\path [line] (pu) -| (compcont);
+	\path [line] (pu) -| (remcon);
+	\path [line] (diag) -| (puo);
+	\path [line] (diag) -| (vehop);
+	\path [line] (opsoft) -| (compcont);
+	\path [line] (compcont) -| (motors);
+	\path [line] (compcont) -| (drive);
+	\path [line] (compcont) -| (comms);
+	\path [line] (compcont) -| (ied);
+	\path [line] (compcont) -| (power);
+	\path [line] (ied) -| (opsoft);
+	\path [line] (comms) -| (opsoft);
+	\path [line] (power) -| (opsoft);
+	\path [line] (motors) -| (opsoft);
+	\path [line] (drive) -| (opsoft);
+	\path [line] (firm) -| (opsoft);
+	\path [line] (firm) -| (compcont);
+	\path [line] (remcon) -| (opsoft);
+	\path [line] (opsoft) -| (remcon);
+	\path [line] (opsoft) -| (diag);
+	\path [line] (firm) -| (diag);
+	\path [line] (firm) -| (pu);
+\end{tikzpicture}}
+\end{center}
+
+\end{document}

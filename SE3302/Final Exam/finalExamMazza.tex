@@ -1,0 +1,63 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+
+%opening
+\title{Final Exam}
+\author{Steve Mazza}
+\date{December 9, 2011}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Question 1:] On the surface the impact to the existing infrastructure should be relatively minimal.  Reporting of missile firing events could easily be handled in small structured text messages such as XML or RDF/OWL.  As well, binary structured data would be small and easily carried by the existing infrastructure.
+
+There is an obvious cost, however, associated with the development, testing, and implementation of the command and control elements, sensor elements, and engagement elements that interact with the missile firing systems and which communicate over the existing infrastructure.  Retrofit of existing aircraft, ships, and command centers will be required.  Additionally, the new system augmentation will be required on existing projects and all new development.  As this is a highly automated system the impact to personnel training is assumed to be minimal and will have the greatest impact to maintenance personnel.
+
+Additional impacts will result from the need to perform routine maintenance and testing of the system.  These impacts manifest both in human terms and in infrastructure demands.  Furthermore, the implementaiton of this system will likely result in a decrease in Mean Time Between Maintenance (MTBM) and an increase in Maintenance Down Time (MDT) due to the added complexity and capabilities.  Responsible implementation and administration of the MIFIRC system will require routine testing which will presumably involve some consumption of network resources as well as planning and scheduling for personnel participation.
+
+Link descriptions apart form Milstar only provide the qualitative terms, \emph{medium data rate} and \emph{low data rate} and so do not afford a more objective assessment of their capabilities.
+
+Furthermore, the stated requirement that "the system shall provide data to the Pentagon Operations Center within 30 seconds of missile leaving its rail or cell" may not be guaranteed to be met given the limitations of the communications links.  A worst-case scenario might have an isolated ground or air unit operating beyond the horizon and out of range of surveillance aircraft.  In this case the specified communications links (Link 16) will not be sufficient to carry the automatic transmission of the missile firing data in a timely manner.\footnote{I assume that in a case like this protocol will dictate the reporting of missile firing data, possibly manually, over an alternative secure channel.}
+
+I will operate under the assumption that the engineering and implementation of the MIFIRC system and specifically its command and control elements, sensor elements, and engagement elements shall be done in such a was as to preserve the program requirements of the existing systems with which they integrate.  For example, the sensor element of the MIFIRC system shall in no way delay or interfere with the missile lock on target.\footnote{While this appears to violate the Heisenberg Uncertainty Principle, we will ignore the quantum effects for relatively large missiles so long as they do not approach the speed of light.}
+
+\item[Question 2:] New technical performance requirements for system suitability shall include:
+	\begin{enumerate}
+	\item The Milstar, Link 16, and Link 11 connections shall support the $A_{o}$ of required by the overall MIFIRC system.  Worth noting is the assumption that all MIFIRC traffic will traverse the Milstar link.  Some smaller proper subset of system traffic will traverse the Link 16 and Link 11 networks.
+	\item The MIFIRC system in performing its intended mission shall not inhibit, prevent, or delay the performance of existing missile systems.  The interface with existing systems for the purpose of gathering information shall in no way degrade the performance of those existing systems.
+	\item The reporting of any missile firing activities shall be correct with regard to global system time to within $\frac{2}{10}$ of a second and shall be reported in Zulu time.
+	\item Maintenance down time shall not cause the host program, system, or station to exceed its technical performance requirements for MDT.  Allowing some additional overhead for maintenance and testing associated with the implementation of the MIFIRC system, it shall be sufficiently small such that it meets the requirements of the host system.
+	\end{enumerate}
+
+\item[Question 3:] Threats potentially capable of causing the MIFIRC system to fail:
+	\begin{enumerate}
+	\item The New York Times reported in their January 15, 2011 edition a brief analysis of the Stuxnet worm and its affect on the Iranian nuclear refinement faciliteis\footnote{Broad, Markoff, \& Sanger, New York Times, January 15, 2011}.  The MIFIRC system would be potentially susceptible to a similar type of attack. A worm or computer virus could be introduced into the system that fooled the operators into believing that the system was operating normally and completely undermine the system monitoring and reporting capability.  Or worse, erroneous information could be injected into the normal reporting that caused (or prevented) continued action, reaction, or escalation due to faulty analysis.  Booting the firmware for the MIFIRC system from a trusted hypervisor would provide some measure of additional confidence regarding the internal consistency of the system and, in general, represents good practice whenever possible.
+	\item The ultimate success of the reporting hinges on the reliability of the Milstar reporting link.  A disruption in this link whether due to system failur of the satellite network or sabotage would render the MIFIRC system unable to meet its stated operational goals.  Building in some redundancy by providing an alternative channel for reporting would hedge against this type of disruptive attack.  Specifically, the system could fall back on the WIN/T + SatCom links that provide existing communications and data connectivity back to CONUS from theater.
+	\item A related compromise of the Milstar reporting link could allow the alteration of transmissions or the injection of fabricated data for the purposes of preventing or inciting conflict.  The use of end-to-end verification mechanisms such as secure keys and checksums would allow operators to quickly identify and screen unauthorized or altered message traffic.
+	\end{enumerate}
+
+\item[Question 4:]  The greatest barriers to supportability will result directly from the additional system complexity required to be integrated into existing as well as new systems and the resultant additional requirements to training, maintenance, and routine testing of the MIFIRC system components.  This impact can be managed by engineering the MIFIRC system to be modular and encapsulated.  This will facilitate the replacement and upgrade of fielded units.  Additionally, engineering software and hardware level consistency self-diagnostics will ensure that fielded systems are operating at specification.  Providing a service-accessible diagnostic port and firmware flash upgrade capability will significantly reduce MDT.  Implementing a diagnostic protocol that periodically and routinely exercises the on-board system components as well an end-to-end network and reporting capability would relieve some burden on personel to perform routine integrated system tests.
+
+\item[Question 5:]\ 
+	\begin{enumerate}[A: ]
+	\item Providing an abstracted and encapsulated implementation of the core MIFIRC system will provide a best-path approach to system fielding leaving the implementation details of specific legacy systems the flexibility to do so in a manner best suited to the circumstances of that system.  The model I'm describing is the print driver model implemented by Microsoft in its Windows operating system.  The print subsystem is standardized; it is abstracted and isolated from the potentially messy details of interfacing with \emph{your} specific printer (OMG\dots are you \emph{really} still using a dot-matrix printer???).  This method of drawing strict system boundaries around the standardized implementation of MIFIRC and providing a unified interface by which the system can be implemented on any given platform accommodates the engineering latitude necessary to meet technical performance parameters across a wide range of legacy systems while preserving the abiltiy to mature and upgrade the MIFIRC system across its lifecycle.
+	\item The in-theater Intelligence community would be an obvious benefactor of the missile firing information provided by the MIFIRC system.  In the Army, the Intelligence and Information Warfare Directorate (I2WD) already performs this type of data collection at different levels, monitoring the battlefield for both red- and blue-force activities, attempting to locate and monitor shots fired, and maintain situational awareness of other critical intelligence.  This community uses the information to inform the decisions of the Command and Control (C2) community which directs the movement and engagement of our troops.
+	
+	Similarly, the C2 community would benefit from the receipt of MIFIRC information as it would allow them to make timely and informed decisions about troop movement, timing of engagements, as well as troop reinforcement and the possible need for additional medical support.
+	\end{enumerate}
+
+\end{description}
+\end{document}

@@ -1,0 +1,1768 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     54450,       1759]
+NotebookOptionsPosition[     45797,       1451]
+NotebookOutlinePosition[     46208,       1469]
+CellTagsIndexPosition[     46165,       1466]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["OS3180 Final Exam", "Title",
+ CellChangeTimes->{{3.5252565757188673`*^9, 3.525256595715234*^9}, {
+  3.525354577080908*^9, 3.5253545795334673`*^9}}],
+
+Cell["Steve Mazza", "Subtitle",
+ CellChangeTimes->{{3.52536710996443*^9, 3.5253671201965017`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem 1", "Section",
+ CellChangeTimes->{{3.5252566024934683`*^9, 3.525256613734373*^9}}],
+
+Cell["\<\
+Interpretation of this problem has me treating the first and second halves of \
+the problem independently and then multiplying their results.  The first half \
+is easy... we calculate the probability that the signal will not get through \
+either the top or bottom branch as follows (they are the same probability):\
+\>", "Text",
+ CellChangeTimes->{{3.525256826579707*^9, 3.525256958817663*^9}, {
+  3.525257336604514*^9, 3.525257342178146*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "0.9"}]], "Input",
+ CellChangeTimes->{{3.525257237914068*^9, 3.525257243210191*^9}}],
+
+Cell[BoxData["0.09999999999999998`"], "Output",
+ CellChangeTimes->{3.525257245579117*^9}]
+}, Open  ]],
+
+Cell["\<\
+Then calculate the combined probability the signal will pass throught the \
+first (left) half of the network:\
+\>", "Text",
+ CellChangeTimes->{{3.525257345919775*^9, 3.525257393962535*^9}, {
+  3.5252575379575253`*^9, 3.525257539981427*^9}, {3.525281013828825*^9, 
+  3.5252810349443283`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"(", 
+   RowBox[{"0.1", "*", "0.1"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.5252574150331383`*^9, 3.5252574550550137`*^9}}],
+
+Cell[BoxData["0.99`"], "Output",
+ CellChangeTimes->{{3.525257431290164*^9, 3.525257458033679*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Next calculate the probability the signal will not pass through the top \
+branch of the second (right) half of the network:\
+\>", "Text",
+ CellChangeTimes->{{3.525257487155589*^9, 3.525257534524824*^9}, {
+  3.525257627918375*^9, 3.5252576282792788`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"(", 
+   RowBox[{"0.95", "*", "0.95"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.525257560055808*^9, 3.525257571855937*^9}}],
+
+Cell[BoxData["0.09750000000000003`"], "Output",
+ CellChangeTimes->{3.5252575747705803`*^9}]
+}, Open  ]],
+
+Cell["\<\
+And the probability that the signal will not pass thought the bottom half of \
+the second (right) half of the network:\
+\>", "Text",
+ CellChangeTimes->{{3.525257632755568*^9, 3.5252576657032633`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "0.85"}]], "Input",
+ CellChangeTimes->{{3.525257679979869*^9, 3.52525768449792*^9}}],
+
+Cell[BoxData["0.15000000000000002`"], "Output",
+ CellChangeTimes->{3.5252576859675922`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Now the combined probability that the signal will pass through the second \
+(right) half of the network:\
+\>", "Text",
+ CellChangeTimes->{{3.525257689469575*^9, 3.5252577135443773`*^9}, {
+  3.5252577471166973`*^9, 3.525257751457477*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"(", 
+   RowBox[{"0.0975", "*", "0.15"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.52525776426071*^9, 3.5252577794930267`*^9}}],
+
+Cell[BoxData["0.985375`"], "Output",
+ CellChangeTimes->{3.525257780828085*^9}]
+}, Open  ]],
+
+Cell["\<\
+Last, calculate the probability that the signal will pass through the entire \
+network:\
+\>", "Text",
+ CellChangeTimes->{{3.5252577861704206`*^9, 3.525257816130295*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.99", "*", "0.985375"}]], "Input",
+ CellChangeTimes->{{3.525257841242292*^9, 3.525257855358436*^9}}],
+
+Cell[BoxData["0.97552125`"], "Output",
+ CellChangeTimes->{3.525257860821011*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 2", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["\<\
+NOTE: The assumption for this problem is that there exist only two (2) types \
+of armor: rolled homogeneous and composite.
+Begin by interpreting the results of the penetration test:\
+\>", "Text",
+ CellChangeTimes->{{3.525268899081603*^9, 3.525268899601141*^9}, {
+   3.5252689828344393`*^9, 3.525269009264101*^9}, {3.525269089693309*^9, 
+   3.525269145490506*^9}, {3.5252698939542828`*^9, 3.525269992458953*^9}, 
+   3.525270031958219*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox["40", "50.0"]], "Input",
+ CellChangeTimes->{{3.5252690220870323`*^9, 3.525269032938727*^9}, {
+  3.5252919623829393`*^9, 3.525291966719202*^9}}],
+
+Cell[BoxData["0.8`"], "Output",
+ CellChangeTimes->{{3.5252690245087214`*^9, 3.5252690345894327`*^9}, 
+   3.525291968495564*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox["25", "50.0"]], "Input",
+ CellChangeTimes->{{3.525269039329817*^9, 3.525269041319584*^9}, {
+  3.525291941542035*^9, 3.525291953693969*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.5252690426171*^9, 3.525291957247106*^9}]
+}, Open  ]],
+
+Cell["\<\
+P(penetrate rolled homogeneous armor) = 0.8
+P(penetrate composite armor) = 0.5
+P(enemy uses rolled homogeneous armor) = 0.8
+P(enemy uses composite armor) = 0.2
+
+Next calculate P(armor penetration) = (P(penetration \[VerticalSeparator] \
+composite armor) \[Cross] P(composite armor)) \[Cross] (P(penetration \
+\[VerticalSeparator] rolled armor) \[Cross] P(rolled armor)):\
+\>", "Text",
+ CellChangeTimes->{{3.5252691914207706`*^9, 3.5252692094518642`*^9}, {
+   3.525269324838252*^9, 3.525269367647046*^9}, {3.52527003978985*^9, 
+   3.5252700490364857`*^9}, {3.525270126744616*^9, 3.5252702750491943`*^9}, 
+   3.525271077977352*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"0.8", "*", "0.8"}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{"0.5", "*", "0.2"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.525270314590439*^9, 3.525270366397687*^9}}],
+
+Cell[BoxData["0.7400000000000001`"], "Output",
+ CellChangeTimes->{3.525270369588799*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270421373691*^9}}],
+
+Cell["\<\
+Calculate P(composite armor | failed penetration)
+= P(failed penetration \[Intersection] composite armor) \[Divide] P(failed \
+penetration)
+= P(failed penetration \[VerticalSeparator] composite armor) \[Cross] \
+P(composite armor) \[Divide] P(failed penetration)\
+\>", "Text",
+ CellChangeTimes->{{3.525270541104166*^9, 3.5252705439483433`*^9}, {
+  3.525270591369318*^9, 3.525270707944906*^9}, {3.525270749096046*^9, 
+  3.525270774521872*^9}, {3.525270859043651*^9, 3.5252709009243813`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.5", "*", "0.2"}], 
+  RowBox[{"1", "-", "0.74"}]]], "Input",
+ CellChangeTimes->{{3.5252709414470797`*^9, 3.52527097203298*^9}, {
+  3.525291980161921*^9, 3.525291996706376*^9}}],
+
+Cell[BoxData["0.3846153846153846`"], "Output",
+ CellChangeTimes->{3.525270974555038*^9, 3.525291998579056*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 3", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.525256669764904*^9}],
+
+Cell["GIVEN: No false positives!", "Text",
+ CellChangeTimes->{{3.525271431772169*^9, 3.5252714466238747`*^9}, {
+  3.525276989680152*^9, 3.525276991372601*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["\<\
+Calculate P(detection \[VerticalSeparator] presence) \[Cross] P(presence)\
+\>", "Text",
+ CellChangeTimes->{{3.525272100829877*^9, 3.5252721642438*^9}, {
+  3.525272200228463*^9, 3.525272223388671*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.24", "*", "0.05"}]], "Input",
+ CellChangeTimes->{{3.5252723093390093`*^9, 3.525272351905232*^9}}],
+
+Cell[BoxData["0.012`"], "Output",
+ CellChangeTimes->{3.525272353342938*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.52527194973564*^9, 3.52527194983671*^9}}],
+
+Cell["\<\
+Calculate P(no presence \[VerticalSeparator] no detection) 
+= P(no detection \[Intersection] presence) \[Divide] P(presence)
+= P(no detection \[VerticalSeparator] presence) \[Cross] P(presence) \
+\[Divide] P(no detection)\
+\>", "Text",
+ CellChangeTimes->{{3.525272483698237*^9, 3.525272520610455*^9}, {
+  3.5252725751395693`*^9, 3.525272594608304*^9}, {3.525272657984764*^9, 
+  3.5252728170402317`*^9}, {3.5252730792105207`*^9, 3.525273151630522*^9}, {
+  3.525273208504024*^9, 3.525273211192264*^9}, {3.525277942206931*^9, 
+  3.525277945206841*^9}, {3.525278197627742*^9, 3.525278227627942*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.76", "*", "0.05"}], 
+  RowBox[{"1", "-", "0.012"}]]], "Input",
+ CellChangeTimes->{{3.525277155387495*^9, 3.525277173681842*^9}, {
+  3.525277221202999*^9, 3.525277231140038*^9}, {3.525277883025177*^9, 
+  3.525277885528819*^9}, {3.52527795665837*^9, 3.525277960481937*^9}, {
+  3.525278020722979*^9, 3.525278022731153*^9}, {3.525278069732729*^9, 
+  3.5252780703640223`*^9}, {3.5252782342950773`*^9, 3.5252782625154963`*^9}, {
+  3.525278308958143*^9, 3.525278324320262*^9}, {3.525291860868973*^9, 
+  3.525291896369512*^9}}],
+
+Cell[BoxData["0.03846153846153847`"], "Output",
+ CellChangeTimes->{3.525277233508368*^9, 3.5252778870357237`*^9, 
+  3.525278024595747*^9, 3.5252780722094593`*^9, 3.5252783308837347`*^9, 
+  3.525291907049356*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part c)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525271945687146*^9, 3.525271945792701*^9}}],
+
+Cell[TextData[{
+ "First calculate the probabiility that one search would not detect the ",
+ StyleBox["Scorpion",
+  FontSlant->"Italic"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.525279430253257*^9, 3.525279481153906*^9}, {
+  3.525279580311352*^9, 3.525279580700178*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "0.24"}]], "Input",
+ CellChangeTimes->{{3.5252795657000523`*^9, 3.525279568454626*^9}}],
+
+Cell[BoxData["0.76`"], "Output",
+ CellChangeTimes->{3.525279573774485*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Now calculate the odds for two:\
+\>", "Text",
+ CellChangeTimes->{{3.525279671216215*^9, 3.5252796849985943`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["0.76", "2"]], "Input",
+ CellChangeTimes->{{3.5252796945282373`*^9, 3.525279698185465*^9}, {
+  3.5252919136265993`*^9, 3.525291917988062*^9}}],
+
+Cell[BoxData["0.5776`"], "Output",
+ CellChangeTimes->{3.5252796996909246`*^9, 3.525291920830328*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 4", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.5252566716691227`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["\<\
+This is the Binomial Distribution: P(X\[GreaterSlantEqual]6).\
+\>", "Text",
+ CellChangeTimes->{{3.5252823145046043`*^9, 3.525282358585684*^9}, {
+  3.525282489713249*^9, 3.5252825006692743`*^9}, {3.52528253522397*^9, 
+  3.525282547309266*^9}, {3.5253483082293043`*^9, 3.5253483279853573`*^9}, {
+  3.525348954311225*^9, 3.525348962605261*^9}, {3.525349403673151*^9, 
+  3.525349461383407*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525271977728334*^9, 3.5252719778307*^9}}],
+
+Cell["\<\
+Calculate E(X) based on the 80% chance of completing the mission (rounded \
+down since you can\[CloseCurlyQuote]t have partial helicopters in the air):\
+\>", "Text",
+ CellChangeTimes->{{3.5252823145046043`*^9, 3.525282358585684*^9}, {
+  3.525282489713249*^9, 3.5252825006692743`*^9}, {3.52528253522397*^9, 
+  3.525282547309266*^9}, {3.5253483082293043`*^9, 3.5253483279853573`*^9}, {
+  3.52534842807836*^9, 3.525348461036189*^9}, {3.525348541325788*^9, 
+  3.52534855339785*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Floor", "[", 
+  RowBox[{"8", "*", "0.8"}], "]"}]], "Input",
+ CellChangeTimes->{{3.525348522403686*^9, 3.525348525239394*^9}, 
+   3.525348581965164*^9}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.5253485262196083`*^9, 3.525348584945613*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part c)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525271973992174*^9, 3.525271974116191*^9}}],
+
+Cell["\<\
+Calculate the sum of probabilities 0...5 to determine the probability of \
+mission failure:\
+\>", "Text",
+ CellChangeTimes->{{3.5253490815946083`*^9, 3.5253491143519373`*^9}, {
+  3.525349350864523*^9, 3.5253493656909943`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "0"}], "]"}], "*", 
+    SuperscriptBox["0.8", "0"], "*", 
+    SuperscriptBox["0.2", "8"]}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "1"}], "]"}], "*", 
+    SuperscriptBox["0.8", "1"], "*", 
+    SuperscriptBox["0.2", "7"]}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "2"}], "]"}], "*", 
+    SuperscriptBox["0.8", "2"], "*", 
+    SuperscriptBox["0.2", "6"]}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "3"}], "]"}], "*", 
+    SuperscriptBox["0.8", "3"], "*", 
+    SuperscriptBox["0.2", "5"]}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "4"}], "]"}], "*", 
+    SuperscriptBox["0.8", "4"], "*", 
+    SuperscriptBox["0.2", "4"]}], ")"}], "+", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"8", ",", "5"}], "]"}], "*", 
+    SuperscriptBox["0.8", "5"], "*", 
+    SuperscriptBox["0.2", "3"]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.525348815080537*^9, 3.525348924674144*^9}, {
+  3.525349217912428*^9, 3.525349333739101*^9}}],
+
+Cell[BoxData["0.2030822400000002`"], "Output",
+ CellChangeTimes->{3.525348843197929*^9, 3.525348897930584*^9, 
+  3.525348928248148*^9, 3.525349234841125*^9, 3.525349336613242*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part d)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525271970448197*^9, 3.5252719705911217`*^9}}],
+
+Cell["\<\
+The conclusions are predicated on the assumption that helicopter failure is \
+an independent random variable.  If failure of one helicopter affects the \
+probability of failure of another, then these are invalid conclusions.  I do \
+not believe this is the case, however.  And so I believe that the assumption \
+of independence has been met.\
+\>", "Text",
+ CellChangeTimes->{{3.525349702384933*^9, 3.525349849551363*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 5", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.525256672933*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["\<\
+First calculate the standard deviation for 6 pallettes:\
+\>", "Text",
+ CellChangeTimes->{{3.525288077287146*^9, 3.525288092434155*^9}, {
+  3.525288136303815*^9, 3.525288140008173*^9}, {3.525288263985876*^9, 
+  3.5252882733943243`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SqrtBox[
+  RowBox[{"6.0", "*", 
+   SuperscriptBox["200", "2"]}]]], "Input",
+ CellChangeTimes->{{3.5252881480992613`*^9, 3.525288200908197*^9}, {
+  3.525291721538341*^9, 3.5252917489619904`*^9}}],
+
+Cell[BoxData["489.89794855663564`"], "Output",
+ CellChangeTimes->{{3.525288192993012*^9, 3.525288202001837*^9}, 
+   3.5252917533473186`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Next calculate the mean for the 6 pallettes:\
+\>", "Text",
+ CellChangeTimes->{{3.525288359543324*^9, 3.5252883931084146`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"6", "*", "1323"}]], "Input",
+ CellChangeTimes->{{3.525288911514606*^9, 3.525288913512945*^9}}],
+
+Cell[BoxData["7938"], "Output",
+ CellChangeTimes->{3.525288917794957*^9}]
+}, Open  ]],
+
+Cell["\<\
+Next calculate the standard deviation for 90 troops:\
+\>", "Text",
+ CellChangeTimes->{{3.525288227599043*^9, 3.525288248825272*^9}, {
+  3.525288288615973*^9, 3.525288293402589*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SqrtBox[
+  RowBox[{"90.0", "*", 
+   SuperscriptBox["20", "2"]}]]], "Input",
+ CellChangeTimes->{{3.525288299239366*^9, 3.5252883272458973`*^9}, {
+  3.525291791363872*^9, 3.5252918168670053`*^9}}],
+
+Cell[BoxData["189.73665961010275`"], "Output",
+ CellChangeTimes->{{3.525288322535184*^9, 3.525288328113661*^9}, 
+   3.5252918219666243`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Next calculate the mean for the 90 troops:\
+\>", "Text",
+ CellChangeTimes->{{3.525288359543324*^9, 3.525288410357121*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"90", "*", "180"}]], "Input",
+ CellChangeTimes->{{3.525288990795313*^9, 3.5252889966826973`*^9}}],
+
+Cell[BoxData["16200"], "Output",
+ CellChangeTimes->{3.525288999457402*^9}]
+}, Open  ]],
+
+Cell["\<\
+Use the rules for sums of random variables to combine the totals for the mean:\
+\>", "Text",
+ CellChangeTimes->{{3.5253410819885263`*^9, 3.525341118024459*^9}, {
+  3.525341348037719*^9, 3.5253413793568068`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"16200", "+", "7938"}]], "Input",
+ CellChangeTimes->{{3.525341363491211*^9, 3.525341371382987*^9}}],
+
+Cell[BoxData["24138"], "Output",
+ CellChangeTimes->{3.525341373513288*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use the rules for sums of random variables to combine the totals for the \
+standard deviation:\nNOTE: These are independent random variables and so Cov(",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["X", "1"], ",", " ", 
+      SubscriptBox["X", "2"]}], ")"}], "=", "0."}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.5253410819885263`*^9, 3.525341118024459*^9}, {
+  3.525341348037719*^9, 3.525341398980937*^9}, {3.525341554218863*^9, 
+  3.525341586208046*^9}, {3.525341632883902*^9, 3.525341693762809*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SqrtBox[
+  RowBox[{
+   SuperscriptBox["189.737", "2"], "+", 
+   SuperscriptBox["489.898", "2"], "+", "0"}]]], "Input",
+ CellChangeTimes->{{3.5253414533013067`*^9, 3.525341528324058*^9}}],
+
+Cell[BoxData["525.357192368202`"], "Output",
+ CellChangeTimes->{3.525341531184066*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525271992136486*^9, 3.5252719922805567`*^9}}],
+
+Cell[TextData[Cell[BoxData[{
+ FormBox[
+  RowBox[{"X", "=", 
+   RowBox[{"N", "(", 
+    RowBox[{"24138", ",", 
+     SuperscriptBox["525.357", "2"]}], ")"}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "(", 
+    RowBox[{"X", ">", "25000"}], ")"}], "=", 
+   RowBox[{"1", "-", 
+    RowBox[{"\[CapitalPhi]", "(", 
+     FractionBox[
+      RowBox[{"-", "862"}], "525.357"], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{"1", "-", 
+    RowBox[{"\[CapitalPhi]", "(", 
+     RowBox[{"-", "1.640789"}], ")"}]}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{"1", "-", "0.0505"}]}], TraditionalForm]}],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.525345343640005*^9, 3.525345578481761*^9}, {
+  3.5253459611916723`*^9, 3.525345991865704*^9}, {3.52534610702772*^9, 
+  3.5253461203028173`*^9}, {3.525346281068982*^9, 3.525346284050314*^9}, {
+  3.525346323360132*^9, 3.525346332606859*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", " ", "-", " ", "0.0505"}]], "Input",
+ CellChangeTimes->{3.525346405828444*^9},
+ FormatType->"InputForm"],
+
+Cell[BoxData["0.9495`"], "Output",
+ CellChangeTimes->{3.525346409939274*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 6", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.525256674981119*^9}],
+
+Cell[TextData[{
+ "NOTE: I am assuming that I can add simply take the 45 seconds off the top \
+of the calculation by increasing the response time.\nCalculate: ",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"P", "(", 
+    RowBox[{
+     RowBox[{"N", "(", 
+      RowBox[{"4", ",", 
+       SuperscriptBox["0.25", "2"]}], ")"}], " ", ">", " ", 
+     RowBox[{
+      RowBox[{"N", "(", 
+       RowBox[{"2.75", ",", " ", 
+        SuperscriptBox["0.5", "2"]}], ")"}], "+", "0.75"}]}], ")"}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{"P", "(", 
+     RowBox[{
+      RowBox[{"N", "(", 
+       RowBox[{
+        RowBox[{"4", "-", "2.75"}], ",", " ", 
+        RowBox[{
+         SuperscriptBox["0.25", "2"], "+", 
+         SuperscriptBox["0.5", "2"]}]}], ")"}], ">", "0"}], ")"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{"P", "(", 
+     RowBox[{
+      RowBox[{"N", "(", 
+       RowBox[{"0", ",", "1"}], ")"}], ">", 
+      FractionBox[
+       RowBox[{"-", "1.25"}], 
+       SqrtBox["0.3125"]]}], ")"}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{"1", "-", 
+     RowBox[{"\[CapitalPhi]", "(", 
+      RowBox[{"-", "2.23607"}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{"=", 
+    RowBox[{"1", "-", "0.0126736"}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.525293088402443*^9, 3.5252932316841908`*^9}, {
+  3.52529417427671*^9, 3.525294352729953*^9}, {3.525294384155921*^9, 
+  3.525294406501884*^9}, {3.525295048206738*^9, 3.525295072967112*^9}, {
+  3.525295178765201*^9, 3.52529523255224*^9}, {3.525295328636784*^9, 
+  3.525295441619629*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "0.012673593107712471`"}]], "Input",
+ CellChangeTimes->{{3.525295240045981*^9, 3.525295257815127*^9}}],
+
+Cell[BoxData["0.9873264068922876`"], "Output",
+ CellChangeTimes->{3.5252952614637203`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 7", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.525256676453362*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["\<\
+Observed value = 0.06.
+We use this value to calculate the Standard Error:\
+\>", "Text",
+ CellChangeTimes->{{3.525357628420045*^9, 3.5253576520600567`*^9}, {
+  3.5253576955078163`*^9, 3.52535773364953*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  SqrtBox[
+   RowBox[{"0.06", "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", "0.06"}], ")"}]}]], 
+  SqrtBox["600"]]], "Input",
+ CellChangeTimes->{{3.525357751324328*^9, 3.525357783597027*^9}}],
+
+Cell[BoxData["0.009695359714832659`"], "Output",
+ CellChangeTimes->{3.525357786660715*^9}]
+}, Open  ]],
+
+Cell["\<\
+Now we use the computed standard error and the value 1.96 from the table to \
+compute our interval:\
+\>", "Text",
+ CellChangeTimes->{{3.525357817036298*^9, 3.52535786836425*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1.96", "*", "0.009695359714832659`"}]], "Input",
+ CellChangeTimes->{{3.525357911528771*^9, 3.525357999410439*^9}}],
+
+Cell[BoxData["0.01900290504107201`"], "Output",
+ CellChangeTimes->{{3.525357977038241*^9, 3.5253580003603687`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Our 95% confidence interfal is 0.06 \[PlusMinus] 0.0190029 or, 0.0409971 \
+\[LessSlantEqual] p \[LessSlantEqual] 0.0790029\
+\>", "Text",
+ CellChangeTimes->{{3.525358012895196*^9, 3.525358048823127*^9}, {
+  3.525358083185349*^9, 3.525358106493374*^9}, {3.52535815963571*^9, 
+  3.5253582032454443`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272009160584*^9, 3.525272009296859*^9}}],
+
+Cell["\<\
+NOTE: Anser is rounnded up since you can\[CloseCurlyQuote]t survey a partial \
+person.\
+\>", "Text",
+ CellChangeTimes->{{3.5253591152241173`*^9, 3.525359144460009*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Ceiling", "[", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["1.64", "2"], "*", "0.06", "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", "0.06"}], ")"}]}], 
+   SuperscriptBox["0.01", "2"]], "]"}]], "Input",
+ CellChangeTimes->{{3.5253590015496607`*^9, 3.52535903564032*^9}, 
+   3.525359108226001*^9, {3.525359155634247*^9, 3.525359163599883*^9}}],
+
+Cell[BoxData["1517"], "Output",
+ CellChangeTimes->{3.525359037254569*^9, 3.5253591106181173`*^9, 
+  3.525359175227726*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 8", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.52525667841323*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell[TextData[{
+ "Calculate ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Z", "O"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.525363925711254*^9, 3.5253640068420553`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.208", "-", "0.15"}], 
+  FractionBox[
+   SqrtBox[
+    RowBox[{"0.15", "*", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "0.15"}], ")"}]}]], 
+   SqrtBox["125"]]]], "Input",
+ CellChangeTimes->{{3.525363839448292*^9, 3.525363900258273*^9}, {
+  3.5253640479438763`*^9, 3.525364058541765*^9}}],
+
+Cell[BoxData["1.8160504441469336`"], "Output",
+ CellChangeTimes->{3.525363904134385*^9, 3.5253640666296463`*^9}]
+}, Open  ]],
+
+Cell["Compute the p-value: ", "Text",
+ CellChangeTimes->{{3.52536408069639*^9, 3.5253641369509172`*^9}, {
+  3.5253655449563513`*^9, 3.525365552272204*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "Statistics`HypothesisTests`"}]], "Input",
+ CellChangeTimes->{{3.5253654886115913`*^9, 3.5253655022799587`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NormalPValue", "[", "1.8160504441469336`", "]"}]], "Input",
+ CellChangeTimes->{{3.525365407851144*^9, 3.525365412471652*^9}, {
+  3.525365509144779*^9, 3.5253655198029137`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"OneSidedPValue", "\[Rule]", "0.03468131722661022`"}]], "Output",
+ CellChangeTimes->{3.525365521231546*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ": The observations are the result of chance.\[LineSeparator]",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "A"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ": The system performance is different than \
+expected.\[LineSeparator]Conclusion: Since the p-value is less than \[Alpha], \
+we must rule out ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and determine that the observations are different than expected."
+}], "Text",
+ CellChangeTimes->{{3.525364720466728*^9, 3.525364818384536*^9}, {
+  3.525364959069743*^9, 3.525364959069853*^9}, {3.525365582283967*^9, 
+  3.525365632760201*^9}, {3.525366297527142*^9, 3.5253663742286463`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272018824884*^9, 3.525272018952978*^9}}],
+
+Cell[TextData[{
+ "The p-value tells us how likely we are to obtain our observed results if ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "is true."
+}], "Text",
+ CellChangeTimes->{{3.5253658054028063`*^9, 3.5253658247836523`*^9}, {
+  3.525366548310732*^9, 3.5253665943710537`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 9", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, 
+   3.525256680581596*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"(", GridBox[{
+     {"21.0", "61"},
+     {"28.3", "87"},
+     {"27.5", "98"},
+     {"26.8", "104"},
+     {"28.3", "102"},
+     {"30.5", "63"},
+     {"30.8", "27"},
+     {"33.6", "14"},
+     {"31.3", "30"},
+     {"33.0", "67"},
+     {"34.3", "6"},
+     {"33.0", "18"},
+     {"32.0", "42"},
+     {"27.8", "60"},
+     {"25.0", "82"},
+     {"26.0", "77"},
+     {"18.0", "108"},
+     {"24.8", "77"},
+     {"26.0", "93"},
+     {"27.1", "100"},
+     {"29.0", "118"},
+     {"34.0", "74"},
+     {"28.3", "43"},
+     {"31.0", "19"},
+     {"31.8", "23"},
+     {"33.5", "25"},
+     {"34.5", "40"},
+     {"34.3", "21"},
+     {"26.5", "23"},
+     {"27.3", "56"},
+     {"25.8", "59"},
+     {"18.5", "89"},
+     {"19.0", "102"},
+     {"16.3", "97"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.525302494073285*^9, 3.525302902181966*^9}, {
+  3.525308945844803*^9, 3.5253092980487347`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"21.`", ",", "61"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"28.3`", ",", "87"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"27.5`", ",", "98"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26.8`", ",", "104"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"28.3`", ",", "102"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"30.5`", ",", "63"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"30.8`", ",", "27"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"33.6`", ",", "14"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"31.3`", ",", "30"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"33.`", ",", "67"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"34.3`", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"33.`", ",", "18"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"32.`", ",", "42"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"27.8`", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"25.`", ",", "82"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26.`", ",", "77"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18.`", ",", "108"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"24.8`", ",", "77"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26.`", ",", "93"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"27.1`", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"29.`", ",", "118"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"34.`", ",", "74"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"28.3`", ",", "43"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"31.`", ",", "19"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"31.8`", ",", "23"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"33.5`", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"34.5`", ",", "40"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"34.3`", ",", "21"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26.5`", ",", "23"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"27.3`", ",", "56"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"25.8`", ",", "59"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18.5`", ",", "89"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"19.`", ",", "102"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.3`", ",", "97"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.525302904935224*^9, 3.525309307264934*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"m", ",", "x", ",", " ", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5253029492453947`*^9, 3.525302990776952*^9}, {
+  3.525308023045414*^9, 3.525308110146762*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FittedModel", "[", 
+  PanelBox[
+   TagBox[
+    RowBox[{"182.13858189904252`", "\[VeryThinSpace]", "-", 
+     RowBox[{"4.280774724649119`", " ", "x"}]}],
+    Short],
+   FrameMargins->5], "]"}]], "Output",
+ CellChangeTimes->{
+  3.525302995826812*^9, {3.525308028812038*^9, 3.525308111644808*^9}, 
+   3.525309312531726*^9, 3.5253391174381638`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"reg", "=", 
+  RowBox[{"Regress", "[", 
+   RowBox[{"m", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.525308197933847*^9, 3.5253082398782263`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"ParameterTable", "\[Rule]", 
+    TagBox[
+     TagBox[GridBox[{
+        {
+         StyleBox["\[Null]",
+          ShowStringCharacters->False], 
+         TagBox["\<\"Estimate\"\>",
+          HoldForm], 
+         TagBox["\<\"SE\"\>",
+          HoldForm], 
+         TagBox["\<\"TStat\"\>",
+          HoldForm], 
+         TagBox["\<\"PValue\"\>",
+          HoldForm]},
+        {
+         TagBox["1",
+          HoldForm], "182.13858189904238`", "25.478497093933484`", 
+         "7.148717651105496`", "4.095543237880861`*^-8"},
+        {
+         TagBox["x",
+          HoldForm], 
+         RowBox[{"-", "4.280774724649118`"}], "0.8934756886170385`", 
+         RowBox[{"-", "4.791148521651542`"}], "0.00003642997424200977`"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[2.0999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+     Function[BoxForm`e$, 
+      TableForm[
+      BoxForm`e$, 
+       TableHeadings -> {{1, $CellContext`x}, {
+         "Estimate", "SE", "TStat", "PValue"}}]]]}], ",", 
+   RowBox[{"RSquared", "\[Rule]", "0.41770649894762707`"}], ",", 
+   RowBox[{"AdjustedRSquared", "\[Rule]", "0.3995098270397405`"}], ",", 
+   RowBox[{"EstimatedVariance", "\[Rule]", "661.9355172270994`"}], ",", 
+   RowBox[{"ANOVATable", "\[Rule]", 
+    InterpretationBox[GridBox[{
+       {"\<\"\"\>", "\<\"DF\"\>", "\<\"SumOfSq\"\>", "\<\"MeanSq\"\>", \
+"\<\"FRatio\"\>", "\<\"PValue\"\>"},
+       {"\<\"Model\"\>", "1", "15194.798742850457`", "15194.798742850457`", 
+        "22.955104156523703`", "0.000036429974242024876`"},
+       {"\<\"Error\"\>", "32", "21181.93655126718`", 
+        "661.9355172270994`", "\<\"\"\>", "\<\"\"\>"},
+       {"\<\"Total\"\>", "33", 
+        "36376.735294117636`", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     TableForm[{{
+       1, 15194.798742850457`, 15194.798742850457`, 22.955104156523703`, 
+        0.000036429974242024876`}, {
+       32, 21181.93655126718, 661.9355172270994}, {33, 36376.735294117636`}}, 
+      TableHeadings -> {{"Model", "Error", "Total"}, {
+        "DF", "SumOfSq", "MeanSq", "FRatio", "PValue"}}]]}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.525308225603979*^9, 3.525308241840248*^9}, 
+   3.52530932399931*^9, 3.5253391229806623`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", "m", "]"}], ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"model", "[", "\"\<BestFit\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "130"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.525303054725082*^9, 3.52530315345234*^9}, {
+  3.525303186468902*^9, 3.525303211502091*^9}, {3.525309538800346*^9, 
+  3.525309547118931*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {Hue[0.67, 0.6, 0.6], PointBox[CompressedData["
+1:eJxdkUsOgkAQRCeeQpe6cOXCaIwKftpEdogGf6BxY6Jbr8A19DQcAO8kOK9J
+oBNSqamunq6hfX+Fj4YxppN/BdoayR+SQL5ZXv7M8vTIuQtGVs8cy82l2p/E
+4ALc0g83LlzgPfxLuPrQ0508i+qu0JtV3QxA5R7z2dcE4BTfAc7+sq/NueKf
+1HTtP8vnnVdL55PXzJl/g7NvEtbex0PXvEPuUz4mt+Zhb9H869p76H9zSr+9
+T/fzma/5NyB55VTuYc9j/H30SH4wlXLH
+      "]]}, {}}, {{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwVjXk4lAkcx7FEqMROhSibVY7o0UTO+Q3l2iHHOCbD+65jNCwzMeatZHmS
+YrZdXYxrbYe1sxIVyZV+W7PaaFtX2pRUEhU7LZKsWP3xfT5/fJ7n8zWJEgTG
+qigpKfku7hMHl2y5H8dsc22xTbcUyHmwoqp/3CO+nLFRTfe/mVYe1ChrJRjE
+1zFOPqhoP9TIgwyr8+aq8XJG3MFOfkE1D0aYCo0P/F6GbtsG2fVCHpSw8vdN
+8l8w+Jx2U+1EHrwL2HPpLX+KQctcbfwrjQfnegNYCr4qCP68rDPEi4XrT4jk
+hp00OGdRpfn2TTSoq0/tx+J14FHg3KYviQK+5smZiQFTqD1rRNBtvoZLV+3O
+xHMtwG0wR78zkYCR2dxhtXQbmJeqzAhruAATIq1b2bbQdF9daUc9BxKfamVq
+wjbQCqq+OdMeAicMD9yK7rAH5/FMjZGVbHgp++dgzfeOkKQ9SKkbB8DWLEe1
+ZSYuMHe8u/dmAwuehiS+2vsLA7xyzG0cAzyBcO05G2PLhMJc6WOaiAntVLhd
+0X43gNzm9Xem7cG3/6Wa52N3QLMxbiR9E2Q2xmbt274TlKZ5F5d6DjBsGP6j
+tukeIOysk5ncM8X34y45vAFP8ApzNk+1tkMnd+mKDWbeIHxd37C/AFD622RX
+mMQHGsoactnfeeD5Fnc33dGvoLeHGk6IYaFl5EIR29oXCuMERjlj/tixqdVK
+57gfeJBSY9mzIBwpGq1g9++CVc6nSn8oD8F+96y45Xn+4Pf3OHGKw0HWX3r6
+Na4BcETR8iHWm4tzm3e7nn4eAE9eEToLSwjcbvKFst3pQCipaZ6/skDi3e6h
+4iK3IEhrn5a+E0VhWWi4jDkcBON9JQLDrmicE7KDKvLZMLA+zVbmE4uFEZ8l
+73IMhgiufOuaCzw8plEV1/QoGPRmWkKlqntQ26tv9pkkBDy7FLz0ND62765X
+9rMOhWWlx+o8HsYjTWVNhXgwFILLo8fF7G+w7KBN69DhMLAsK4+R1CdixlW4
+qLuRAw4zp+erVgpw7FCPw3wfB57fHmQa7hSidMNaR+u03SDUrjzfNSXEe2Ev
+HxhsDodWwco0p9q9GMGqZN15FA5mWZ1DVknJaKFnuq3lWy6E5Mnf5K1Nwayk
+dc0JNhHg0RTMr3iYggY/dtYRvREwP2B4xFoiwqWStGyaOBK6LzvQXe1T8bCW
+bPLolwTElE+FKk+mogspue96hwDMe2Fgd06MY7Xq/fp3CXjNFgt2/CzGUvXs
+J1P3CFhloCEPlIlxtjpjpLKXgPhyy0RBtRgbPoo+rHq66BuTb8iaxEgvIYwU
+0wQkPVeKMewRIy2h+MouXRIMthldVFKlcOzzh/TreiTsmK1WXqFOobx19TUL
+GgnCGxBipEmhSDe/WW0NCW3eMQsOOhR2N+bJm40WfeSFgJS1FB7XyO7baE7C
+H0cdpofpFO65ciss34KECVaHz5Q9hcBVeaRiRYKxbsRPKk4UKmoyBgesSUgu
+zfRax6TQL/TA6Cn6or98uzjMl0Iz5cZ4ZTsSfMQcBc+fwo+V78eS7EkQOb1x
+Tw2isGpe9K+34+Lf78vHT3AoPCyrTbnmRMKU5AzzDJdCbuDEO1MXEtb72xZU
+ExTS57bsO+m62KPJX7dEUahVIZhdYCz2+oMZHbEU/g/WVUQy
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{16., 0},
+  PlotRange->{{16.3, 34.5}, {0., 118.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.5253031550970488`*^9, {3.525303187309903*^9, 3.525303214573614*^9}, 
+   3.525308035348867*^9, 3.5253093291336327`*^9, {3.525309539671331*^9, 
+   3.525309549400969*^9}, 3.525339127629779*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "[", "\"\<ParameterTable\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.5253032616045227`*^9, 3.525303269494259*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[GridBox[{
+     {"\<\"\"\>", "\<\"Estimate\"\>", "\<\"Standard Error\"\>", "\<\"t\
+\[Hyphen]Statistic\"\>", "\<\"P\[Hyphen]Value\"\>"},
+     {"1", "182.13858189904252`", "25.478497093933484`", 
+      "7.1487176511055015`", "4.0955432273952025`*^-8"},
+     {"x", 
+      RowBox[{"-", "4.280774724649119`"}], "0.8934756886170386`", 
+      RowBox[{"-", "4.791148521651542`"}], "0.00003642997424200977`"}
+    },
+    AutoDelete->False,
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+    GridBoxDividers->{
+     "ColumnsIndexed" -> {2 -> GrayLevel[0.7]}, 
+      "RowsIndexed" -> {2 -> GrayLevel[0.7]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{
+     "ColumnsIndexed" -> {2 -> 1}, "RowsIndexed" -> {2 -> 0.75}}],
+   "Grid"], "DialogStyle",
+  StripOnInput->False]], "Output",
+ CellChangeTimes->{3.5253032704434147`*^9, 3.5253080392492657`*^9, 
+  3.525309338970903*^9, 3.5253391313915586`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The error seems high so I would say that the utility of this model is fairly \
+low.\
+\>", "Text",
+ CellChangeTimes->{{3.525303361081067*^9, 3.52530339563664*^9}, {
+  3.525339066307412*^9, 3.5253390758160887`*^9}, {3.5253615480780354`*^9, 
+  3.525361559067787*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.52527203339292*^9, 3.525272033520791*^9}}],
+
+Cell["\<\
+Calculate the estimate for successful detections at 25\[Degree] C: \
+\>", "Text",
+ CellChangeTimes->{{3.5253381844080877`*^9, 3.525338242800766*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "[", "25", "]"}]], "Input",
+ CellChangeTimes->{{3.525309960944849*^9, 3.52530996837293*^9}}],
+
+Cell[BoxData["75.11921378281455`"], "Output",
+ CellChangeTimes->{3.52530996991012*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Re-calculate the estimate at 25\[Degree] C and provide a 95% confidence \
+interval for the estimate:\
+\>", "Text",
+ CellChangeTimes->{{3.525338250588738*^9, 3.5253383275301437`*^9}, {
+  3.525338494151307*^9, 3.525338500044681*^9}}],
+
+Cell[BoxData[
+ RowBox[{"     ", 
+  RowBox[{
+   RowBox[{"fit", "      ", "lwr", "     ", "upr"}], "\n", 
+   RowBox[{"75.11921", " ", "64.52173", " ", "85.7167"}]}]}]], "Code",
+ CellChangeTimes->{{3.5253383572104597`*^9, 3.525338357212695*^9}, {
+  3.525338416823804*^9, 3.525338445478191*^9}, {3.525338506071443*^9, 
+  3.525338508007287*^9}, {3.525338689044207*^9, 3.525338694691165*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part c)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272028769211*^9, 3.525272028905198*^9}}],
+
+Cell["\<\
+Re-calculate the estimate at 25\[Degree] C and provide a 95% prediction \
+interval for the estimate:\
+\>", "Text",
+ CellChangeTimes->{{3.525338250588738*^9, 3.5253383275301437`*^9}, {
+  3.525338494151307*^9, 3.525338500044681*^9}, {3.5253387110193787`*^9, 
+  3.5253387122587347`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"     ", 
+  RowBox[{
+   RowBox[{"fit", "      ", "lwr", "      ", "upr"}], "\n", 
+   RowBox[{"75.11921", " ", "21.65201", " ", "128.5864"}]}]}]], "Code",
+ CellChangeTimes->{{3.525338636144843*^9, 3.525338670762074*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 10", "Section",
+ CellChangeTimes->{{3.525256618890334*^9, 3.525256627474766*^9}, {
+  3.52525666373569*^9, 3.5252566638046494`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Part a)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}}],
+
+Cell["r = 0.6900", "Text",
+ CellChangeTimes->{{3.525354370572259*^9, 3.5253543920158033`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part b)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272053081594*^9, 3.5252720532335873`*^9}}],
+
+Cell[TextData[{
+ "Calculate ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["R", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "by first calculating the missing value for Sum of Squares on the ANOVA \
+table:"
+}], "Text",
+ CellChangeTimes->{{3.5253532698554993`*^9, 3.52535332413549*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"(", 
+   RowBox[{"308.6447", "-", "161.7146"}], ")"}], "308.6447"]], "Input",
+ CellChangeTimes->{{3.525353328690469*^9, 3.525353370228647*^9}}],
+
+Cell[BoxData["0.4760493214365904`"], "Output",
+ CellChangeTimes->{3.525353373119467*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part c)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272049411001*^9, 3.525272049514144*^9}}],
+
+Cell["\<\
+Calculate standard error by first calculating MSE:\
+\>", "Text",
+ CellChangeTimes->{{3.5253537593738127`*^9, 3.5253537671740026`*^9}, {
+  3.525353799905323*^9, 3.525353813446608*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["161.7146", 
+   RowBox[{"(", 
+    RowBox[{"19", "+", "1", "-", "2"}], ")"}]]]], "Input",
+ CellChangeTimes->{{3.525353842499824*^9, 3.525353864996468*^9}, {
+  3.5253539069577217`*^9, 3.525353908818811*^9}}],
+
+Cell[BoxData["2.997356242498453`"], "Output",
+ CellChangeTimes->{3.525353878102529*^9, 3.5253539127647257`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part d)", "Subsection",
+ CellChangeTimes->{{3.525270387784533*^9, 3.525270406211113*^9}, {
+  3.525272045641224*^9, 3.525272045785369*^9}}],
+
+Cell["n = 20", "Text",
+ CellChangeTimes->{{3.5253535855398483`*^9, 3.5253536042691727`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1078, 1144},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 153, 2, 76, "Title"],
+Cell[735, 26, 98, 1, 46, "Subtitle"],
+Cell[CellGroupData[{
+Cell[858, 31, 96, 1, 67, "Section"],
+Cell[957, 34, 453, 7, 41, "Text"],
+Cell[CellGroupData[{
+Cell[1435, 45, 117, 2, 27, "Input"],
+Cell[1555, 49, 89, 1, 27, "Output"]
+}, Open  ]],
+Cell[1659, 53, 301, 6, 26, "Text"],
+Cell[CellGroupData[{
+Cell[1985, 63, 170, 4, 27, "Input"],
+Cell[2158, 69, 98, 1, 27, "Output"]
+}, Open  ]],
+Cell[2271, 73, 264, 5, 26, "Text"],
+Cell[CellGroupData[{
+Cell[2560, 82, 168, 4, 27, "Input"],
+Cell[2731, 88, 91, 1, 27, "Output"]
+}, Open  ]],
+Cell[2837, 92, 210, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[3072, 100, 117, 2, 27, "Input"],
+Cell[3192, 104, 91, 1, 27, "Output"]
+}, Open  ]],
+Cell[3298, 108, 247, 5, 26, "Text"],
+Cell[CellGroupData[{
+Cell[3570, 117, 171, 4, 27, "Input"],
+Cell[3744, 123, 78, 1, 27, "Output"]
+}, Open  ]],
+Cell[3837, 127, 179, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[4041, 135, 125, 2, 27, "Input"],
+Cell[4169, 139, 118, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4336, 147, 94, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[4455, 152, 95, 1, 34, "Subsection"],
+Cell[4553, 155, 447, 8, 41, "Text"],
+Cell[CellGroupData[{
+Cell[5025, 167, 170, 3, 47, "Input"],
+Cell[5198, 172, 127, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5362, 179, 166, 3, 47, "Input"],
+Cell[5531, 184, 93, 1, 27, "Output"]
+}, Open  ]],
+Cell[5639, 188, 639, 13, 101, "Text"],
+Cell[CellGroupData[{
+Cell[6303, 205, 217, 6, 27, "Input"],
+Cell[6523, 213, 126, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6698, 221, 95, 1, 34, "Subsection"],
+Cell[6796, 224, 500, 9, 56, "Text"],
+Cell[CellGroupData[{
+Cell[7321, 237, 216, 5, 47, "Input"],
+Cell[7540, 244, 148, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7749, 253, 120, 2, 67, "Section"],
+Cell[7872, 257, 159, 2, 26, "Text"],
+Cell[CellGroupData[{
+Cell[8056, 263, 95, 1, 34, "Subsection"],
+Cell[8154, 266, 210, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[8389, 274, 123, 2, 27, "Input"],
+Cell[8515, 278, 113, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8677, 286, 142, 2, 34, "Subsection"],
+Cell[8822, 290, 605, 10, 56, "Text"],
+Cell[CellGroupData[{
+Cell[9452, 304, 560, 10, 47, "Input"],
+Cell[10015, 316, 249, 4, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10313, 326, 144, 2, 34, "Subsection"],
+Cell[10460, 330, 268, 7, 26, "Text"],
+Cell[CellGroupData[{
+Cell[10753, 341, 120, 2, 27, "Input"],
+Cell[10876, 345, 112, 2, 43, "Output"]
+}, Open  ]],
+Cell[11003, 350, 123, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[11151, 357, 172, 3, 30, "Input"],
+Cell[11326, 362, 138, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11525, 371, 122, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[11672, 377, 95, 1, 34, "Subsection"],
+Cell[11770, 380, 438, 8, 42, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12245, 393, 142, 2, 34, "Subsection"],
+Cell[12390, 397, 488, 8, 26, "Text"],
+Cell[CellGroupData[{
+Cell[12903, 409, 175, 4, 27, "Input"],
+Cell[13081, 415, 132, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13262, 423, 144, 2, 34, "Subsection"],
+Cell[13409, 427, 236, 5, 26, "Text"],
+Cell[CellGroupData[{
+Cell[13670, 436, 1260, 39, 53, "Input"],
+Cell[14933, 477, 217, 3, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15199, 486, 146, 2, 34, "Subsection"],
+Cell[15348, 490, 469, 8, 57, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15866, 504, 117, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[16008, 510, 95, 1, 34, "Subsection"],
+Cell[16106, 513, 245, 5, 26, "Text"],
+Cell[CellGroupData[{
+Cell[16376, 522, 209, 5, 39, "Input"],
+Cell[16588, 529, 140, 2, 27, "Output"]
+}, Open  ]],
+Cell[16743, 534, 136, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[16904, 541, 118, 2, 27, "Input"],
+Cell[17025, 545, 73, 1, 27, "Output"]
+}, Open  ]],
+Cell[17113, 549, 191, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[17329, 557, 209, 5, 39, "Input"],
+Cell[17541, 564, 140, 2, 27, "Output"]
+}, Open  ]],
+Cell[17696, 569, 132, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[17853, 576, 120, 2, 27, "Input"],
+Cell[17976, 580, 74, 1, 27, "Output"]
+}, Open  ]],
+Cell[18065, 584, 221, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[18311, 592, 122, 2, 27, "Input"],
+Cell[18436, 596, 112, 2, 43, "Output"]
+}, Open  ]],
+Cell[18563, 601, 606, 14, 41, "Text"],
+Cell[CellGroupData[{
+Cell[19194, 619, 201, 5, 39, "Input"],
+Cell[19398, 626, 124, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19571, 634, 146, 2, 34, "Subsection"],
+Cell[19720, 638, 1017, 29, 89, "Text"],
+Cell[CellGroupData[{
+Cell[20762, 671, 132, 3, 27, "Input"],
+Cell[20897, 676, 114, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21072, 685, 120, 2, 67, "Section"],
+Cell[21195, 689, 1730, 50, 126, "Text"],
+Cell[CellGroupData[{
+Cell[22950, 743, 135, 2, 27, "Input"],
+Cell[23088, 747, 128, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23265, 755, 120, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[23410, 761, 95, 1, 34, "Subsection"],
+Cell[23508, 764, 215, 5, 41, "Text"],
+Cell[CellGroupData[{
+Cell[23748, 773, 220, 7, 57, "Input"],
+Cell[23971, 782, 90, 1, 27, "Output"]
+}, Open  ]],
+Cell[24076, 786, 188, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[24289, 794, 138, 2, 27, "Input"],
+Cell[24430, 798, 115, 1, 27, "Output"]
+}, Open  ]],
+Cell[24560, 802, 349, 7, 42, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24946, 814, 144, 2, 34, "Subsection"],
+Cell[25093, 818, 178, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[25296, 826, 368, 9, 51, "Input"],
+Cell[25667, 837, 160, 3, 43, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25888, 847, 119, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[26032, 853, 95, 1, 34, "Subsection"],
+Cell[26130, 856, 221, 8, 26, "Text"],
+Cell[CellGroupData[{
+Cell[26376, 868, 327, 10, 62, "Input"],
+Cell[26706, 880, 112, 1, 27, "Output"]
+}, Open  ]],
+Cell[26833, 884, 155, 2, 26, "Text"],
+Cell[26991, 888, 141, 2, 27, "Input"],
+Cell[CellGroupData[{
+Cell[27157, 894, 200, 3, 27, "Input"],
+Cell[27360, 899, 130, 2, 27, "Output"]
+}, Open  ]],
+Cell[27505, 904, 876, 22, 72, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28418, 931, 144, 2, 34, "Subsection"],
+Cell[28565, 935, 382, 10, 42, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28996, 951, 120, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[29141, 957, 95, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[29261, 962, 920, 39, 557, "Input"],
+Cell[30184, 1003, 2286, 71, 58, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32507, 1079, 250, 5, 27, "Input"],
+Cell[32760, 1086, 368, 10, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33165, 1101, 238, 6, 27, "Input"],
+Cell[33406, 1109, 3274, 78, 138, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36717, 1192, 450, 11, 27, "Input"],
+Cell[37170, 1205, 2608, 50, 242, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39815, 1260, 147, 2, 27, "Input"],
+Cell[39965, 1264, 1036, 23, 81, "Output"]
+}, Open  ]],
+Cell[41016, 1290, 274, 6, 26, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41327, 1301, 143, 2, 34, "Subsection"],
+Cell[41473, 1305, 159, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[41657, 1312, 124, 2, 27, "Input"],
+Cell[41784, 1316, 124, 2, 43, "Output"]
+}, Open  ]],
+Cell[41923, 1321, 241, 5, 26, "Text"],
+Cell[42167, 1328, 424, 8, 59, "Code"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42628, 1341, 144, 2, 34, "Subsection"],
+Cell[42775, 1345, 294, 6, 26, "Text"],
+Cell[43072, 1353, 280, 6, 59, "Code"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43401, 1365, 145, 2, 67, "Section"],
+Cell[CellGroupData[{
+Cell[43571, 1371, 95, 1, 34, "Subsection"],
+Cell[43669, 1374, 132, 2, 42, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43838, 1381, 146, 2, 34, "Subsection"],
+Cell[43987, 1385, 300, 9, 29, "Text"],
+Cell[CellGroupData[{
+Cell[44312, 1398, 181, 4, 47, "Input"],
+Cell[44496, 1404, 126, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44671, 1412, 144, 2, 34, "Subsection"],
+Cell[44818, 1416, 193, 4, 26, "Text"],
+Cell[CellGroupData[{
+Cell[45036, 1424, 243, 6, 65, "Input"],
+Cell[45282, 1432, 149, 2, 43, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45480, 1440, 144, 2, 34, "Subsection"],
+Cell[45627, 1444, 130, 2, 42, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

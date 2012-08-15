@@ -1,0 +1,42 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 1}
+\author{Steve Mazza}
+
+\begin{document}
+
+\maketitle
+
+\section*{B\&F Chapter 1}
+\subsection*{Problem 3}
+A newspaper printing press is a system that alters material and is comprised of structural components, operating components, and flow components.
+\begin{description}
+\item[Structural Components] Because of the volume with which newspapers are printed and the speed at which the presses run it is critical that the print rollers, drums, and rolls of paper be properly supported.  Weighing thousands of pounds, the rolls of paper must be both adequately supported and also free to rotate.  The rolls of paper, rotating drums, cutters, and folders must all be very carefully aligned and rely on a strong frame to accomplish this.  Rotational inertia and sheer weight of the paper and drums must not be sufficient to cause a critical mis-alignment in the frame.
+\item[Operating components]   The paper is pulled off of the rolls very quickly and fed through the drums which must rotate at a high speed to keep up.  The drums collect ink and apply it to the paper as it passes through.  The ink is dried and the papers are cut, folded, and bound.  Main operational components are the drums, the kiln, the cutting heads, and the folders and binders.
+\item[Flow Components]  Paper and ink are the two principal of these components, although it is arguable that power (electricity) and heat from the kiln also comprise the flow.  Unlike paper and ink they are not part of the output product but they are consumed along the way.
+\end{description}
+\subsection*{Problem 4}
+I build vintage reproduction vacuum tube guitar amps as a hobby and while they  are not \emph{complex} by contemporary electrical engineering standards they are, nonetheless, sufficiently complex to talk about in the context of a hierarchy of systems.
+\par Any of these amplifiers can be roughly broken down into three (3) subsystems: power, gain, and output.
+\begin{description}
+\item[Power:] This system, itself, is comprised of mains supply, filtering, conversion, and rectification.  Mains supply provides the physical connection and switching to a standard 120V/60Hz supply (in the US).  Often the mains supply subsystem includes a power indicator lamp.  Since this supply power can often be \emph{messy} power (e.g., unstable reference, excess noise) it is important to filter the supply power.  Next the filtered power must be converted to a suable level which is done by the power transformer (PT).  Wound with several taps, the PT frequently supplies 6.3VAC to the heaters and power indicator lamp, 150VAC to the power tubes, and 350VAC to the rectifier circuit.  This, of course, varies by individual specifications.  Lastly, the rectifier circuit produces as much as 600V of direct current (often called $B^{+}$) to the gain and output subsections.  If all goes well, the power at this point will be very clean, reliable, and held to a very tight tolerance.
+\item[Gain:] This begins at the guitar input jack where the guitar (I'm viewing this as  a separate system) supplies an extremely low signal produced by the inducted current of the strings vibrating past the strong magnets of the pickups.  This signal is far too low to be useful by itself and must be increased sufficiently before sending it to the output transformer (OT).  The process of increasing this signal is handled by one or more gain stages which act in series to incrementally boost it to an audible level.  The greatest difficulty in this is that the process of amplification works equally on everything supplied to the input jack and induced along the way.  Reducing hum and hiss in this circuit means paying careful attention to the wiring layout, grounding scheme, and shielding (both of the wiring and the chassis).
+\item[Output:]  When the signal finally reaches the output transformer (PT) it has a very high impedance, a consequence of the engineering of the power tubes.  This value may be on the order of many hundred ohms.  The final step in the output subsystem is the speaker, often called the \emph{load}, and frequently has a nominal impedance between 4 and 16 ohms.  It is the job of the PT to mediate between these two very different impedance levels to ensure low maintenance costs and high reliability over the product's expected life.
+\end{description}
+\par While tractably complex the vintage tube guitar amplifier can be naturally broken down into multiple subsystems, each relying on the proper operation of the other and their subordinate systems for proper function.
+
+\section*{B\&F Chapter 2}
+\subsection*{Problem 10}
+System life-cycle thinking applies critical engineering rigor to an effort starting with conception and following through to disposal.  Current (i.e., traditional) engineering is principally concerned with requirements, design, and manufacturing.  It is possible that this is facilitated because the producer is rarely the consumer of the system under development.  Since this assumption so commonly held by private industry almost never applies in military circles, a more holistic approach is necessary.  Furthermore the scope, cost, and expected life-span of many projects highly encourages a system of systems engineering view.
+\subsection*{Problem 16}
+After requirements are gathered from the customer design dependent parameters (DDP's) are selected, estimated, and agreed upon.  DDP's are used as a baseline against which to judge candidate designs using the specific values, also called the technical performance measures (TPM's).  The degree to which TPM's agree  with system requirements is a measure of the suitability of a candidate design.  The remedy when requirements and TPM's are not in agreement is to alter the candidate design.
+\subsection*{Problem 24}
+Applying systems thinking to the engineering process results in greater cost control not just in development but across the whole life of the product.  It also reduces time, total effort, and system errors.  It increases the likelihood of project success, communication throughout engineering activities, integration with other systems, and customer acceptance.
+
+\end{document}

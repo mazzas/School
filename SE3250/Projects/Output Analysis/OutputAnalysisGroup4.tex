@@ -1,0 +1,59 @@
+\documentclass[letterpaper,12pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\usepackage[english]{babel}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+% Alter some LaTeX defaults for better treatment of figures:
+% See p.105 of "TeX Unbound" for suggested values.
+% See pp. 199-200 of Lamport's "LaTeX" book for details.
+%   General parameters, for ALL pages:
+\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+%   Parameters for TEXT pages (not float pages):
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}     % 2 may work better
+\setcounter{dbltopnumber}{2}    % for 2-column pages
+\renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+\renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+%   Parameters for FLOAT pages (not text pages):
+\renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+% N.B.: floatpagefraction MUST be less than topfraction !!
+\renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+%Repeat the example shown in the output analysis classes, except use Server utilization as your metric. Steps to complete:
+%Use an appropriate warm-up period if warranted.  Tell me what time you used and justify why you think you should have a warm up period (or not).
+%Measure mean server utilization for each of 50 replications.
+%Export the data to the statistical package of your choice
+%Repeat this step 3 times
+%Produce a confidence interval for one column of data
+%Produce a 2-sample t test for two columns of data
+%Produce an ANOVA comparing all three columns of data
+%In Extend, change the interarrival time from Exponential to Triangular (2,3,4) and generate 50 new observations - note that the Triangular distribution is usually designated by specifying the (minimum, most likely, maximum) values - in ExtendSim, however, the Triangular dialog takes input in the order (minimum, maximum, most likely).
+%Produce a 2-sample t test for the triangular data vs. one of your columns of exponential data.
+%Submit your results using by attaching your file(s) (appropriately named/labeled) in the Assignments Tab. Deliverables may be your Excel spreadsheet (if you used Excel) or appropriate tables/output from any other statistical package of your choice (e.g., Minitab).   You can put any narrative explanations in your spreadsheet if you so desire.
+
+\title{Project 2 \\ \large Group 4}
+\author{Douglas Brown \\ Jessica Hale \\ Steve Mazza \\ Daniel Torres}
+\date{February 22, 2012}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+\pagebreak
+
+\section{First Section}
+
+\end{document}

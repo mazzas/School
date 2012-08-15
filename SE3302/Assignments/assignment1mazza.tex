@@ -1,0 +1,65 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Assignment 1}
+\author{Steve Mazza}
+
+% Complete problems 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, and 12.15 in B&F.
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[12.2]\ 
+Reliability affects customer acceptance, overall lifecycle costs, and system performance.  According to \textbf{B\&F} it must be properly specified during conceptual design as one of the \emph{design-to} requirements.  These identified reliability requirements must be considered throughout the development lifecycle from \emph{conceptual design} through \emph{operational use and system support}.
+
+\item[12.3]\ 
+Reliability at its most basic is defined by the \emph{reliability function}, or \emph{survival function}.\[R(t) = 1-F(t)\]It is the probability that a system will operate successfully for some time, $t$.  The measures for hardware, software, personnel, facilities, and data may differ.  For example, hardware reliability may be a measure of physical failures, stress on working parts, joints, or heat-sensitive components.  For software it may be a measure of the number of errors introduced into the code over a given time.  Personnel reliability may be measured by timeliness, accuracy of their work, employee turnover, or number of sick days taken.  For facilities, reliability may be an aggregate measure of other large systems on which the facility relies such as power \& energy, lighting, and ventilation as well as on overall measure of suitability of use over time.  Reliability of data may be  a measure of errors due to data collection or transcription or might be a measure of the confidence in the source of the data, itself.
+
+\item[12.4]\ 
+According to \textbf{B\&F}, \emph{failure rate} is expressed as a count or percentage of failure per unit time.  \[\lambda = \frac{n}{t}\]Over the life of the system, the failure rate may not be constant.  Consequently, to get a look at the \emph{overall failure rate} one could graph the failure-rate curve, thus providing a broader view into the rate of failure over the life of the system.  Maintenance and system changes most often have the greatest impact on overall failure rate and so should be included for consideration.  Infant mortality and equipment wear out determine the shape of the failure-rate curve.
+
+\item[12.5]\ 
+As hinted at earlier, the most useful portion of the \emph{bathtub curve} is often the middle or \emph{flat} portion as it is most representative of the reliability of a system in service (vs. early development or end of life).  If a system is delivered to a customer too early, as represented by the \emph{head} of the curve, failure rates are likely to be higher.  This is often due to an immature manufacturing process, lack of steady suppliers for parts, or incomplete system debugging.  Good engineering practices such as component testing, integration testing, regression testing, use case analysis, requirements validation, and continual involvement of the customer in the development process can reduce errors and improve the relative length of the \emph{flat} portion of the curve.
+
+\item[12.6]\ 
+The \emph{jagged} portion of the curve in \emph{Figure 12.5} can be attributed to any number of usual causes.  \textbf{B\&F} specifically call out software maintenance and system changes but I suggest it would also be appropriate to include funding issues, labor problems, technical hurdles, and supply chain disruption\footnote{Witness the difficulty in maintaining production by Japanese auto manufacturers following the tsunami and the resultant Fukushima reactor disaster.}.
+
+\item[12.7]\ 
+Reliability of components in a series network is calculated in general as \[R=R_{0}\times R_{1}\times\cdots\times R_{n}\]And for the values presented,
+\begin{align*}
+R&=0.98\times 0.85\times 0.90\times 0.88 \\
+&= 0.66
+\end{align*}
+
+\item[12.8]\ 
+Reliability of components in a parallel network is calculated in general as\[R=1-(1-R_{0})\times(1-R_{1})\times\cdots\times(1-R_{n})\]And for the values presented,
+\begin{align*}
+R&=1-(1-0.98)\times(1-0.85)\times(1-0.88) \\
+&= 1-0.02\times 0.15\times 0.12 \\
+&= 1-0.00036 \\
+&= 0.99964
+\end{align*}
+
+\item[12.15]\ 
+\begin{enumerate}[a)]
+\item Reliability calculation results:
+
+\begin{align*}
+R(\mbox{Configuration A}) &= 0.7292 \\
+R(\mbox{Configuration B}) &= 0.7136 \\
+R(\mbox{Configuration C}) &= 0.6035
+\end{align*}
+
+\item Selection based on cost-effectiveness points to \emph{Configuration B} as the best candidate solution.
+\end{enumerate}
+
+\end {description}
+\end{document}

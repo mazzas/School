@@ -1,0 +1,72 @@
+\documentclass[letterpaper,12pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+
+% Choose two of the following essay questions and write a response to each that is no more than two pages in length (roughly one page per question).  Submit your essay in Sakai (in Word or PDF).  This exam is open note and open book and you have from Friday March 2 – Sunday March 11th at midnight (eastern time) to complete it.
+
+\title{Final Exam}
+\author{Steve Mazza}
+
+\date{March 11, 2012}
+
+\begin{document}
+\maketitle
+
+\section{Ship System Design Trades}
+% 1. Ship System Design Trades.  The Navy is planning to build a new class of destroyers and must make a large number of design trades to determine how to best outfit the new ships.  Identify and discuss three types of system assessments that would be most useful to support the Navy in its conceptual design process.  How are the three assessment methods you selected particularly geared towards a large system and what types of results will the assessments provide to the Navy?
+
+\subsection{Quality Functional Deployment (QFD)}
+QFDs facilitate turning stakeholder requirements into a functional design.  Most engineering efforts begin by collecting requirements against a stated need, and the number of requirements is likely to be proportional to the size of the overall engineering effort. QFDs are extremely helpful in deriving a functional design that maps reliably to these requirements.
+
+\subsection{Multiple Criteria Optimization} 
+When faced with many variables and decisions in a complex project it is extremely helpful to have a good set of Decision Analysis tools.  From the lecture,
+\begin{quote}"Rarely, if ever, is there a single criterion present in a decision making situation.  In most cases, a decision must be made in the face of multiple criteria that jointly influence the relative desirability of the alternatives under consideration.  The decision should be made only after considering all relevant criteria, recognizing that some are quantifiable and others are qualitative in nature."\end{quote}
+
+Multiple Criteria Decision Making (MCDM) is comprised of both multi-attribute and multi-objective decision making.  Multi-attribute applies when there is a well defined set of discrete alternatives from which to choose.  Multi-objective applies when simultaneously considering multiple alternatives.
+
+Again, from the lecture slides,
+\begin{quote}
+"[Different] methods of decision analysis include but are not limited to trade studies, system analyses, system safety analyses, trade-off analysis, supportability analysis, level of repair vs. discard analysis, and cost analysis.  It's important to note that these should be supported by the modelling and simulation process and prototype designs."
+\end{quote}
+
+Pareto optimization is a method of defining a solution set for a given problem whose criteria is defined in such a way that an improvement on any individual point will necessarily result in the degradation of at least one other point.  Since these solutions for any non-trivial problem are not unique, managing the decision making process involves other aspects of design including stakeholder input.
+
+CAIV analysis is an implementation of Pareto optimization that focuses on a mathematical method of identifying a \emph{distance to the ideal} for a range of alternatives for a given parameter and is intended to help identify the \emph{best} solution.
+
+\subsection{Human Factors Engineering (HFE)}
+This represents a fairly new discipline in the engineering arsenal and directly addresses the need to contain spiralling life cycle costs of large systems.  Following HFE guidelines will allow often significant reductions in sustainment and support costs over the life of the system.  Operation, maintenance, and sustainment are huge cost centers that all benefit from this process through reduced training, reduced staff (personnel), and reduced maintenance.
+
+Although these often incur some up-front engineering costs and can sometimes affect the length of certain phases of development, the long-term savings is well worth the cost, particularly in large systems like US Navy Ships.  From the lectures,
+\begin{quote}
+"Compliance with human interface requirements should be tested as early as possible. T\&E should include evaluation of maintenance and sustainment activities and evaluation of the dimensions and configuration of the environment relative to criteria for HFE and each of the other Human Systems Integration domains."
+\end{quote}
+As you will notice, HFE touches on many aspects of system design.  Design reviews conducted from the HFE engineering efforts should be integrated into later testing which should verify the maintenance, sustainment, and operation of systems to stated levels of staffing, maintenance personnel, and training.
+
+\section{Stakeholder Input}
+% 2. Stakeholder Input.  Discuss the importance of stakeholder (or customer) input into the systems engineering process.  Discuss three different types of system assessments in which stakeholder input is critical to the process.  Why is the stakeholder input critical in each case; what type of input is needed in each case; and what are some methods that the system engineer should use to obtain the input in each case?
+
+\subsection{Requirements Analysis}
+Stakeholder input is critical at almost every point in the systems engineering process and begins with a statement of need.  This encapsulates the capability gap and forms the basis of the engineering process.  Requirements follow and come directly from the stakeholder, or customer.
+
+Stakeholder requirements form the basis of the QFD process.  The requirements collected are first scored through the use of a pair-wise comparison matrix.  This is a customer-driven exercise and is intended to facilitate the customer's understanding of the relative importance of the various requirements and to give the customer a means by which to trade these off.  
+
+The results, a set of criteria-weight pairs, are mapped as \emph{high-level characteristics} to \emph{technical characteristics} in the QFD I.  The QFD II turns the \emph{technical characteristics} into \emph{functions} which are in turn mapped into \emph{forms} in the conceptual system design in the QFD III. 
+
+\subsection{User Acceptance Testing}
+A component of on-going testing and evaluation is user acceptance testing.  Often this is reserved for the end of a project prior to delivery to the customer but more conscientious engineers and project managers will involve the customer in this assessment multiple times throughout the development process beginning as early as possible.
+
+\subsection{System Level Trade-offs}
+Cost, risk, and effectiveness assessment and analysis cannot happen entirely in absence of customer input and feedback.  Ultimately it is the stakeholder who will drive levels of acceptable risk and, as a consequence, how much they are prepared to spend in avoidance of such.
+
+\end{document}

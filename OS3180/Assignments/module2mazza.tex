@@ -1,0 +1,223 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+
+%opening
+\title{Homework for Module 2}
+\author{Steve Mazza}
+
+\begin{document}
+
+\maketitle
+
+\begin{description}
+\item[2.1.2] \ 
+\begin{table}[htdp]
+\caption{Probability Mass Function}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+& \textbf{$P(x)$} \\ \hline
+$- \infty$ & 0.00 \\ \hline
+$-4$ & 0.21 \\ \hline
+$-1$ & 0.11 \\ \hline
+$0$ & 0.07 \\ \hline
+$2$ & 0.29 \\ \hline
+$3$ & 0.13 \\ \hline
+$7$ & 0.19 \\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}
+
+\begin{center}
+\includegraphics[scale=0.75]{module2a.pdf}
+\end{center}
+
+
+\item[2.1.4] \ 
+\begin{enumerate}
+\item
+\begin{enumerate}[a)]
+\item Probability mass function
+\begin{align*}
+P(0, 0) &= 0.75 \times 0.75 = 0.5625 \\
+P(0, 1) &= 0.75 \times 0.25 = 0.1875 \\
+P(1, 0) &= 0.25 \times 0.75 = 0.1875 \\
+P(1, 1) &= 0.25 \times 0.25 = 0.0625
+\end{align*}
+\item \ 
+\begin{center}
+\includegraphics[scale=0.75]{module2b.pdf}
+\end{center}
+\item 0 and 1 seem equally likely
+\end{enumerate}
+\item
+\begin{enumerate}[a)]
+\item Probability mass function
+\begin{align*}
+P(0, 0) &= \frac{39}{52} \times \frac{39}{51} \approx 0.5735 \\
+P(0, 1) &= \frac{39}{52} \times \frac{13}{51} \approx 0.1912 \\
+P(1, 0) &= \frac{13}{52} \times \frac{39}{51} \approx 0.1912 \\
+P(1, 1) &= \frac{13}{52} \times \frac{13}{51} \approx 0.637
+\end{align*}
+\item  \ 
+\begin{center}
+\includegraphics[scale=0.75]{module2c.pdf}
+\end{center}
+\item 0 and 1 seem equally likely
+\end{enumerate}
+\end{enumerate}
+
+\item[2.1.8] \ 
+Possible combinations in the form \textsc{win} $-$ \textsc{cost} $=$ \textsc{net} (all are equally likely):
+\begin{align*}
+(1, 2) &= 3-4=-1 \\
+(1, 3) &= 4-4=0 \\
+(1,6) &= 7-4=3 \\
+(2,3) &= 5-4 = 1 \\
+(2,6) &= 8-4=4 \\
+(3,6) &= 9-4=5
+\end{align*}
+
+Probability mass function:
+\begin{center}
+\includegraphics[scale=0.75]{module2d.pdf}
+\end{center}
+
+Cumulative distribution function:
+\begin{center}
+\includegraphics[scale=0.75]{module2e.pdf}
+\end{center}
+
+\item[2.2.4] \  
+\begin{enumerate}[a)]
+\item Cumulative distribution function:
+\begin{center}
+\includegraphics[scale=0.75]{module2f.pdf}
+\end{center}
+\item $P(X\geq 2) = 7/6$
+\item $P(1 \leq X \leq 3) = 13/24$
+\item Probability density function:
+\begin{center}
+\includegraphics[scale=0.75]{module2g.pdf}
+\end{center}
+\end{enumerate}
+
+\item[2.3.8] I would expect net winnings on each ticket to be negative.  People play the Lottery for many reasons.  The psychology of random reward is very powerful.  Furthermore, the incremental investment (risk) is very small compared to the reward (should the participant win).  Also, most people cannot do math.
+
+\item[2.3.11] \  
+\begin{enumerate}[a)]
+\item\begin{align*}
+\int_{0}^{4} \frac{x^{2}}{16}dx &= \frac{x^{3}}{48} \mid_{0}^{4} \\
+&= \frac{64-0}{48} \\
+&= \frac{4}{3}
+\end{align*}
+\item\begin{align*}
+\frac{x^{2}}{16} \rightarrow
+F(x) &= 0.5 \\ 
+x &= 2 \\
+&= \frac{4}{16} \\
+&= \frac{1}{4}
+\end{align*}
+\end{enumerate}
+
+\item[2.4.4] \ 
+\begin{align*}
+Var(X) &= E(x^{2}) - (E(x))^{2} \\
+&= \frac{35}{6} - 3.7636 \\
+&\approx 2.07
+\end{align*}
+\begin{align*}
+E(x^{2}) &= \sum_{i} p_{i}x^{2}_{i} \\
+&= (\frac{1}{6}\times 0^{2}) + (\frac{5}{18}\times 1^{2}) + (\frac{2}{9}\times 2^{2}) + (\frac{1}{6}\times 3^{2}) + (\frac{1}{9}\times 4^{2}) + (\frac{1}{18}\times 5^{2}) \\
+&= 0+\frac{5}{18}+\frac{8}{9}+\frac{9}{6}+\frac{16}{9}+\frac{25}{18} \\
+&= \frac{35}{6} \\
+&= 5.8\overline{33}
+\end{align*}
+
+I would prefer a small variance.
+
+\item[2.5.6] \ 
+\begin{enumerate}[a)]
+\item \ 
+\begin{table}[htdp]
+\caption{Joint \& Marginal Probability Mass Function}
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+ & 0 & 1 & 2 \\ \hline
+ 0 & 0.25 & 0 & 0.125 & 0.375 \\ \hline
+ 1 & 0 & 0.125 & 0 & 0.25\\ \hline
+ 2 & 0.125 & 0 & 0 & 0.125 \\ \hline
+ & 0.375 & 0.125 & 0.125
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}
+
+\item See a)
+\item The variables $X$ and $Y$ are dependent because there is no replacement.
+\item I am confused on this point and cannot calculate these values.
+\item \begin{align*}
+\mbox{Cov}(X, Y) &= E(XY) - E(X)E(Y) \\
+&= 0.062 - 0.140625 \\
+&= -0.078125
+\end{align*}
+\item \[\frac{-0078125}{\sqrt{0.0087890625}}=-0.8\overline{33}\]
+\item I don't know how to calculate this value.
+\end{enumerate}
+
+\item[2.5.9] \ 
+\begin{enumerate}[a)]
+\item I don't know how to calculate this value.
+\item I don't know how to calculate this value.
+\item \begin{align*}E(X) &= 2.94\\ \mbox{Var}(X) &= 0.942 - (2.94)^{2}\\ &= -7.7016\end{align*}
+\item \begin{align*}E(4) &= 2.86\\ \mbox{Var}(4) &= -7.3118\end{align*}
+\item Yes. Yes. I don't know.
+\item 0.3
+\item \begin{align*}
+\mbox{Cov}(X, Y) &= E(XY) - E(X)E(Y) \\
+&= 9.29 - 8.4084 \\
+&= 0.8816
+\end{align*}
+\item \begin{align*}
+\mbox{Cor}(X, Y) &= \frac{0.8816}{\sqrt{-7.7016\times -7.3118}} \\
+&\approx 0.1175
+\end{align*}
+\end{enumerate}
+
+\item[2.6.4] \ 
+Suppose $P=A_{1}+A_{2}+B$
+\begin{align*}
+E(P) &= E(A_{1})+E(A_{2})+E(B) \\
+&= 37+37+24 \\
+&= 98
+\end{align*}
+\begin{align*}
+\mbox{Var}(P) &= \mbox{Var}(A_{1})+\mbox{Var}(A_{2})+\mbox{Var}(B) \\
+&= 0.7^{2}+0.7^{2}+0.3^{2} \\
+&= 1.07
+\end{align*}
+
+\item[2.6.14] \
+\begin{align*}
+E(Y) &= aE(X)+b \\
+1000 &= 77a+b \\
+\mbox{--and--} \\
+100 &= 81a^{2} \\
+\frac{100}{81} &= a^{2} \\
+\pm \sqrt{\frac{100}{81}} &= a \\
+\pm \frac{10}{9} &= a \\
+a &= 1.\overline{11}
+\end{align*}
+
+\end {description}
+
+\end{document}

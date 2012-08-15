@@ -1,0 +1,46 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand{\Mct}{\overline{\mbox{M}}\mbox{ct}}
+
+%opening
+\title{Project Assignment 2}
+\author{Steve Mazza}
+\date{November 11, 2011}
+
+\begin{document}
+\maketitle
+
+The following table summarizes the analysis of maintainability and availability of the ACIDS system.  See the accompanying spreadsheet for details of the calculations.
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{l.}
+\hline
+$A_{o}$ & 0.176295589 \\MTBM & 2.837684449 \\MDT & 13.25848941 \\$\overline{M}$ & 0.239193152 \\$M_{ct}$ & 1.25 \\$M_{pt}$ & 0.177083333 \\$LDT_{c}$ & 33.88235294 \\$LDT_{s}$ & 7.0 \\LDT & 8.556186152 \\$ADT_{c}$ & 12.0 \\$ADT_{s}$ & 4.0 \\ADT & 4.463110102 \\$MTBM_{u}$ & 49.01960784 \\$MTBM_{s}$ & 3.012048193 \\$\lambda$ & 0.0204 \\fpt & 0.332 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+$A_{o}$ is well below the threshold of 0.8 and the goal of 0.9 however a quick calculation for the probability of mission completion reveals that, given the mission parameters on Slide \#6, one (1) spare is sufficient to raise the probability of mission completion to over 0.99.
+
+\begin{align*}
+\lambda &= 0.0204 \\
+t &= 2\mbox{\ hours} \\
+n &= 1\mbox{\ system} \\
+n\lambda t &= 0.0408
+\end{align*}
+
+Using \emph{Figure 15.7} on page 517 of \emph{B\&F} we find that with zero (0) spares there is a slightly better than 90\% probability of mission completion.  With one spare the percentage climbs to over 99\%.  So while the system does not meet the criteria for $A_{o}$, one (1) spare is sufficient to exceed the METAL-V required reliability of 0.96.
+
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\title{Functional Hierarchy Demomposition}
+\date{}
+
+\begin{document}
+\pagestyle{empty}
+
+\maketitle
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto] 
+	% Place nodes
+	\node [block] (acids) {ACIDS};
+	
+	\node [block, below of=acids] (metalvsub) {METAL-V Subsystem};
+	\node [block, left of=metalvsub] (puo) {Program-ming Unit Operator};
+	\node [block, left of=puo] (vehop) {Vehicle Operator};
+	\node [block, right of=metalvsub] (pu) {Program-ming Unit};
+	\node [block, right of=pu] (diag) {ACIDS Diagnostic Subsystem};
+	
+	\node [block, below of=metalvsub] (metalv) {METAL-V};
+	\node [block, left of=metalv] (storcon) {MVS Storage Container};
+	\node [block, left of=storcon] (remcon) {MVS Remote Controller};
+	\node [block, right of=metalv] (firm) {Firmware};
+	\node [block, right of=firm] (opsoft) {MVS Operational Software};
+	
+	\node [block, below of=metalv] (compcont) {Computer Controller};
+	\node [block, left of=compcont] (chassis) {Chasis};
+	\node [block, left of=chassis] (motors) {Motor Set};
+	\node [block, left of=motors] (drive) {Drive Train};
+	\node [block, right of=compcont] (comms) {Communi-cations Set};
+	\node [block, right of=comms] (ied) {IED Sensors};
+	\node [block, right of=ied] (power) {Power Supply};
+	
+	% Draw edges
+	\path [line] (acids) -- (metalvsub);
+	\path [line] (acids) -- ++ (0,-1) -| (vehop);
+	\path [line] (acids) -- ++(0,-1) -| (diag);
+	\path [line] (acids) -- ++(0,-1) -| (puo);
+	\path [line] (acids) -- ++(0,-1) -| (pu);
+	
+	
+	\path [line] (metalvsub) -- (metalv);
+	\path [line] (metalvsub) -- ++(0,-1) -| (storcon);
+	\path [line] (metalvsub) -- ++(0,-1) -| (remcon);
+	\path [line] (metalvsub) -- ++(0,-1) -| (firm);
+	\path [line] (metalvsub) -- ++(0,-1) -| (opsoft);
+	
+	\path [line] (metalv) -- (compcont);
+	\path [line] (metalv) -- ++(0,-1) -| (chassis);
+	\path [line] (metalv) -- ++(0,-1) -| (motors);
+	\path [line] (metalv) -- ++(0,-1) -| (drive);
+	\path [line] (metalv) -- ++(0,-1) -| (comms);
+	\path [line] (metalv) -- ++(0,-1) -| (ied);
+	\path [line] (metalv) -- ++(0,-1) -| (power);
+\end{tikzpicture}
+\end{center}
+
+\end{document}

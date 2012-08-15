@@ -1,0 +1,128 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand{\Mct}{\overline{\mbox{M}}\mbox{ct}}
+
+%opening
+\title{Project Assignment 3}
+\author{Steve Mazza}
+\date{November 18, 2011}
+
+\begin{document}
+\maketitle
+
+\section{High priority software suitability characteristics}
+\subsection{Correctness}
+It is fundamentally important in almost every system that the developed software implement and support the system requirements correctly.  The importance is elevated in a system such as ACIDS that supports mission critical activities like IED clearing.
+\subsection{Reliability}
+Having established \emph{correctness}, the software must also be reliable.  That is to say, it must perform the \emph{correct} action consistently, predictably, and without fail.
+\subsection{Usability}
+In an effort to reduce potentially catastrophic human errors, the software must be usable.  This also has the desired side-effects of reducing training time and increasing overall system adoption.
+
+\section{Requirements Statement}
+\subsection{Correctness}
+Each system requirement shall be supported directly by one or more calls, methods, procedures, components, classes, or libraries of the METAL-V operational software which shall map directly to and support system requirements.
+\subsection{Reliability}
+The METAL-V operational software shall perform consistently as written under normal operating conditions with a reliability greater than 0.98.
+\subsection{Usability}
+The METAL-V operational software shall present an interface that closely resembles the physical operation of the system.
+\par
+I considered this at some length and I believe that it is important to illustrate a couple related aspects to \emph{usability}.  There is overall system usability that may be measured in reduced training time and overall adoption of the system.  But there are lower level usability considerations that, in aggregate, may be just as important and are possibly more easily tested.\footnote{Requirements that are not testable are not good requirements.}
+\par
+The METAL-V operational software shall prevent over rotation of the number six servo.\footnote{This is a fictitious element of the hardware that we are supposing could cause severe problems if over rotated.}
+\par
+So while this requirement does not fall into the traditional lane of \emph{Usability} it does address and illustrate the principle that software should make the user's job easier wherever possible by reducing complexity\footnote{Complexity in this case refers to the amount and nature of extraneous details that the user must attend to.} and mitigating against user-induced fault.
+
+\section{Test and evaluation activities}
+\subsection{Correctness}
+The principle aim is to ensure complete coverage of all of the system requirements by the METAL-V operational software.  By providing traceability back to the requirements of the software components we can assure that coverage is complete.  Often the biggest difficulties arise either when requirements change or when new requirements are added.  Maintaining a complete mapping requires diligence and commitment on the part of the software development team as well as management.
+\subsection{Reliability}
+Determining software reliability is often a matter of mapping and exercising every path of execution.  This method falls apart, though, for \emph{object} and \emph{event-driven} models.  Careful design emphasizing encapsulation and abstraction facilitates unit testing where it is frequently more tractable to \emph{prove} code by identifying pre- and post-conditions\footnote{See Dijkstra}.
+\subsection{Usability}
+For this, the more specific the requirements are the easier they are to test.  In the two examples above, the constrained rotation is highly objective and easily testable whereas the former example may require the use of user juries  and user acceptance testing.  In cases like this it is often useful to get interface prototypes in front of users as early as possible to verify the proper capture of work flows as well as gather essential user feedback.
+
+\section{Software component suitability}
+\subsection{Prototype MRC and METAL-V firmware}
+While this is COTS software, it is not suitable for acceptance and lifecycle use because it is only applicable in the context of the prototype hardware (Lego Mindstorms).
+\subsection{Prototype MRC and METAL-V operational software}
+While it is difficult to be certain, it is likely that the prototype operational software could be engineered in such a way that it is (mostly) ready for acceptance and lifecycle use.  This pre-supposes, however, that the operational software is sufficiently abstracted from the prototype system.
+\subsection{Prototype operational software generator}
+Assuming that these are currently available components it is possible that this section might be suitable for acceptance and lifecycle use.  It is worth mentioning, though, that Borland has transformed itself and has abandoned Delphi and that Object Pascal may not be as easy to support throughout the system lifecycle.
+\subsection{ACIDS diagnostic software}
+It is very difficult to tell here but it seems that BricxCC is a Lego Mindstorm specific tool and would not be suitable for acceptance and lifecycle use.
+
+\section{Executive summary}
+% Identify the criteria
+Given the critical nature of the mission and the hostile environment for which the ACIDS system is targeted, an emphasis on \emph{usability}, \emph{reliability}, and \emph{correctness} is suggested. Although it is fundamentally important in almost every system that the developed software implement and support
+the system requirements \emph{correctly}, the importance is elevated in a system such as ACIDS that supports
+mission critical activities like IED clearing.  Failure to correctly and adequately cover the system requirements could unduly place warfighters in harm's way.
+\par
+Having established correctness, the software must also be \emph{reliable}. That is to say, it must perform the correct
+actions consistently, predictably, and without fail.  If the software is correct and defect-free then it will also be reliable.  Rechtin \& Maier suggest that the number of defects remaining in a peice of software are proportional to the number of defects found.  Where lives are at stake the goal should always be to produce the highest quality error-free software.
+\par
+\emph{Usability} in the field is of great concern.  Software that is difficult to use increases the potential for catastrophic human errors. Addressing issues of usability  also has the desired side-effect of reducing training time and increasing overall system adoption.  The standard for usability has been set by commercial giants Microsoft and Apple.
+
+% State the requirements.
+The first step to enforcing these criteria is to state each as a requirement or set of requirements.  In the case of \emph{correctness} we can state a high level requirement to ensure that all of the system requirements are supported in code by mapping each part of the code back to system requirements.
+\begin{quote}
+"Each system requirement shall be supported directly by one or more calls, methods, procedures, components,
+classes, or libraries of the METAL-V operational software which shall map directly to and support system
+requirements."
+\end{quote}
+For \emph{reliability} we can spell out a measure of overall system performance.
+\begin{quote}
+"The METAL-V operational software shall perform consistently as written under normal operating conditions
+with a reliability greater than 0.98."
+\end{quote}
+Lastly, a high level usability requirement will not only assist in the design and implementation of the system software but will also help convey a common understanding of the problem by showing how the algorithmic solution models the physical system.
+\begin{quote}
+"The METAL-V operational software shall present an interface that closely resembles the physical operation
+of the system."
+\end{quote}
+Further consideration illuminates a couple related aspects
+of usability. There is overall system usability that may be measured in reduced training time and overall
+adoption of the system. But there are lower level usability considerations that, in aggregate, may be just as
+important and are possibly more easily tested.
+\begin{quote}
+"The METAL-V operational software shall prevent over rotation of the number six servo\footnote{This is a fictitious element of the hardware that we are supposing could cause severe problems if over rotated.}."
+\end{quote}
+So while this requirement does not fall into the traditional lane of Usability it does address and illustrate
+the principle that software should make the user's job easier wherever possible by reducing complexity and mitigating against user-induced fault.
+
+% Discuss testing.
+ By providing traceability back to the requirements of the software components we can assure that coverage is complete.  Often the biggest difficulties arise either when requirements change or when new requirements are added.  Maintaining a complete mapping requires diligence and commitment on the part of the software development team as well as management.
+\par
+Determining software reliability is often a matter of mapping and exercising every path of execution.  This method falls apart, though, for \emph{object} and \emph{event-driven} models.  Careful design emphasizing encapsulation and abstraction facilitates unit testing where it is frequently more tractable to \emph{prove} code by identifying pre- and post-conditions\footnote{See Dijkstra}.
+\par
+For usability testing, the more specific the requirements are the easier they are to test.  In the two examples above, the constrained rotation is highly objective and easily testable whereas the former example may require the use of user juries  and user acceptance testing.  In cases like this it is often useful to get interface prototypes in front of users as early as possible to verify the proper capture of work flows as well as gather essential user feedback.
+
+% Evaluate software component suitability
+While prototype MRC and METAL-V firmware is COTS software, it is not suitable for acceptance and lifecycle use because it is only applicable in the context of the prototype hardware (Lego Mindstorms).  On the other hand, it is possible that the prototype operational software could be engineered in
+such a way that it is (mostly) ready for acceptance and lifecycle use. This pre-supposes, however, that the
+operational software is sufficiently abstracted from the prototype system.
+\par
+Assuming current availability, it is possible that the Prototype operational software generator might be suitable for
+acceptance and lifecycle use. It is worth mentioning, though, that Borland has transformed itself and has
+abandoned Delphi and that Object Pascal may not be as easy to support throughout the system lifecycle as some other languages.
+\par
+With regard to the ACIDS diagnostic software it is very difficult to tell.  It seems that while BricxCC supports a growing list of programmable microcontroller platforms it is still very tightly tied to hardware and so may not be suitable for acceptance and lifecycle use.  The following is from the BricxCC SourceForge project page.
+\begin{quote}
+"Bricx Command Center (BricxCC) is a Windows (95, 98, ME, NT, W2K, XP, Vista) program commonly known as an integrated development environment (IDE) for programming the RCX (all versions), Scout, Cybermaster, and Spybot programmable bricks using Dave Baum's Not Quite C (NQC) language. And it supports programming the Scout, RCX2, and Spybot using The LEGO Company's MindScript(tm) and LASM(tm) languages via the Mindstorms 2.5 SDK. It supports programming RCX bricks in C, C++, Pascal, Forth, and Java using the brickOS, pbForth, and leJOS alternate firmwares. BricxCC now also supports programming the new LEGO Mindstorms NXT brick using Not eXactly C (NXC), Next Byte Codes (NBC), and a simple on-brick programming language called NPG."
+\end{quote}
+
+% Draw Conclusions.
+\par
+The overall state of the ACIDS prototype software is not suitable for acceptance and lifecycle use.  Too much relies on the specific implementation which uses the Lego Mindstorm NXT brick.  Sufficient software engineering by way of abstraction and encapsulation may result in the ability to re-use (or at least leverage) some of the  prototype operational software.  But the fielded implementation may well be similarly tailored to the specifics of the production hardware.  This is due to the hardware specific nature of programmable microcontrollers and the lack of portable and generalized routines and libraries for sensor and actuator access.  Nonetheless, the prototype system is valuable in that it provides early feedback on system viability, user adoption, and importatnt lessons learned.
+\par
+The success of the system may ride on careful selection of key criteria.  Emphasizing \emph{correctness}, \emph{reliability}, and \emph{usability} will place proper emphasis on the strengths that will be most imporant to safety, performance, and sdoption in the field.
+
+\end{document}
