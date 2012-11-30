@@ -58,4 +58,5 @@ Answer one or more parts below.
 3. (p → q) Λ (p V r)
 4. p V ¬q → r
 5. (p V q) Λ (p → r)
+
 > The correct answer is \#5.
