@@ -27,10 +27,15 @@ Describe some challenges for reusing software (technical, programmatic or both).
 Provide short answers to all parts below.
 
 1. (1 pt) Give an example of a safety-critical software function in a system you are familiar with (either from work or everyday life).
+
 > The Bluetooth pairing function in my wife’s car only works when the vehicle is in park.  This restriction prevents the driver from trying to change the pairing, a function that (for whatever reason) requires the traversal of *way* too many menus while operating the vehicle.
+
 2. (1 pt) Name a potential hazard pertaining to this function, and a potential mishap that can occur if the hazard is not addressed.
+
 > A hazard associated with this function is the very real possibility of incurring an accident due to the distraction of trying to navigate the *way* too many menus required to affect a change in the Bluetooth pairing.  To be fair, another hazard might also be that you will incur an injury to your hand as you attempt to smash the unresponsive touch screen that barely passes for an interface to the system.
+
 3. (1 pt) What can be done to reduce the likelihood of hazardous failure modes, throughout the development of the system in which the software is embedded?
+
 > The primary safeguard is to ensure that the system functionality is locked out unless the vehicle is in park.  Given that this safety check might fail due to a faulty proximity switch (or other sensor), the speedometer could be queried to see that the vehicle is not in motion.  An even better method would be to also add a check with an internal inertial sensor or a GPS and have the systems vote.  This way, a failure in any one system would not incorrectly prevent (or permit, in a worst case scenario) pairing.
 
 ### Question 6 (2 pts).
