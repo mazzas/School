@@ -11,41 +11,59 @@ You are a member of the Systems Engineering IPT for a new Unmanned Aerial System
 
 What counterpoints might be offered to justify a position for including software engineers this early in the process? Which position are you more inclined to support and why?
 
+> The two objections appear to be somewhat internally inconsistent.  On the one hand the argument is being made that there is nothing for the software engineers to do yet.  And on the other hand there is an argument that software engineers will apply an inappropriate level of detail, rigor, and process to the problem, implying that there is in fact something for them to contribute.
+
+> My position, of course, is that software engineers should be involved as early as absolutely possible.  Especially if decisions have yet to be made regarding portions of the system allocated to hardware vs. software, software engineers can serve as valuable subject matter experts in helping to guide those decisions.
+
+> Regarding the application of an inappropriate level of detail early on, some thoughtful guidance could include the setting of meeting agenda, statement of meeting outcomes, and clarification on the goals and standards for communicating with the stakeholders.
+
+> To omit the software engineers from the requirements planning would set back the understanding of key members of the engineering team.  Furthermore, you would lose the software engineering insight into the requirements definition.
+
 ### Question 2.
 Refer to Figure 1 in IEEE Standard 1471 (reprinted below).
 
 1. (1 pt) [Identify](http://www.iso-architecture.org/ieee-1471/cm/) the notation (*language*) and type of *diagram* that were used to create this model.
 
-> This is a simple Class Diagram showing the relationships among this class structure.  In this diagram, classes are represented without members.
+>> This is a simple Class Diagram showing the relationships among this class structure.  In this diagram, classes are represented without members.
 
 2. (2 pts) Stepping through the diagram one element pair and relationship at a time, write a natural language description of each relationship. Include multiplicity in your written explanation, e.g. “One system fulfills many missions.” You may capture relationships in just one direction, i.e., you do not have to also write “Many missions are fulfilled by one system.” *Use proper English grammar, as if you were explaining the diagram to someone else.*
 
-> - The System fulfills Missions
-> - The Environment influences the System
-> - The System inhabits the Environment
-> - The System has an Architecture
-> - The System has many Stakeholdes
-> - The Architecture is described by an Architectural Description
-> - The Architectural Description provides a Rationale
-> - The Rationale participates in the Architectural Description
-> - The Stakeholder identifes the Architectural Descriptions
-> - The Stakeholder identifies Concerns
-> - The Concerns are important to multiple Stakeholders
-> - The Concern has multiple Stekeholders
-> - The Concern identifies Architectural Descriptions
-> - The Viewpoint is used to cover Concerns
-> - The Viewpoint is addressed to the Stakeholders
-> - The Architectural Description selects Viewpoints
-> - The Viewpoint conforms to a View
-> - The Library Viewpoint may have source Viewpoint
-> - The Model establishes methods for the Viewpoints
-> - The Model participates in the Views
-> - The View consists of Models
-> - The Architectural Description is organized by Views (this is an aggregate relationship)
-> - The Architectural Description aggregates Models (this is an aggregate relationship)
+>> - The System fulfills Missions
+>> - The Environment influences the System
+>> - The System inhabits the Environment
+>> - The System has an Architecture
+>> - The System has many Stakeholdes
+>> - The Architecture is described by an Architectural Description
+>> - The Architectural Description provides a Rationale
+>> - The Rationale participates in the Architectural Description
+>> - The Stakeholder identifes the Architectural Descriptions
+>> - The Stakeholder identifies Concerns
+>> - The Concerns are important to multiple Stakeholders
+>> - The Concern has multiple Stekeholders
+>> - The Concern identifies Architectural Descriptions
+>> - The Viewpoint is used to cover Concerns
+>> - The Viewpoint is addressed to the Stakeholders
+>> - The Architectural Description selects Viewpoints
+>> - The Viewpoint conforms to a View
+>> - The Library Viewpoint may have source Viewpoint
+>> - The Model establishes methods for the Viewpoints
+>> - The Model participates in the Views
+>> - The View consists of Models
+>> - The Architectural Description is organized by Views (this is an aggregate relationship)
+>> - The Architectural Description aggregates Models (this is an aggregate relationship)
 
 ### Question3. (2 pts). 
 Define software [coupling and cohesion](http://c2.com/cgi/wiki?CouplingAndCohesion). How do these design considerations impact software quality?
+
+> The reference I cite provides the following two definitions; I like them for their succinctness.
+
+>> "Given two lines of code, A and B, they are coupled when B must change behavior only because A changed."
+
+>> "They are cohesive when a change to A allows B to change so that both add new value."
+
+> While I said that I liked the definitions for their succinctness, I'll confess that I can only really make any sense out of the first of the two.  My understanding of cohesion in software refers to the maintenance of a logical internal consistency, an encapsulation of like functionality, within a class, module, library, or other section of code.
+
+> *Good* software will have high cohesion and loose coupling.  This minimizes the interactions among the parts of code, facilitates refactoring, and makes it easier to identify errors.  Minimizing interactions is important because changes have fewer unintended consequences throughout the general body of code.  Re-factoring is *always* good and is a by-product of the development of a greater understanding of the problem space.  Errors are more easily found when the mechanics implementing a given feature are encapsulated in a given body of code (i.e., highly cohesive).
 
 ### Question 4. (2 pts). 
 Describe some [challenges for reusing software](http://www.cs.wustl.edu/~schmidt/reuse-lessons.html) (technical, programmatic or both). Which of these are more prevalent for DoD. Why?
