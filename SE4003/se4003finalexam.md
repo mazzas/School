@@ -1,5 +1,6 @@
 # SE4003 Systems Software Engineering
 ## Final Exam
+## Steve Mazza
 
 **Directions:** Complete all six questions below as well as the bonus question if desired. The exam is worth 15 points total and is open book/notes. Cite references properly, and state any assumptions.
 
