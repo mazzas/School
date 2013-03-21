@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<specification>
+<type>Mana Scenario File</type>
+<version> 5.01.00 </version>
+
+<description>
+.
+.
+</description>
+
+<multirun>
+   <seed> 0 </seed>
+   <side> 0 </side>
+   <BlueLimit> 5 </BlueLimit>
+   <RedLimit> 5 </RedLimit>
+   <NeutralLimit> 5 </NeutralLimit>
+   <SquadReachedGoal> No </SquadReachedGoal>
+   <SquadNumToReachGoal> 0 </SquadNumToReachGoal>
+   <StopSquadDead> No </StopSquadDead>
+   <SquadLimit> 1 </SquadLimit>
+   <SquadNumToSufferLoss> 0 </SquadNumToSufferLoss>
+   <MultiResultsName> New Scenario.csv </MultiResultsName>
+   <maxruns> 50 </maxruns>
+</multirun>
+
+<Battlefield>
+   <x_range> 2000 </x_range>
+   <y_range> 2000 </y_range>
+   <LowRealY> 0.0 </LowRealY>
+   <HighRealY> 2000.0 </HighRealY>
+   <LowRealX> 0.0 </LowRealX>
+   <HighRealX> 2000.0 </HighRealX>
+   <GlobalX_Min> 0.0 </GlobalX_Min>
+   <GlobalX_Max> 2000.0 </GlobalX_Max>
+   <GlobalY_Min> 0.0 </GlobalY_Min>
+   <GlobalY_Max> 2000.0 </GlobalY_Max>
+   <LowRealElev> 0 </LowRealElev>
+   <HighRealElev> 255 </HighRealElev>
+   <TimeScale> 1.0 </TimeScale>
+   <LOSresolution> 1 </LOSresolution>
+   <DistUnits> distMetres </DistUnits>
+   <CombineLOSCalc> No </CombineLOSCalc>
+   <SAMode> Map Location </SAMode>
+   <SAMgNewCt> Contact ID </SAMgNewCt>
+   <LOSMode> Advanced </LOSMode>
+   <UseNonStdTerrains> No </UseNonStdTerrains>
+   <ContactRad> 6.01 </ContactRad>
+   <TerrainRange> 5 </TerrainRange>
+   <NumSquads> 3 </NumSquads>
+   <TimeStep> 25 </TimeStep>
+   <MaxSteps> 5000 </MaxSteps>
+   <settings>
+      <ShowPath> Yes </ShowPath>
+      <ShowFlags> Yes </ShowFlags>
+      <CalcLOS> Yes </CalcLOS>
+      <Networking> Yes </Networking>
+      <IntraNet> Yes </IntraNet>
+      <RecPositions> No </RecPositions>
+      <RecFirstEnDetections> No </RecFirstEnDetections>
+      <RecRedDetections> No </RecRedDetections>
+      <RecComms> No </RecComms>
+      <RecMDetects> No </RecMDetects>
+      <RecSteps> No </RecSteps>
+      <RecCasLocs> No </RecCasLocs>
+      <SoundFx> No </SoundFx>
+      <LockSeed> No </LockSeed>
+      <StopBlueDead> No </StopBlueDead>
+      <StopRedDead> No </StopRedDead>
+      <ShowBackground> No </ShowBackground>
+      <ShowAnimation> Yes </ShowAnimation>
+      <ShowInteractions> Yes </ShowInteractions>
+      <ShowFiring> Yes </ShowFiring>
+      <ShowAgtOrientation> No </ShowAgtOrientation>
+      <DoPathFinding> No </DoPathFinding>
+      <RecAgentEndState> No </RecAgentEndState>
+      <ShowDeadIcons> Yes </ShowDeadIcons>
+      <RecDetects> No </RecDetects>
+   </settings>
+</Battlefield>
+
+<Squad>
+   <SquadType> Trooper </SquadType>
+   <SquadActive> Yes </SquadActive>
+   <SquadCommsEnable> Yes </SquadCommsEnable>
+   <index> 1 </index>
+   <ParentSqd> 0 </ParentSqd>
+   <SquadName> Blue </SquadName>
+   <NumAgents> 1 </NumAgents>
+   <SquadOnly> Yes </SquadOnly>
+   <Use_Momentum> No </Use_Momentum>
+   <Use_Diag> Yes </Use_Diag>
+   <MultiOccupy> No </MultiOccupy>
+   <AutoRflAgt> No </AutoRflAgt>
+   <Use_Going> Yes </Use_Going>
+   <RooftopAllowed> No </RooftopAllowed>
+   <Move_Together> No </Move_Together>
+   <MoveSelectType> Precision </MoveSelectType>
+   <Homes>
+      <HomeNumberOf> 1 </HomeNumberOf>
+      <HomeDistribution> Turns </HomeDistribution>
+      <HomePos>
+         <Home_x_coord> 1000 </Home_x_coord>
+         <Home_y_coord> 1800 </Home_y_coord>
+         <HomeWid> 2 </HomeWid>
+         <HomeHgt> 2 </HomeHgt>
+         <HomeExclDist> 0 </HomeExclDist>
+         <HomeShape> HomeShapeRect </HomeShape>
+         <Waypoints>
+            <numberOf> 1 </numberOf>
+            <loop> No </loop>
+            <waypoint>
+               <x_coord> 1000 </x_coord>
+               <y_coord> 50 </y_coord>
+            </waypoint>
+            <HaveAltGoal> No </HaveAltGoal>
+         </Waypoints>
+      </HomePos>
+   </Homes>
+   <FlagIcon> 1 </FlagIcon>
+   <Comms>
+   </Comms>
+   <SALockoutTime> 0 </SALockoutTime>
+   <OrgThreatRate> 30 </OrgThreatRate>
+   <InorgThreatRate> 30 </InorgThreatRate>
+   <OrgFuseRad> 0 </OrgFuseRad>
+   <OrgFuseTime> 0 </OrgFuseTime>
+   <InorgFuseRad> 0 </InorgFuseRad>
+   <InorgFuseTime> 0 </InorgFuseTime>
+   <ForceOrgUpdateByCtID> No </ForceOrgUpdateByCtID>
+   <ForceInorgUpdateByCtID> No </ForceInorgUpdateByCtID>
+   <ResOrgUnknown> No </ResOrgUnknown>
+   <ResInorgUnknown> No </ResInorgUnknown>
+   <PathWidth> 0 </PathWidth>
+   <TurretBearing> 0 </TurretBearing>
+   <CommsDelay> 0 </CommsDelay>
+   <Sound> 6 </Sound>
+   <Precision> 200 </Precision>
+   <FuelTank> 1000 </FuelTank>
+   <CommsQuality> Low </CommsQuality>
+   <Platform>
+       <OrientToX> 0 </OrientToX>
+       <OrientToY> 0 </OrientToY>
+       <OrientAwayX> 0 </OrientAwayX>
+       <OrientAwayY> 0 </OrientAwayY>
+       <OrientToBearing> 0 </OrientToBearing>
+      <OrientMode> Bearing </OrientMode>
+   </Platform>
+   <Patrol_Xmin> 0 </Patrol_Xmin>
+   <Patrol_Xmax> 0 </Patrol_Xmax>
+   <Patrol_Ymin> 0 </Patrol_Ymin>
+   <Patrol_Ymax> 0 </Patrol_Ymax>
+   <SelectZone> No </SelectZone>
+   <Weapon>
+      <WpnSAType> AgentKE </WpnSAType>
+      <WpnName> Untitled </WpnName>
+      <WpnType> Simple </WpnType>
+      <WpnAgtClass> Primary </WpnAgtClass>
+      <WpnLockDefState> No </WpnLockDefState>
+      <WpnLOF> Yes </WpnLOF>
+      <WpnReloadAmmoTime> -1 </WpnReloadAmmoTime>
+      <WpnAmmo> 1000 </WpnAmmo>
+   </Weapon>
+   <Sensor>
+      <SensName> Untitled </SensName>
+      <SensType> Simple </SensType>
+      <SensClass> A </SensClass>
+      <SensLockDefState> No</SensLockDefState>
+   </Sensor>
+
+   <state>
+      <StateName> Default State </StateName>
+      <SquadAlleg> 1 </SquadAlleg>
+      <DefIcon> 1 </DefIcon>
+      <Trigger>
+         <fallback_to> Default State </fallback_to>
+         <duration> 0 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> Yes </ReleaseFromParent>
+      <ReleaseChildren> Yes </ReleaseChildren>
+      <EmbussChildren> No </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 0 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 25 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <WeaponState> 
+           <WpnEnabled> Yes </WpnEnabled>
+           <WpnInterpSSKP> No </WpnInterpSSKP>
+           <WpnTargetClosest> No </WpnTargetClosest>
+           <WpnNumTargets> 100 </WpnNumTargets>
+           <WpnShotRadius> 0 </WpnShotRadius>
+           <WpnCollateral> No </WpnCollateral>
+           <WpnArcOfConcern> 2 </WpnArcOfConcern>
+           <WpnMinRange> 0 </WpnMinRange>
+           <WpnMaxRange> 1000 </WpnMaxRange>
+           <WpnPenetration> 0 </WpnPenetration>
+           <WpnMinThreat> 0 </WpnMinThreat>
+           <WpnMaxThreat> 3 </WpnMaxThreat>
+           <WpnMaxAge> 100 </WpnMaxAge>
+           <WpnMinAp> 360 </WpnMinAp>
+           <WpnMaxAp> 0 </WpnMaxAp>
+           <WpnTargetUnknownsWait> -1 </WpnTargetUnknownsWait>
+           <WpnProtectSelf> No </WpnProtectSelf>
+           <WpnProtectSqFr> No </WpnProtectSqFr>
+           <WpnProtectOthFr> No </WpnProtectOthFr>
+           <WpnProtectNeutrals> No </WpnProtectNeutrals>
+           <WpnProtectUnknowns> No </WpnProtectUnknowns>
+           <WpnProtectUsingOrgSA> No </WpnProtectUsingOrgSA>
+           <WpnProtectUsingInorgSA> No </WpnProtectUsingInorgSA>
+           <sskpTable>
+             <sskpTablePoint>
+               <sskpTableRange> 200  </sskpTableRange>
+               <sskpTableProb> 10000  </sskpTableProb>
+             </sskpTablePoint>
+           </sskpTable>
+           <AgtClassTable>
+           </AgtClassTable>
+           <nonTargetTable>
+           </nonTargetTable>
+      </WeaponState> 
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   50   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+</Squad>
+
+<Squad>
+   <SquadType> Trooper </SquadType>
+   <SquadActive> Yes </SquadActive>
+   <SquadCommsEnable> Yes </SquadCommsEnable>
+   <index> 2 </index>
+   <ParentSqd> 0 </ParentSqd>
+   <SquadName> Red Vehicle </SquadName>
+   <NumAgents> 1 </NumAgents>
+   <SquadOnly> Yes </SquadOnly>
+   <Use_Momentum> No </Use_Momentum>
+   <Use_Diag> Yes </Use_Diag>
+   <MultiOccupy> No </MultiOccupy>
+   <AutoRflAgt> No </AutoRflAgt>
+   <Use_Going> Yes </Use_Going>
+   <RooftopAllowed> No </RooftopAllowed>
+   <Move_Together> No </Move_Together>
+   <MoveSelectType> Precision </MoveSelectType>
+   <Homes>
+      <HomeNumberOf> 1 </HomeNumberOf>
+      <HomeDistribution> Turns </HomeDistribution>
+      <HomePos>
+         <Home_x_coord> 1000 </Home_x_coord>
+         <Home_y_coord> 200 </Home_y_coord>
+         <HomeWid> 2 </HomeWid>
+         <HomeHgt> 2 </HomeHgt>
+         <HomeExclDist> 0 </HomeExclDist>
+         <HomeShape> HomeShapeRect </HomeShape>
+         <Waypoints>
+            <numberOf> 2 </numberOf>
+            <loop> No </loop>
+            <waypoint>
+               <x_coord> 1000 </x_coord>
+               <y_coord> 1950 </y_coord>
+            </waypoint>
+            <waypoint>
+               <x_coord> 1226 </x_coord>
+               <y_coord> 479 </y_coord>
+            </waypoint>
+            <HaveAltGoal> No </HaveAltGoal>
+         </Waypoints>
+      </HomePos>
+   </Homes>
+   <FlagIcon> 2 </FlagIcon>
+   <Comms>
+   </Comms>
+   <SALockoutTime> 0 </SALockoutTime>
+   <OrgThreatRate> 30 </OrgThreatRate>
+   <InorgThreatRate> 30 </InorgThreatRate>
+   <OrgFuseRad> 0 </OrgFuseRad>
+   <OrgFuseTime> 0 </OrgFuseTime>
+   <InorgFuseRad> 0 </InorgFuseRad>
+   <InorgFuseTime> 0 </InorgFuseTime>
+   <ForceOrgUpdateByCtID> No </ForceOrgUpdateByCtID>
+   <ForceInorgUpdateByCtID> No </ForceInorgUpdateByCtID>
+   <ResOrgUnknown> No </ResOrgUnknown>
+   <ResInorgUnknown> No </ResInorgUnknown>
+   <PathWidth> 0 </PathWidth>
+   <TurretBearing> 0 </TurretBearing>
+   <CommsDelay> 0 </CommsDelay>
+   <Sound> 6 </Sound>
+   <Precision> 200 </Precision>
+   <FuelTank> 1000 </FuelTank>
+   <CommsQuality> Low </CommsQuality>
+   <Platform>
+       <OrientToX> 0 </OrientToX>
+       <OrientToY> 0 </OrientToY>
+       <OrientAwayX> 0 </OrientAwayX>
+       <OrientAwayY> 0 </OrientAwayY>
+       <OrientToBearing> 0 </OrientToBearing>
+      <OrientMode> Bearing </OrientMode>
+   </Platform>
+   <Patrol_Xmin> 0 </Patrol_Xmin>
+   <Patrol_Xmax> 0 </Patrol_Xmax>
+   <Patrol_Ymin> 0 </Patrol_Ymin>
+   <Patrol_Ymax> 0 </Patrol_Ymax>
+   <SelectZone> No </SelectZone>
+   <Sensor>
+      <SensName> Untitled </SensName>
+      <SensType> Simple </SensType>
+      <SensClass> A </SensClass>
+      <SensLockDefState> No</SensLockDefState>
+   </Sensor>
+
+   <state>
+      <StateName> Default State </StateName>
+      <SquadAlleg> 2 </SquadAlleg>
+      <DefIcon> 29 </DefIcon>
+      <Trigger>
+         <fallback_to> Default State </fallback_to>
+         <duration> 0 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> No </ReleaseFromParent>
+      <ReleaseChildren> No </ReleaseChildren>
+      <EmbussChildren> Yes </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 0 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 25 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   50   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+
+   <state>
+      <StateName> Reach Waypoint State </StateName>
+      <SquadAlleg> 2 </SquadAlleg>
+      <DefIcon> 29 </DefIcon>
+      <Trigger>
+         <fallback_to> Spare1 State </fallback_to>
+         <duration> 5 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> No </ReleaseFromParent>
+      <ReleaseChildren> Yes </ReleaseChildren>
+      <EmbussChildren> No </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 0 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 0 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+
+   <state>
+      <StateName> Spare1 State </StateName>
+      <SquadAlleg> 2 </SquadAlleg>
+      <DefIcon> 29 </DefIcon>
+      <Trigger>
+         <fallback_to> Spare2 State </fallback_to>
+         <duration> 100 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> No </ReleaseFromParent>
+      <ReleaseChildren> Yes </ReleaseChildren>
+      <EmbussChildren> No </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 0 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 25 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   50   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+
+   <state>
+      <StateName> Spare2 State </StateName>
+      <SquadAlleg> 2 </SquadAlleg>
+      <DefIcon> 79 </DefIcon>
+      <Trigger>
+         <fallback_to> Default State </fallback_to>
+         <duration> 150 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> No </ReleaseFromParent>
+      <ReleaseChildren> No </ReleaseChildren>
+      <EmbussChildren> Yes </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 0 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 0 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+</Squad>
+
+<Squad>
+   <SquadType> Trooper </SquadType>
+   <SquadActive> Yes </SquadActive>
+   <SquadCommsEnable> Yes </SquadCommsEnable>
+   <index> 3 </index>
+   <ParentSqd> 2 </ParentSqd>
+   <SquadName> Red </SquadName>
+   <NumAgents> 10 </NumAgents>
+   <SquadOnly> Yes </SquadOnly>
+   <Use_Momentum> No </Use_Momentum>
+   <Use_Diag> Yes </Use_Diag>
+   <MultiOccupy> No </MultiOccupy>
+   <AutoRflAgt> No </AutoRflAgt>
+   <Use_Going> Yes </Use_Going>
+   <RooftopAllowed> No </RooftopAllowed>
+   <Move_Together> No </Move_Together>
+   <MoveSelectType> Precision </MoveSelectType>
+   <Homes>
+      <HomeNumberOf> 1 </HomeNumberOf>
+      <HomeDistribution> Turns </HomeDistribution>
+      <HomePos>
+         <Home_x_coord> 1000 </Home_x_coord>
+         <Home_y_coord> 200 </Home_y_coord>
+         <HomeWid> 2 </HomeWid>
+         <HomeHgt> 2 </HomeHgt>
+         <HomeExclDist> 0 </HomeExclDist>
+         <HomeShape> HomeShapeRect </HomeShape>
+         <Waypoints>
+            <numberOf> 1 </numberOf>
+            <loop> No </loop>
+            <waypoint>
+               <x_coord> 715 </x_coord>
+               <y_coord> 263 </y_coord>
+            </waypoint>
+            <HaveAltGoal> No </HaveAltGoal>
+         </Waypoints>
+      </HomePos>
+   </Homes>
+   <FlagIcon> 2 </FlagIcon>
+   <Comms>
+   </Comms>
+   <SALockoutTime> 0 </SALockoutTime>
+   <OrgThreatRate> 30 </OrgThreatRate>
+   <InorgThreatRate> 30 </InorgThreatRate>
+   <OrgFuseRad> 0 </OrgFuseRad>
+   <OrgFuseTime> 0 </OrgFuseTime>
+   <InorgFuseRad> 0 </InorgFuseRad>
+   <InorgFuseTime> 0 </InorgFuseTime>
+   <ForceOrgUpdateByCtID> No </ForceOrgUpdateByCtID>
+   <ForceInorgUpdateByCtID> No </ForceInorgUpdateByCtID>
+   <ResOrgUnknown> No </ResOrgUnknown>
+   <ResInorgUnknown> No </ResInorgUnknown>
+   <PathWidth> 0 </PathWidth>
+   <TurretBearing> 0 </TurretBearing>
+   <CommsDelay> 0 </CommsDelay>
+   <Sound> 6 </Sound>
+   <Precision> 200 </Precision>
+   <FuelTank> 1000 </FuelTank>
+   <CommsQuality> Low </CommsQuality>
+   <Platform>
+       <OrientToX> 0 </OrientToX>
+       <OrientToY> 0 </OrientToY>
+       <OrientAwayX> 0 </OrientAwayX>
+       <OrientAwayY> 0 </OrientAwayY>
+       <OrientToBearing> 0 </OrientToBearing>
+      <OrientMode> Bearing </OrientMode>
+   </Platform>
+   <Patrol_Xmin> 1100 </Patrol_Xmin>
+   <Patrol_Xmax> 1300 </Patrol_Xmax>
+   <Patrol_Ymin> 400 </Patrol_Ymin>
+   <Patrol_Ymax> 600 </Patrol_Ymax>
+   <SelectZone> Yes </SelectZone>
+   <Sensor>
+      <SensName> Untitled </SensName>
+      <SensType> Simple </SensType>
+      <SensClass> A </SensClass>
+      <SensLockDefState> No</SensLockDefState>
+   </Sensor>
+
+   <state>
+      <StateName> Default State </StateName>
+      <SquadAlleg> 2 </SquadAlleg>
+      <DefIcon> 26 </DefIcon>
+      <Trigger>
+         <fallback_to> Default State </fallback_to>
+         <duration> 0 </duration>
+         <CanInterrupt> Yes </CanInterrupt>
+         <Interrupter> No </Interrupter>
+         <OnceOnly> No </OnceOnly>
+         <RandomDuration> No </RandomDuration>
+         <HighestPriority> No </HighestPriority>
+      </Trigger>
+      <Threat> 3 </Threat>
+      <AgtClass> 0 </AgtClass>
+      <ReleaseFromParent> No </ReleaseFromParent>
+      <ReleaseChildren> No </ReleaseChildren>
+      <EmbussChildren> No </EmbussChildren>
+      <ActivateConCombat> No </ActivateConCombat>
+      <ActivateConCluster> No </ActivateConCluster>
+      <ActivateConAdvance> No </ActivateConAdvance>
+      <FormationShape> None </FormationShape>
+      <OnlyRespToMovAgt> No </OnlyRespToMovAgt>
+      <Stealth> 100 </Stealth>
+      <FuelRate> 0 </FuelRate>
+      <Speed> 25 </Speed>
+      <SpeedUnits> spKm_per_hour </SpeedUnits>
+      <Mass> 0.1 </Mass>
+      <TrackTarget> No </TrackTarget>
+      <CrowdSeparation> 1 </CrowdSeparation>
+      <RandomDebussAng> No </RandomDebussAng>
+      <PlatformState>
+         <SlewRate> 180 </SlewRate>
+         <ScanSpan> 180 </ScanSpan>
+         <Height> 2 </Height>
+         <ScanMode> No Change </ScanMode>
+         <ScanDir> Clockwise </ScanDir>
+         <OrientUsingAgentSA> Yes </OrientUsingAgentSA>
+         <OrientUsingSquadSA> No </OrientUsingSquadSA>
+         <OrientUsingInorgSA> No </OrientUsingInorgSA>
+         <OrientUsingInorgUnk> No </OrientUsingInorgUnk>
+         <OrientTowardsShooter> No </OrientTowardsShooter>
+         <ShotAtTime> 5 </ShotAtTime>
+      </PlatformState>
+      <SensorState> 
+           <SensStEnabled> Yes </SensStEnabled>
+           <SensStClassify> 200 </SensStClassify>
+           <SensStDetect> 200 </SensStDetect>
+           <SensStMinAp> 360 </SensStMinAp>
+           <SensStMaxAp> 0 </SensStMaxAp>
+           <SensStSync> No </SensStSync>
+           <SensSpecClasses> Yes </SensSpecClasses>
+           <classTable>
+             <classTablePoint>
+               <classTableRange> 200  </classTableRange>
+               <classTableProb> 10000  </classTableProb>
+             </classTablePoint>
+           </classTable>
+           <detectTable>
+             <detectTablePoint>
+               <detectTableRange> 200  </detectTableRange>
+               <detectTableProb> 0  </detectTableProb>
+             </detectTablePoint>
+           </detectTable>
+           <SensClassTable>
+           </SensClassTable>
+      </SensorState> 
+      <weight><WgtName> Alive Enemy   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Injured Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alive Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Next Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Alternate Waypoint   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Easy Terrain   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Cover   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Concealment   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Centre   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Squad Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Other Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Org Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 2 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Threat 3 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Friends   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Neutrals   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Inorg Unknowns   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Low)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (Medium)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Threat 1 (High)   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> En Ideal   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Formation   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> AgtEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> OrgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> InorgEnOrient   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Squad Awareness   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Debuss Behaviour   </WgtName><WgtVal>   0   </WgtVal></weight>
+      <weight><WgtName> Dynamic Waypoint   </WgtName><WgtVal>   10   </WgtVal></weight>
+      <range><RangeName> Sensor Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Detection Range   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Movement Speed   </RangeName><RangeVal>   100   </RangeVal></range>
+      <range><RangeName> No. of Hits Required to Kill   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemies   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Next Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Alternate Waypoint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Cluster Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Combat Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Advance Constraint   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Refuel Range   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Friend   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Probability of Refuel Neutral   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Armour Thickness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Waypoint Radius   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemies   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Next Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Alternate Waypoint   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Squad Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Other Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Organic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Squad Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Other Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Organic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Friends   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Neutrals   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Inorganic Unknowns   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Friends   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Neutrals   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Inorganic Unknowns   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 1   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 2   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Enemy Threat 3   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Ideal Enemy   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 1   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 2   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Enemy Threat 3   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Ideal Enemy   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Ideal Enemy Class   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance for Combat Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Cluster Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Max Distance for Advance Constraint   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Orientation To Enemy Angle (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Agt SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Sqd SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance En. Angle Orient (Inorg SA)   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Formation Square Width   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Formation Circle Diameter   </RangeName><RangeVal>   2   </RangeVal></range>
+      <range><RangeName> Min Distance to Going   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Cover   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Min Distance to Concealment   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Going   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Cover   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Max Distance to Concealment   </RangeName><RangeVal>   1000000   </RangeVal></range>
+      <range><RangeName> Min Distance to Squad Awareness   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Max Distance to Squad Awareness   </RangeName><RangeVal>   10000   </RangeVal></range>
+      <range><RangeName> Debuss Angle   </RangeName><RangeVal>   0   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Characteristic Dist   </RangeName><RangeVal>   50   </RangeVal></range>
+      <range><RangeName> Dynamic Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Debuss Dist   </RangeName><RangeVal>   1   </RangeVal></range>
+      <range><RangeName> Embuss Wpt Tolerance   </RangeName><RangeVal>   1   </RangeVal></range>
+   </state>
+</Squad>
+
+</specification>
