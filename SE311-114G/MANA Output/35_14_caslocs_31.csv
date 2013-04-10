@@ -1,0 +1,86 @@
+# MANA Casualty Location Results File
+# Version: 5.01.04
+# Machine Name: MAZZAS-PC
+# Run Started at 4/9/2013, 2:00:20 PM
+RandSeed= 11206494
+ID,x-casualty,y-casualty,time,Cas Squad,Cas Squad ID,Cas alleg,subsquad,state,shooter ID,Squad ID,Sqd name,weapon class,weapon ID,x-shooter,y-shooter,shooter alleg
+78
+54,15176,1514,142,Bradley_Infantry,13,1,0,Shot At State (Pri),91,19,Red_60mm_mortar,Primary,1,14191,3136,2
+91,14191,3136,181,Red_60mm_mortar,19,2,0,Shot At State (Pri),33,7,M1A2 Abrams Sep,Primary,1,15048,1344,1
+6,15221,2952,192,IED,2,2,0,Default State,7,3,AH64D_AttHeli,Primary,2,20105,1764,1
+25,13627,3085,192,Red_Inf_Squad,6,2,1,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+24,14121,3194,250,Red_Inf_Squad,6,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+18,13937,3017,253,Red_Inf_Squad,6,2,1,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+32,14007,3137,287,Red_Inf_Squad,6,2,1,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+92,14265,3077,287,Red_60mm_mortar,19,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+30,14954,3577,527,Red_Inf_Squad,6,2,6,Shot At State (Pri),7,3,AH64D_AttHeli,Primary,2,19128,2256,1
+20,15789,2992,529,Red_Inf_Squad,6,2,3,Shot At State (Sec),34,7,M1A2 Abrams Sep,Secondary,3,15309,2512,1
+17,14867,3211,538,Red_Inf_Squad,6,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,18407,1860,1
+31,14875,3193,538,Red_Inf_Squad,6,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,18407,1860,1
+29,14919,3347,558,Red_Inf_Squad,6,2,5,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,18256,1892,1
+21,15601,3535,584,Red_Inf_Squad,6,2,4,Shot At State (Pri),62,15,Bradley M2A3,Primary,3,14805,1585,1
+27,16030,3037,598,Red_Inf_Squad,6,2,3,Shot At State (Sec),34,7,M1A2 Abrams Sep,Secondary,3,15310,2520,1
+23,14895,3466,629,Red_Inf_Squad,6,2,6,Shot At State (Pri),36,7,M1A2 Abrams Sep,Primary,1,15386,2205,1
+19,15538,3275,660,Red_Inf_Squad,6,2,2,Shot At State (Sec),34,7,M1A2 Abrams Sep,Secondary,3,15309,2523,1
+28,15769,3459,752,Red_Inf_Squad,6,2,4,Shot At State (Pri),7,3,AH64D_AttHeli,Primary,2,17419,2230,1
+45,15207,2772,776,Bradley_Infantry,11,1,0,Shot At State (Pri),22,6,Red_Inf_Squad,Primary,1,14942,3271,2
+22,14942,3270,792,Red_Inf_Squad,6,2,5,Shot At State (Pri),61,14,Bradley M2A3,Primary,3,14845,1660,1
+93,14176,3101,822,Red_60mm_mortar,19,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,16471,2303,1
+26,15546,3272,904,Red_Inf_Squad,6,2,2,Shot At State (Pri),42,11,Bradley_Infantry,Primary,1,15047,2590,1
+95,12205,17568,3090,Red_Milan,21,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+1,15113,25535,3766,Minefield,1,2,0,Default State,38,9,M109A6 155mm,Primary,2,27720,446,1
+111,15998,25400,3793,Red_Milan,26,2,1,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+96,12364,17532,3884,Red_Milan,21,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,11780,12902,1
+5,14879,25552,4235,Minefield,1,2,0,Default State,38,9,M109A6 155mm,Primary,2,27720,446,1
+4,15194,25669,4406,Minefield,1,2,0,Default State,38,9,M109A6 155mm,Primary,2,27720,446,1
+39,13211,29964,4429,RQ11 Raven,10,1,0,Shot At State (Pri),76,18,Red_Inf_Squad,Primary,1,13364,30937,2
+2,15187,25492,4621,Minefield,1,2,0,Default State,38,9,M109A6 155mm,Primary,2,27720,446,1
+3,14982,25451,4781,Minefield,1,2,0,Default State,7,3,AH64D_AttHeli,Primary,2,13721,21230,1
+110,16182,25348,4927,Red_Milan,26,2,1,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,13093,20466,1
+101,11801,31627,5045,T-90M,23,2,0,Default State,7,3,AH64D_AttHeli,Primary,2,13156,23804,1
+34,14398,25773,5195,M1A2 Abrams Sep,7,1,0,Default State,99,23,T-90M,Primary,3,11681,29369,2
+100,11933,30513,5254,T-90M,23,2,0,Squad Taken Shot State (Pri),8,3,AH64D_AttHeli,Primary,2,12875,22978,1
+64,13891,26146,5303,Red_Inf_Squad,17,2,1,Shot At State (Sec),36,7,M1A2 Abrams Sep,Secondary,2,14306,26154,1
+7,12061,25333,5329,AH64D_AttHeli,3,1,0,Injured State,99,23,T-90M,Primary,1,11697,29297,2
+68,13877,26197,5367,Red_Inf_Squad,17,2,1,Shot At State (Sec),36,7,M1A2 Abrams Sep,Secondary,3,14311,26514,1
+94,10984,28745,5445,Red_M120mm_mortar,20,2,0,Taken Shot State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+36,14353,26877,5451,M1A2 Abrams Sep,7,1,0,Default State,102,23,T-90M,Primary,3,11907,30290,2
+61,13632,25006,5671,Bradley M2A3,14,1,0,Shot At State (Pri),102,23,T-90M,Primary,3,12039,29592,2
+9,13202,25826,5701,Bradley M2A3,4,1,0,Shot At State (Pri),102,23,T-90M,Primary,3,12041,29576,2
+67,13468,26190,6066,Red_Inf_Squad,17,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,13092,26120,1
+99,12206,27629,6118,T-90M,23,2,0,Squad Taken Shot State (Pri),63,16,Bradley M2A3,Primary,3,13167,25772,1
+72,13464,26273,6141,Red_Inf_Squad,17,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,13049,26184,1
+102,12310,28268,6564,T-90M,23,2,0,Squad Taken Shot State (Pri),63,16,Bradley M2A3,Primary,3,12949,26377,1
+74,14909,26225,7283,Red_Inf_Squad,17,2,1,Shot At State (Sec),35,7,M1A2 Abrams Sep,Secondary,3,14736,26201,1
+33,15662,27996,7760,M1A2 Abrams Sep,7,1,0,Default State,109,26,Red_Milan,Primary,1,14407,29822,2
+109,14407,29822,7963,Red_Milan,26,2,0,Shot At State (Pri),35,7,M1A2 Abrams Sep,Primary,1,15407,28799,1
+35,15395,28811,7994,M1A2 Abrams Sep,7,1,0,Squad Taken Shot State (Pri),108,26,Red_Milan,Primary,1,14413,29870,2
+108,14413,29870,8106,Red_Milan,26,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+65,15753,25977,8127,Red_Inf_Squad,17,2,0,Shot At State (Sec),63,16,Bradley M2A3,Secondary,2,15293,26402,1
+69,15657,26094,8133,Red_Inf_Squad,17,2,0,Shot At State (Sec),63,16,Bradley M2A3,Secondary,2,15294,26404,1
+73,15597,26002,8159,Red_Inf_Squad,17,2,0,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,15167,25958,1
+70,15606,25712,8164,Red_Inf_Squad,17,2,0,Shot At State (Sec),63,16,Bradley M2A3,Secondary,2,15310,26465,1
+82,14222,30965,8495,Red_Inf_Squad,18,2,1,Shot At State (Pri),63,16,Bradley M2A3,Primary,3,15154,29440,1
+80,14318,30964,9181,Red_Inf_Squad,18,2,1,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+97,10151,27909,9211,Red_SA18,22,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+81,14520,31478,9342,Red_Inf_Squad,18,2,0,Shot At State (Pri),38,9,M109A6 155mm,Primary,1,27720,446,1
+47,15062,30199,9594,Bradley_Infantry,12,1,0,Shot At State (Pri),83,18,Red_Inf_Squad,Primary,1,14597,30994,2
+83,14596,30977,9738,Red_Inf_Squad,18,2,0,Shot At State (Pri),59,13,Bradley_Infantry,Primary,1,15205,30039,1
+75,14558,31148,9778,Red_Inf_Squad,18,2,0,Shot At State (Pri),53,12,Bradley_Infantry,Primary,1,15031,30454,1
+85,14560,31226,9834,Red_Inf_Squad,18,2,0,Shot At State (Pri),49,12,Bradley_Infantry,Primary,4,14965,30342,1
+77,14509,31100,9835,Red_Inf_Squad,18,2,0,Shot At State (Pri),60,13,Bradley_Infantry,Primary,1,14981,30373,1
+88,14158,30912,9875,Red_Inf_Squad,18,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,14491,30044,1
+98,10061,27775,9910,Red_SA18,22,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,3,13503,28756,1
+87,14626,31248,9923,Red_Inf_Squad,18,2,0,Shot At State (Pri),59,13,Bradley_Infantry,Primary,1,14859,30381,1
+89,14538,31091,9950,Red_Inf_Squad,18,2,0,Shot At State (Pri),55,13,Bradley_Infantry,Primary,1,14611,30601,1
+90,13694,30800,10000,Red_Inf_Squad,18,2,1,Shot At State (Pri),60,13,Bradley_Infantry,Primary,1,14677,30561,1
+76,13371,30848,10116,Red_Inf_Squad,18,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,13825,29967,1
+86,13270,30784,10230,Red_Inf_Squad,18,2,1,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,13573,29700,1
+84,13198,30785,10339,Red_Inf_Squad,18,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,13106,29824,1
+78,13172,30823,10646,Red_Inf_Squad,18,2,1,Shot At State (Sec),62,15,Bradley M2A3,Secondary,2,13370,30251,1
+79,14452,31561,10669,Red_Inf_Squad,18,2,0,Shot At State (Pri),8,3,AH64D_AttHeli,Primary,2,9225,30603,1
+8,14950,26404,29322,AH64D_AttHeli,3,1,0,Shot At State (Pri),66,17,Red_Inf_Squad,Primary,1,15696,26080,2
+60,14655,32013,30670,Bradley_Infantry,13,1,0,Shot At State (Pri),106,25,Red_AGS30_Squad,Primary,2,15100,32016,2
+53,13569,30997,45332,Bradley_Infantry,12,1,0,Shot At State (Pri),107,25,Red_AGS30_Squad,Primary,1,15400,31706,2
+58,13717,30867,45987,Bradley_Infantry,13,1,0,Shot At State (Pri),106,25,Red_AGS30_Squad,Primary,1,15100,32016,2
+# Run End

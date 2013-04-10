@@ -1,0 +1,119 @@
+# MANA Agent End State Results File
+# Version: 5.01.04
+# Machine Name: MAZZAS-PC
+# Run Started at 4/8/2013, 8:27:28 PM
+RandSeed= -1660101106
+ID,name,squad,subsquad,x,y,status,fuel,goalx,goaly,hits,state,trig_step,ammo1,ammo2,ammo3,ammo4,ammo5,ammo6
+0,Minefield_agent,Minefield,0,14853.0,25625.0,Active,1000,0,0,0,Taken Shot State (Pri),8968,0, 0, 0, 0, 0, 0
+1,Minefield_agent,Minefield,0,14963.0,25781.0,Active,1000,0,0,0,Default State,0,1, 0, 0, 0, 0, 0
+2,Minefield_agent,Minefield,0,15082.0,25429.0,Dead,1000,0,0,1,Default State,0,1, 0, 0, 0, 0, 0
+3,Minefield_agent,Minefield,0,14875.0,25375.0,Dead,1000,0,0,1,Default State,0,1, 0, 0, 0, 0, 0
+4,Minefield_agent,Minefield,0,14907.0,25748.0,Active,1000,0,0,0,Default State,0,1, 0, 0, 0, 0, 0
+5,Minefield_agent,Minefield,0,15193.0,25513.0,Dead,1000,0,0,1,Default State,0,1, 0, 0, 0, 0, 0
+6,IED_agent,IED,0,15221.0,2952.0,Dead,1000,0,0,1,Default State,0,1, 0, 0, 0, 0, 0
+7,AH64D_AttHel_agent,AH64D_AttHeli,0,11791.8,25118.3,Dead,139358,2419,2853,2,Injured State,4439,1174,4,33, 0, 0, 0
+8,AH64D_AttHel_agent,AH64D_AttHeli,0,9747.6,24110.6,Dead,17588,1290,32837,2,Fuel Out State,34190,1190,5,6, 0, 0, 0
+9,Bradley M2A3_agent,Bradley M2A3,0,12457.7,25456.2,Dead,1000,13790,21109,1,Dembuss Child,38587,824,4396,3, 0, 0, 0
+10,Bradley_Infa_agent,Bradley_Infantry,0,15141.1,3003.8,Dead,8600,13629,39556,1,Shot At State (Pri),239,1192,1250,70,1, 0, 0
+11,Bradley_Infa_agent,Bradley_Infantry,0,15179.6,2893.5,Dead,8600,13629,39556,1,Shot At State (Pri),175,1200,1250,70,1, 0, 0
+12,Bradley_Infa_agent,Bradley_Infantry,0,13029.4,26329.5,Active,8600,13629,39556,0,Reach Dynamic Waypoint State,33780,1146,1250,70,1, 0, 0
+13,Bradley_Infa_agent,Bradley_Infantry,0,13269.0,28532.5,Dead,8600,13629,39556,1,Shot At State (Pri),15149,1182,1250,70,1, 0, 0
+14,Bradley_Infa_agent,Bradley_Infantry,0,13475.9,30571.2,Active,8600,13629,39556,0,Default State,38561,1102,1250,69,1, 0, 0
+15,Bradley_Infa_agent,Bradley_Infantry,0,13473.4,30054.8,Dead,8600,13629,39556,1,Shot At State (Pri),20986,1129,1250,70,1, 0, 0
+16,Bradley_Infa_agent,Bradley_Infantry,0,13464.5,30360.4,Dead,8600,13629,39556,1,Shot At State (Pri),38587,1040,1250,70,1, 0, 0
+17,Red_Inf_Squa_agent,Red_Inf_Squad,0,14170.8,3253.3,Dead,8600,0,0,1,Shot At State (Pri),206,1997,3500,20,1, 0, 0
+18,Red_Inf_Squa_agent,Red_Inf_Squad,1,13838.0,3023.5,Dead,8600,0,0,1,Shot At State (Pri),625,1922,3500,20,1, 0, 0
+19,Red_Inf_Squa_agent,Red_Inf_Squad,2,15537.8,3273.5,Dead,8600,0,0,1,Shot At State (Pri),324,1895,3494,20,0, 0, 0
+20,Red_Inf_Squa_agent,Red_Inf_Squad,3,16083.4,3025.7,Dead,8600,0,0,1,Shot At State (Sec),322,1983,3500,20,1, 0, 0
+21,Red_Inf_Squa_agent,Red_Inf_Squad,4,15727.3,3561.8,Dead,8600,0,0,1,Shot At State (Pri),325,1972,3500,20,1, 0, 0
+22,Red_Inf_Squa_agent,Red_Inf_Squad,5,14928.9,3181.1,Dead,8600,0,0,1,Shot At State (Sec),192,1974,3495,20,1, 0, 0
+23,Red_Inf_Squa_agent,Red_Inf_Squad,6,14939.1,3615.6,Dead,8600,0,0,1,Shot At State (Pri),216,1997,3500,20,1, 0, 0
+24,Red_Inf_Squa_agent,Red_Inf_Squad,0,14158.1,3197.0,Dead,8600,0,0,1,Shot At State (Pri),666,1904,3500,20,0, 0, 0
+25,Red_Inf_Squa_agent,Red_Inf_Squad,1,13737.1,3074.2,Dead,8600,0,0,1,Shot At State (Pri),718,1952,3500,20,1, 0, 0
+26,Red_Inf_Squa_agent,Red_Inf_Squad,2,15543.6,3279.2,Dead,8600,0,0,1,Shot At State (Pri),412,1925,3495,20,0, 0, 0
+27,Red_Inf_Squa_agent,Red_Inf_Squad,3,15832.6,2984.7,Dead,8600,0,0,1,Shot At State (Sec),308,1965,3500,20,1, 0, 0
+28,Red_Inf_Squa_agent,Red_Inf_Squad,4,15603.0,3524.5,Dead,8600,0,0,1,Shot At State (Pri),282,1985,3500,20,1, 0, 0
+29,Red_Inf_Squa_agent,Red_Inf_Squad,5,14925.4,3317.0,Dead,8600,0,0,1,Shot At State (Pri),233,1977,3496,20,1, 0, 0
+30,Red_Inf_Squa_agent,Red_Inf_Squad,6,14889.3,3556.1,Dead,8600,0,0,1,Shot At State (Pri),160,1997,3500,20,1, 0, 0
+31,Red_Inf_Squa_agent,Red_Inf_Squad,0,14319.9,3200.0,Dead,8600,0,0,1,Shot At State (Pri),391,1950,3500,20,1, 0, 0
+32,Red_Inf_Squa_agent,Red_Inf_Squad,1,13452.0,3062.7,Dead,8600,0,0,1,Shot At State (Pri),651,1988,3500,20,1, 0, 0
+33,M1A2 Abrams _agent,M1A2 Abrams Sep,0,13965.3,25464.2,Dead,1000,14798,24659,1,Squad Taken Shot State (Pri),4904,42,888,4400, 0, 0, 0
+34,M1A2 Abrams _agent,M1A2 Abrams Sep,0,13783.6,25588.1,Dead,1000,14798,24659,1,Squad Taken Shot State (Pri),4904,39,890,4400, 0, 0, 0
+35,M1A2 Abrams _agent,M1A2 Abrams Sep,0,13548.6,15974.7,Dead,1000,13427,19905,1,Squad Taken Shot State (Pri),4904,42,900,4400, 0, 0, 0
+36,M1A2 Abrams _agent,M1A2 Abrams Sep,0,13962.5,25073.5,Dead,1000,14798,24659,1,Squad Taken Shot State (Pri),4904,42,892,4400, 0, 0, 0
+37,Company_HQ_agent,Company_HQ,0,28633.0,704.0,Active,999999,0,0,0,Default State,0, 0, 0, 0, 0, 0, 0
+38,M109A6 155mm_agent,M109A6 155mm,0,28169.0,470.0,Active,1000,0,0,0,Default State,0,5,16, 0, 0, 0, 0
+39,RQ11 Raven_agent,RQ11 Raven,0,11668.0,28416.3,Dead,66374,24476,29097,1,Fuel Out State,5400, 0, 0, 0, 0, 0, 0
+40,Bradley_Infa_agent,Bradley_Infantry,0,13991.1,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1257,1200,1250,70,1, 0, 0
+41,Bradley_Infa_agent,Bradley_Infantry,0,13991.1,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1297,1200,1250,70,1, 0, 0
+42,Bradley_Infa_agent,Bradley_Infantry,0,13991.1,23706.0,Dead,8600,13548,39176,1,Default State,282,1200,1250,70,1, 0, 0
+43,Bradley_Infa_agent,Bradley_Infantry,0,13991.1,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1597,1200,1250,70,1, 0, 0
+44,Bradley_Infa_agent,Bradley_Infantry,0,13991.2,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1583,1200,1250,70,1, 0, 0
+45,Bradley_Infa_agent,Bradley_Infantry,0,13991.2,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1572,1200,1250,70,1, 0, 0
+46,Bradley_Infa_agent,Bradley_Infantry,0,13991.1,23706.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1388,1200,1250,70,1, 0, 0
+47,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1264,1200,1250,70,1, 0, 0
+48,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1321,1200,1250,70,1, 0, 0
+49,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1445,1200,1250,70,1, 0, 0
+50,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1569,1200,1250,70,1, 0, 0
+51,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1607,1200,1250,70,1, 0, 0
+52,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1590,1200,1250,70,1, 0, 0
+53,Bradley_Infa_agent,Bradley_Infantry,0,13547.6,14745.0,Dead,8600,13548,39176,1,Reach Dynamic Waypoint State,1417,1200,1250,70,1, 0, 0
+54,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1161,1250,70,1, 0, 0
+55,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1161,1250,70,0, 0, 0
+56,Bradley_Infa_agent,Bradley_Infantry,0,12614.3,26208.3,Dead,8600,13548,39176,1,Shot At State (Pri),6500,1200,1250,70,1, 0, 0
+57,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1159,1250,70,1, 0, 0
+58,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1162,1250,70,1, 0, 0
+59,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1159,1250,70,1, 0, 0
+60,Bradley_Infa_agent,Bradley_Infantry,0,14885.3,25567.4,Dead,8600,13548,39176,1,Default State,7432,1161,1250,70,1, 0, 0
+61,Bradley M2A3_agent,Bradley M2A3,0,13991.2,23706.0,Dead,1000,14476,23835,1,Embussed Children,38587,900,4400,4, 0, 0, 0
+62,Bradley M2A3_agent,Bradley M2A3,0,13547.6,14745.0,Dead,1000,13548,17686,1,Embussed Children,38587,900,4400,7, 0, 0, 0
+63,Bradley M2A3_agent,Bradley M2A3,0,14885.3,25567.4,Dead,1000,15323,26434,1,Embussed Children,38587,872,4396,0, 0, 0, 0
+64,Red_Inf_Squa_agent,Red_Inf_Squad,0,15643.7,25530.5,Dead,8600,0,0,1,Shot At State (Sec),5001,2000,3500,20,1, 0, 0
+65,Red_Inf_Squa_agent,Red_Inf_Squad,1,13569.3,26141.7,Dead,8600,0,0,1,Shot At State (Pri),7278,1958,3500,20,1, 0, 0
+66,Red_Inf_Squa_agent,Red_Inf_Squad,1,13879.6,26199.1,Dead,8600,0,0,1,Shot At State (Pri),9847,1979,3500,20,1, 0, 0
+67,Red_Inf_Squa_agent,Red_Inf_Squad,0,15805.0,26126.0,Active,8600,0,0,0,Default State,0,2000,3500,20,1, 0, 0
+68,Red_Inf_Squa_agent,Red_Inf_Squad,1,14985.0,26185.5,Active,8600,0,0,0,Default State,5207,2000,3500,20,1, 0, 0
+69,Red_Inf_Squa_agent,Red_Inf_Squad,1,13602.0,26220.2,Dead,8600,0,0,1,Shot At State (Pri),7230,1985,3500,20,1, 0, 0
+70,Red_Inf_Squa_agent,Red_Inf_Squad,0,15764.1,25982.5,Active,8600,0,0,0,Default State,15070,2000,3500,20,1, 0, 0
+71,Red_Inf_Squa_agent,Red_Inf_Squad,1,13473.9,26318.9,Dead,8600,0,0,1,Shot At State (Pri),7312,1982,3500,20,1, 0, 0
+72,Red_Inf_Squa_agent,Red_Inf_Squad,1,14836.2,26161.7,Active,8600,0,0,0,Default State,5305,2000,3500,20,1, 0, 0
+73,Red_Inf_Squa_agent,Red_Inf_Squad,1,14685.2,26213.3,Dead,8600,0,0,1,Shot At State (Pri),4848,2000,3500,20,1, 0, 0
+74,Red_Inf_Squa_agent,Red_Inf_Squad,0,15609.8,25728.7,Dead,8600,0,0,1,Shot At State (Pri),14709,1900,3500,20,1, 0, 0
+75,Red_Inf_Squa_agent,Red_Inf_Squad,0,14632.7,31120.0,Active,8600,0,0,0,Default State,24265,2000,3500,20,1, 0, 0
+76,Red_Inf_Squa_agent,Red_Inf_Squad,1,13540.0,30825.4,Dead,8600,0,0,1,Shot At State (Pri),20947,1976,3500,20,1, 0, 0
+77,Red_Inf_Squa_agent,Red_Inf_Squad,0,14532.6,31167.0,Active,8600,0,0,0,Taken Shot State (Pri),38391,1987,3500,20,1, 0, 0
+78,Red_Inf_Squa_agent,Red_Inf_Squad,1,13503.8,30899.3,Dead,8600,0,0,1,Shot At State (Pri),21328,1912,3500,20,1, 0, 0
+79,Red_Inf_Squa_agent,Red_Inf_Squad,0,14668.5,31548.2,Dead,8600,0,0,1,Shot At State (Pri),24169,2000,3500,20,1, 0, 0
+80,Red_Inf_Squa_agent,Red_Inf_Squad,1,13880.0,30942.5,Dead,8600,0,0,1,Shot At State (Pri),20919,1987,3500,20,1, 0, 0
+81,Red_Inf_Squa_agent,Red_Inf_Squad,0,14564.0,31237.0,Dead,8600,0,0,1,Shot At State (Pri),23873,2000,3500,20,1, 0, 0
+82,Red_Inf_Squa_agent,Red_Inf_Squad,1,13504.7,30817.2,Dead,8600,0,0,1,Shot At State (Pri),21221,1952,3500,20,1, 0, 0
+83,Red_Inf_Squa_agent,Red_Inf_Squad,0,14553.4,31334.4,Dead,8600,0,0,1,Shot At State (Pri),24166,2000,3500,20,1, 0, 0
+84,Red_Inf_Squa_agent,Red_Inf_Squad,1,14116.3,30834.5,Dead,8600,0,0,1,Shot At State (Pri),21254,1934,3500,20,1, 0, 0
+85,Red_Inf_Squa_agent,Red_Inf_Squad,0,14642.4,31340.7,Dead,8600,0,0,1,Shot At State (Pri),24142,2000,3500,20,1, 0, 0
+86,Red_Inf_Squa_agent,Red_Inf_Squad,1,14265.0,30834.6,Active,8600,0,0,0,Taken Shot State (Pri),38587,1816,3500,20,1, 0, 0
+87,Red_Inf_Squa_agent,Red_Inf_Squad,0,14531.0,31734.0,Dead,8600,0,0,1,Shot At State (Pri),21079,2000,3500,20,1, 0, 0
+88,Red_Inf_Squa_agent,Red_Inf_Squad,1,13775.3,30851.9,Dead,8600,0,0,1,Shot At State (Pri),21348,1947,3500,20,1, 0, 0
+89,Red_Inf_Squa_agent,Red_Inf_Squad,0,14693.1,31509.5,Active,8600,0,0,0,Default State,24419,2000,3500,20,1, 0, 0
+90,Red_Inf_Squa_agent,Red_Inf_Squad,1,13491.6,30920.9,Dead,8600,0,0,1,Shot At State (Pri),21335,1906,3500,20,1, 0, 0
+91,Red_60mm_mor_agent,Red_60mm_mortar,0,14140.0,3071.0,Dead,8600,0,0,1,Shot At State (Pri),134,49,500, 0, 0, 0, 0
+92,Red_60mm_mor_agent,Red_60mm_mortar,0,14143.0,3116.0,Dead,8600,0,0,1,Shot At State (Pri),364,48,500, 0, 0, 0, 0
+93,Red_60mm_mor_agent,Red_60mm_mortar,0,14191.0,3102.0,Dead,8600,0,0,1,Shot At State (Pri),210,47,500, 0, 0, 0, 0
+94,Red_M120mm_m_agent,Red_M120mm_mortar,0,11175.0,28596.0,Dead,8600,0,0,1,Taken Shot State (Pri),6794,0,18, 0, 0, 0, 0
+95,Red_Milan_agent,Red_Milan,0,12491.0,17548.0,Dead,8600,0,0,1,Shot At State (Pri),3564,1,3499, 0, 0, 0, 0
+96,Red_Milan_agent,Red_Milan,0,12328.0,17566.0,Dead,8600,0,0,1,Shot At State (Pri),3491,1,3500, 0, 0, 0, 0
+97,Red_SA18_agent,Red_SA18,0,10147.0,28325.0,Active,8600,0,0,0,Default State,6379,0,3500, 0, 0, 0, 0
+98,Red_SA18_agent,Red_SA18,0,10225.0,28077.0,Active,8600,0,0,0,Default State,30146,0,3500, 0, 0, 0, 0
+99,T-90M_agent,T-90M,0,10952.3,31817.7,Dead,1000,0,0,1,Squad Taken Shot State (Pri),5181,43,4400,4,300, 0, 0
+100,T-90M_agent,T-90M,0,11890.3,28303.0,Dead,1000,0,0,1,Squad Taken Shot State (Pri),5181,43,4396,0,296, 0, 0
+101,T-90M_agent,T-90M,0,11580.5,29011.1,Dead,1000,0,0,1,Default State,6381,43,4400,0,300, 0, 0
+102,T-90M_agent,T-90M,0,11453.9,31190.8,Dead,1000,0,0,1,Squad Taken Shot State (Pri),5181,43,4400,4,300, 0, 0
+103,RED_Company__agent,RED_Company_HQ,0,1694.0,38732.0,Active,999999,0,0,0,Default State,0, 0, 0, 0, 0, 0, 0
+104,Red_AGS30_Sq_agent,Red_AGS30_Squad,0,15103.0,32079.0,Active,8600,89,101,0,Default State,0,22,750, 0, 0, 0, 0
+105,Red_AGS30_Sq_agent,Red_AGS30_Squad,1,15384.0,31631.0,Dead,8600,89,101,1,Shot At State (Pri),19993,26,750, 0, 0, 0, 0
+106,Red_AGS30_Sq_agent,Red_AGS30_Squad,0,15108.0,32029.0,Active,8600,89,101,0,Default State,0,15,750, 0, 0, 0, 0
+107,Red_AGS30_Sq_agent,Red_AGS30_Squad,1,15550.0,31629.0,Dead,8600,89,101,1,Shot At State (Pri),20261,22,750, 0, 0, 0, 0
+108,Red_Milan_agent,Red_Milan,0,14408.0,29915.0,Dead,8600,0,0,1,Shot At State (Pri),16171,1,250, 0, 0, 0, 0
+109,Red_Milan_agent,Red_Milan,0,14411.0,29865.0,Dead,8600,0,0,1,Shot At State (Pri),19867,2,250, 0, 0, 0, 0
+110,Red_Milan_agent,Red_Milan,1,16265.0,25383.0,Dead,8600,0,0,1,Shot At State (Pri),4473,1,250, 0, 0, 0, 0
+111,Red_Milan_agent,Red_Milan,1,16250.0,25372.0,Dead,8600,0,0,1,Shot At State (Pri),6967,1,250, 0, 0, 0, 0
+# Run End
