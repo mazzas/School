@@ -30,6 +30,8 @@
 	<string>&lt;$p&gt;</string>
 	<key>SCRCompileCenterHeaderStringKey</key>
 	<string></string>
+	<key>SCRCompileColorPrintedHyperlinksKey</key>
+	<true/>
 	<key>SCRCompileConvertEllipsesToTriplePeriodsKey</key>
 	<false/>
 	<key>SCRCompileConvertEmDashesToHyphensKey</key>
@@ -42,6 +44,8 @@
 	<false/>
 	<key>SCRCompileConvertMMDAnnotationsToHTMLStyledTextKey</key>
 	<true/>
+	<key>SCRCompileConvertMultiMarkdownToRichTextKey</key>
+	<false/>
 	<key>SCRCompileConvertSpacesKey</key>
 	<false/>
 	<key>SCRCompileConvertSpacingToPlainTextKey</key>
@@ -133,6 +137,8 @@ p.transition {text-align:right; text-indent:0; margin: 12pt 0 0 0; text-transfor
 p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform:uppercase; font-family: Courier;}</string>
 	<key>SCRCompileEBookSubjectKey</key>
 	<array/>
+	<key>SCRCompileEBookTitleKey</key>
+	<string></string>
 	<key>SCRCompileEBookUniqueIdentifierKey</key>
 	<string></string>
 	<key>SCRCompileEBookUseCustomIdentifierKey</key>
@@ -203,9 +209,9 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<true/>
 	<key>SCRCompileFDXScriptNoteFontKey</key>
 	<data>
-	BAtzdHJlYW10eXBlZIHoA4QBQISEhAZOU0ZvbnQehIQITlNPYmplY3QAhYQBaSyEBVs0
-	NGNdBgAAACQAAAD//kMAbwB1AHIAaQBlAHIARgBpAG4AYQBsAEQAcgBhAGYAdACEAWYM
-	hAFjAJgBmACYAIY=
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAZOU0ZvbnQehIQITlNPYmplY3QAhYQBaSSEBVsz
+	NmNdBgAAABoAAAD//kwAdQBjAGkAZABhAEcAcgBhAG4AZABlAAAAhAFmDIQBYwCYAZgA
+	mACG
 	</data>
 	<key>SCRCompileFDXSummaryFontKey</key>
 	<data>
@@ -366,9 +372,11 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<key>SCRCompileFootnotesStyleKey</key>
 	<integer>0</integer>
 	<key>SCRCompileFormatKey</key>
-	<integer>0</integer>
+	<integer>31</integer>
 	<key>SCRCompileFrontMatterIDKey</key>
 	<integer>-1</integer>
+	<key>SCRCompileGeneratePDFWithAspose</key>
+	<integer>0</integer>
 	<key>SCRCompileGroupFootnotesBeforePageBreakTypeKey</key>
 	<integer>1</integer>
 	<key>SCRCompileGroupFootnotesBeforePageBreaksKey</key>
@@ -446,6 +454,14 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<false/>
 	<key>SCRCompileMultiMarkdownAddFormatCompleteKey</key>
 	<true/>
+	<key>SCRCompileMultiMarkdownLaTeXBeginDocumentStringKey</key>
+	<string></string>
+	<key>SCRCompileMultiMarkdownLaTeXDocumentClassKey</key>
+	<integer>3</integer>
+	<key>SCRCompileMultiMarkdownLaTeXFooterStringKey</key>
+	<string></string>
+	<key>SCRCompileMultiMarkdownLaTeXHeaderStringKey</key>
+	<string></string>
 	<key>SCRCompileMultiMarkdownMetaDataKey</key>
 	<array>
 		<dict>
@@ -467,6 +483,14 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 			<string>Author</string>
 		</dict>
 	</array>
+	<key>SCRCompileMultiMarkdownUseXSLTPostProcessingKey</key>
+	<false/>
+	<key>SCRCompileMultiMarkdownUsesHTMLMarkdownCompatibilityKey</key>
+	<false/>
+	<key>SCRCompileMultiMarkdownUsesMMD2SyntaxKey</key>
+	<false/>
+	<key>SCRCompileMultiMarkdownshowPDFLogKey</key>
+	<false/>
 	<key>SCRCompileNoHeaderAfterPageBreaksKey</key>
 	<false/>
 	<key>SCRCompileNoHeaderOrFooterOnSinglePagesKey</key>
@@ -475,6 +499,10 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<integer>0</integer>
 	<key>SCRCompileNotesBeforeTextKey</key>
 	<true/>
+	<key>SCRCompileOmitTitlePrefixFromFrontMatterDocumentsKey</key>
+	<false/>
+	<key>SCRCompileOmitTitleSuffixFromFrontMatterDocumentsKey</key>
+	<false/>
 	<key>SCRCompileOverrideAffectsFontOnlyKey</key>
 	<false/>
 	<key>SCRCompileOverrideFlattenIndentsOnNewPagesOnly</key>
@@ -495,11 +523,24 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<false/>
 	<key>SCRCompileOverridePreservesAlignmentKey</key>
 	<false/>
+	<key>SCRCompileOverridePreservesCenteredAlignmentOnlyKey</key>
+	<false/>
 	<key>SCRCompileOverridePreservesIndentsKey</key>
 	<false/>
 	<key>SCRCompileOverridePreservesLineSpacingKey</key>
 	<false/>
 	<key>SCRCompileOverrideTextAndNotesFormatKey</key>
+	<false/>
+	<key>SCRCompilePDFExportColorInternalLinksKey</key>
+	<false/>
+	<key>SCRCompilePDFExportGeneratesOutlineKey</key>
+	<true/>
+	<key>SCRCompilePDFInternalLinkColorKey</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmAIMUrsc+AAGG
+	</data>
+	<key>SCRCompilePDFUnderlineInternalLinksKey</key>
 	<false/>
 	<key>SCRCompilePageBottomMarginKey</key>
 	<real>1</real>
@@ -532,6 +573,8 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	</data>
 	<key>SCRCompileProjectVariableReplacementsKey</key>
 	<array/>
+	<key>SCRCompileRTFColumnsStartLocationKey</key>
+	<integer>0</integer>
 	<key>SCRCompileRTFEnsureHyperlinksUseColorAndUnderlineKey</key>
 	<false/>
 	<key>SCRCompileRTFFlattenFootnotesAndCommentsKey</key>
@@ -834,6 +877,8 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	</array>
 	<key>SCRCompileTextSectionSeparatorKey</key>
 	<integer>3</integer>
+	<key>SCRCompileUnderlinePrintedHyperlinksKey</key>
+	<true/>
 	<key>SCRCompileUpdateScrivenerLinksWithPrefixAndSuffixKey</key>
 	<true/>
 	<key>SCRCompileUseAlternativeBlankLineSeparatorBetweenPagesKey</key>

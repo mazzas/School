@@ -12,14 +12,14 @@
                 <TextSelection>460,0</TextSelection>
             </TextSettings>
         </BinderItem>
-        <BinderItem ID="31" Type="Text" Created="2013-05-01 13:52:10 -0400" Modified="2013-05-01 13:54:11 -0400">
+        <BinderItem ID="31" Type="Text" Created="2013-05-01 13:52:10 -0400" Modified="2013-05-01 14:19:12 -0400">
             <Title>MMD Meta Data</Title>
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
                 <NotesTextSelection>0,0</NotesTextSelection>
             </MetaData>
             <TextSettings>
-                <TextSelection>195,0</TextSelection>
+                <TextSelection>72,0</TextSelection>
             </TextSettings>
         </BinderItem>
         <BinderItem ID="0" Type="DraftFolder" Created="2010-09-27 16:08:56 -0400" Modified="2010-09-30 13:29:08 -0400">
@@ -35,7 +35,7 @@
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>19,17</TextSelection>
+                        <TextSelection>23,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem ID="28" Type="Text" Created="2010-09-28 19:51:46 -0400" Modified="2010-09-30 15:47:28 -0400">
@@ -145,6 +145,38 @@
                     <TextSettings>
                         <TextSelection>0,0</TextSelection>
                     </TextSettings>
+                </BinderItem>
+                <BinderItem ID="32" Type="Folder" Created="2013-05-01 18:29:48 -0400" Modified="2013-05-01 18:30:00 -0400">
+                    <Title>Meetings with Auguston</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="33" Type="Text" Created="2013-05-01 18:30:08 -0400" Modified="2013-05-01 18:43:41 -0400">
+                            <Title>2013-04-23</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>503,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="34" Type="Text" Created="2013-05-01 18:36:59 -0400" Modified="2013-05-01 18:42:59 -0400">
+                            <Title>2013-04-30</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>755,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
                 </BinderItem>
                 <BinderItem ID="30" Type="Text" Created="2010-10-01 14:18:33 -0400" Modified="2010-10-01 14:21:25 -0400">
                     <Title>Style Guidelines</Title>
