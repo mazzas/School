@@ -11,7 +11,7 @@
 	<key>KBPreserveFormattingPreservesTabsAndIndents</key>
 	<true/>
 	<key>SCRCompileAddFrontMatterKey</key>
-	<false/>
+	<true/>
 	<key>SCRCompileAlternativeBlankLineSeparatorKey</key>
 	<string>* * *</string>
 	<key>SCRCompileAnnotationsRTFConversionTypeKey</key>
@@ -374,7 +374,7 @@ p.shot {text-align:left; text-indent:0; margin: 12pt 0pt 0pt 0pt; text-transform
 	<key>SCRCompileFormatKey</key>
 	<integer>31</integer>
 	<key>SCRCompileFrontMatterIDKey</key>
-	<integer>-1</integer>
+	<integer>31</integer>
 	<key>SCRCompileGeneratePDFWithAspose</key>
 	<integer>0</integer>
 	<key>SCRCompileGroupFootnotesBeforePageBreakTypeKey</key>
