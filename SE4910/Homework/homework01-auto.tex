@@ -1,0 +1,143 @@
+
+% This LaTeX was auto-generated from an M-file by MATLAB.
+% To make changes, update the M-file and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    
+\section*{Homework 1}
+
+
+\subsection*{Problem 1}
+
+\begin{par}
+See attached PDF for solution.
+\end{par} \vspace{1em}
+
+
+\subsection*{Problem 2}
+
+\begin{par}
+See attached PDF for solution.
+\end{par} \vspace{1em}
+
+
+\subsection*{Problem 3}
+
+\begin{par}
+Also see attached PDF.
+\end{par} \vspace{1em}
+\begin{verbatim}
+num = [1 5 6 9 30];
+den = [1 6 21 46 30];
+[r,p,k] = residue(num,den)
+% TODO: format output.
+
+syms s
+F = (s^4+5*s^3+6*s^2+9*s+30)/(s^4+6*s^3+21*s^2+46*s+30);
+ilaplace(F)
+% TODO: format output.
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}
+r =
+
+  -1.0812 + 1.7051i
+  -1.0812 - 1.7051i
+  -0.1154 + 0.0000i
+   1.2778 + 0.0000i
+
+
+p =
+
+  -1.0000 + 3.0000i
+  -1.0000 - 3.0000i
+  -3.0000 + 0.0000i
+  -1.0000 + 0.0000i
+
+
+k =
+
+     1
+
+ 
+ans =
+ 
+(23*exp(-t))/18 - (3*exp(-3*t))/26 + dirac(t) - (253*exp(-t)*(cos(3*t) + (399*sin(3*t))/253))/117
+ 
+\end{verbatim} \color{black}
+    
+
+\subsection*{Problem 4}
+
+\begin{par}
+Also see attached PDF.
+\end{par} \vspace{1em}
+\begin{verbatim}
+z = [-1; -2];
+p = [0; -4; -6; 2+3i; 2-3i];
+k = 5;
+[num,den] = zp2tf(z,p,k);
+printsys(num,den,'s')
+% TODO: format output.
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim} 
+num/den = 
+ 
+             5 s^2 + 15 s + 10
+   ------------------------------------
+   s^5 + 6 s^4 - 3 s^3 + 34 s^2 + 312 s
+\end{verbatim} \color{black}
+    
+
+\subsection*{Problem 5}
+
+\begin{par}
+Also see attached PDF.
+\end{par} \vspace{1em}
+\begin{verbatim}
+syms w
+F = 5/(s^2*(s^2+w^2));
+ilaplace(F)
+% TODO: format output.
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim} 
+ans =
+ 
+(5*t)/w^2 - (5*sin(t*w))/w^3
+ 
+\end{verbatim} \color{black}
+    
+
+\subsection*{Problem 6}
+
+\begin{par}
+Also see attached PDF.
+\end{par} \vspace{1em}
+\begin{verbatim}
+dsolve('D2x+3*Dx+2*x=0','x(0)=-1, Dx(0)=2')
+% TODO: format output.
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim} 
+ans =
+ 
+-exp(-2*t)
+ 
+\end{verbatim} \color{black}
+    
+
+
+\end{document}
+    
