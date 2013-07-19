@@ -14,7 +14,7 @@
 \newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
 
 %opening
-\title{Homework 2}
+\title{Homework}
 \author{Steve Mazza}
 %\date{January 20, 2012}
 
@@ -34,15 +34,55 @@
 
 \section*{Homework 3}
 \subsection*{Problem 2}
-% Nise, 166
-% Ogata, 161
+\begin{align*}
+	\dfrac{C(s)}{R(s)} &= \dfrac{1}{Ts+1} \\
+	C(s) &= \frac{1}{s}\left(\dfrac{1}{Ts+1}\right) \\
+	C(s) &= \frac{1}{s} - \dfrac{T}{Ts+1} \\
+	C(s) &= \frac{1}{s} - \dfrac{1}{s+(1/T)} \\
+	c(t) &= 1 - e^{-1/T} \\
+	0.98 &= 1 - e^{-1/T} \\
+	0.02 &= e^{-1/T} \\
+	ln(0.02) &= -\frac{1}{T} \\
+	T &= -\dfrac{1}{ln(0.02)} \\
+	T &\approx 0.2556 \mbox{\ minutes} \\
+	&\approx 15.3373 \mbox{\ seconds}
+\end{align*}
 
 \subsection*{Problem 3}
-% Franklin, 112
-% Dorf, 693-700
+Based on the information supplied, we determine that $J = 1$ and $B = 14$.
+Next we use the equation $\dfrac{K}{J} = \omega_{n}^{2}$ to determine that $K=\omega_{n}^{2}$.  Finally we use the equation $\dfrac{B}{J}=2\zeta\omega_{n}$ as follows:
+\begin{align*}
+	B &= 2\zeta\omega_{n} \\
+	7 &= \zeta\omega_{n} \\
+	7 &= 0.7\omega_{n} \\
+	10 &= \omega_{n} \\
+	10^2 &= K \\
+	100 &= K
+\end{align*}
 
 \subsection*{Problem 4}
-% Nise, 168
-% Ogata, 164
+We use the information given to determine the following three sets of inequalities in terms of $\omega_{d}$ and $\sigma$.
+
+Given what we know about \emph{percent overshoot}:
+\begin{align*}
+	M_{p} &\leq e^{-(\sigma/\omega_{d})\pi} \\
+	ln(0.05) &\leq -\left(\dfrac{\sigma}{\omega_{d}}\right)\pi \\
+	\dfrac{ln(0.05)}{\pi} &\leq -\dfrac{\sigma}{\omega_{d}}
+\end{align*}
+
+Given what we know about \emph{settling time}:
+\begin{align*}
+	t_{s} &< \dfrac{4}{\sigma} \\
+	4 &> \dfrac{4}{\sigma} \\
+	\sigma &> 1
+\end{align*}
+
+Given what we know about \emph{peak time}:
+\begin{align*}
+	1 &> \dfrac{\pi}{\omega_{d}} \\
+	\omega_{d} &> \pi
+\end{align*}
+
+We now graph these inequalities to determine the permissible area for poles of $T(s)$.
 
 \end{document}
