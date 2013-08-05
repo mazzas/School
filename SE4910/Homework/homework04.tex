@@ -108,17 +108,28 @@ Root-locus plots of the following functions\dots
 \end{center}
 
 \subsection*{Problem 4}
-First we apply our reduction rules to the system as follows:
+First we apply our reduction rules to the system an derive the open-loop transfer function as follows:
 \begin{align*}
 	G(s) &= \dfrac{20}{(s+1)(s+4)} \\
-	&= \dfrac{\dfrac{20}{(s+1)(s+4)}}{1+\dfrac{20}{(s+1)(s+4)}\times K} \\
-	&= \dfrac{20}{s^{2}+5s+4+20K} \times \dfrac{1}{s} \\
-	&= \dfrac{\dfrac{20}{\dfrac{20}{s^{3}+5s^{2}+4s+20Ks}}}{1+\dfrac{20}{s^{3}+5s^{2}+4s+20Ks}} \\
-	&= \dfrac{20}{s^{3}+5s^{2}+4s+20Ks+20}
+	0 &= \dfrac{\dfrac{20}{(s+1)(s+4)}}{1+\dfrac{20}{(s+1)(s+4)}\times K} \\
+	0 &= \dfrac{20}{s^{2}+5s+4+20K} \times \dfrac{1}{s} \\
+	0 &= \dfrac{20}{s^{3}+5s^{2}+4s+20Ks} \\
+	\dfrac{C(s)}{R(s)} &= \dfrac{20}{s^{3}+5s^{2}+4s+20+20Ks} \\
+	&= \dfrac{20}{(s+2i)(s-2i)(s+5)+20Ks} 
 \end{align*}
+So we have roots at $\pm 2i$ and $-5$.  I then plug the values that I know into the supplied MATLAB script, \texttt{velocity\_feedback.m}, and obtain two values for $k$ satisfying $\zeta = 0.4$: $k = 0.45\times20$ and $k = 1.4\times20$.
+\begin{center}
+	\includegraphics[width=0.49\textwidth]{homework04-7-4a.png}
+	\includegraphics[width=0.49\textwidth]{homework04-7-4b.png}
+\end{center}
 
 \subsection*{Problem 5}
-Determine damping ration, $\zeta$, for maximum overshoot, $M_{p}$, given:
+Reducing the system, we obtain a transfer function of
+$$\dfrac{K_{p}+K_{d}s}{Js^{2}}$$
+Removing the unity feedback, we obtain
+$$\dfrac{K_{p}+K_{d}s}{Js^{2}+K_{p}+K_{d}s}$$
+
+Determine damping ratio, $\zeta$, for maximum overshoot, $M_{p}$, given:
 \begin{align*}
 	M_{p} &= e^{-\left(\zeta/\sqrt{1-\zeta^{2}}\right)\pi} \\
 	0.1 &= e^{-\left(\zeta/\sqrt{1-\zeta^{2}}\right)\pi} \\

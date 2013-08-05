@@ -80,10 +80,22 @@ axis equal
 sgrid
 
 %% Homework 7, Problem 4
+% Solved using velocity_feedback.m
+
+%% Homework 7, Problem 5
+clear all
 s = tf('s');
-num = [20];
-den = [1 5 24];
-rltool(tf(num,den)*(1/s))
+num = [1 5];
+den = [1 1 5];
+subplot(1,2,1);
+pzmap(tf(num,den))
+axis equal
+sgrid
+subplot(1,2,2);
+rlocus(num,den)
+axis equal
+sgrid
+rltool(tf(num,den))
 
 %% Midterm Project, Problem 1, a
 clear all

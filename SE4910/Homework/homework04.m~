@@ -80,10 +80,10 @@ axis equal
 sgrid
 
 %% Homework 7, Problem 4
-s = tf('s');
+% Ogata, page 343
 num = [20];
-den = [1 5 4];
-rltool(tf(num,den)*(1/s))
+den = [1 5 4 20];
+rltool(tf(num,den))
 
 %% Midterm Project, Problem 1, a
 clear all
