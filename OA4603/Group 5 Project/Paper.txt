@@ -1,0 +1,93 @@
+# New Unmanned Air Vehicle for Surveillance or Strike Role
+Group 5 T&E Project
+
+## Operational Requirements
+* The (UAV Name) shall be flown by a 2 pilots 
+* The (UAV Name) must be fully transportable and compartmentalized into no more than six pieces 
+* The (UAV Name) must be transportable by a C-130
+* The (UAV Name) must be able to land and take off within 1000ft
+* Time to reassemble the (UAV Name) shall not exceed six hours 
+* The (UAV Name) must be able to fly up to 75,000 ft
+* The Synthetic Aperture Radar must capable to see through haze, clouds and smoke.
+* The cameras must be high definition, night vision and inferred and capable of producing full motion video.
+* Line of site connectivity must be C-band 
+* Beyond line of site connectivity must be Ku-band
+* The (UAV Name) must reach a maximum altitude of 75,000 ft
+* Joint Force Commanders must be able to receive radar imagery in real time
+* The (UAV Name) shall direct stationary and moving targets with precision guided munitions
+* The (UAV Name) shall neutralize an enemy radar within a 50 mile radius.
+* The reliability of hit the (UAV Name) precision guided munition shall be 0.99.
+* The reliability of kill of the (UAV Name) precision guided munition shall be 0.98.
+* Video/Camera/SAR shall have a combined operational availability of 0.95.
+* Optics must view target up to 110 km.
+* The (UAV Name) shall carry a payload up to 4700 lbs.
+* MTBF shall be 250,000 hours at a 95% CL.
+* (UAV Name) shall carry up to 1000 lbs of aircraft engine fuel.
+* (UAV Name) software maintenance shall be capable of software uploads while in flight.
+* (UAV Name) shall be operable in autonomous mode
+* Satellite connectivity must be UHF and SHF.
+* Flight avionics must be redundant
+
+## Critical Technical Parameters
+
+## Critical Operational Issues/MOEs/MOPs
+Operational Effectiveness and Operational Suitability
+
+
+* Is the UAV range sufficient to support the mission?
+	* The probability of flying up to 75,000 feet.
+		* Maximum altitude.
+		* Average time to maximum altitude.
+	* The probability of flying for X hours.
+		* Average flying time at maximum speed.
+		* Average flying time at minimum speed.
+	* Probability of acquiring mission critical information
+		* Maximun range of primary sensor under ideal conditions
+		* Percent degradation of primary sensor due to less than ideal conditions
+* Is the UAV set up time sufficient to support the mission?
+	* The probability of setting up in 6 hours.
+		* Average set up time.
+		* Minimum set up time.
+	* The probability of successful set up.
+		* Average number of people required for set up.
+		* Minimum number of people required for set up.
+* Is the UAV interoperable with other C4I systems?
+* Does the UAV meet operational reliablity and maintainablity standards for use in theater?
+	* Probabability the UAV will be available to fly
+		* Operational availability (Ao) = 0.99 (87 hours of downtime per year)
+		* Mean downtime
+		* Mean time between failure
+	* Probability of spares for repair
+		* Percent of parts shared across existing systems
+	* Probability of trained personel on hand
+		* Training hours required
+		* Number of technicians required to perform repair
+
+* Can the UAV maneuver through hazardous environment?
+	* The probability of surviving hazardous environment.
+		* The number of hits before flight failure.
+		* The amount of smoke before video failure.
+		* The amount of bad weather before flight failure.
+* Can the UAV engage enemy threat?
+	* The probability of hitting enemy threat.
+		* Mean time to engage enemy threat.
+		* Percent of enemy threats hit.
+	* The probability of surviving enemy engagements.
+		* Average time to detect enemy threats.
+		* Percent of enemy threats destroyed.
+* Is the maneuverability of the (UAV Name) sufficient enough to evade enemy missiles? (Maneuverability)
+* Is the ceiling of the (UAV Name) sufficient to escape radar detection? (Operational Effectiveness)
+* Is the (UAV Name) fully operable with the Link-16 communication nodes? (Operational Effectiveness)
+* Is the pilot crew fully capable of controlling the flight dynamics and on board navigations? (Operational Effectiveness)
+* Is the (UAV Name) light enough to reach sufficient speeds in time to take off within 1000 ft? (Weight)
+* Are the optics capable of seeing beyond the line of sight in all weather? (Operational Effectiveness)
+* Will the (UAV Name) be safe to operate in a combat environment? (Safety) 
+* Will the (UAV Name) detect the threat in a combat environment at adequate range to allow successful engagement? 
+* Does the (UAV Name) perform reconnaissance, surveillance and target acquisition tasks to support battle management, execution and operations other than war?
+* Is the Electronic Warfare system operationally ready to support (UAV Name) mission requirements? (Operational Effectiveness)
+* Is the (UAV Name) compatible with its operating environment? (Compatibility)
+* Is the (UAV Name) capable of meeting the air maneuver brigade commander’s sustained combat requirements? (Logistics Supportability)
+* Will the (UAV Name) be maintainable by flight personnel? (Maintainability)
+* Will the human factors aspects of the (UAV Name) support completion of the aircrafts mission?  (Human Factors)
+* Will the (UAV Name) demonstrate performance necessary to effectively self-deploy in its intended operating environment?
+* Will the susceptibility and vulnerability characteristics of the (UAV Name) allow the successful completion of its mission in its intended operating environment? (Survivability)
