@@ -50,13 +50,30 @@ For all of the following, see the attached MATLAB file for the calculation.
 \end{description}\end{quote}
 
 \subsection*{Problem 2}
+Reducing the system, we obtain a transfer function of
+$$\dfrac{100(K_{p}+K_{d}s)}{s^{2}}$$
+There are two poles at 0 and one zero at $-\dfrac{K_{p}}{K_{d}}$ as seen in the following root-locus plots:
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{homework04-6-2a.png} \\
+	Root-locus plot.
+\end{center}
 \subsubsection*{(a)}
+The entire plot lies on the left half of the plane and so it is all considered stable.  The unstable region would have been on the right half of the real axis.
 \subsubsection*{(b)}
+The two poles of our transfer function are equal and so the system is critically damped.  Critical damping occurs where the poles move off of the real axis.  This happens at or near 0.
 \subsubsection*{(c)}
+Over damped poles will lie on the real axis.  This occurs between $-1$ and $-2$.
 \subsubsection*{(d)}
+Underdamping occurs when the poles are above and below the real axis, between $-2$ and 0.
 \subsubsection*{(e)}
 \subsubsection*{(f)}
+$\omega_{n}=1/50$ sec at 
 \subsubsection*{(g)}
+Pole-zero cancellation is achieved by adding a zero at 0.
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{homework04-6-2g.png} \\
+	Pole-zero cancellation.
+\end{center}
 
 \section*{Homework 7}
 \subsection*{Problem 1}
@@ -128,12 +145,16 @@ Reducing the system, we obtain a transfer function of
 $$\dfrac{K_{p}+K_{d}s}{Js^{2}}$$
 Removing the unity feedback, we obtain
 $$\dfrac{K_{p}+K_{d}s}{Js^{2}+K_{p}+K_{d}s}$$
-
-Determine damping ratio, $\zeta$, for maximum overshoot, $M_{p}$, given:
-\begin{align*}
-	M_{p} &= e^{-\left(\zeta/\sqrt{1-\zeta^{2}}\right)\pi} \\
-	0.1 &= e^{-\left(\zeta/\sqrt{1-\zeta^{2}}\right)\pi} \\
-	\zeta &\approx 0.826085
-\end{align*}
+Substituting $K_{p} = 5K_{d}$, given, we get
+$$\dfrac{K_{d}(s+5)}{Js^{2}+K_{d}s+5K_{d}}$$
+I feed the coefficients for this transfer function into MATLAB and, using the \texttt{rltool()} function, I obtain the following analysis:
+\begin{center}
+	\includegraphics[width=0.49\textwidth]{homework04-7-5a.png}
+	\includegraphics[width=0.49\textwidth]{homework04-7-5b.png}
+\end{center}
+I also obtain the same information without the use of the tool, \texttt{rltool()} by using \texttt{pzmap()} and \texttt{rlocus()}.
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{homework04-7-5c.png}
+\end{center}
 
 \end{document}

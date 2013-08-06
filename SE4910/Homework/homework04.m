@@ -148,3 +148,15 @@ ess=abs(1-y(end)) % error due to step function
 ess=abs(1-y(end)) % error due to ramp function
 [y,t] = impulse(gh*(1/s^3));
 ess=abs(1-y(end)) % error due to acceleration function
+
+%% Midterm Project, Problem 2
+clear all
+s = tf('s');
+num = [100 100];
+den = [1 0 0];
+%rlocus(tf(num,den))
+%hold on
+%rlocus((s + 0) * tf(num,den)) %pole-zero cancellation
+axis equal
+sgrid
+%rltool(tf(num,den))
