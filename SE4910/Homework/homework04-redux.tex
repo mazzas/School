@@ -1,0 +1,55 @@
+\documentclass[letterpaper,10pt]{article}
+
+%\setlength{\parindent}{0in}
+%\usepackage{fullpage} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{dcolumn}
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+
+%opening
+\title{Homework}
+\author{Steve Mazza}
+%\date{July 22, 2013}
+
+\begin{document}
+\maketitle
+
+\section*{Midterm Project}
+\subsection*{Problem 1 (redux)}
+\subsubsection*{(a)}
+\begin{align*}
+\lim_{s\to\infty}s\times\dfrac{1}{s}\times\dfrac{\dfrac{1}{s^2+s+2}}{1+\dfrac{1}{s^2+s+2}\times\dfrac{1}{s+1}}=0 \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^2}\times\dfrac{\dfrac{1}{s^2+s+2}}{1+\dfrac{1}{s^2+s+2}\times\dfrac{1}{s+1}}=1 \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^3}\times\dfrac{\dfrac{1}{s^2+s+2}}{1+\dfrac{1}{s^2+s+2}\times\dfrac{1}{s+1}}=\infty
+\end{align*}
+
+\subsubsection*{(b)}
+\begin{align*}
+\lim_{s\to\infty}s\times\dfrac{1}{s}\times\dfrac{\dfrac{1}{s(s+5)}}{1+\dfrac{1}{s(s+5)}\times5}=0.2 \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^2}\times\dfrac{\dfrac{1}{s(s+5)}}{1+\dfrac{1}{s(s+5)}\times5}=\infty \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^3}\times\dfrac{\dfrac{1}{s(s+5)}}{1+\dfrac{1}{s(s+5)}\times5}=\infty
+\end{align*}
+
+\subsubsection*{(c)}
+\begin{align*}
+\lim_{s\to\infty}s\times\dfrac{1}{s}\times\dfrac{\dfrac{1}{s^2(s+10)}}{1+\dfrac{1}{s^2(s+10)}\times\dfrac{s+1}{s+5}}=5 \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^2}\times\dfrac{\dfrac{1}{s^2(s+10)}}{1+\dfrac{1}{s^2(s+10)}\times\dfrac{s+1}{s+5}}=\infty \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^3}\times\dfrac{\dfrac{1}{s^2(s+10)}}{1+\dfrac{1}{s^2(s+10)}\times\dfrac{s+1}{s+5}}=\infty
+\end{align*}
+
+\subsubsection*{(d)}
+\begin{align*}
+\lim_{s\to\infty}s\times\dfrac{1}{s}\times\dfrac{\dfrac{1}{s^2(s+12)}}{1+\dfrac{1}{s^2(s+12)}\times5(s+2)}=0.1 \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^2}\times\dfrac{\dfrac{1}{s^2(s+12)}}{1+\dfrac{1}{s^2(s+12)}\times5(s+2)}=\infty \\
+\lim_{s\to\infty}s\times\dfrac{1}{s^3}\times\dfrac{\dfrac{1}{s^2(s+12)}}{1+\dfrac{1}{s^2(s+12)}\times5(s+2)}=\infty
+\end{align*}
+
+
+\end{document}
