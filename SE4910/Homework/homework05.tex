@@ -29,14 +29,14 @@ The computed deficiency angle is $90^{\circ}$.
 This corrects the angle deficiency as follows: $135 + 135 + 45 - 135 = 180$.
 
 \subsubsection*{Solution 2}
-Another (and better) solution is $G_{c}(s) = \dfrac{s+0.5}{s+3}\times\dfrac{1}{s^{2}}$.
+Another solution is $G_{c}(s) = \dfrac{s+0.5}{s+3}\times\dfrac{1}{s^{2}}$.
 This corrects the angle deficiency as follows: $135+135+30-120=180$.
 
 \subsubsection*{Root-Loci Plot}
 \begin{center}
 	\includegraphics[scale=0.75]{2-rlocus.png}
 \end{center}
-Both solutions pass through $s=-1\pm j$.
+Both solutions pass through $s=-1\pm j$ with a gain of $K=4$.
 
 \subsubsection*{System Responses}
 
@@ -45,6 +45,8 @@ Both solutions pass through $s=-1\pm j$.
 	\includegraphics[scale=0.65]{2-unit-ramp.png} \\
 	\includegraphics[scale=0.65]{2-unit-accel.png}
 \end{center}
+
+Given the response curves, solution 1 (pole-zero cancellation) seems the better option.
 
 \subsection*{Problem 3}
 We calculate the steady state error, $E_{ss}$\dots
