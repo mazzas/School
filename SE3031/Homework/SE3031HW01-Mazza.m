@@ -22,8 +22,7 @@ c = (Year - Y) / 100;
 % Now perform the calculation.
 % NOTE: I think that within the constraint of valid input, floor() and trunc()
 %	behave the same.
-WeekDay = (D + floor(0.2(13*m-1)) 
-	+ Y + floor(Y/4) + floor(c/4) - 2*c+777) mod 7;
+WeekDay = mod(D + floor(0.2*(13*m-1)) + Y + floor(Y/4) + floor(c/4) - 2*c+777,7);
 
 % Output result to the user.
 DOW = {'Sunday' 'Monday' 'Tuesday' 'Wednesday' 'Thursday' 'Friday' 'Saturday'};
