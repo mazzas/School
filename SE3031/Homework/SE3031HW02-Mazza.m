@@ -89,3 +89,32 @@ fprintf('The balance of the 1st account will reach $%.2f in %d years and %d mont
 close all
 clc
 clear all
+
+DEBUG = 0;              % used for testing purposes
+
+% Create initial vector.
+n = [1 10 100 500 1000 2000 4000 8000];
+if (DEBUG)
+    disp(n')
+end
+
+% Compute new vector using element-wise operations.
+y = (1 + 1 ./ n).^n;
+if (DEBUG)
+    disp(y')
+end
+
+% Compute the difference vector.
+e = exp(1);             % strictly for convenience
+d = abs(y-e)/e*100;
+if (DEBUG)
+    disp(d')
+end
+
+% Build output matrix.
+m = [n' y' d'];
+
+% Output results to user.
+fprintf('\n\n');
+format shortg;
+disp(m);
