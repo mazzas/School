@@ -61,8 +61,8 @@ WSFO = [6.7 7.5 8.5 9.5 10.4 10.9 11.2 10.5 9.1 7.6 6.3 6.5];
 WOrl = [9.0 9.6 9.9 9.4  8.8  8.0  7.3  7.2 7.7 8.6 8.6 8.5];
 
 % Declare and initialize auxiliary array.
-Month = ['January' 'February' 'March' 'April' 'May' 'June' ...
-    'July' 'August' 'September' 'October' 'November' 'December'];
+Month = {'January' 'February' 'March' 'April' 'May' 'June' ...
+    'July' 'August' 'September' 'October' 'November' 'December'};
 
 % Calculate average wind speed for each city.
 fprintf('\n\nThe average wind speed for San Francisco was %.1f mph.\n', ...
@@ -71,13 +71,43 @@ fprintf('The average wind speed for Orlando was %.1f mph.\n', ...
     mean(WOrl));
 
 % Determine how many months the wind speed is below the annual average.
-fprintf('\n\nThe wind speed was below average in San Francisco %d times.\n', ...
-    size(find(WSFO < mean(WSFO)),2));
+fprintf('\nThe wind speed was below average in San Francisco %d times.\n', ...
+    numel(find(WSFO < mean(WSFO))));
 fprintf('The wind speed was below average in Orlando %d times.\n', ...
-    size(find(WOrl < mean(WOrl)),2));
+    numel(find(WOrl < mean(WOrl))));
 
 % Determine how many times and in which months the wind speed in San
 %   Francisco was higher than in Orlando.
+% NOTE: I would like to think that MATLAB has a more elegant way to do this
+%   but the following brute force method is guaranteed to work.
+x = [];
+for i=1:numel(WSFO)
+    if WSFO(i) > WOrl(i)
+        x(end+1) = i;
+    end
+end
+fprintf(strcat('\nThe wind speed in San Francisco Exceeded that', ...
+    ' in Orlando %d time(s).\n'), numel(x));
+if numel(x)>0
+    fprintf('It happened in the following month(s):\n');
+    for i=1:numel(x)
+        fprintf('\t%s\n', Month{x(i)});
+    end
+end
 
 % Determine how many times and in which months the wind spees was within
-% 0.2 mph of Orlando.
+%   0.2 mph of Orlando.
+x = [];
+for i=1:numel(WSFO)
+    if abs(WSFO(i)-WOrl(i)) <= 0.2
+        x(end+1) = i;
+    end
+end
+fprintf(strcat('\nThe wind speed in San Francisco was within 0.2 mph', ...
+    ' of that in Orlando %d time(s).\n'), numel(x));
+if numel(x)>0
+    fprintf('It happened in the following month(s):\n');
+    for i=1:numel(x)
+        fprintf('\t%s\n', Month{x(i)});
+    end
+end

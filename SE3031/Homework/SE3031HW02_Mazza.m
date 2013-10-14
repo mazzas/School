@@ -14,7 +14,9 @@ t = 3;          % duration of experiment
 
 % output result to user
 Tf = Tc + (Ti - Tc) * exp(-k * t);
-fprintf('\nThe temperature of the soda after %d hours is %f degrees F.\n', t, Tf);
+fprintf(...
+    '\nThe temperature of the soda after %d hours is %f degrees F.\n',...
+    t, Tf);
 
 %% Problem 2
 %
@@ -52,7 +54,9 @@ end
 [max_value, max_value_index] = max(R(:));
 % Now convert the index to a row/column value pair.
 [i,j] = ind2sub(size(R),max_value_index);
-fprintf('\nThe largest value remaining in R (%d) is located at (%d,%d).\n', max_value,i,j);
+fprintf(...
+    '\nThe largest value remaining in R (%d) is located at (%d,%d).\n',...
+    max_value,i,j);
 
 %% Problem 3
 %
@@ -68,7 +72,9 @@ n = 1;          % number of times per year interest is compounded
 
 % First, calclate the balance of the 2nd account after 17 years.
 B = P * (1+(r/n))^(n*t);
-fprintf('\nThe balance of the 2nd account after %d years is: $%.2f\n', t,B);
+fprintf(...
+    '\nThe balance of the 2nd account after %d years is: $%.2f\n',...
+    t,B);
 
 % Now change our compounding from yearly to monthly.
 n = 12;
@@ -82,7 +88,9 @@ years = fix(t);
 months = ceil((t - years) * 12);
 
 % Output result to user.
-fprintf('The balance of the 1st account will reach $%.2f in %d years and %d months.\n', B,years,months);
+% NOTE: strcat() is used for output legibility.
+fprintf(strcat('The balance of the 1st account will reach ', ...
+    ' $%.2f in %d years and %d months.\n'), B,years,months);
 
 %% Problem 4
 %
