@@ -1,0 +1,102 @@
+% Document Type: LaTeX
+% Master File: hw0-wi08.tex
+%
+
+
+\documentclass[11pt]{../src/nps-homework}
+\usepackage{fullpage}
+\usepackage{url}
+\usepackage{amsmath,amsfonts,amsthm}
+%\usepackage{mlsmath}		% common macros for RMM
+\usepackage{epsfig,color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{comment,index}	% for exercises
+\usepackage{bm}
+
+% Commands to allow inclusion of book material
+%\newcommand\action[2]{}		% get rid of any action items
+%\includecomment{problem}	% include problem statements
+%\excludecomment{solution}	% don't include the solutions
+
+\begin{document}
+
+\instructor{T.H. Chung}
+\course{SE4960: Network Concepts in Systems Engineering}
+\semester{Fall AY14}
+
+\title{Homework \#0}
+\issued{2 Oct 13}
+\due{--}
+\maketitle
+
+%\textbf{Readings}:  \textit{ExtendSim8 User's Guide}, pp.41-70 \vspace{-\parskip}
+
+%\hspace{2cm} Class examples for \textit{Excel} and \textit{ExtendSim}
+
+%{\bf Note: In the upper left hand corner of the {\em second} page of
+%your homework set, please put the number of hours that you spent on
+%this homework set.}
+
+
+\begin{enumerate}
+
+ 	%=======================
+	%	 Basics of Matlab
+	%=======================
+	\item \label{hw:basicMatlab} (\textit{Basic MATLAB}) Create a MATLAB script file in which you perform the following steps:
+		\begin{enumerate}
+			\item Request from the user (with the \texttt{input} command) a positive integer value, denoted $N$;
+			\item Create a \textit{row} vector containing $N$ values, each of which is a uniformly random number between 0 and 1;
+			\item Iterate through each element of this row vector, replacing the $i^\text{th}$ element with a ``1'' if the value is greater than or equal to $\bm{p=0.6}$, and zero otherwise;
+			\item Compute the sum over all elements of your modified (0,1)-row vector, and output a descriptive message with this summed value to the Command Window (using \texttt{disp} command).
+		\end{enumerate}			
+
+		
+
+
+    \vspace{0.25cm}
+%    \begin{flushright}
+%      (over$\leadsto$)
+%    \end{flushright}
+%    \newpage
+
+ 	%=======================
+	%	Histogram/frequency plotting
+	%=======================
+	\item \label{hw:freqHist} (\textit{Frequency Histograms}) For each of the following data examples, plot a histogram that depicts the frequency of occurrences of a range of integer values. In other words, construct a bar graph such that the horizontal axis represents the integer value, and the vertical axis represents how often that integer occurs in the dataset.
+		\begin{enumerate}
+			\item A vector of length 1000 which contains uniformly distributed \underline{integers} between 0 and 50;
+			\item A vector of length 2500 which contains Poisson-distributed integers, with mean value $\lambda = 50$;
+			\item The vector, \texttt{mydata}, contained in the data file \texttt{test\_data.mat}. (You will have to load this data set into your workspace.)
+			
+			
+		\end{enumerate}			
+	
+	
+	Be sure to annotate your plots with descriptive axis labels!
+	
+
+    \vspace{0.25cm}
+  
+  
+ 	%=======================
+	%	Installing MATLAB Toolboxes
+	%=======================
+	\item \label{hw:toolboxInstall} (\textit{Working with Third-Party Toolboxes}) There are many useful third-party toolboxes, e.g., such as those found on the MATLAB File Exchange, that have been developed and shared by the MATLAB community. Two such toolboxes that will likely be useful for this class include:
+	
+		\begin{itemize}
+			\item \textit{MATLAB Tools for Network Analysis}\footnote{Main page: \url{http://strategic.mit.edu/downloads.php?page=matlab_networks}, \\Download link: \url{http://strategic.mit.edu/docs/matlab_networks/matlab_networks_routines.zip}}, which provides numerous basic network analysis functions, and
+			\item \textit{MatlabBGL}\footnote{Main site: \url{http://dgleich.github.io/matlab-bgl/}, \\MATLAB File Exchange: \url{http://www.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl
+}}, which uses Boost Graph Library to efficiently implement graph algorithms.
+		\end{itemize}
+
+		Download and install these two toolboxes to your local MATLAB installation and familiarize yourself with their usage.  In particular, explore the various graph construction, network analysis, and network algorithm functions implemented in these toolboxes.		
+
+	
+
+
+  \end{enumerate}
+
+
+
+\end{document}
