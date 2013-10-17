@@ -11,8 +11,9 @@ p_fun = '3*x*sin(x)-2*x';
 fplot(p_fun,[-2*pi 2*pi]);
 hold on;
 
-% Compute the derivative
-pd_fun = polyder(p_fun);
+% Compute the derivative by hand
+%pd_fun = polyder(p_fun);
+pd_fun = '3*sin(x)+3*cos(x)-2'; 
 
 % Add the derivative to the same plot
 fplot(pd_fun,[-2*pi 2*pi],'--');
@@ -23,7 +24,7 @@ xlabel('x');
 ylabel('y');
 
 % Use fzero() to find all zeros of the drivative at -4, -2, 0, 2, 4.
-f_zero = zeros(5);
+f_zero = zeros(1,5);
 f_zero(1) = fzero(pd_fun,-4);
 f_zero(2) = fzero(pd_fun,-2);
 f_zero(3) = fzero(pd_fun,0);
@@ -32,8 +33,9 @@ f_zero(5) = fzero(pd_fun,4);
 
 % Add zeros to the plot as markers
 for i=1:5
-    y = fnval(pd_fun,f_zero(i));
-    plot(f_zero(i),y,'x');
+    x = f_zero(i);
+    y = 3*sin(x)+3*cos(x)-2;
+    plot(x,y,'rx');
 end
 
 
