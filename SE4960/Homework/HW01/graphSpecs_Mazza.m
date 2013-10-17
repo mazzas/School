@@ -1,4 +1,4 @@
-function [ D, L, adj_list, d_bar, diam ] = graphSpecs( A )
+function [ D, L, adj_list, d_bar, diam ] = graphSpecs_Mazza( A )
 % Calculate and return summary graph statistics.
 %   Determines degree, average degree, and diameter, and builds an
 %   adjacency list and Laplacian matrix for A.
