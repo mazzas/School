@@ -45,6 +45,11 @@ close all;
 clc;
 clear all;
 
+syms x y;
+
+% Add 8-mile visibility line
+plot(y=8);
+
 %% Problem 3
 %
 close all;
