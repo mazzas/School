@@ -18,7 +18,8 @@ clc; close all; clear
 % Create custom adjacency matrix
 %  Options: (1) Use 'bucky' command to generate Bucky Ball adjacency matrix
 %           (2) Create own randomized adjacency matrix
-A = bucky;
+% A = bucky;
+A = randomGraph_Mazza(20,0.3);
 
 %----
 % Load from dataset
@@ -47,7 +48,7 @@ A = bucky;
 %               d_bar - average node degree
 %               diam - diameter of the graph
 
-[D, L, adj_list, d_bar, diam] = graphSpecs_Mazza( A );
+[D, L, adj_list, d_bar] = graphSpecs_Mazza( A );
 
 
 

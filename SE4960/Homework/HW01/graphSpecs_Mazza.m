@@ -13,19 +13,18 @@ function [ D, L, adj_list, d_bar ] = graphSpecs_Mazza( A )
 % We will compute this first since it facilitates some other answers.
 % For each row of the adjacency matrix, build an adjacency list.
 array_size = numel(A(1,:));
-adj_list = cell(array_size);        % dimensoin the array
-for i=1:numel(array_size)
-    %TODO: fix this.
-    adj_list(i,1) = A(i,1);         % store the node value
-    adj_list(i,2) = find(A(i,:));   % store all edges
+adj_list = cell(1,array_size);      % dimensoin the array
+
+for i=1:array_size
+    adj_list{i} = find(A(i,:));     % store all edges
 end
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % DEGREE
 % For each element in the adjacency list, get the number of elements in the
 %   array.
-D = zeros(1,numel(adj_list));
-for i=1:numel(adj_list)
+D = zeros(1,array_size);
+for i=1:array_size
     D(i) = numel(adj_list{i});
 end
 
@@ -37,7 +36,8 @@ d_bar = mean(D);
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % LAPLACIAN MATRIX
 %
-
+% TODO: L = D - A
+L = zeros(array_size);
 
 end
 
