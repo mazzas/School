@@ -5,21 +5,26 @@
 %           properties.
 %
 %  CREATED: T.H.Chung, 2012
+%  MODIFIED: Steve Mazza, 2013
 %
 clc; close all; clear
 
+% Set the following flag to change function behavior.
+HIST = 1;               % Display a histogram of the degree distribution.
+DISP = 1;               % Show a graphical representation of the graph.
+LEGACY_DISP = 0;        % Legacy display code.
 
 %--------------------------
 % Load or create an adjacency matrix you wish to be analyzed
 %  - can create a customize adjacency matrix
 %  - can load from existing dataset
+%  - can call custom function to create a matrix
 
 %----
 % Create custom adjacency matrix
 %  Options: (1) Use 'bucky' command to generate Bucky Ball adjacency matrix
 %           (2) Create own randomized adjacency matrix
 % A = bucky;
-A = randomGraph_Mazza(20,0.3);
 
 %----
 % Load from dataset
@@ -34,6 +39,14 @@ A = randomGraph_Mazza(20,0.3);
 % % A_sparse = getfield( Problem, 'A' );% adjacency stored as sparse matrix
 % % A = full(A_sparse);                 % convert to full square matrix
 
+%----
+% Call custom function
+% 
+% NOTE: If you want to create a matrix of larger than 50 nodes, turn off
+% the graph visualization.
+num_nodes = 10;         % number of nodes (machine-sized integer)
+edge_prob = 0.1;        % edge probability (double from 0 to 1)
+A = randomGraph_Mazza(num_nodes,edge_prob);
 
 
 %--------------------------
@@ -47,27 +60,48 @@ A = randomGraph_Mazza(20,0.3);
 %               adj_list - adjacency list representation of A
 %               d_bar - average node degree
 %               diam - diameter of the graph
-
-[D, L, adj_list, d_bar] = graphSpecs_Mazza( A );
+[D, L, adj_list, d_bar, diam] = graphSpecs_Mazza( A );
 
 
 
 %--------------------------
+% Show the degree distribution
+if HIST
+    hist(D);
+    title(strcat(strcat(strcat('Nodes: ',num2str(num_nodes)),...
+        ', Edge Probability: '),num2str(edge_prob)));
+    xlabel('Node Degree');
+    ylabel('Count');
+end
+
+
+%--------------------------
 % Visualize the graph
+if DISP
+    % The Pajek tools seem only to be available for PC.  So I hope you will
+    % accept the following graphical representation within MATLAB as a
+    % suitable alternative.
+    view(biograph(sparse(A)));
+end
 
-%----
-% Create randomized planar coordinates to assist with visualization
-num_nodes = length(A);
-xy_coords = num_nodes * rand( num_nodes, 2 );       % generate random x,y
 
-%----
-% Use 'gplot' to graphically display the graph
-figure
-set(gcf, 'Color', 'white')
-[X,Y] = gplot( A, xy_coords );          % return points rather than plot
-h_graph = plot( X, Y, 'bo', 'MarkerSize', 10, 'MarkerEdgeColor', 'b',...
-    'MarkerFaceColor', 'b', 'Color', 'r', 'LineStyle', '-');
-axis equal
+%--------------------------
+% Visualize the graph (previous code)
+if LEGACY_DISP
+    %----
+    % Create randomized planar coordinates to assist with visualization
+    num_nodes = length(A);
+    xy_coords = num_nodes * rand( num_nodes, 2 );       % generate random x,y
+
+    %----
+    % Use 'gplot' to graphically display the graph
+    figure
+    set(gcf, 'Color', 'white')
+    [X,Y] = gplot( A, xy_coords );          % return points rather than plot
+    h_graph = plot( X, Y, 'bo', 'MarkerSize', 10, 'MarkerEdgeColor', 'b',...
+        'MarkerFaceColor', 'b', 'Color', 'r', 'LineStyle', '-');
+    axis equal
+end
 
 
 

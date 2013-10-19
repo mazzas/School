@@ -1,4 +1,4 @@
-function [ D, L, adj_list, d_bar ] = graphSpecs_Mazza( A )
+function [ D, L, adj_list, d_bar, diam ] = graphSpecs_Mazza( A )
 % Calculate and return summary graph statistics.
 %   Determines degree, average degree, and diameter, and builds an
 %   adjacency list and Laplacian matrix for A.
@@ -34,10 +34,22 @@ end
 d_bar = mean(D);
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% diam
+% Find the diameter of the graph.
+[ dist ] = graphallshortestpaths(sparse(A));
+dist(find(dist == inf)) = 0;
+diam = max(max(dist));
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % LAPLACIAN MATRIX
 %
-% TODO: L = D - A
-L = zeros(array_size);
-
+% Create a degree matrix from the degree array.
+DM = zeros(array_size);
+for i=1:array_size
+    DM(i,i) = D(i);
 end
 
+% Calculate the Laplacian.
+L = DM - A;
+
+end
