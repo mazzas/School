@@ -50,28 +50,86 @@ plot(rp1,0,'rx');
 plot(rp2,0,'rx');
 plot(rp3,0,'rx');
 
-% Add annotations.
-% NOTE: The following is very unsatisfying.  Because of the relative
-% specification of the x/y coordinates, I cannot find a good way to
-% automatically calculate the placement of the annotations.  Plus, I am
-% manually inspecting the roots arrays.  Booooo!!!  The whole thing is ver
-% ugly and I don't like it at all.
-annotation('textarrow', [.3 .235], [.4 .275], 'String' , num2str(rp1(3)));
-annotation('textarrow', [.5 .435], [.4 .275], 'String' , num2str(rp1(2)));
-annotation('textarrow', [.72 .785], [.4 .275],'String' , num2str(rp1(1)));
-annotation('textarrow', [.65 .62], [.4 .275],'String' , num2str(rp2(1)));
+% Add information to the plot.
+% NOTE: I am aware that text values are being overwritten.
+yvalue = 1.1;
+for i=1:size(rp1)
+    text(rp1(i),yvalue,strcat('x=',num2str(rp1(i))));
+end
+for i=1:size(rp2)
+    text(rp2(i),yvalue,strcat('x=',num2str(rp2(i))));
+end
+for i=1:size(rp3)
+    text(rp3(i),yvalue,strcat('x=',num2str(rp3(i))));
+end
 
 %% Problem 2
 %
 close all; clc; clear all;
 
+syms x;
+
+% a)
+simplify(3*sin(x) - 4*sin(x)^3)
+
+% b)
+expand(cos(4*x))
+
+% c)
+rewrite(sin(x)^2,'tan')
+
+% d)
+rewrite(tanh(x),'exp')
 
 %% Problem 3
 %
 close all; clc; clear all;
 
+syms x n d a;
+
+% a)
+limit(1/(1+2^(-1/x)),x,0,'right')
+
+% b)
+limit(n/(factorial(n)^(1/n)),n,inf)
+
+% c)
+limit(x*sin(d/x),x,inf)
+
+% d)
+limit((a^x-1)/x,x,0)
 
 %% Problem 4
 %
 close all; clc; clear all;
 
+syms r l e theta x y;
+
+% Define symbolic expression for the conic section.
+H = r - l/(1 + e * cos(theta));
+
+% Convert to Cartesian coordinates.
+H = subs(H,r,sqrt(x^2 + y^2));
+H = subs(H,cos(theta),x/sqrt(x^2 + y^2));
+
+% Substitute values (given) for l and e.
+H1 = subs(H,l,1.5);
+H1 = subs(H1,e,0.7);
+H2 = subs(H,l,1);
+H2 = subs(H2,e,0.2);
+
+% Plot the functions.
+ezplot(char(H1));
+hold on; 
+h = ezplot(char(H2));
+set(h,'Color',[1 0 1]);
+set(h,'LineWidth',2);
+stem(0,1.5);
+
+% Decorate the plot.
+title('Homework 5, Problem 4');
+xlabel('x');
+ylabel('y');
+legend('H1','H2');
+axis equal; 
+axis tight;
