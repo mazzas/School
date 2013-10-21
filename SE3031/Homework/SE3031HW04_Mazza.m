@@ -142,11 +142,12 @@ for i = 1:101
     for j = 1:101
         x(i,j) = r(i)*cos(phi(j));
         y(i,j) = r(i)*sin(phi(j));
-        z(i,j) = besselj(freq*r(i),cos(phi(j)));
+        z(i,j) = besselj(1,freq*r(i))*cos(phi(j));
     end
 end
 
 % Selectively remove some values of z.
+z(find(abs(z) > 0.2)) = NaN;
 
 % Plot the membrane using mesh().
 mesh(x,y,z);
