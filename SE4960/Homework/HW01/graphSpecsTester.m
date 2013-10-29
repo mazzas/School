@@ -10,7 +10,7 @@
 clc; close all; clear
 
 % Set the following flag to change function behavior.
-HIST = 1;               % Display a histogram of the degree distribution.
+HIST = 0;               % Display a histogram of the degree distribution.
 DISP = 1;               % Show a graphical representation of the graph.
 LEGACY_DISP = 0;        % Legacy display code.
 
@@ -44,8 +44,8 @@ LEGACY_DISP = 0;        % Legacy display code.
 % 
 % NOTE: If you want to create a matrix of larger than 50 nodes, turn off
 % the graph visualization.
-num_nodes = 10;         % number of nodes (machine-sized integer)
-edge_prob = 0.1;        % edge probability (double from 0 to 1)
+num_nodes = 15;         % number of nodes (machine-sized integer)
+edge_prob = 0.2;        % edge probability (double from 0 to 1)
 A = randomGraph_Mazza(num_nodes,edge_prob);
 
 
