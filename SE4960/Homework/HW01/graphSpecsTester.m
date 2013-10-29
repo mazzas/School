@@ -10,7 +10,7 @@
 clc; close all; clear
 
 % Set the following flag to change function behavior.
-HIST = 0;               % Display a histogram of the degree distribution.
+HIST = 1;               % Display a histogram of the degree distribution.
 DISP = 1;               % Show a graphical representation of the graph.
 LEGACY_DISP = 0;        % Legacy display code.
 
