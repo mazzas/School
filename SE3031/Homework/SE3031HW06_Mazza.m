@@ -42,8 +42,11 @@ axis([3,10,-5,1]);
 close all; clc; clear all;
 
 %a)
+fprintf('\n\nProblem A:\n');
 A = [ 6 -3 4; 12 5 -7; -5 2 6 ];
 b = [ 41; -26; 14 ];
+% UL factorization.
+x = linsolve(A,b)
 % Direct solution.
 x = A\b
 % Determinant of A.
@@ -55,11 +58,14 @@ p = x(jb);
 % Rank.
 r = length(jb);
 r = rank(A);
+fprintf('Matrix rank: %d\nMatrix determinant: %.0f.\n', r, s);
 
 %b)
-
+fprintf('\n\nProblem B:\n');
 A = [ 0 0 3 5; 3 7 -4 5; 5 -6 7 8; 0 4 0 5 ];
 b = [ 17; 5; 45; 9 ];
+% UL factorization.
+x = linsolve(A,b)
 % Direct solution.
 x = A\b
 % Determinant of A.
@@ -71,10 +77,14 @@ p = x(jb);
 % Rank.
 r = length(jb);
 r = rank(A);
+fprintf('Matrix rank: %d\nMatrix determinant: %.0f.\n', r, s);
 
 %c)
+fprintf('\n\nProblem C:\n');
 A = [ 16 2 3 13; 5 11 10 8; 9 7 6 12; 25 27 28 22 ];
 b = [ 41; -26; 14; -64 ];
+% UL factorization (does not work in this case).
+x = linsolve(A,b)
 % Direct solution (does not work in this case).
 x = A\b
 % Determinant of A.
@@ -86,6 +96,7 @@ p = x(jb);
 % Rank.
 r = length(jb);
 r = rank(A);
+fprintf('Matrix rank: %d\nMatrix determinant: %.0f.\n', r, s);
 
 %% Problem 4
 close all; clc; clear all;
