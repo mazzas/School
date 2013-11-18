@@ -100,3 +100,39 @@ fprintf('Matrix rank: %d\nMatrix determinant: %.0f.\n', r, s);
 
 %% Problem 4
 close all; clc; clear all;
+
+% Set up system of linear equations.
+% f1 = f3 + 100 - 200 -> f1 - f3 = -100
+% f2 = f1 - f4 + 300  -> f2 - f1 + f4 = 300
+% f3 = f6 + 300 - 300 -> f3 - f6 = 0
+% f4 = f1 - f2 + 300  -> f4 - f1 + f2 = 300
+% f5 = 400 + 200 - f7 -> f5 + f7 = 600
+% f6 = f4 + f7 - 200  -> f6 - f4 - f7 = -200
+% f7 = 400 + 200 - f5 -> f7 + f5 = 600
+
+% Set up matrix of equiations
+A = [ 1 0 -1 0 0 0 0;
+    -1 1 0 1 0 0 0;
+    0 0 1 0 0 -1 0;
+    -1 1 0 1 0 0 0;
+    0 0 0 0 1 0 1;
+    0 0 0 -1 0 1 -1;
+    0 0 0 0 1 0 1];
+b = [ -100; 300; 0; 300; 600; -200; 600 ];
+
+% Try to find solutions.
+% Determinant of A.
+s = det(A);
+% Solution using LU decomposition.
+[ R jb ] = rref([ A b ]);
+% UL factorization (does not work in this case).
+x = linsolve(R(1:5, 1:7),R(1:5, 8:8))
+% Pivot variables.
+p = x(jb);
+% Rank.
+r = length(jb);
+r = rank(A);
+fprintf('Matrix rank: %d\nMatrix determinant: %.0f.\n', r, s);
+
+% NOTE: it is not possible to solve this system of equations; the number
+% of independent variables is 7, while the rank is 5.
