@@ -34,3 +34,4 @@ loglog(pk, '-s');
 grid on;
 xlabel('Degree Distribution');
 ylabel('Degree Probability');
+title('Dataset: California');
