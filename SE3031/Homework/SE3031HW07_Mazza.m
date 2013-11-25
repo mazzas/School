@@ -84,7 +84,6 @@ end
 clear all; clc; close all;
 warning off;
 
-%syms x y;
 xmin = -1;
 xmax = 1;
 
@@ -95,8 +94,8 @@ fun_xy = @(x,y) (x/(sqrt(x^2+y^2)))* ...
     besselj(1,3.8316*sqrt(x^2+y^2));
 
 % The following two calls fail!!!
-[x0,fval0,exitflag0,output0] = fminsearch(fun_h,[-0.5,0]);
-[x1,fval1,exitflag1,output1] = fminunc(fun_h,[-0.5,0]);
+[x0,fval0,exitflag0,output0] = fminsearch(fun_h,[-0.5; 0]);
+[x1,fval1,exitflag1,output1] = fminunc(fun_h,[-0.5; 0]);
 
 fprintf('\n\nfminsearch() took %d iterations and fminumc() took %d.\n' ...
     ,output0.iterations,output1.iterations);
@@ -105,9 +104,39 @@ fprintf('\n\nfminsearch() took %d iterations and fminumc() took %d.\n' ...
 ezmeshc(fun_xy,[xmin,xmax]);
 hold on;
 title('Homework 7, Problem 3');
-xlabel('x1');ylabel('x2');zlabel('f(x1,x2)');
+xlabel('x');ylabel('y');zlabel('f(x,y)');
 plot3(x1(1),x1(2),fval1,'ob','MarkerSize',12);
 
 %% Problem 4
 %
 clear all; clc; close all;
+syms x;
+
+% Define the function.
+fun_h = @(x) (x(1)/(sqrt(x(1)^2+x(2)^2)))* ...
+    besselj(1,3.8316*sqrt(x(1)^2+x(2)^2));
+
+% Define the non-linear constraint.
+con_h = @(x) 0.6^2 - (x(1) - 0.4)^2 - (x(2) - 0.4)^2;
+
+% Define the other arguments to fmincon().
+fun = fun_h;        % function to evaluate.
+x0 = [-1,1];        % starting point for x.
+A = [];             % inequality matrix.
+b = [];             % inequality vector.
+Aeq = [];           % equality matrix.
+beq = [];           % eqyality vector.
+lb = -0.2;          % lower bound for x.
+ub = 1;             % upper bound for x.
+nonlcon = con_h(x); % non-linar constraint.
+
+% Run the solution.
+x = fmincon(fun_h,x0,A,b,Aeq,beq,lb,ub,nonlcon);
+
+% Plot the work.
+[x,y,z] = cylinder(0.6,40);
+mesh(x+0.4,y+0.4,1.2*z-0.6,'FaceAlpha',0.8);
+axis equal;
+hold on;
+title('Homework 7, Problem 4');
+xlabel('x');ylabel('y');zlabel('f(x,y)');
