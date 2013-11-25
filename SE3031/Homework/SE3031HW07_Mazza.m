@@ -87,15 +87,15 @@ warning off;
 xmin = -1;
 xmax = 1;
 
-fun_h = @(x) (x(1)/(sqrt(x(1)^2+x(2)^2)))* ...
+fun_h = @(x) (-x(1)/(sqrt(x(1)^2+x(2)^2)))* ...
     besselj(1,3.8316*sqrt(x(1)^2+x(2)^2));
 
 fun_xy = @(x,y) (x/(sqrt(x^2+y^2)))* ...
     besselj(1,3.8316*sqrt(x^2+y^2));
 
 % The following two calls fail!!!
-[x0,fval0,exitflag0,output0] = fminsearch(fun_h,[-0.5; 0]);
-[x1,fval1,exitflag1,output1] = fminunc(fun_h,[-0.5; 0]);
+[x0,fval0,exitflag0,output0] = fminsearch(fun_h,[0.5; -0.5]);
+[x1,fval1,exitflag1,output1] = fminunc(fun_h,[0.5; -0.5]);
 
 fprintf('\n\nfminsearch() took %d iterations and fminumc() took %d.\n' ...
     ,output0.iterations,output1.iterations);
@@ -105,7 +105,7 @@ ezmeshc(fun_xy,[xmin,xmax]);
 hold on;
 title('Homework 7, Problem 3');
 xlabel('x');ylabel('y');zlabel('f(x,y)');
-plot3(x1(1),x1(2),fval1,'ob','MarkerSize',12);
+plot3(x1(1),x1(2),-1*fval1,'ob','MarkerSize',12);
 
 %% Problem 4
 %
