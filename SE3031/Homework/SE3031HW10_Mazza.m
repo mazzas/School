@@ -1,4 +1,9 @@
 %% Homework 10 - Steve Mazza
+%% Problem 1
+%
+
+%% Problem 2
+%
 
 %% Problem 3
 clc; clear all; close all; warning off;

@@ -110,6 +110,7 @@ plot3(x1(1),x1(2),-1*fval1,'ob','MarkerSize',12);
 %% Problem 4
 %
 clear all; clc; close all;
+warning off;
 
 % Define the function.
 fun_h = @(x) (-x(1)/(sqrt(x(1)^2+x(2)^2)))* ...
@@ -144,5 +145,4 @@ hold on;
 title('Homework 7, Problem 4');
 xlabel('x');ylabel('y');zlabel('f(x,y)');
 ezmeshc(fun_xy,[-1,1]);
-plot(nonlcon(x0),'--rs','LineWidth',2);     % This does not seem to work correctly.
 plot3(x_(1),x_(2),-1*fval,'ob','MarkerSize',12);
