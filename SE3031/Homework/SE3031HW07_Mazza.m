@@ -110,28 +110,28 @@ plot3(x1(1),x1(2),-1*fval1,'ob','MarkerSize',12);
 %% Problem 4
 %
 clear all; clc; close all;
-syms x;
 
 % Define the function.
 fun_h = @(x) (x(1)/(sqrt(x(1)^2+x(2)^2)))* ...
     besselj(1,3.8316*sqrt(x(1)^2+x(2)^2));
 
-% Define the non-linear constraint.
-con_h = @(x) 0.6^2 - (x(1) - 0.4)^2 - (x(2) - 0.4)^2;
+% Define the non-linear constraints.
+c = @(x) 0.6^2 - (x(1) - 0.4)^2 - (x(2) - 0.4)^2;
+ceq = @(x) [];
+nonlinfcn = @(x)deal(c(x),ceq(x));
 
 % Define the other arguments to fmincon().
 fun = fun_h;        % function to evaluate.
-x0 = [-1,1];        % starting point for x.
+x0 = [0.5;-0.5];    % starting point for x.
 A = [];             % inequality matrix.
 b = [];             % inequality vector.
 Aeq = [];           % equality matrix.
 beq = [];           % eqyality vector.
-lb = -0.2;          % lower bound for x.
-ub = 1;             % upper bound for x.
-nonlcon = con_h(x); % non-linar constraint.
+lb = [-1;-1];       % lower bound for x.
+ub = [1;1];         % upper bound for x.
 
 % Run the solution.
-x = fmincon(fun_h,x0,A,b,Aeq,beq,lb,ub,nonlcon);
+[x_,fval,exitflag,output] = fmincon(fun_h,x0,A,b,Aeq,beq,lb,ub,nonlinfcn);
 
 % Plot the work.
 [x,y,z] = cylinder(0.6,40);
@@ -140,3 +140,6 @@ axis equal;
 hold on;
 title('Homework 7, Problem 4');
 xlabel('x');ylabel('y');zlabel('f(x,y)');
+% TODO: plot the constraint.
+%ezplot(nonlinfcn);     % This does not work.
+plot3(x_(1),x_(2),-1*fval,'ob','MarkerSize',12);
