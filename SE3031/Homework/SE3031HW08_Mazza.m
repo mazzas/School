@@ -5,6 +5,7 @@ clc; clear all; close all;
 
 xd = [2 4 6 7];
 yd = [12 15 17 25];
+xf = linspace(min(xd),max(xd));
 
 % Compute least squares regressions.
 [p0,s0] = polyfit(xd,yd,0);
@@ -20,10 +21,10 @@ Rsq3=(St-s3.normr^2)/St;
 
 % Plot the results along with the original data.
 hold on; 
-plot(xd,polyval(p0,xd),':');
-plot(xd,polyval(p1,xd),'-.');
-plot(xd,polyval(p2,xd),'--');
-plot(xd,polyval(p3,xd),'-');
+plot(xf,polyval(p0,xf),':');
+plot(xf,polyval(p1,xf),'-.');
+plot(xf,polyval(p2,xf),'--');
+plot(xf,polyval(p3,xf),'-');
 title('Homework 8, Problem 1');
 xlabel('x');
 ylabel('f(x)');
@@ -38,35 +39,40 @@ text(2.25,18,strcat('R^2_3 = ',num2str(Rsq3)));
 %
 clc; clear all; close all;
 
-xd = [-20 0 20 40 60 80 100 120];
+%xd = [-20 0 20 40 60 80 100 120];
+xk = [253.15 273.15 293.15 313.15 333.15 353.15 373.15 393.15];
 yd = [4 0.38 0.095 0.032 0.015 0.0078 0.0045 0.0032];
+xf = linspace(min(xk),max(xk));
+
+% Define the function.
+%f = @(u
 
 % Plot u=f(T).
 subplot(3,1,1);
-plot(xd,yd,'ro');
+plot(xk,yd,'ro');
 hold on;
-[p,s] = polyfit(xd,yd,1);
-plot(xd,polyval(p,xd));
-title('Linear Fit');
-xlabel('Temperature (Celsius)');
+[p,s] = polyfit(xk,yd,1);
+plot(xk,polyval(p,xk));
+title('Fitting Curve');
+xlabel('Temperature (Kelvin)');
 ylabel('Viscosity');
 
 % Find the quadratic regression.
 subplot(3,1,2);
-plot(xd,yd,'ro');
+plot(xk,yd,'ro');
 hold on;
-[p,s] = polyfit(xd,yd,2);
-plot(xd,polyval(p,xd));
+[p,s] = polyfit(xk,yd,2);
+plot(xf,polyval(p,xf));
 title('Quadratic Fit');
-xlabel('Temperature (Celsius)');
+xlabel('Temperature (Kelvin)');
 ylabel('Viscosity');
 legend('Data points','Regression',0);
 
 % Plot the residuals.
 subplot(3,1,3);
 hold on;
-bar(xd,yd-p(1)*xd-p(2));
-xlim([-20 120]);
+bar(xk,yd-p(1)*xk-p(2));
+xlim([min(xk) max(xk)]);
 title('Residuals');
 xlabel('Temperature (Celsius)');
 ylabel('ln(y)-ln(y_{est})');
@@ -85,12 +91,11 @@ hold on;
 title('Linear Interpolation');
 xlabel('Depth');
 ylabel('Light Penetration');
-yy = interp1(xd,yd,30,'linear');
-x = linspace(0,100);
-[p,s] = polyfit(xd,yd,1);
-plot(xd,polyval(p,xd),'-.');
-plot(30,yy,'kd');
-text(32,0,num2str(yy/polyval(p,30)));
+xq = linspace(min(xd),max(xd));
+yy = interp1(xd,yd,xq);
+plot(xq,yy,'-.');
+plot(30,yy(30),'kd');
+%text(32,0,num2str(yy(30)/polyval(p,30)));
 
 subplot(3,1,2);
 plot(xd,yd,'ro');
@@ -98,12 +103,10 @@ hold on;
 title('Spline Interpolation');
 xlabel('Depth');
 ylabel('Light Penetration');
-yy = interp1(xd,yd,30,'spline');
-x = linspace(0,100);
-s = spline(xd,yd,x);
-plot(x,s,'-.');
-plot(30,yy,'kd');
-text(32,10,num2str(yy/s(30)));
+yy = interp1(xd,yd,xq,'spline');
+plot(xq,yy,'-.');
+plot(30,yy(30),'kd');
+%text(32,10,num2str(yy/s(30)));
 
 subplot(3,1,3);
 plot(xd,yd,'ro');
@@ -111,12 +114,10 @@ hold on;
 title('Cubic Hermite Interpolation');
 xlabel('Depth');
 ylabel('Light Penetration');
-yy = interp1(xd,yd,30,'pchip');
-x = linspace(0,100);
-s = pchip(xd,yd,x);
-plot(x,s,'-.');
-plot(30,yy,'kd');
-text(32,20,num2str(yy/s(30)));
+yy = interp1(xd,yd,xq,'cubic');
+plot(xq,yy,'-.');
+plot(30,yy(30),'kd');
+%text(32,20,num2str(yy/s(30)));
 
 %% Problem 4
 %
