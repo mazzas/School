@@ -1,12 +1,12 @@
 %% Homework 10 - Steve Mazza
 %% Problem 1
 %
-clc; clear all; close all; warning off;
+clc; clear all; close all;
 
 
 %% Problem 2
 %
-clc; clear all; close all; warning off;
+clc; clear all; close all;
 
 
 %% Problem 3

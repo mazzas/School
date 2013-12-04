@@ -121,7 +121,7 @@ plot(30,yy(30),'kd');
 
 %% Problem 4
 %
-clc; clear all; close all;
+clc; clear all; close all; warning off;
 
 formatIn = 'dd-mmm-yyyy';
 
