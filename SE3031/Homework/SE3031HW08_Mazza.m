@@ -83,6 +83,7 @@ clc; clear all; close all;
 
 xd = [0 1 2 10 50 100];
 yd = [100 45 39 22 5 0.5];
+xq = linspace(min(xd),max(xd));
 
 % Plot u=f(T).
 subplot(3,1,1);
@@ -91,11 +92,10 @@ hold on;
 title('Linear Interpolation');
 xlabel('Depth');
 ylabel('Light Penetration');
-xq = linspace(min(xd),max(xd));
 yy = interp1(xd,yd,xq);
 plot(xq,yy,'-.');
 plot(30,yy(30),'kd');
-%text(32,0,num2str(yy(30)/polyval(p,30)));
+text(32,30,num2str(yy(30)));
 
 subplot(3,1,2);
 plot(xd,yd,'ro');
@@ -106,7 +106,8 @@ ylabel('Light Penetration');
 yy = interp1(xd,yd,xq,'spline');
 plot(xq,yy,'-.');
 plot(30,yy(30),'kd');
-%text(32,10,num2str(yy/s(30)));
+text(32,10,num2str(yy(30)));
+text(50,50,'There is no way that this can be correct.');
 
 subplot(3,1,3);
 plot(xd,yd,'ro');
@@ -117,9 +118,7 @@ ylabel('Light Penetration');
 yy = interp1(xd,yd,xq,'cubic');
 plot(xq,yy,'-.');
 plot(30,yy(30),'kd');
-%text(32,20,num2str(yy/s(30)));
-
-% TODO: fix the percentages.
+text(32,20,num2str(yy(30)));
 
 %% Problem 4
 %
