@@ -46,7 +46,6 @@ clc; clear all; close all; warning off;
 open('SE3031HW10_sim_Mazza.slx')
 sim('SE3031HW10_sim_Mazza.slx', [0 9])
 
-% NOTE: You are supposed to plot y versus vdot (first derivative of y).
 plot(y,tout,'-',dy,tout,'--');
 legend('y','dy',0);
 grid;

@@ -68,7 +68,7 @@ xlabel('Temperature (Kelvin)');
 ylabel('Viscosity');
 legend('Data points','Regression',0);
 
-% Plot the residuals.
+% TODO: Plot the residuals.
 subplot(3,1,3);
 hold on;
 bar(xk,yd-p(1)*xk-p(2));
@@ -118,6 +118,8 @@ yy = interp1(xd,yd,xq,'cubic');
 plot(xq,yy,'-.');
 plot(30,yy(30),'kd');
 %text(32,20,num2str(yy/s(30)));
+
+% TODO: fix the percentages.
 
 %% Problem 4
 %
