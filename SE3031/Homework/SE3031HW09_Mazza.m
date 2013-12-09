@@ -88,7 +88,7 @@ ylabel('reliabilty');
 
 % Determine the probability of survival on the interval 2..6 days.
 fprintf(strcat('\n\nThe probability of survival for at least 2 days, ', ...
-    'but not more than 6 days is %1.4f.\n'), trapz(x(3:7),y(3:7)));
+    '\n\tbut not more than 6 days is %1.4f.\n'), trapz(x(3:7),y(3:7)));
 
 %% Problem 4
 %
@@ -96,13 +96,20 @@ clc; clear all; close all;
 syms x y z;
 
 % Define anonymous functions.
-f2 = @(x,y) x^2-3*y^2+x*y^3;
-f3 = @(x,y,z) x^3-2*y*z;
+f2 = @(x,y) (x.^2-3.*y.^2+x.*y.^3);
+f3 = @(x,y,z) (x.^3-2.*y.*z);
 
 % Calculate double integral.
-q2 = integral2(f2(x,y),0,4,-2,2);
+q2 = integral2(f2,0,4,-2,2);
 
 % Calculate triple integral.
-q3 = integral3(f3(x,y,z),-1,3,0,6,-4,4);
+q3 = integral3(f3,-1,3,0,6,-4,4);
 
 % Plot the double integral.
+z = zeros(4);
+for i = 1:4
+    for j = -1:2
+        z(i,j+2) = integral2(f2,0,i,-2,j);
+    end
+end
+meshz(z);
