@@ -38,6 +38,22 @@ ylabel('y2')
 %
 clc; clear all; close all;
 
+[t,y] = ode45(@(t,y)[y(2); y(3); y(4); ...
+    -5*(1-y(1))*y(4)-2*y(3)-3*y(2)-y(1)^3+10*sin(pi*t)], ...
+    [0 9], [0 0 0 0]);
+
+% Plot the results.
+plot(t,y(:,1),':',t,y(:,2),'--',t,y(:,3),'-.',t,y(:,4),':');
+title('Time vs. F(Time)');
+xlabel('time');
+ylabel('f(time)');
+legend('y_1(t)','y_2(t)','y_3(t)','y_4(t)',0);
+
+% Plot z2 vs z1.
+plot(y(:,2),y(:,1));
+title('f_2(t) vs. f_1(t)');
+xlabel('f_2(t)');
+ylabel('f_1(t)');
 
 %% Problem 3
 %
