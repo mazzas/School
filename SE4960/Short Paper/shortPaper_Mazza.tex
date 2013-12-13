@@ -1,78 +1,4 @@
-
-%% bare_conf.tex
-%% V1.3
-%% 2007/01/11
-%% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%
-%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
-%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
-%%*************************************************************************
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. IEEE's font choices can trigger bugs that do  ***
-% *** not appear when using other class files.                            ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-
-% Note that the a4paper option is mainly intended so that authors in
-% countries using A4 can easily print to A4 and see how their papers will
-% look in print - the typesetting of the document will not typically be
-% affected with changes in paper size (but the bottom and side margins will).
-% Use the testflow package mentioned above to verify correct handling of
-% both paper sizes by the user's LaTeX system.
-%
-% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
-% should be used if it is desired that the figures are to be displayed in
-% draft mode.
-%
 \documentclass[10pt]{./IEEEtran}
-% Add the compsoc option for Computer Society conferences.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
-
-
-
-
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -349,50 +275,14 @@
 
 
 \begin{document}
-%
-% paper title
-% can use linebreaks \\ within to get better formatting as desired
-\title{Military Implementation of Federation Among Remote Data Stores In DIL Environments}
 
+\title{Federation Among Remote Military Data Stores In DIL Environments}
 
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
 \author{\IEEEauthorblockN{Steve Mazza}\\
 \IEEEauthorblockA{School of Systems Engineering\\
 Naval Postgraduate School\\
 Monterey, CA 93943\\
 Email: spmazza@nps.edu}}
-
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
 
 
 % make the title area
@@ -403,40 +293,68 @@ Email: spmazza@nps.edu}}
 %\boldmath
 The abstract goes here.
 \end{abstract}
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the conference you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals/conferences frown on
-% math in the abstract anyway.
-
-% no keywords
 
 
-
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
-
 
 
 \section{Introduction}
 % no \IEEEPARstart
-There exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of the locus of computing power and data storage, there is now an acknowledged need to federate\cite{Takai:2012} in order to maintain data concurrency.
+Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the problem by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+Consequently, there exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of computing power and data storage, there is now an acknowledged need to implement some form of federation\cite{Takai:2012} in order to maintain data concurrency.  This is especially true in theaters of operation that are characterized as austere environments and for which communications are assumed to be disconnected, intermittent, or limited (DIL), and where connections to a centralized data store are impractical or impossible.
 
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+\section{Problem Space}
+United States involvement in military operations over the past fifteen years has been in operationally challenging environments.  Lack of existing infrastructure to provide necessary operational support has been a primary challenge to sustaining long-term presence necessary to achieve our national security goals.  We focus on the challenges associated with fighting in an asymmetrical conflict while operating in an environment in which the transmission of electronic data is challenging at best.
+
+\subsection{Motivation}
+Is this answered in the Introduction?  If not (or possibly even, if) elaborate here on the distribution (diffusion) of computing and storage.  Also, comment on the commonality of the need for federation as a service to a) protect and manage bandwidth as an Organizational resource, and b) prevent independent implementation by multiple systems, which would result in redundant and potentially conflicting services.  We view bandwidth as a resource and treat it similar to ammunition and food.
+
+\subsection{Questions}
+Here is what we intend to address:
+\begin{itemize}
+	\item Can we guarantee eventual consistency of data, if even statistically?
+	\item In what sort of time can we expect to achieve consistency?
+	\begin{itemize}
+		\item I think it should approach $O(log(n))$, maybe with some constant, $K$, based on the likelihood that small-world networks will develop.  $O(K log(n))$
+		\item Elapsed time, based on number of time steps and the average duration of each step.
+	\end{itemize}
+\end{itemize}
+
+
+\section{Model Design}
+A description of the model goes here.
+
+Can we make a cogent case for using the inverse square of the distance law of gravitational attraction to accurately model both bandwidth and the probability of connectivity within the constraints of our graph model, taking distance, $d$, as the graph distance between any two given nodes, $n_i$ and $n_j$?  Possibly we follow this basic model but apply some constant to correct for accuracy.  Certainly it does seem to be the case (on first inspection) that both bandwidth and connectivity should follow some inverse power law.
+
+\subsection{Bandwidth}
+Bandwidth is inversely proportional to the distance of some node, $k$, to the root of the graph.
+
+\subsection{Connectivity}
+The probability of connectivity goes inversely with the distance of some node, $k$, to the root of the graph.
+
+\subsection{Directionality}
+While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier be a sensor on the network\cite{Ray:2009}.  A direct result of this is that information will naturally flow not only up and down the traditional chain of command, but also laterally within a structural organization and even across formations.  We will further see how the occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
+
+\subsection{Shortcuts}
+We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations within an otherwise hierarchical network model.  Talk about why small-world networks are important for shortening the diameter of the graph.
+
+\subsubsection{Lateral Movement of Data} 
+Data at rest on computing devices in transit between Companies or Battalions could constitute an instance of an unintended consequence of an increasingly distributed computing environment and result in a lateral transfer of information.
+
+\subsubsection{Hierarchical Movement of Data}
+The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command could result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset.
+
+\section{Related Work}
+Possibilities for additional, related work include:
+\begin{itemize}
+	\item Individual datum may have different levels of importance, and consequently there may be the need to address QoS issues on the network.
+	\item Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the military organization.
+\end{itemize}
+
+\section{Conclusion}
+The conclusion goes here.
 
 
 % An example of a floating figure using the graphicx package.
@@ -522,9 +440,6 @@ Subsubsection text here.
 % command of the stfloats package.
 
 
-
-\section{Conclusion}
-The conclusion goes here.
 
 The following is just a collection of citations that may (or may not) be used in this paper.  I have collected them here in order to ensure they not get misplaced.
 \cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ayalvadi:2005}
