@@ -304,12 +304,15 @@ Transportable computing and some degree of network connectivity have been a nece
 
 Consequently, there exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of computing power and data storage, there is now an acknowledged need to implement some form of federation\cite{Takai:2012} in order to maintain data concurrency.  This is especially true in theaters of operation that are characterized as austere environments and for which communications are assumed to be disconnected, intermittent, or limited (DIL), and where connections to a centralized data store are impractical or impossible.
 
+% TODO: introduce sections and lay out paper to the reader.
+
 
 \section{Problem Space}
 United States involvement in military operations over the past fifteen years has been in operationally challenging environments.  Lack of existing infrastructure to provide necessary operational support has been a primary challenge to sustaining long-term presence necessary to achieve our national security goals.  We focus on the challenges associated with fighting in an asymmetrical conflict while operating in an environment in which the transmission of electronic data is challenging at best.
 
 \subsection{Motivation}
 Is this answered in the Introduction?  If not (or possibly even, if) elaborate here on the distribution (diffusion) of computing and storage.  Also, comment on the commonality of the need for federation as a service to a) protect and manage bandwidth as an Organizational resource, and b) prevent independent implementation by multiple systems, which would result in redundant and potentially conflicting services.  We view bandwidth as a resource and treat it similar to ammunition and food.
+
 
 \subsection{Questions}
 Here is what we intend to address:
@@ -323,6 +326,9 @@ Here is what we intend to address:
 \end{itemize}
 
 
+\section{Design of Experiments}
+
+
 \section{Model Design}
 We have an interesting situation in that the physical organization of the network is highly structured, as prescribed by military doctrine, which favors a top-down, hierarchical task organization with a relatively fixed number of nodes at each echelon.  We generalize this as a tree structure in the classical sense, having no closed loops.  We then augment this structure by introducing some loops that connect nodes both laterally and across echelons to represent various opportunities for data delivery and synchronization scenarios not uncommon to actual operational threads.
 
@@ -330,7 +336,19 @@ We have an interesting situation in that the physical organization of the networ
 
 Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{Recent theaters of operation include Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power law proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.
 
-We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but also apply a constant, $K$, to allow a correction for accuracy, given the particular constraints of any specific setting.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\textwidth]{images/prob_con}
+  \caption{Representative probabilities of connectivity by echelon.}
+\end{figure}
+
+We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $\lambda$, to allow a correction for the particular constraints of any specific environment.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\textwidth]{images/bandwidth}
+  \caption{Representative bandwidth by echelon.}
+\end{figure}
 
 \subsection{Undirected Graph}
 While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
