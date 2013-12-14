@@ -116,7 +116,6 @@
 
 
 
-
 % *** SPECIALIZED LIST PACKAGES ***
 %
 %\usepackage{algorithmic}
@@ -278,7 +277,7 @@
 
 \title{Federation Among Remote Military Data Stores In Austere Environments}
 
-\author{\IEEEauthorblockN{Steve Mazza}\\
+\author{\IEEEauthorblockN{Steven Mazza}\\
 \IEEEauthorblockA{School of Systems Engineering\\
 Naval Postgraduate School\\
 Monterey, CA 93943\\
@@ -292,6 +291,8 @@ Email: spmazza@nps.edu}}
 \begin{abstract}
 %\boldmath
 Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  Through model design and discussion we address some aspects of one potential solution to this fragmentation through federation of data stores.  In particular, we show that we can guarantee eventual consistency of data, even in austere environments.  Furtherore, we show that this state can be achieved in time proportional to $O(K log(n))$ where $n$ is the number of nodes in the network.
+
+%TODO: fix the metrics.
 \end{abstract}
 
 
@@ -299,84 +300,98 @@ Transportable computing and some degree of network connectivity have been a nece
 
 
 \section{Introduction}
+\label{sec:introduction}
 % no \IEEEPARstart
 Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  
 
-Consequently, there exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of computing power and data storage, there is now an acknowledged need to implement some form of federation\cite{Takai:2012} in order to maintain data concurrency.  This is especially true in theaters of operation that are characterized as austere environments and for which communications are assumed to be disconnected, intermittent, or limited (DIL), and where connections to a centralized data store are impractical or impossible.
+Consequently, there exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of computing power and data storage, there is now an acknowledged need to implement some form of federation\cite{Takai:2012} in order to maintain data concurrency.  This is especially true in theaters of operation that are characterized as austere environments and for which communications are assumed to be disconnected, intermittent, or limited (DIL), and where connections to a centralized data store are impractical or impossible\cite{Sonnenberg:2009}.
 
-% TODO: introduce sections and lay out paper to the reader.
+The paper is structured as follows.  We begin in Section \ref{sec:probspace} by introducing the problem space, which includes a discussion of the motivation for this work along with the questions we address.  Section \ref{sec:doe} sets up the design of experiments that we use to address the questions introduced in Section \ref{sec:probspace}.  Next we dive into a discussion of the model design in Section \ref{sec:model}.  We discuss the model development and constraints including bandwidth and connectivity, edge construction, and graph topology.  Disaster recovery is briefly related to our study in Section \ref{sec:dr}, and we wrap up with related work in Section \ref{sec:related} and finally a conclusion in Section \ref{sec:conclusion}.
 
 
 \section{Problem Space}
+\label{sec:probspace}
 United States involvement in military operations over the past fifteen years has been in operationally challenging environments.  Lack of existing infrastructure to provide necessary operational support has been a primary challenge to sustaining long-term presence necessary to achieve our national security goals.  We focus on the challenges associated with fighting in an asymmetrical conflict while operating in an environment in which the transmission of electronic data is challenging at best.
 
 \subsection{Motivation}
-Is this answered in the Introduction?  If not (or possibly even, if) elaborate here on the distribution (diffusion) of computing and storage.  Also, comment on the commonality of the need for federation as a service to a) protect and manage bandwidth as an Organizational resource, and b) prevent independent implementation by multiple systems, which would result in redundant and potentially conflicting services.  We view bandwidth as a resource and treat it similar to ammunition and food.
+Maintaining some data consistency in support of military operations is an important component to ensuring that everyone is working from the same basis of understanding in carrying out the Commander's intent.\footnote{Commander's intent in the military context is the broad context under which both direction is given by 06 officers and specific actions are taken by MAJ and SGT warfighters.}  If a given unit in formation is working off of a differential of understanding due either to stale or missing data, that unit runs the risk of inadvertently placing others in harm's way.
+
+Data can be relatively immutable and persist for long periods of time, as with terrain maps which tend to change on a geologic scale.  On the other hand much of the important data is highly volatile and often takes the form of overlays on the maps.  Data such as current friendly force and enemy positions, locations of supply and weapons cache, and route planning characterize this type of data.  Intelligence data, recent significant events, and UAS feeds all have a relatively short shelf life and tend to get updated frequently.
+
+This type of data is typical of that which is both produced and consumed by many programs of record (PoRs).\footnote{Examples in the US Army include Command Post of the Future (CPoF) and Joint Battle Command Platform (JBC-P)}  Programs of record refer to systems that are fielded by Program Management organizations in the Army and comprise the tools with which warfighters accomplish their jobs.  In the absence of a unified mechanism and in an effort to ensure the best information is delivered to the warfighter at any point, each of these PoRs attempts to address the problems of federation, individually.
+
+This presents a problem for the military for several reasons.  On the surface, stove-piped solutions present an ongoing barrier to interoperability and compatibility.  But on a more fundamental level, there exists a commonality for the need to have access to federation as a service.  In this way the military can proactively protect and manage bandwidth as an organizational resource.  We want to view bandwidth, for example, as a resource and treat it similarly to ammunition and food.
 
 
 \subsection{Questions}
-Here is what we intend to address:
-\begin{itemize}
-	\item Can we guarantee eventual consistency of data, if even statistically?
-	\item In what sort of time can we expect to achieve consistency?
-	\begin{itemize}
-		\item I think it should approach $O(log(n))$, maybe with some constant, $K$, based on the likelihood that small-world networks will develop.  $O(K log(n))$
-		\item Elapsed time, based on number of time steps and the average duration of each step.
-	\end{itemize}
-\end{itemize}
+Here is what we intend to address.  We would like to know if we can guarantee the eventual consistency of data, if even statistically.  Furthermore, we would like to know in what sort of time can we expect to achieve data consistency. For the investigation of these concerns we will address time as a function of algorithmic complexity\footnote{We express complexity in big O notation.}, although that could easily be extrapolated to an estimate of elapsed time.
 
 
 \section{Design of Experiments}
+\label{sec:doe}
+We begin by constructing an acyclic undirected graph as described in Section \ref{sec:model} with $k$ nodes.  We assign some $\rho$ data elements to each node, and assume unlimited capacity.  Storage is not expensive, and the cost per unit storage is dropping in excess of that predicted by Moore's Law.  Consequently, any accounting for capacity as a significant factor will be rapidly made obsolete by the market.  Furthermore, as connectivity increases, we may begin to naturally favor solutions such as a dynamic distributed federated database (DDFD) which allow queries to be distributed across the network\cite{Bent2009}.
+
+We first measure the time steps, $t$, required to synchronize all $n$ nodes of the network with $\rho$ elements of data, and show that this operation completes in polynomial time.  Next we re-establish our initial conditions and run our experiment again with the introduction of randomly assigned edges, creating temporary cycles in the graph.  These edges are assigned as follows.
+
+We select two non-adjacent nodes, $\mathscr{N}_{i}$ and $\mathscr{N}_{j}$, of the graph at random, with probability proportional to their connectivity within their respective immediate neighbors, $p(\mathscr{N}_{i})$ and $p(\mathscr{N}_{j})$, which we can refer to as $p_{i}$ and $p_{j}$ for convenience.  We allow the newly created edge to persist for one time step during which both nodes can perform a full exchange of data.  Note that it is possible, given sufficiently low probability of overall connectivity, that no new edge will be created on any given time step, $\tau_{t}$.  At most, however, one edge will be constructed.
 
 
 \section{Model Design}
+\label{sec:model}
 We have an interesting situation in that the physical organization of the network is highly structured, as prescribed by military doctrine, which favors a top-down, hierarchical task organization with a relatively fixed number of nodes at each echelon.  We generalize this as a tree structure in the classical sense, having no closed loops.  We then augment this structure by introducing some loops that connect nodes both laterally and across echelons to represent various opportunities for data delivery and synchronization scenarios not uncommon to actual operational threads.
 
 \subsection{Bandwidth and Connectivity}
 
-Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{Recent theaters of operation include Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power law proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.
+Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{At the time of the writing of this paper, recent theaters of operation included Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power law proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.  Figure \ref{fig:probcon} shows a range of representative probabilities of connectivity that might suit a model given a variety of working environmental conditions.  We develop a plot of the probability by echelon and vary the overall likelihood by altering $n$ to suit measurable conditions.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.5\textwidth]{images/prob_con}
-  \caption{Representative probabilities of connectivity by echelon.}
+    \includegraphics[width=0.5\textwidth]{images/probcon}
+  \caption{Representative probabilities of connectivity by echelon, given various conditions.}
+  \label{fig:probcon}
 \end{figure}
 
-We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $\lambda$, to allow a correction for the particular constraints of any specific environment.
+We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $K$, to allow a correction for the particular constraints of any specific environment.
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.5\textwidth]{images/bandwidth}
-  \caption{Representative bandwidth by echelon.}
+  \caption{Example representation of bandwidth by echelon.}
+  \label{fig:bandwidth}
 \end{figure}
 
 \subsection{Undirected Graph}
 While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
 
 \subsection{Shortcuts}
-We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
+We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations\cite{Vahdat:2000} within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
 
 \subsubsection{Lateral Movement of Data} 
 Data at rest on computing devices\footnote{While these are traditionally ruggedized racked computers, increasingly they will be tablets, smart phones, and other end user devices (EUDs).} in transit between Companies or Battalions is an example of how a situation can arise.  When this results in the opportunistic exchange and synchronization of data between nodes that are otherwise separated by much larger geodesic distances,  it constitutes an instance of an unintended consequence of an increasingly distributed and mobile computing environment.
 
 \subsubsection{Hierarchical Movement of Data}
-The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command can also result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset or if that Commander (or his staff) travels to Division HQ.  In both cases we are creating network cycles in the form of temporary links that transcend the hierarchical structure of the graph and connect nodes tat are otherwise separated by much larger geodesic distances.
+The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command can also result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset or if that Commander (or his staff) travels to Division HQ.  In both cases we are creating network cycles in the form of temporary links that transcend the hierarchical structure of the graph and connect nodes that are otherwise separated by much larger geodesic distances.  This has a nontrivial effect\cite{Ganesh:2005} on rate at which data is disseminated across the network.
 
 
 \section{Disaster Recovery}
-An event in which a node suffers catastrophic loss of data, a disaster recovery scenario, can be evaluated with epidemic modeling.  In both cases there is a non-trivial healing function which occurs over some $t$ time steps and which is affected by the network topology\cite{Ganesh:2005}.  In the former case, the disaster recovery \emph{heals} similar to a standard S-I-R model.  The failed node is analogous to the infected state (for example in a cellular automata).  As the data propagates back, the infected node transitions to a recovered state.  All nodes on the network are assumed to be susceptible.  
+\label{sec:dr}
+An event in which a node suffers catastrophic loss of data, characterized as a disaster recovery scenario, can be evaluated with epidemic modeling.  In both cases there is a non-trivial healing function which occurs over some $t$ time steps and which is affected by the network topology\cite{Ganesh:2005}.  In the former case, the disaster recovery \emph{heals} similar to a standard S-I-R model.  The failed node is analogous to the infected state (as in a cellular automata).  As the data propagates back, the infected node transitions to a recovered state.  All nodes on the network are assumed to be susceptible.  
 
-As with all data flow on the network, the rate of propagation of data to the failed node is determined by bandwidth and probability of connectivity, both of which are functions of geodesic distance to the root node.
+As with all data flow on the network, the rate of propagation of data to the failed node is determined by bandwidth and probability of connectivity, both of which have been previously defined in terms of their geodesic distance to the root node.  A complete discussion of this additional modeling is left to future work.
 
 
 \section{Related Work}
-Possibilities for additional, related work include:
-\begin{itemize}
-	\item Individual datum may have different levels of importance, and consequently there may be the need to address QoS issues on the network.
-	\item Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the military organization.
-\end{itemize}
+\label{sec:related}
+Given the rapidly evolving nature of both military conflict and technology, there are many opportunities to extend and enhance this work.  Possibilities for additional related work include the following.
+
+Individual datum may have different levels of importance, and consequently there may be the need to address QoS issues on the network.  In the context investigated in this paper, all data are treated equally on the network and there is no attempt made to differentiate datum, sender, or recipient, although all three might be a valid basis for establishing precedence.
+
+Especially in a military context, but in others as well, there is a need to control access to data based on different criteria.  Frequently this tames the form of access list or is managed through credentials during sign-on.  Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the organization.  In many situations this extends not only to controlling data access by individuals on the network but also controlling what data reaches the network in the first place.  In the military this is sometimes referred to as a red-black issue and much of the concern over security revolves around defending network borders.
+	
+Earlier, we briefly mentioned dynamic distributed federated databases (DDFDs) and suggested that there might at some future point be an opportunity to assess their fitness for use in austere conditions.  They are popular and will become a viable solution as network capacity and reliability continue to increase or where data needs are sufficiently localized and local connectivity allows.
 
 \section{Conclusion}
+\label{sec:conclusion}
 The conclusion goes here.
 
 
@@ -464,9 +479,9 @@ The conclusion goes here.
 
 
 
-The following is just a collection of citations that may (or may not) be used in this paper.  I have collected them here in order to ensure they not get misplaced.
-\cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ganesh:2005}
-\cite{Bent2009}\cite{Bent:2008}\cite{Toce:2011}\cite{Sonnenberg:2009}
+%The following is just a collection of citations that may (or may not) be used in this paper.  I have collected them here in order to ensure they not get misplaced.
+%\cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ganesh:2005}
+%\cite{Bent2009}\cite{Bent:2008}\cite{Toce:2011}\cite{Sonnenberg:2009}
 
 
 
@@ -474,10 +489,10 @@ The following is just a collection of citations that may (or may not) be used in
 
 
 % use section* for acknowledgement
-%\section*{Acknowledgment}
+\section*{Acknowledgment}
 %
 %
-%The authors would like to thank...
+The authors would like to thank Dr. Timothy Chung and the Systems Engineering Department of the Naval Postgraduate School for their support, resources, and motivation.
 
 
 
