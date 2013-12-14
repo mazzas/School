@@ -112,7 +112,7 @@
 % does. amsmath.sty is already installed on most LaTeX systems. The latest
 % version and documentation can be obtained at:
 % http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
-
+\usepackage{mathrsfs}
 
 
 
@@ -276,7 +276,7 @@
 
 \begin{document}
 
-\title{Federation Among Remote Military Data Stores In DIL Environments}
+\title{Federation Among Remote Military Data Stores In Austere Environments}
 
 \author{\IEEEauthorblockN{Steve Mazza}\\
 \IEEEauthorblockA{School of Systems Engineering\\
@@ -291,7 +291,7 @@ Email: spmazza@nps.edu}}
 
 \begin{abstract}
 %\boldmath
-The abstract goes here.
+Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  Through model design and discussion we address some aspects of one potential solution to this fragmentation through federation of data stores.  In particular, we show that we can guarantee eventual consistency of data, even in austere environments.  Furtherore, we show that this state can be achieved in time proportional to $O(K log(n))$ where $n$ is the number of nodes in the network.
 \end{abstract}
 
 
@@ -300,7 +300,7 @@ The abstract goes here.
 
 \section{Introduction}
 % no \IEEEPARstart
-Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the problem by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.
+Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  
 
 Consequently, there exists a significant and growing problem related to the decentralization of computing in the United States military.  Due to the increasing distribution of computing power and data storage, there is now an acknowledged need to implement some form of federation\cite{Takai:2012} in order to maintain data concurrency.  This is especially true in theaters of operation that are characterized as austere environments and for which communications are assumed to be disconnected, intermittent, or limited (DIL), and where connections to a centralized data store are impractical or impossible.
 
@@ -324,27 +324,32 @@ Here is what we intend to address:
 
 
 \section{Model Design}
-A description of the model goes here.
+We have an interesting situation in that the physical organization of the network is highly structured, as prescribed by military doctrine, which favors a top-down, hierarchical task organization with a relatively fixed number of nodes at each echelon.  We generalize this as a tree structure in the classical sense, having no closed loops.  We then augment this structure by introducing some loops that connect nodes both laterally and across echelons to represent various opportunities for data delivery and synchronization scenarios not uncommon to actual operational threads.
 
-Can we make a cogent case for using the inverse square of the distance law of gravitational attraction to accurately model both bandwidth and the probability of connectivity within the constraints of our graph model, taking distance, $d$, as the graph distance between any two given nodes, $n_i$ and $n_j$?  Possibly we follow this basic model but apply some constant to correct for accuracy.  Certainly it does seem to be the case (on first inspection) that both bandwidth and connectivity should follow some inverse power law.
+\subsection{Bandwidth and Connectivity}
 
-\subsection{Bandwidth}
-Bandwidth is inversely proportional to the distance of some node, $k$, to the root of the graph.
+Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{Recent theaters of operation include Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power law proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.
 
-\subsection{Connectivity}
-The probability of connectivity goes inversely with the distance of some node, $k$, to the root of the graph.
+We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but also apply a constant, $K$, to allow a correction for accuracy, given the particular constraints of any specific setting.
 
-\subsection{Directionality}
-While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier be a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow not only up and down the traditional chain of command, but also laterally within a structural organization and even across formations.  We will further see how the occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
+\subsection{Undirected Graph}
+While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
 
 \subsection{Shortcuts}
-We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations within an otherwise hierarchical network model.  Talk about why small-world networks are important for shortening the diameter of the graph.
+We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
 
 \subsubsection{Lateral Movement of Data} 
-Data at rest on computing devices in transit between Companies or Battalions could constitute an instance of an unintended consequence of an increasingly distributed computing environment and result in a lateral transfer of information.
+Data at rest on computing devices\footnote{While these are traditionally ruggedized racked computers, increasingly they will be tablets, smart phones, and other end user devices (EUDs).} in transit between Companies or Battalions is an example of how a situation can arise.  When this results in the opportunistic exchange and synchronization of data between nodes that are otherwise separated by much larger geodesic distances,  it constitutes an instance of an unintended consequence of an increasingly distributed and mobile computing environment.
 
 \subsubsection{Hierarchical Movement of Data}
-The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command could result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset.
+The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command can also result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset or if that Commander (or his staff) travels to Division HQ.  In both cases we are creating network cycles in the form of temporary links that transcend the hierarchical structure of the graph and connect nodes tat are otherwise separated by much larger geodesic distances.
+
+
+\section{Disaster Recovery}
+An event in which a node suffers catastrophic loss of data, a disaster recovery scenario, can be evaluated with epidemic modeling.  In both cases there is a non-trivial healing function which occurs over some $t$ time steps and which is affected by the network topology\cite{Ganesh:2005}.  In the former case, the disaster recovery \emph{heals} similar to a standard S-I-R model.  The failed node is analogous to the infected state (for example in a cellular automata).  As the data propagates back, the infected node transitions to a recovered state.  All nodes on the network are assumed to be susceptible.  
+
+As with all data flow on the network, the rate of propagation of data to the failed node is determined by bandwidth and probability of connectivity, both of which are functions of geodesic distance to the root node.
+
 
 \section{Related Work}
 Possibilities for additional, related work include:
@@ -442,7 +447,7 @@ The conclusion goes here.
 
 
 The following is just a collection of citations that may (or may not) be used in this paper.  I have collected them here in order to ensure they not get misplaced.
-\cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ayalvadi:2005}
+\cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ganesh:2005}
 \cite{Bent2009}\cite{Bent:2008}\cite{Toce:2011}\cite{Sonnenberg:2009}
 
 
@@ -477,7 +482,7 @@ The following is just a collection of citations that may (or may not) be used in
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
 \bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-\bibliography{../../581Thesis/bibtex/581.bib}
+\bibliography{../../581Thesis/bibtex/581}
 %
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
