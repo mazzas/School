@@ -342,7 +342,7 @@ We have an interesting situation in that the physical organization of the networ
 
 \subsection{Bandwidth and Connectivity}
 
-Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{At the time of the writing of this paper, recent theaters of operation included Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power law proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.  Figure \ref{fig:probcon} shows a range of representative probabilities of connectivity that might suit a model given a variety of working environmental conditions.  We develop a plot of the probability by echelon and vary the overall likelihood by altering $n$ to suit measurable conditions.
+Where this graph structure becomes particularly interesting is in the implementation of the edges.  Due to limited resources in most all theaters of operation\footnote{At the time of the writing of this paper, recent theaters of operation included Iran, Iraq, and Afghanistan.} we model the probability of connectivity and bandwidth as an edge weight that tends to follow an inverse power formula proportional to the distance of any node, $\mathscr{N}_{k}$, to the root node, $\mathscr{N}_{0}$.  Figure \ref{fig:probcon} shows a range of representative probabilities of connectivity that might suit a model given a variety of working environmental conditions.  We develop a plot of the probability by echelon and vary the overall likelihood by altering $n$ to suit measurable conditions.
 
 \begin{figure}[h!]
   \centering
@@ -351,7 +351,7 @@ Where this graph structure becomes particularly interesting is in the implementa
   \label{fig:probcon}
 \end{figure}
 
-We allow creation of the graph model dynamically by using the inverse square of the distance law of gravitational attraction to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.   We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $K$, to allow a correction for the particular constraints of any specific environment.
+We allow creation of the graph model dynamically by using an inverse power formula to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.  We can see this illustrated in Figure \ref{fig:bandwidth}.  We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $K$, to allow a correction for the particular constraints of any specific environment.
 
 \begin{figure}[h!]
   \centering
@@ -364,10 +364,17 @@ We allow creation of the graph model dynamically by using the inverse square of 
 While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
 
 \subsection{Shortcuts}
-We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations\cite{Vahdat:2000} within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
+We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  This is illustrated in Figure \ref{fig:network}.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations\cite{Vahdat:2000} within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
 
 \subsubsection{Lateral Movement of Data} 
 Data at rest on computing devices\footnote{While these are traditionally ruggedized racked computers, increasingly they will be tablets, smart phones, and other end user devices (EUDs).} in transit between Companies or Battalions is an example of how a situation can arise.  When this results in the opportunistic exchange and synchronization of data between nodes that are otherwise separated by much larger geodesic distances,  it constitutes an instance of an unintended consequence of an increasingly distributed and mobile computing environment.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\textwidth]{images/network}
+  \caption{Representative lateral and hierarchical cycles.}
+  \label{fig:network}
+\end{figure}
 
 \subsubsection{Hierarchical Movement of Data}
 The establishment of temporary connectivity from one echelon to another, which bypasses the standard chain of command can also result in a hierarchical movement of data.  Such situation may exist if, for example, a Company Commander required a Sat-Com link to a Division asset or if that Commander (or his staff) travels to Division HQ.  In both cases we are creating network cycles in the form of temporary links that transcend the hierarchical structure of the graph and connect nodes that are otherwise separated by much larger geodesic distances.  This has a nontrivial effect\cite{Ganesh:2005} on rate at which data is disseminated across the network.
