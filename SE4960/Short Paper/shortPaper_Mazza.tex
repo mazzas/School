@@ -290,7 +290,7 @@ Email: spmazza@nps.edu}}
 
 \begin{abstract}
 %\boldmath
-Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  Through model design and discussion we address some aspects of one potential solution to this fragmentation through federation of data stores.  In particular, we show that we can guarantee eventual consistency of data, even in austere environments.  Furtherore, we show that this state can be achieved in time proportional to $O(K log(n))$ where $n$ is the number of nodes in the network.
+Transportable computing and some degree of network connectivity have been a necessary component of US military operations at least since the advent of the personal computer in the 1980s.  Subsequent ubiquity of laptop computers and, more recently, hand held devices such as the smart phone have exacerbated the situation by allowing the need for data and the locus of computing power to be increasingly distributed and fragmented.  Through model design and discussion we address some aspects of one potential solution to this fragmentation through federation of data stores.  In particular, we show that we are likely to obtain eventual consistency of data, even in austere environments.  Furthermore, we show that we can improve on the worst case for the time in which this state can be achieved, $O(n^{2})$ where $n$ is the number of nodes in the network.  By altering the network topology by introducing temporary cycles with varying degrees of probability, we approach time proportional to $O(log(n))$ in the best case and $O(n)$ in the average.
 
 %TODO: fix the metrics.
 \end{abstract}
@@ -333,7 +333,7 @@ We begin by constructing an acyclic undirected graph as described in Section \re
 
 We first measure the time steps, $t$, required to synchronize all $n$ nodes of the network with $\rho$ elements of data, and show that this operation completes in polynomial time.  Next we re-establish our initial conditions and run our experiment again with the introduction of randomly assigned edges, creating temporary cycles in the graph.  These edges are assigned as follows.
 
-We select two non-adjacent nodes, $\mathscr{N}_{i}$ and $\mathscr{N}_{j}$, of the graph at random, with probability proportional to their connectivity within their respective immediate neighbors, $p(\mathscr{N}_{i})$ and $p(\mathscr{N}_{j})$, which we can refer to as $p_{i}$ and $p_{j}$ for convenience.  We allow the newly created edge to persist for one time step during which both nodes can perform a full exchange of data.  Note that it is possible, given sufficiently low probability of overall connectivity, that no new edge will be created on any given time step, $\tau_{t}$.  At most, however, one edge will be constructed.
+We select two non-adjacent nodes, $\mathscr{N}_{i}$ and $\mathscr{N}_{j}$, of the graph at random, with probability proportional to their connectivity within their respective immediate neighbors, $p(\mathscr{N}_{i})$ and $p(\mathscr{N}_{j})$, which we can refer to as $p_{i}$ and $p_{j}$ for convenience.  We allow the newly created edge to persist for one time step during which both nodes can perform a full exchange of data.  Note that it is possible, given sufficiently low probability of overall connectivity, that no new edge will be created on any given time step, $\tau_{t}$.  In fact, it is this probability with which cycles are introduced that determines the number of cycles at any step.  This ultimately determines the order of time in which we can achieve consistency among the nodes.
 
 
 \section{Model Design}
@@ -361,7 +361,7 @@ We allow creation of the graph model dynamically by using an inverse power formu
 \end{figure}
 
 \subsection{Undirected Graph}
-While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks within the hierarchical military structure.
+While the traditional flow of information in a military hierarchy follows a top-down model, we implement an undirected graph.  We feel this is in keeping with the stated specific desire that each soldier become a sensor on the network\cite{Patton:2003}.  A direct result of this is that information will naturally flow naturally both up and down the traditional chain of command.  An unintended consequence is that, due largely to task re-organization, general officer and staff mobility, and transient network connections, it may also flow laterally within a structural organization and even across formations.  We will further see how this occasional lateral flow of information facilitates our desired end state of achieving consistency of data across the network by creating temporary ad hoc small-world networks\cite{Watts:1998} within the hierarchical military structure.
 
 \subsection{Shortcuts}
 We intentionally allow the occasional introduction of shortcuts on our graph.  These shortcuts model the transit of information over non-traditional routes within the network.  This is illustrated in Figure \ref{fig:network}.  Shortcuts are an important part of this network model in that they intermittently create small-world type situations\cite{Vahdat:2000} within an otherwise hierarchical, acyclical network model.  These shortcuts come in two general types that have similar effect but which arise from different circumstances.
@@ -395,7 +395,7 @@ Individual datum may have different levels of importance, and consequently there
 
 Especially in a military context, but in others as well, there is a need to control access to data based on different criteria.  Frequently this tames the form of access list or is managed through credentials during sign-on.  Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the organization.  In many situations this extends not only to controlling data access by individuals on the network but also controlling what data reaches the network in the first place.  In the military this is sometimes referred to as a red-black issue and much of the concern over security revolves around defending network borders.
 	
-Earlier, we briefly mentioned dynamic distributed federated databases (DDFDs) and suggested that there might at some future point be an opportunity to assess their fitness for use in austere conditions.  They are popular and will become a viable solution as network capacity and reliability continue to increase or where data needs are sufficiently localized and local connectivity allows.
+In Section \ref{sec:doe} we briefly mentioned dynamic distributed federated databases (DDFDs) and suggested that there might at some future point be an opportunity to assess their fitness for use in austere conditions.  They are popular and will become a viable solution as network capacity and reliability continue to increase or where data needs are sufficiently localized and local connectivity allows.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -488,7 +488,7 @@ The conclusion goes here.
 
 %The following is just a collection of citations that may (or may not) be used in this paper.  I have collected them here in order to ensure they not get misplaced.
 %\cite{Hui:2011}\cite{Liu:2009}\cite{Vahdat:2000}\cite{Gross:2006}\cite{Fu:2003}\cite{Ganesh:2005}
-%\cite{Bent2009}\cite{Bent:2008}\cite{Toce:2011}\cite{Sonnenberg:2009}
+%\cite{Bent2009}\cite{Bent:2008}\cite{Toce:2011}\cite{Sonnenberg:2009}\cite{Watts:1998}
 
 
 
