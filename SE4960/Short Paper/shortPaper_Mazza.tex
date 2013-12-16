@@ -3,6 +3,7 @@
 
 \usepackage{cite}
 \usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
 \usepackage{mathrsfs}
 
 
@@ -58,16 +59,16 @@ Here is what we intend to address.  We would like to know if we can guarantee th
 
 \section{Design of Experiments}
 \label{sec:doe}
-We begin by constructing an acyclic undirected graph as described in Section \ref{sec:model} with $k$ nodes.  We assign some $\rho$ data elements to each node, and assume unlimited capacity.  Storage is not expensive, and the cost per unit storage is dropping in excess of that predicted by Moore's Law.  Consequently, any accounting for capacity as a significant factor will be rapidly made obsolete by the market.  Furthermore, as connectivity increases, we may begin to naturally favor solutions such as a dynamic distributed federated database (DDFD) which allow queries to be distributed across the network\cite{Bent2009}.
+We begin by constructing an acyclic undirected graph as described in Section \ref{sec:model} with $n$ nodes.  We assign some $\rho$ data elements to each node, and assume unlimited capacity.  Storage is not expensive, and the cost per unit storage is dropping in excess of that predicted by Moore's Law.  Consequently, any accounting for capacity as a significant factor will be rapidly made obsolete by the market.  Furthermore, as connectivity increases, we may begin to naturally favor solutions such as a dynamic distributed federated database (DDFD) which allow queries to be distributed across the network\cite{Bent2009}.
 
-We first measure the time steps, $t$, required to synchronize all $n$ nodes of the network with $\rho$ elements of data, and show that this operation completes in polynomial time.  Next we re-establish our initial conditions and run our experiment again with the introduction of randomly assigned edges, creating temporary cycles in the graph.  These edges are assigned as follows.
+We first measure the time steps, $t$, required to synchronize all $n$ nodes of the network with $\rho$ elements of data, and show that this operation completes in polynomial time.  Next we re-establish our initial conditions and run our experiment again with the introduction of randomly assigned edges, creating temporary cycles in the graph.  These edges can be seen in Figure \ref{fig:network} and are assigned as follows.
 
 We select two non-adjacent nodes, $\mathscr{N}_{i}$ and $\mathscr{N}_{j}$, of the graph at random, with probability proportional to their connectivity within their respective immediate neighbors, $p(\mathscr{N}_{i})$ and $p(\mathscr{N}_{j})$, which we can refer to as $p_{i}$ and $p_{j}$ for convenience.  We allow the newly created edge to persist for one time step during which both nodes can perform a full exchange of data.  Note that it is possible, given sufficiently low probability of overall connectivity, that no new edge will be created on any given time step, $\tau_{t}$.  In fact, it is this probability with which cycles are introduced that determines the number of cycles at any step.  This ultimately determines the order of time in which we can achieve consistency among the nodes.
 
 
 \section{Model Design}
 \label{sec:model}
-We have an interesting situation in that the physical organization of the network is highly structured, as prescribed by military doctrine, which favors a top-down, hierarchical task organization with a relatively fixed number of nodes at each echelon.  We generalize this as a tree structure in the classical sense, having no closed loops.  We then augment this structure by introducing some loops that connect nodes both laterally and across echelons to represent various opportunities for data delivery and synchronization scenarios not uncommon to actual operational threads.
+We have an interesting situation in that the physical organization of the network is highly structured, as prescribed by military doctrine, which favors a top-down, hierarchical task organization with a relatively fixed number of nodes at each echelon.  We generalize this as a tree structure in the classical sense, having no closed loops.  Then, as in Figure \ref{fig:network}, we augment this structure by introducing some loops that connect nodes both laterally and across echelons.  This represents various opportunities for data delivery and synchronization scenarios that are not uncommon to actual operational threads.
 
 \subsection{Bandwidth and Connectivity}
 
@@ -80,7 +81,10 @@ Where this graph structure becomes particularly interesting is in the implementa
   \label{fig:probcon}
 \end{figure}
 
-We allow creation of the graph model dynamically by using an inverse power formula to approximate both bandwidth and the probability of connectivity within the constraints of our graph model.  We can see this illustrated in Figure \ref{fig:bandwidth}.  We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the value, $K$, to allow a correction for the particular constraints of any specific environment.
+We allow creation of the graph model dynamically by also using an inverse power formula to approximate bandwidth  within the constraints of our graph model.  We can see this illustrated in Figure \ref{fig:bandwidth}.  We assume distance, $d$, as the graph distance between any two given nodes, $\mathscr{N}_i$ and $\mathscr{N}_j$ such that $d(\mathscr{N}_{i}, \mathscr{N}_{j})$ is the geodesic distance with $0<d\leq \epsilon(v)$, where $\epsilon(v)$ is the graph diameter.  We construct the graph following this basic model but adjust the values, $K$ and $\lambda$, to allow a correction for the particular constraints of any specific environment.
+\[
+	p(\mbox{connectivity}) = \dfrac{1}{Kn_{k}^{\lambda n}}
+\]
 
 \begin{figure}[h!]
   \centering
@@ -122,16 +126,16 @@ Given the rapidly evolving nature of both military conflict and technology, ther
 
 Individual datum may have different levels of importance, and consequently there may be the need to address QoS issues on the network.  In the context investigated in this paper, all data are treated equally on the network and there is no attempt made to differentiate datum, sender, or recipient, although all three might be a valid basis for establishing precedence.
 
-Especially in a military context, but in others as well, there is a need to control access to data based on different criteria.  Frequently this tames the form of access list or is managed through credentials during sign-on.  Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the organization.  In many situations this extends not only to controlling data access by individuals on the network but also controlling what data reaches the network in the first place.  In the military this is sometimes referred to as a red-black issue and much of the concern over security revolves around defending network borders.
+Especially in a military context, but in others as well, there is a need to control access to data based on different criteria.  Frequently this takes the form of an access list or is managed through credentials during sign-on.  Security has been summarily ignored for the sake of this discussion, but must be implemented in a way that satisfies the needs of the organization.  In many situations this extends not only to controlling data access by individuals on the network but also controlling what data reaches the network in the first place.  In the military this is sometimes referred to as a red-black issue and much of the concern over security revolves around defending network borders.
 	
 In Section \ref{sec:doe} we briefly mentioned dynamic distributed federated databases (DDFDs) and suggested that there might at some future point be an opportunity to assess their fitness for use in austere conditions.  They are popular and will become a viable solution as network capacity and reliability continue to increase or where data needs are sufficiently localized and local connectivity allows.
 
 
 \section{Summary}
 \label{sec:conclusion}
-We discovered that we can rely on the established hierarchical structure, alone, to ensure that data on the network will converge to a stable consistent state.  Furthermore, this will occur in polynomial time roughly proportional to $O(n^{2})$ in the worst case, although it will likely approach $O(n)$.  
+We discovered that we can rely on the established hierarchical structure, alone, to ensure that data on the network will converge to a stable consistent state.  Furthermore, we find that this will occur in polynomial time roughly proportional to $O(n^{2})$ in the worst case, although it will likely approach $O(n)$.  
 
-The interesting finding, though, is that the introduction of a relatively small number of cycles significantly speeds up the process of data synchronization\cite{Watts:1998}.  Given a sufficiently high probability of cycle creation, we can expect federation in time proportional to no less than $O(n)$ and more likely approaching $O(log(n))$.
+The interesting finding, though, is that the introduction of a relatively small number of cycles significantly speeds up the process of data synchronization\cite{Watts:1998}.  Given a sufficiently high probability of cycle creation, we can expect federation in time proportional to no greater than $O(n)$ and more likely approaching $O(log(n))$.
 
 
 \newpage
