@@ -22,6 +22,45 @@
 \maketitle
 
 \section*{Problem 1.1.16}
+Some number of particles, $a$ leaves $x=0$ and heads toward $x=1$.  If $r$ is the fraction of particles reflected back toward $x=0$ at $x=1$ (iteration $n=1$) then $ar$ particles are returned and $a(1-r)$ particles escape.  At iteration $n=2$ (back at $x=0$) we have $ar\times r$ particles or $ar^2$ particles reflected back and, consequently, $ar \times (1-r)$ particles escaping.  We write the sequence as
+\[
+	ar^0(1-r), ar^1(1-r), ar^2(1-r), ar^3(1-r),\dots
+\]
+and we can generalize this as 
+\begin{equation}
+	ar^{n-1}(1-r)
+\end{equation}
+We further notice that odd values of $n$ occur at $x=1$ and even values of $n$ occur at $x=0$, so we can write the sequence for each as
+\begin{align*}
+	x=0&: ar^{1}(1-r), ar^{3}(1-r), ar^{5}(1-r), ar^{7}(1-r),\dots \\
+	x=1&: ar^{0}(1-r), ar^{2}(1-r), ar^{4}(1-r), ar^{6}(1-r),\dots
+\end{align*}
+which we can generalize as
+\begin{align}
+	x=0&: ar^{2n-1}(1-r) \\
+	x=1&: ar^{2n-2}(1-r)
+\end{align}
+
+In general, the sums for these series is determined by the equation
+\begin{equation*}
+	S=\dfrac{a}{1-r}
+\end{equation*}
+So to sum the series at $x=0$ we substitute values $a=ar^{2n-1}$ $r=(1-r)$ and get
+\begin{align*}
+	S&= \dfrac{ar^{2n-1}}{1-(1-r)} \\
+	&= \dfrac{ar^{2n-1}}{1-1+r} \\
+	&= \dfrac{ar^{2n-1}}{r} \\
+	&= ar^{2n-2}
+\end{align*}
+Summing the series at $x=1$ we substitute values $a=ar^{2n-2}$ $r=(1-r)$ and get
+\begin{align*}
+	S&= \dfrac{ar^{2n-2}}{1-(1-r)} \\
+	&= \dfrac{ar^{2n-2}}{1-1+r} \\
+	&= \dfrac{ar^{2n-2}}{r} \\
+	&= ar^{2n-3}
+\end{align*}
+
+Since the particles begin at $x=0$ and head toward $x=1$ first, the largest fraction of particles which can escape at $x=0$ ($n=2$) is $\frac{1}{2}$.
 
 \section*{Problem 1.6.27}
 
