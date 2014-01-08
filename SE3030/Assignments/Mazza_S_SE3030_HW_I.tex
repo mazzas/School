@@ -63,6 +63,13 @@ Summing the series at $x=1$ we substitute values $a=ar^{2n-2}$ $r=(1-r)$ and get
 Since the particles begin at $x=0$ and head toward $x=1$ first, the largest fraction of particles which can escape at $x=0$ ($n=2$) is $\frac{1}{2}$.
 
 \section*{Problem 1.6.27}
+We apply the ratio test to $\sum\limits^{\infty}_{n=0}\frac{100^{n}}{n^{200}}$ as follows and determine that our series diverges since $\rho > 1$.
+\begin{align*}
+	\rho_{n} &= \left\lvert{\dfrac{\dfrac{100^{n+1}}{(n+1)^{200}}}{\dfrac{100^{n}}{n^{200}}}}\right\rvert \\
+	\rho &= \lim_{n\to\infty}\left\lvert{\dfrac{\dfrac{100^{n+1}}{(n+1)^{200}}}{\dfrac{100^{n}}{n^{200}}}}\right\rvert \\
+	&= \lim_{n\to\infty}\left\lvert \dfrac{100 n^{200}}{(1+n)^{200}}\right\rvert \\
+	&= 100
+\end{align*}
 
 \section*{Problem 1.10.2}
 
