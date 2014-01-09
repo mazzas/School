@@ -11,7 +11,8 @@
 \institute[Naval Postgraduate School]
 {
   Naval Postgraduate School \\
-  Monterey, CA
+  Monterey, CA \\
+  \includegraphics[height=3cm]{images/NPS_logo.jpg}
 }
 \date {SE3030, Winter/2014 \\ Quantitative Methods of Systems Engineering}
 \subject{Quantitative Methods of Systems Engineering}
@@ -22,9 +23,31 @@
 \frame{\titlepage}
 
 \begin{frame}{Introduction}
+	Power series are series where the $n^{\mbox{th}}$ term is a constant times $x^n$ or a constant times $(x-a)^n$ where $a$ is also constant.
+	\begin{block}{Definition}
+		\begin{align*}
+		\sum\limits_{n=0}^\infty a_nx^n&=a_0+a_1x+a_2x^2+a_3x^3+\cdots \\
+		\sum\limits_{n=0}^\infty a_n(x-a)^n&=a_0+a_1(x-a)+a_2(x-a)^2+a_3(x-a)^3+\cdots
+		\end{align*}
+	\end{block}
 \end{frame}
 
+\frame{{Examples}
+	The following are two of the examples that can also be found in Boas: \emph{Quantitative Methods of Systems Engineering} on page 20.
+	\begin{exampleblock}{Example \#1}
+		\[
+		x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots+\dfrac{(-1)^{x+1}x^n}{n}+\cdots 
+		\]
+	\end{exampleblock}
+	\begin{exampleblock}{Example \#2}
+		\[
+		1+\dfrac{(x+2)}{\sqrt{2}}+\dfrac{(x+2)^2}{\sqrt{3}}+\cdots+\dfrac{(x+2)^n}{\sqrt{(n+1)}}+\cdots
+		\]
+	\end{exampleblock}
+}
+
 \begin{frame}{Interval of Convergence}
+	Convergence of the power series depends on the value of $x$.  We can use the ratio test to find $x$ such that the series converges. 
 \end{frame}
   
 \begin{frame}{Theorems About Power Series}
