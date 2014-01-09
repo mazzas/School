@@ -47,17 +47,81 @@
 }
 
 \begin{frame}{Interval of Convergence}
-	Convergence of the power series depends on the value of $x$.  We can use the ratio test to find $x$ such that the series converges. 
+	Convergence of the power series depends on the value of $x$.  We can use the ratio test to find values of $x$ that cause the series to converge. 
+	\begin{exampleblock}{Example}
+		\begin{align*}
+		\rho_n &= \left\lvert \dfrac{(-x)^{n+1}}{2^{n+1}} \div \dfrac{(-x)^n}{2^n} \right\rvert \\
+		\rho &= \left\lvert \dfrac{x}{2} \right\rvert
+		\end{align*}
+	\end{exampleblock}
+	Since the series will converge for values $\rho < 1$, we can see that it holds for all values $\lvert x\rvert < 2$ and diverges for all values $\lvert x\rvert > 2$.
 \end{frame}
   
 \begin{frame}{Theorems About Power Series}
+	There are four theorems about power series that we want to introduce.
+	\begin{block}{Theorem \#1}
+		A power series can be integrated and differentiated.
+	\end{block}
+	It is convenient that the resulting power series converges to the derivative or integral of the original power series's functional equivalent and, furthermore, it does so within the same interval.
+\end{frame}
+  
+\begin{frame}{Theorems About Power Series (continued)}
+	\begin{block}{Theorem \#2}
+		Power series may be added, subtracted, multiplied, or divided.
+	\end{block}
+	The resulting series will converge at least in the common interval of convergence.
+	\begin{alertblock}{No Division by Zero!}
+		Division of power series holds only so long as the denominator series is not zero at $x=0$.
+	\end{alertblock}
+\end{frame}
+  
+\begin{frame}{Theorems About Power Series (continued)}
+	\begin{block}{Theorem \#3}
+		One series may be substituted in another.
+	\end{block}
+	This holds so long as the values of the substituted series are in the interval of convergence or the other.
+\end{frame}
+  
+\begin{frame}{Theorems About Power Series (continued)}
+	\begin{block}{Theorem \#4}
+		The power series of a function is unique.
+	\end{block}
+	For any function there is exactly one converging power series of the form $\sum_{n=0}^\infty a_nx^n$ .
 \end{frame}
   
 \begin{frame}{Expanding Functions in Power Series}
+	We wish to derive a power series that represents a given function.  We begin this by assuming that the power series exists and we write
+	\begin{exampleblock}{Step \#1}
+	$\mbox{sin\ } x = a_0 + a_1x + a_2x^2+\cdots +a_nx^n+\cdots$
+	\end{exampleblock}
+	We then select coefficients such that the function's value is preserved at $x=0$.
+	\begin{exampleblock}{Step \#2}
+	$a_0=0$ and $\mbox{sin\ }0=0$
+	\end{exampleblock}
+	Next we differentiate term by term.
+	\begin{exampleblock}{Step \#3}
+	cos $x=a_1+2a_2x+3a_3x^2+\cdots$
+	\end{exampleblock}
+\end{frame}
+  
+\begin{frame}{Expanding Functions in Power Series (continued)}
+	We continue setting $x=0$ and differentiating as follows
+	\begin{exampleblock}{Continuing...}
+	\begin{align*}
+	-\mbox{sin\ }x &= 2a_2+3\cdot2a_3x+4\cdot3a_4x^2+\cdots \\
+	-\mbox{cos\ }x&= 3\cdot2a_3+4\cdot3\cdot2a_4x+\cdots \\
+	\mbox{sin\ }x &= 4\cdot3\cdot2a_4+5\cdot4\cdot3\cdot2a_5x+\cdots \\
+	\mbox{cos\ }x &= 5\cdot4\cdot3\cdot2a_5+\cdots
+	\end{align*}
+	\end{exampleblock}
+	We can see that this results in the values $a_2=0$, $a_3=-\frac{1}{3!}$, $a_4=0$, $a_5=\frac{1}{5!}$, etc.  Lastly, we perform substitution back into the original equation.
+	\begin{exampleblock}{Substitution}
+	$\mbox{sin\ } x = x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots$
+	\end{exampleblock}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    We outlay and demonstrate several methods of obtaining power series expansions.
+    We outlay and demonstrate several additional methods of obtaining power series expansions to provide alternatives to the differentiation-substitution method.
     \begin{itemize}
     	\item Multiplying a series by polynomial or by another series
 	\item Division of two series or of a series by a polynomial
@@ -68,25 +132,48 @@
 	\item Using a computer
     \end{itemize}
 \end{frame}
-  
+
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Multiplying a Series by a Polynomial or by Another Series}
+	\framesubtitle{Basic Series Formula}
+	The textbook strongly recommends memorizing the following:
+	\begin{alertblock}{Save for Reference}
+	{\tiny\begin{align*}
+	& & \mbox{converge} \\
+	\mbox{sin\ }x &= \sum\limits_{n=0}^\infty\dfrac{(-1a)^nx^{2n+1}}{(2n+1)!} = x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+\cdots & \forall x \\
+	\mbox{cos\ }x &= \sum\limits_{n=0}^\infty\dfrac{(-1)^nx^{2n}}{(2n)!} =  1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots & \forall x \\
+	e^x &= \sum\limits_{n=0}^\infty\dfrac{x^n}{n!} = 1+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}-\dfrac{x^4}{4!}+\cdots & \forall x \\
+	\mbox{ln\ }(1+x) &= \sum\limits_{n=1}^\infty\dfrac{(-1)^{n+1}x^n}{n} = x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots & \forall x:\{-1<x\leq 1\} \\
+	(1+x)^p &= \sum\limits_{n=0}^\infty {p\choose n}x^n = 1+px+\dfrac{p(p-1)}{2!}x^2+\dfrac{p(p-1)(p-2)}{3!}x^3+\cdots & \forall x:\{ \lvert x\rvert < 1\}
+	\end{align*}
+	} % end \tiny
+	\end{alertblock}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Division of Two Series or of a Series by a Polynomial}
+    	\framesubtitle{Multiplying a Series by a Polynomial or by Another Series}
+    	This is very straight forward and is carried out by simply performing the multiplication and collecting the terms.
+    	\begin{exampleblock}{Multiplication by a Polynomial}
+    	\begin{align*}
+    	(x+1)\mbox{sin\ } x &= (x+1)\left( x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\right) \\
+    	&= x + x^2 - \dfrac{x^3}{3!}-\dfrac{x^4}{3!}+\dfrac{x^5}{5!}-\dfrac{x^6}{5!}\cdots
+    	\end{align*}
+    	\end{exampleblock}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Binomial Series}
+    	\framesubtitle{Division of Two Series or of a Series by a Polynomial}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Substitution of a Polynomial or a Series for the Variable in Another Series}
+    	\framesubtitle{Binomial Series}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Combination of Methods}
+    	\framesubtitle{Substitution of a Polynomial or a Series for the Variable in Another Series}
+\end{frame}
+  
+\begin{frame}{Techniques for Obtaining Power Series Expansions}
+   	\framesubtitle{Combination of Methods}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
@@ -101,53 +188,19 @@
    \begin{exampleblock}{Substitution}
    	\begin{align*}
    	    \mbox{ln\ } x&= \mbox{ln\ } [1+(x-1)] \\
-	    &= (x-1)-\dfrac{1}{2}(x-1)^2+\dfrac{1}{3}(x-1)^3-\dfrac{1}{4}(x-1)^4\cdots
+	    &= (x-1)-\dfrac{1}{2}(x-1)^2+\dfrac{1}{3}(x-1)^3-\dfrac{1}{4}(x-1)^4+\cdots
 	\end{align*}
    \end{exampleblock}
 \end{frame}
   
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
-    \framesubtitle{Using a Computer}
+    	\framesubtitle{Using a Computer}
 \end{frame}
   
 \begin{frame}{Accuracy of Series Approximations}
 \end{frame}
   
 \begin{frame}{Some Uses of Series}
-\end{frame}
-
-\begin{frame}{Example of columns 1}
-    \begin{columns}[c] % the "c" option specifies center vertical alignment
-    \column{.5\textwidth} % column designated by a command
-     Contents of the first column
-    \column{.5\textwidth}
-     Contents split \\ into two lines
-    \end{columns}
-\end{frame}
- 
-\begin{frame}{Example of columns 2}
-     \begin{columns}[t] % contents are top vertically aligned
-     \begin{column}[T]{5cm} % each column can also be its own environment
-     Contents of first column \\ split into two lines
-     \end{column}
-     \begin{column}[T]{5cm} % alternative top-align that's better for graphics
-          \includegraphics[height=3cm]{images/engineering.jpg}
-     \end{column}
-     \end{columns}
-\end{frame}
-
-\begin{frame}{Block Types}
-   \begin{block}{This is a Block}
-      This is important information
-   \end{block}
- 
-   \begin{alertblock}{This is an Alert block}
-   This is an important alert
-   \end{alertblock}
- 
-   \begin{exampleblock}{This is an Example block}
-   This is an example 
-   \end{exampleblock}
 \end{frame}
 
 \end{document}
