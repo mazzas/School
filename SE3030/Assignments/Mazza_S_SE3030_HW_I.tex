@@ -31,33 +31,27 @@ and we can generalize this as
 	ar^{n-1}(1-r)
 \end{equation}
 We further notice that odd values of $n$ occur at $x=1$ and even values of $n$ occur at $x=0$, so we can write the sequence for each as
-\begin{align*}
-	x=0&: ar^{1}(1-r), ar^{3}(1-r), ar^{5}(1-r), ar^{7}(1-r),\dots \\
-	x=1&: ar^{0}(1-r), ar^{2}(1-r), ar^{4}(1-r), ar^{6}(1-r),\dots
-\end{align*}
-which we can generalize as
 \begin{align}
-	x=0&: ar^{2n-1}(1-r) \\
-	x=1&: ar^{2n-2}(1-r)
+	x=0&: ar^{1}(1-r), ar^{3}(1-r), ar^{5}(1-r), ar^{7}(1-r), \dots \dfrac{a(1-r)r}{(1-r^2)} \\
+	x=1&: ar^{0}(1-r), ar^{2}(1-r), ar^{4}(1-r), ar^{6}(1-r), \dots \dfrac{a(1-r)}{(1-r^2)}
 \end{align}
-
-In general, the sums for these series is determined by the equation
+We recall
 \begin{equation*}
-	S=\dfrac{a}{1-r}
+	\sum\limits_{n=0}^\infty ar^n=\dfrac{a}{1-r} \mbox{\hspace{4em}}\forall x: |x|<1
 \end{equation*}
-So to sum the series at $x=0$ we substitute values $a=ar^{2n-1}$ $r=(1-r)$ and get
+So to sum the series at $x=0$,
 \begin{align*}
-	S&= \dfrac{ar^{2n-1}}{1-(1-r)} \\
-	&= \dfrac{ar^{2n-1}}{1-1+r} \\
-	&= \dfrac{ar^{2n-1}}{r} \\
-	&= ar^{2n-2}
+	\sum\limits_{n=0}^\infty a(1-r)r^{2n+1} &= \sum\limits_{n=0}^\infty[a(1-r)r]r^{2^n} \\
+	&= \dfrac{a(1-r)r}{1-r^2} \\
+	&= \dfrac{a(1-r)r}{(1-r)(1+r)} \\
+	&= \dfrac{ar}{1+r}
 \end{align*}
-Summing the series at $x=1$ we substitute values $a=ar^{2n-2}$ $r=(1-r)$ and get
+Summing the series at $x=1$,
 \begin{align*}
-	S&= \dfrac{ar^{2n-2}}{1-(1-r)} \\
-	&= \dfrac{ar^{2n-2}}{1-1+r} \\
-	&= \dfrac{ar^{2n-2}}{r} \\
-	&= ar^{2n-3}
+	\sum\limits_{n=0}^\infty a(1-r)r^{2n} &= \sum\limits_{n=0}^\infty[a(1-r)]r^{2^n} \\
+	&= \dfrac{a(1-r)}{1-r^2} \\
+	&= \dfrac{a(1-r)}{(1-r)(1+r)} \\
+	&= \dfrac{a}{1+r}
 \end{align*}
 
 Since the particles begin at $x=0$ and head toward $x=1$ first, the largest fraction of particles which can escape at $x=0$ ($n=2$) is $\frac{1}{2}$.
