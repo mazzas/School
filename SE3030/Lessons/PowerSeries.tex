@@ -154,12 +154,12 @@
     	This is very straight forward and is carried out by simply performing the multiplication and collecting the terms.
     	\begin{exampleblock}{Multiplication by a Polynomial: Boas, p. 26}
     	\begin{align*}
-    	(x+1)\mbox{sin\ } x &= (x+1)\left( x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\right) \\
+    	(x+1)\mbox{~sin\ } x &= (x+1)\left( x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\right) \\
     	&= x + x^2 - \dfrac{x^3}{3!}-\dfrac{x^4}{3!}+\dfrac{x^5}{5!}-\dfrac{x^6}{5!}\cdots
     	\end{align*}
     	\end{exampleblock}
     	\begin{exampleblock}{Multiplication by Another Series: Boas, p. 27}
-	\[e^{x}\mbox{cos\ }x = \left(1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+\dfrac{x^{4}}{4!}+\cdots \right)\left(1-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4!}-\cdots \right)\]
+	\[e^{x}\mbox{~cos\ }x = \left(1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+\dfrac{x^{4}}{4!}+\cdots \right)\left(1-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4!}-\cdots \right)\]
 	\end{exampleblock}
 \end{frame}
   
@@ -167,7 +167,7 @@
     	\framesubtitle{Division of Two Series or of a Series by a Polynomial}
 	Division works exactly like multiplication with the caveat that we must prevent division by zero.
     	\begin{exampleblock}{Division by a Polynomial: Boas, p. 27}
-	\[ \dfrac{1}{x}\mbox{ln\ }(1+x) = 1 - \dfrac{x}{2} + \dfrac{x^{2}}{3} - \dfrac{x^{3}}{4} + \cdots \]
+	\[ \dfrac{1}{x}\mbox{~ln\ }(1+x) = 1 - \dfrac{x}{2} + \dfrac{x^{2}}{3} - \dfrac{x^{3}}{4} + \cdots \]
 	\end{exampleblock}
 	\begin{block}{Division by Another Series}
     	Division by another series is a somewhat lengthier process for which there is an excellent example in the textbook on page 28.
@@ -214,9 +214,7 @@
     \framesubtitle{Taylor Series Using the Basic Maclaurin Series}
     The Maclaurin series provides us with an alternative method to the formulas for obtaining a Taylor series.
    \begin{exampleblock}{Maclaurin Series}
-       	\center{
        	    $\mbox{ln\ } x = \mbox{ln\ }[1+(x-1)]$
-        }
    \end{exampleblock}
    Then we replace $x$ with $(x-1)$
    \begin{exampleblock}{Substitution}
@@ -230,8 +228,9 @@
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
     	\framesubtitle{Using a Computer}
 	Approximate $e^{x}\mbox{cos\ }x$ by plotting partial sums.
-	% TODO: Fix the following graphic to e^x cos x.
-	\center{\includegraphics[width=.9\textwidth]{images/PowerSeriesPlot0.png}}
+	\begin{center}
+		\includegraphics[width=.9\textwidth]{images/PowerSeriesPlot0.png}
+	\end{center}
 \end{frame}
   
 \begin{frame}{Reliability of Series Approximations}
@@ -264,7 +263,7 @@
 	\end{block}
 \end{frame}
   
-\begin{frame}{Some Uses of Series}
+\begin{frame}{Some Use of Series}
 	Uses of series include:
 	\begin{itemize}
 		\item Performing accurate numerical computation
@@ -273,6 +272,27 @@
 		\item Evaluating indeterminate forms
 		\item Approximating series
 	\end{itemize}
+\end{frame}
+  
+\begin{frame}{Example Uses of Series}
+	\framesubtitle{Series Approximation: Boas, p. 38}
+	Computationally difficult problems can often be reduced in order to expedite their approximate solutions.  Take the equation of motion of a pendulum.
+	\begin{exampleblock}{Motion of a Simple Pendulum}
+	$\dfrac{d^{2}\theta}{dt^{2}} = -\dfrac{g}{l}\mbox{~sin\ }\theta$
+	\end{exampleblock}
+	We cannot solve for $\theta$ using o.d.e.  We previously memorized that the series approximation for sin$\theta$ is $\theta - \frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\cdots$.  For sufficiently small values of $\theta$ we need only the first few terms.
+	\begin{exampleblock}{Solutions to Differential Equations}
+	\begin{align*}
+	\theta &= A \mbox{~sin\ }\sqrt{g/l}t \mbox{, and} \\
+	\theta &= B \mbox{~sin\ }\sqrt{g/l}t
+	\end{align*}
+	\end{exampleblock}
+\end{frame}
+  
+\begin{frame}{Questions?}
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{images/fin.png}
+	\end{center}
 \end{frame}
 
 \end{document}
