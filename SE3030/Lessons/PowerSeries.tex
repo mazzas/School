@@ -230,13 +230,49 @@
 \begin{frame}{Techniques for Obtaining Power Series Expansions}
     	\framesubtitle{Using a Computer}
 	Approximate $e^{x}\mbox{cos\ }x$ by plotting partial sums.
+	% TODO: Fix the following graphic to e^x cos x.
 	\center{\includegraphics[width=.9\textwidth]{images/PowerSeriesPlot0.png}}
 \end{frame}
   
+\begin{frame}{Reliability of Series Approximations}
+	\begin{alertblock}{}
+	There are functions for which power series do not exist.
+	\end{alertblock}
+	Not all functions have series expansions.  Consider $\frac{1}{x}$.
+	\begin{alertblock}{}
+	It is possible to derive an erroneous series expansion of a function for which one does not exist.
+	\end{alertblock}
+	\begin{alertblock}{}
+	It is possible to derive a converging series that does not accurately represent the function being expanded.
+	\end{alertblock}
+	Consider the function $e^{-(1/x^2)}$ which expands to $0+0+0+\cdots$ but which is non-zero for $x^2>0$.
+\end{frame}
+  
 \begin{frame}{Accuracy of Series Approximations}
+	\framesubtitle{Alternating Series}
+	\begin{block}{Alternating Series: Boas, p. 34}
+	If $S=\sum\limits_{n=1}^\infty a_n$ is an alternating series with $|a_n+1|<|a_n|$, and $\lim\limits_{n\to\infty}a_n=0$, then $|S-(a_1+a_2+\cdots +a_n)|\leq |a_n+1|$.
+	\end{block}
+	Estimating the error in series approximation for alternating converging series can be accomplished by observing the absolute value of the first neglected term.
+\end{frame}
+  
+\begin{frame}{Accuracy of Series Approximations}
+	\framesubtitle{Non-alternating Series}
+	The previous method provides results that can contain nontrivial errors when applied to non-alternating series.  The results are the same order of magnitude but can be off by a significant factor.  We can refine our results by using the following formula.
+	\begin{block}{Non-alternating Series: Boas, p. 35}
+	If $S=\sum\limits_{n=0}^\infty a_n x^n$ converges for $|x|<1$, and if $|a_{n+1}|<|a_n|$ for $N$, then $\left\lvert S-\sum\limits_{n=0}^N a_n x^n \right\rvert<|a_{N+1}x^{N+1}|\div(1-|x|)$.
+	\end{block}
 \end{frame}
   
 \begin{frame}{Some Uses of Series}
+	Uses of series include:
+	\begin{itemize}
+		\item Performing accurate numerical computation
+		\item Summing series
+		\item Approximating integrals
+		\item Evaluating indeterminate forms
+		\item Approximating series
+	\end{itemize}
 \end{frame}
 
 \end{document}
