@@ -71,23 +71,22 @@
     \begin{block}{Group Conditions}
         {\tiny
             \begin{description}
-                \item [Closure: ] $\forall ~a, b \in V, a\cdot b \in V$
-                \item [Association: ]\hfill
+                \item [Closure: ] $\forall\ \vec{u}, \vec{v} \in V, \vec{u} + \vec{v} \in V$
+                \item [Vector Addition:]\hfill
                 \begin{description}
-                    \item [Addition: ] $\forall ~a, b, c \in V, (a + b) + c = a + (b + c)$
-                    \item [Multiplication: ] $\forall ~a, b, c \in V, (a\cdot b)\cdot c = a\cdot(b\cdot c)$
+                    \item [Commutation: ] $\forall\ \vec{u}, \vec{v} \in V, \vec{u}+\vec{v}=\vec{v}+\vec{u}$
+                    \item [Association: ] $\forall\ \vec{u}, \vec{v}, \vec{w} \in V, (\vec{u} + \vec{w}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})$
                 \end{description}
-                \item [Identity: ]\hfill
+                \item [Additive Identity: ] $\exists\ \vec{0} \in V \mid \forall\ \vec{v} \in V, \vec{0} + \vec{v} = \vec{v} + \vec{0} = \vec{v}$
+                \item [Additive Inverse: ] $\forall\ \vec{v} \in V\ \exists\ -\vec{v} \mid \vec{v}+(-\vec{v}) =0$
+                \item [Multiplication: ]\hfill
                 \begin{description}
-                    \item [Addition: ] $\exists$ exactly 1 element, $0 \in V \mid \forall ~a \in V, 0 = a = a = 0 = a$
-                    \item [Multiplication: ] $\exists$ exactly 1 element, $i \in V \mid \forall ~a \in V, i\cdot a = a\cdot i = a$
+                    \item [Distribution 1: ] $\forall\ \vec{u}, \vec{v} \in V, k(\vec{u}+\vec{v}) = k\vec{u}+k\vec{v}$
+                    \item [Distribution 2: ] $\forall\ \vec{v} \in V, \vec{v}(k_1+k_2)=k_1\vec{v}+k_2\vec{v}$
+                    \item [Association: ] $\forall \vec{v} \in V, \vec{v}(k_1\cdot k_2)=(\vec{v}\cdot k_1)k_2$
+                    \item [Identity: ] $\forall\ \vec{v} \in V, 1\cdot \vec{v}=\vec{v}$
+                    \item [Zero: ] $\forall\ \vec{v} \in V, 0\cdot\vec{v} = \vec{0}$
                 \end{description}
-                %TODO: fix everything below here.
-                \item [Inversion: ]
-                \item [Inversion: ]
-                \item [Inversion: ]
-                \item [Inversion: ]
-                \item [Inversion: ]
             \end{description}
         }
     \end{block}
