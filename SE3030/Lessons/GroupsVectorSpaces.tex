@@ -130,19 +130,42 @@
 \end{frame}
 
 \begin{frame}{Inner Product, Norm, Orthogonality}
-    %TODO: put content here.
+    For $A(x)$ and $B(x)$ on $a\leq x\leq b$, we define the following.
+    \begin{block}{Inner Product}
+        $\left <A(x), B(x) \right > = \int_a^b \overline{Ax}B(x)dx$
+    \end{block}
+    \begin{block}{Norm}
+        $\lVert A(x)\rVert = \sqrt{\int_a^b \overline{Ax}A(x)dx}$
+    \end{block}
+    \begin{block}{Orthogonality}
+        $A(x)\perp B(x)$ on $(a,b)$ if $\int_a^b \overline{Ax}B(x)dx=0$
+    \end{block}
 \end{frame}
 
-\begin{frame}{Schwart's Inequality}
-    %TODO: put content here.
+\begin{frame}{Schwartz's Inequality}
+    Let $\vec{u}, \vec{v}$ ab elements of a vector space.  Recall previously that for $n$-dimensional space, Schwartz's Inequality states
+    \begin{block}{Schwartz's Inequality for $n$-dimensional Space}
+        $\lvert\vec{u}\cdot\vec{v}\rvert\leq AB$
+    \end{block}
+    For an inner product space, we modify the definition as follows.
+    \begin{block}{Schwartz's Inequality for Inner Product Space}
+        $\lvert\left<\vec{u}\mid\vec{v}\right>\rvert^2\leq\left<\vec{u}\mid\vec{u}\right>\left<\vec{v}\mid\vec{v}\right>$
+    \end{block}
+    Boas develops a proof of this on page 182.
 \end{frame}
 
 \begin{frame}{Orthonormal Basis}
-    %TODO: put content here.
+    Two functions are \emph{orthonormal} if they
+    \begin{itemize}
+        \item satisfy the property of orthogonality, and
+        \item have a norm $= 1$
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Infinite Dimensional Spaces}
-    %TODO: put content here.
+    An \emph{infinite dimensional vector space} is one which does not have a finite basis.
+    \par We recall that the set of all linearly independent vectors $\vec{b_i}$ which, expressed as some finite sum, are capable of describing any vector, $\vec{v}$, form the \emph{basis} for our vector space.
+    \par As an example, consider $\mathbb{R}[x]$, the set of polynomials in $x$ with real coefficients for which ${x:n\in\mathbb{N}}$ forms the basis.
 \end{frame}
 
 \begin{frame}{Questions?}
