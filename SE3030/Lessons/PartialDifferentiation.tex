@@ -34,13 +34,17 @@
 	\begin{block}{Definition}
 		Derivatives of a multi-variable function where all variables are held fixed during differentiation except the variable of interest.
 	\end{block}
-	To denote this we write $\dfrac{\partial}{\partial y}$, generically.
-	%TODO: Replace the following example with 4.1.12
-	\begin{exampleblock}{Let $f(x,y) = x^{2}y^{3}$ , calculate $\dfrac{\partial f}{\partial x}(x,y)$}
+	To denote this we generically write $\dfrac{\partial}{\partial r}$, which means the partial derivative with respect to $r$.  We more frequently see $\dfrac{\partial z}{\partial r}$, which means the partial derivative of $z$ with respect to $r$.  In equations of more than two variables we may see $\left(\dfrac{\partial z}{\partial r}\right)_{x}$, which denotes the partial derivative of $z$ with respect to $r$, holding $x$ constant.
+}
+
+
+\frame{{Example}
+	\begin{exampleblock}{4.1.12}
 		\begin{align*}
-			g(x) &= x^{2}u^{3}, y=u \\
-			\dfrac{dg}{dx}(x) &= 2b^{3}x \\
-			\dfrac{\partial f}{\partial x}(x,y) &= 2xy^{3}, u=y
+			z &= x^{2}+2y^{2}, x=r\text{cos}\theta, y=r\text{sin}\theta \\
+	    z &= x^{2}+2y^{2} \\
+	    z &= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta \\
+	    \left(\dfrac{\partial z}{\partial y}\right)_{\theta}  &= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta
 		\end{align*}
 	\end{exampleblock}
 }
@@ -93,7 +97,16 @@
 
 
 \frame{{Implicit Differentiation}
-
+	We can differentiate with respect to a given term in some cases where we cannot solve for that term with respect to another.
+	\begin{exampleblock}{Given $x+e^{x}=t$, find $dx/dt$}
+		We realize that $x$ is a function of $t$ even though we cannot solve $x$ for $t$ directly.
+		\begin{align*}
+			x+e^{x} &= t \\
+			\dfrac{dx}{dt}+e^{x}\dfrac{dx}{dt}&=1 \\
+			\dfrac{dx}{dt} &= \dfrac{1}{1+e^{x}}
+		\end{align*}
+	\end{exampleblock}
+	This example can be found in Boas, p 202.
 }
 
 
