@@ -51,13 +51,28 @@
 
 
 \frame{{Power Series in Two Variables}
-	Our standard power series expansions can be re-written as partial differential equations.
+	Our standard power series expansions can be re-written in terms of partial differential equations.
 	\begin{block}{Definition}
 		\[
 			f(x,y) = \sum_{n=0}^{\infty}\dfrac{1}{n!}\left(h\dfrac{\partial}{\partial x}+k\dfrac{\partial}{\partial y}\right)^{n}f(a,b)
 		\]
 	\end{block}
-	%TODO: work an example.
+	\begin{itemize}
+		\item A power series about a given point for a function of 2 variables is unique.
+		\item Any methods from Chapter 1 may be used.
+	\end{itemize}
+}
+
+
+\frame{{Power Series Example}
+	We can arrive at the 2-variable expansion by finding the Maclaurin series expansions for sin and cos in the table on page 26 of Boas.
+	\begin{exampleblock}{Example 1, Boas, p. 191}
+		\begin{align*}
+			f(x,y) &= \text{sin} x \text{ cos} y \\
+			&= \left(x-\dfrac{x^3}{3!}+\cdots\right)\cdot\left(1-\dfrac{y^2}{2!}+\cdots\right) \\
+			&= x - \dfrac{x^3}{3!} - \dfrac{xy^2}{2!} + \cdots
+		\end{align*}
+	\end{exampleblock}
 }
 
 
@@ -127,8 +142,23 @@
 
 
 \frame{{Chain Rule (Redux)}
-	We can extend our earlier examples of the Chain Rule where $z=f(x,y)$ where $x$ and $y$ were functions of $t$ by considering the case where $x$ and $y$ are two variables, $s$ and $t$.
-		%TODO: Consider working 4.7.3
+	We can extend our earlier discussion of the Chain Rule where $z=f(x,y)$ and $x$ and $y$ were functions of some variable $t$ by considering the case where $x$ and $y$ are functions of two variables, $s$ and $t$.  $z$ is a function of both $s$ and $t$ and we want to be able to find $\partial z/\partial s$ and $\partial z/\partial t$.
+}
+
+
+\frame{{Chain Rule (Redux) Example}
+	\begin{exampleblock}{Boas, 4.7.3}
+		\begin{align*}
+			\text{Given: } z &= xe^{-y} \\
+			x &= \text{cosh} t \\
+			y &= \text{cos} s \\
+			\text{Differentiate: } dz &= x^2dy + e^{-y}dx \\
+			dx &= 0 \\
+			dy &= 0 \\
+			\text{Substitute: } dz &= x^2\cdot 0 + e^{-y}\cdot 0 \\
+			&= 0
+		\end{align*}
+	\end{exampleblock}
 }
 
 
