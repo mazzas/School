@@ -5,7 +5,7 @@
 \usecolortheme{crane}
 
 
-\title{Partial Differentiation}                    %TODO: Add a title.
+\title{Partial Differentiation} 
 \subtitle{Mathematical Methods in the Physical Sciences}
 \author{Steve Mazza}
 \institute[Naval Postgraduate School]
@@ -67,10 +67,25 @@
 			dz = \dfrac{\partial}{\partial x}dx+\dfrac{\partial}{\partial y}dy
 		\]
 	\end{block}
+	\textbf{Approximation:}   For sufficiently small values of $\Delta x$ and $\Delta y$,
+	\begin{itemize}
+		\item $\Delta z = \Delta f = f_x(x,y)\Delta x + f_y(x,y)\Delta u$, and
+		\item $f(x+\Delta x, y+\Delta y)\equiv f(x,y)+f_x(x,y)\Delta x+f_y(x,y)\Delta y$.
+	\end{itemize}
 }
 
 
 \frame{{Approximations Using Differentials}
+	\begin{exampleblock}{Example 4, Boas, p. 197}
+		The relative error in length measurement is $\pm$5\% and the relative error in radius measurement is $\pm$10\%.  We want to find the largest value that $\lvert dR/R\rvert$ can have.
+		\begin{align*}
+			R &= \dfrac{kl}{r^2} \\
+			\text{ln} R &= \text{ln} k + \text{ln} l - 2\text{ln} r \\
+			\dfrac{dR}{R} &= \left\lvert\dfrac{dl}{l}\right\rvert - 2\left\lvert\dfrac{dr}{r}\right\rvert \\
+			&= 0.05 + 2(0.10) \\
+			&= 0.25
+		\end{align*}
+	\end{exampleblock}
 
 }
 
@@ -81,9 +96,10 @@
 %			dz = \dfrac{\partial z}{\partial x}dx+\dfrac{\partial z}{\partial y}dy
 %		\]
 %	\end{block}
+	The chain rule is a formula for computing the derivative of the composition of two or more functions.
 	\begin{block}{In General}
 		\[
-			\dfrac{dy}{dx} = \dfrac{dy}{du}\dfrac{du}{dv}\dfrac{dv}{dx}
+			\dfrac{dy}{dx} = \dfrac{dy}{du}\cdot\dfrac{du}{dv}\cdot\dfrac{dv}{dx}
 		\]
 	\end{block}
 	\begin{exampleblock}{Find $dy/dx$ if $y=$ ln sin$2x$}
@@ -117,7 +133,19 @@
 
 
 \frame{{Applications}
-
+	 \begin{columns}[c]
+   		 \column{.3\textwidth}
+   		 	Helps us locate
+     			\begin{itemize}
+     				\item Hills
+     				\item Valleys
+     				\item Saddle Points
+     			\end{itemize}
+   		 \column{.7\textwidth}
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{images/partialdifferentiation.png}
+			\end{center}
+   	\end{columns}
 }
 
 
