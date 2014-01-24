@@ -34,19 +34,20 @@
 	\begin{block}{Definition}
 		Derivatives of a multi-variable function where all variables are held fixed during differentiation except the variable of interest.
 	\end{block}
-    %TODO: Make sure I know what I'm talking about.
 	To denote this we generically write $\dfrac{\partial}{\partial r}$, which means the partial derivative with respect to $r$.  We more frequently see $\dfrac{\partial z}{\partial r}$, which means the partial derivative of $z$ with respect to $r$.  In equations of more than two variables we may see $\left(\dfrac{\partial z}{\partial r}\right)_{x}$, which denotes the partial derivative of $z$ with respect to $r$, holding $x$ constant.
 }
 
 
 \frame{{Example}
-	\begin{exampleblock}{4.1.12}
+	\begin{exampleblock}{4.1.12: Find $\partial z/\partial y$, holding $\theta$ constant}
 		\begin{align*}
-			z &= x^{2}+2y^{2}, x=r\text{cos}\theta, y=r\text{sin}\theta \\
-	    		&= x^{2}+2y^{2} \\
-	    		&= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta \\
-	    		\left(\dfrac{\partial z}{\partial y}\right)_{\theta}  &= 2r\text{cos}^{2}\theta+4r\text{sin}^{2}\theta \\
-			&= 2r\left(\text{cos}^{2}\theta+2r\text{ sin}^{2}\theta\right) 
+			\text{given: } z &= x^{2}+2y^{2}, x=r\text{ cos}\theta, y=r\text{ sin}\theta \\
+	     	\text{solve for $r$: } y&=r\text{ sin}\theta \implies r=\dfrac{y}{\text{sin}\theta} \\
+	     \text{substitute for $r$: }x&=r\text{ cos}\theta \implies \dfrac{y\text{ cos}\theta}{\text{sin}\theta} \\
+	     \text{substitute for $x$: }z &= \left(\dfrac{y\text{ cos}\theta}{\text{sin}\theta}\right)^{2}+2y^{2} \\
+	     \text{rewrite: }&= 2y^{2}+(\text{cot}\theta)^{2} \\
+	     \text{differentiate: }&= 2\cdot2y+0 \\
+	     &= 4y
 		\end{align*}
 	\end{exampleblock}
 }
