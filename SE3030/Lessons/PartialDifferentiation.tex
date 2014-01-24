@@ -40,13 +40,13 @@
 
 
 \frame{{Example}
-    %TODO: This example is wrong.  Fix or replace.
 	\begin{exampleblock}{4.1.12}
 		\begin{align*}
 			z &= x^{2}+2y^{2}, x=r\text{cos}\theta, y=r\text{sin}\theta \\
-	    z &= x^{2}+2y^{2} \\
-	    z &= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta \\
-	    \left(\dfrac{\partial z}{\partial y}\right)_{\theta}  &= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta
+	    		&= x^{2}+2y^{2} \\
+	    		&= r^{2}\text{cos}^{2}\theta+2r^{2}\text{sin}^{2}\theta \\
+	    		\left(\dfrac{\partial z}{\partial y}\right)_{\theta}  &= 2r\text{cos}^{2}\theta+4r\text{sin}^{2}\theta \\
+			&= 2r\left(\text{cos}^{2}\theta+2r\text{ sin}^{2}\theta\right) 
 		\end{align*}
 	\end{exampleblock}
 }
@@ -108,11 +108,6 @@
 
 
 \frame{{Chain Rule}
-%	\begin{block}{Definition}
-%		\[
-%			dz = \dfrac{\partial z}{\partial x}dx+\dfrac{\partial z}{\partial y}dy
-%		\]
-%	\end{block}
 	The chain rule is a formula for computing the derivative of the composition of two or more functions.
 	\begin{block}{In General}
 		\[
@@ -149,17 +144,14 @@
 
 
 \frame{{Chain Rule (Redux) Example}
-    %TODO: Check correctness of this example.
 	\begin{exampleblock}{Boas, 4.7.3}
 		\begin{align*}
-			\text{Given: } z &= xe^{-y} \\
-			x &= \text{cosh} t \\
-			y &= \text{cos} s \\
-			\text{Differentiate: } dz &= x^2dy + e^{-y}dx \\
-			dx &= 0 \\
-			dy &= 0 \\
-			\text{Substitute: } dz &= x^2\cdot 0 + e^{-y}\cdot 0 \\
-			&= 0
+			\text{Given: } z &= xe^{-y}, x = \text{cosh } t, y = \text{cos } s \\
+			\text{Find: } \dfrac{\partial z}{\partial s} xe^{-y} &= \text{cosh}(t) e^{-\text{cos}(s)} \\
+	    \text{Chain Rule: } \dfrac{d}{ds} &= \dfrac{de^{u}}{du}\dfrac{du}{ds}, u=-cos(s) \\
+	    \text{Constants: } &= cosh(t) e^{-cos(s)}\left(-\dfrac{d}{ds}cos(s)\right) \\
+	    &= cosh(t) e^{-cos(s)}\left(-\left(-sin(s)\right)\right) \\
+	    &= cosh(t) e^{-cos(s)}sin(s)
 		\end{align*}
 	\end{exampleblock}
 }
