@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Monterey-Phoenix
 " Maintainer: Steve Mazza
-" Latest Revision: 27 JAN 2014
+" Latest Revision: 29 JAN 2014
 
 if exists("b:current_syntax")
   finish

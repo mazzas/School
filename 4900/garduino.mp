@@ -1,5 +1,5 @@
-// January 19, 2014
-// Steve Mazza
+// Latest Revision: January 29, 2014
+// Author: Steve Mazza
 //
 // Trying out my monterey.vim file to see how it works
 // and learning something about MP at the same time.
