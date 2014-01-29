@@ -52,20 +52,63 @@
     \end{block}
     \begin{itemize}
         \item Can be thought of as the volume of a parallelepiped.
-        \item The order of the factors is cyclical (3.3, p. 279).
+        \item Is the determinant of a $3\times3$ matrix.
+        \item The product is invariant under a circular shift:
+            \begin{exampleblock}{Circular Shift Invariant}
+                \[
+                    \vec{A}\cdot\left(\vec{B}\times\vec{C}\right) = 
+                    \vec{B}\cdot\left(\vec{C}\times\vec{A}\right) = 
+                    \vec{C}\cdot\left(\vec{A}\times\vec{B}\right)
+                \]
+            \end{exampleblock}
+        \item Satisfies an equality under cross product negation:
+            \begin{exampleblock}{Negative Cross Product}
+                \[
+                    \vec{A}\cdot\left(\vec{B}\times\vec{C}\right) = 
+                    -\vec{A}\cdot\left(\vec{C}\times\vec{B}\right)
+                \]
+            \end{exampleblock}
     \end{itemize}
+}
+
+
+\frame{{Triple Products (continued)}
     \begin{block}{Triple Vector Product}
         \[\vec{A}\times\left(\vec{B}\times\vec{C}\right) = 
         \left(\vec{A}\cdot\vec{C}\right)\vec{B} -
         \left(\vec{A}\cdot\vec{B}\right)\vec{C}\]
     \end{block}
-    %TODO: description
+    \begin{itemize}
+        \item Known as the "BAC-CAB" product.
+        \item Useful for simplifying some calculations in physics.
+        \item Is anticommutative: 
+            \begin{exampleblock}{Anticommutative}
+                \[\left(\vec{A}\times\vec{B}\right)\times\vec{C} = -\vec{C}\times\left(\vec{A}\times\vec{B}\right)\]
+            \end{exampleblock}
+        \item Satisfies Lagrange:
+            \begin{exampleblock}{Jacobi Identity}
+                \[
+                    \vec{A}\times\left(\vec{B}\times\vec{C}\right) +
+                    \vec{B}\times\left(\vec{C}\times\vec{A}\right) +
+                    \vec{C}\times\left(\vec{A}\times\vec{B}\right) =0
+                \]
+            \end{exampleblock}
+    \end{itemize}
 }
 
 
 \frame{{Triple Products (continued)}
     \begin{exampleblock}{6.3.2}
-        %TODO Consider problem 6.3.2
+        \begin{align*}
+            \text{Applying: } W &= Fd\text{ cos}\theta \\
+                                &= F\cdot d \\
+            \text{Find: }
+            \vec{B}\cdot\vec{C} &= B_iC_i+b_jC_j+B_kC_k \\
+                                &= 2\cdot0 + (-1)\cdot1 + 3\cdot(-5) \\
+                                &= 0 + (-1) + (-15) \\
+                                &= 0 - 1 - 15 \\
+                                &= -16
+        \end{align*}
     \end{exampleblock}
 }
 
@@ -73,9 +116,9 @@
 \frame{{Differentiation of Vectors}
     \begin{block}{Definition}
         \[\dfrac{d\vec{A}}{dt}=
-        \vec{i}\cfrac{dA_x}{dt} +
-        \vec{j}\cfrac{dA_y}{dt} +
-        \vec{k}\cfrac{dA_z}{dt}\]
+        i\cfrac{dA_x}{dt} +
+        j\cfrac{dA_y}{dt} +
+        k\cfrac{dA_z}{dt}\]
     \end{block}
     %TODO description
 }
