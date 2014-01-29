@@ -26,9 +26,9 @@ syntax match montereyOperator "\v[\* \+ \|]"
 
 " Regions
 " syn region iterationBlock start=+<+ end=+>+ contains=montereyIteration
-syn region unorderedEventBlock start=+{+ end=+}+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
-syn region orderedEventBlock start=+(+ end=+)+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
-syn region optionalElementBlock start=+\[+ end=+\]+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
+"syn region unorderedEventBlock start=+{+ end=+}+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
+"syn region orderedEventBlock start=+(+ end=+)+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
+"syn region optionalElementBlock start=+\[+ end=+\]+ fold transparent contains=basicLanguageKeywords, montereyIteration, montereyVariable, montereyOperator, basicLanguageLabels, basicLanguageRepeats, basicLanguageFunctions 
 
 highlight link basicLanguageKeywords        Keyword
 highlight link basicLanguageFunctions       Function
