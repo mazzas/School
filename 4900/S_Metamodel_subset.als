@@ -1,4 +1,4 @@
-module S*Metamodel_Subset
+module S_Metamodel_Subset
 sig Component {
 		performs:			set   Function --  components perform functions  (change "set" to "some" in any signature  to constrain to at least one - run both ways to see the difference)			
 }			
