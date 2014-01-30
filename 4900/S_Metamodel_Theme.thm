@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view nodetheme="Standard">
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+</node>
+
+<node color="Blue">
+   <type name="Function"/>
+</node>
+
+<node shape="Ellipse" color="Red">
+   <type name="Component"/>
+</node>
+
+<node shape="Parallelogram">
+   <type name="InputOutput"/>
+</node>
+
+<edge color="Black">
+   <relation name="performs"> <type name="Component"/> <type name="Function"/> </relation>
+</edge>
+
+<edge color="Blue">
+   <relation name="receivedby"> <type name="InputOutput"/> <type name="Function"/> </relation>
+</edge>
+
+<edge color="Red">
+   <relation name="generates"> <type name="Function"/> <type name="InputOutput"/> </relation>
+</edge>
+
+<edge visible="no">
+   <relation name="generatedby"> <type name="InputOutput"/> <type name="Function"/> </relation>
+   <relation name="performedby"> <type name="Function"/> <type name="Component"/> </relation>
+   <relation name="receives"> <type name="Function"/> <type name="InputOutput"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

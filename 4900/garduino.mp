@@ -13,18 +13,21 @@ SCHEMA automated_plant_watering
 //       a NULL object?
 ROOT Plant: (); 
 
+// The following happens in an infinite loop.
+// TODO: figure out how to indicate duration (e.g., for sleep())
 ROOT MSP430:
-        (* sleep | request_moisture_reading | 
-        compare_moisture_reading | water_plant *);
+        (* sleep request_moisture_reading  
+        compare_moisture_reading ( water_plant ) *);
 
+// TODO: consider what is appropriate w.r.t. descretely recognized continuous events.
 ROOT Soil_Sensor: 
         (* measure_soil ( provide_moisture_reading ) *);
 
-// NOTE: The method request_water might migrate to the MSL430 if
+// NOTE: The method request_water might migrate to the MSP430 if
 //       a water level sensor is added to the reservoir.  As it stands
 //       currently, the pump is either able or not to draw water.
 ROOT Water_Pump:
-        (* request_water | pump_water *);
+        ( request_water ( sufficient_water  pump_water | insufficient_water pump_air ) );
 
 // NOTE: It was a bit of a stretch to include this in the system
 //       definition since right now it is completely passive.  There
@@ -32,7 +35,7 @@ ROOT Water_Pump:
 //       user a message (e.g., via SMS) if the water falls below
 //       some threshold.
 ROOT Reservoir:
-        (* sufficient_water supply_water | insufficient_water *);
+        (* sufficient_water supply_water | insufficient_water supply_air *);
 
 // NOTE: This data will likely reside on the MSP430 but should be
 //       abstracted, as it could easily be accessed via some 
@@ -40,7 +43,9 @@ ROOT Reservoir:
 //       comparing readings for many different types of plants.
 ROOT Data: (* compare_moisture_reading *);
 
-Data MSP430 SHARE ALL compare_moisture_reading;
+Data, MSP430 SHARE ALL compare_moisture_reading;
+Reservoir, Water_Pump SHARE ALL sufficient_water;
+Reservoir, Water_Pump SHARE ALL insufficient_water;
 
 COORDINATE (* $x: request_moisture_reading *) FROM MSP430,
         (* $y: measure_soil *) FROM Soil_Sensor
@@ -52,4 +57,12 @@ COORDINATE (* $x: water_plant *) FROM MSP430,
 
 COORDINATE (* $z: request_water *) FROM Water_Pump
         (* $w: supply_water *) FROM Reservoir
+        ADD $z PRECEDES $w;
+
+COORDINATE (* $w: supply_water *) FROM Reservoir
+        (* $z: pump_water *) FROM Water_Pump
+        ADD $z PRECEDES $w;
+
+COORDINATE (* $w: supply_air *) FROM Reservoir
+        (* $z: pump_air *) FROM Water_Pump
         ADD $z PRECEDES $w;
