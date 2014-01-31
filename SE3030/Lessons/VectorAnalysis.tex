@@ -100,10 +100,11 @@
 \frame{{Triple Products (continued)}
     \begin{exampleblock}{6.3.2}
         \begin{align*}
-            \text{Applying: } W &= Fd\text{ cos}\theta \\
-                                &= F\cdot d \\
-            \text{Find: }
-            \vec{B}\cdot\vec{C} &= B_iC_i+b_jC_j+B_kC_k \\
+            \text{given: } \vec{B} &= 2\hat{i}-\hat{j}+3\hat{k} &\text{(force)} \\
+            \vec{C} &= \hat{j}-5\hat{k} &\text{(displacement)} \\
+            \text{apply: } W &= F\cdot d \\
+            \text{find: }
+            \vec{B}\cdot\vec{C} &= B_iC_i+B_jC_j+B_kC_k \\
                                 &= 2\cdot0 + (-1)\cdot1 + 3\cdot(-5) \\
                                 &= 0 + (-1) + (-15) \\
                                 &= 0 - 1 - 15 \\
@@ -123,11 +124,11 @@
     \end{block}
 }
 
-\frame{{Differentiation of Vectors (continued)}
-    \begin{exampleblock}{6.4.3}
+%\frame{{Differentiation of Vectors (continued)}
+    %\begin{exampleblock}{6.4.3}
     	% Consider problem 6.4.3
-    \end{exampleblock}
-}
+    %\end{exampleblock}
+%}
 
 
 \frame{{Fields}
@@ -179,7 +180,6 @@
                                 \left(\dfrac{\partial V_y}{\partial x}-\dfrac{\partial V_x}{\partial y}\right)\hat{k}
         \end{align*}
     \end{block}
-    % Consider problem 6.7.5
 }
 
 
@@ -196,8 +196,41 @@
 }
 
 
+\frame{{Expressions Involving $\nabla$ (continued)}
+    \begin{exampleblock}{6.7.5 (Div)}
+        \begin{align*}
+            \text{given: }\vec{V} &= x^2\hat{i}+y^2\hat{j}+z^2\hat{k} \\
+            \text{find: }\nabla\cdot\vec{V} &= 
+            \dfrac{\partial V_x}{\partial x} +
+            \dfrac{\partial V_y}{\partial y} +
+            \dfrac{\partial V_z}{\partial z} \\
+            &= 2x+2y+2z \\
+            &= 2(x+y+z)
+        \end{align*}
+    \end{exampleblock}
+}
+
+
+\frame{{Expressions Involving $\nabla$ (continued)}
+    \begin{exampleblock}{6.7.5 (Curl)}
+        \begin{align*}
+            \text{given: }\vec{V} &= x^2\hat{i}+y^2\hat{j}+z^2\hat{k} \\
+            \text{find: }\nabla\times\vec{V} &= 
+                                \left(\dfrac{\partial V_z}{\partial y}-\dfrac{\partial V_x}{\partial z}\right)\hat{i} \\
+                                &+ \left(\dfrac{\partial V_x}{\partial z}-\dfrac{\partial V_z}{\partial x}\right)\hat{j} \\
+                                &+ \left(\dfrac{\partial V_y}{\partial x}-\dfrac{\partial V_x}{\partial y}\right)\hat{k} \\
+                                &= (0-0)\hat{i}+(0-0)\hat{j}+(0-0)\hat{k} \\
+                                &= 0\hat{i}+0\hat{j}+0\hat{k} \\
+                                &= 0
+        \end{align*}
+    \end{exampleblock}
+}
+
+
 \frame{{Line Integrals}
-    %TODO
+    \begin{center}
+    \includegraphics[width=0.75\textwidth]{images/parabolic_curtain.png}
+    \end{center}
 }
 
 
