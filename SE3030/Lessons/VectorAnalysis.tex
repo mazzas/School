@@ -114,7 +114,7 @@
 
 
 \frame{{Differentiation of Vectors}
-    $\frac{d}{dt}\vec{A}$ is the vector whose components are the derivatives of the components of $\vec{A}$.
+    $\vec{A}'$ is the vector whose components are the derivatives of the components of $\vec{A}$.
     \begin{block}{Definition}
         \[\dfrac{d\vec{A}}{dt}=
         \cfrac{dA_x}{dt}\hat{i} +
@@ -140,14 +140,59 @@
 
 
 \frame{{Gradient}
-    %TODO
+    Consider the points, $(x_0,y_0,z_0)$ and $(x,y,z)$, both located within some scalar field described by $\phi(x,y,z)$.  The separation of these points can be described by the distance, $s$, in the direction $\vec{u}$. From
+    \[(x,y,z)-(x_0,y_0,z_0) = \hat{u}s = (a\hat{i}+b\hat{j}+c\hat{k})s\]
+    we derive the parametric equations,
+    \[x=x_0+as, y=y_0+bs, z=z_0cs\]
+    Substituting the equations back in $\phi(x,y,z)$, we arrive at $\phi$ as a functino of $s$ and find that $d\phi/d s = \nabla\phi\cdot\hat{u}$, so
+    \begin{block}{Definition}
+        \[\nabla\phi = 
+        \dfrac{\partial\phi}{\partial x}\vec{i} +
+        \dfrac{\partial\phi}{\partial y}\vec{j} +
+        \dfrac{\partial\phi}{\partial z}\vec{k}\]
+    \end{block}
     % Consider problem 6.6.5
 }
 
 
 \frame{{Expressions Involving $\nabla$}
-    %TODO
+    \begin{block}{Vector Operator}
+        \[
+            \nabla = \dfrac{\partial}{\partial x}\hat{i} +
+            \dfrac{\partial}{\partial y}\hat{j} +
+            \dfrac{\partial}{\partial z}\hat{k}
+        \]
+    \end{block}
+    \begin{block}{Div}
+        \[
+            \nabla\cdot\vec{V} = \text{div}\vec{V} = 
+            \dfrac{\partial V_x}{\partial x} +
+            \dfrac{\partial V_y}{\partial y} +
+            \dfrac{\partial V_z}{\partial z}
+        \]
+    \end{block}
+    \begin{block}{Curl}
+        \begin{align*}
+            \nabla\times\vec{V} &= \text{curl}\vec{V} \\
+                                &= \left(\dfrac{\partial V_z}{\partial y}-\dfrac{\partial V_y}{\partial z}\right)\hat{i} +
+                                \left(\dfrac{\partial V_x}{\partial z}-\dfrac{\partial V_z}{\partial x}\right)\hat{j} +
+                                \left(\dfrac{\partial V_y}{\partial x}-\dfrac{\partial V_x}{\partial y}\right)\hat{k}
+        \end{align*}
+    \end{block}
     % Consider problem 6.7.5
+}
+
+
+\frame{{Expressions Involving $\nabla$ (continued)}
+    \begin{block}{The Laplacian}
+        \begin{align*}
+            \nabla^2\phi &= \nabla\cdot\nabla\phi \\
+                         &= \text{div grad } \phi \\
+                         &= \dfrac{\partial}{\partial x}\dfrac{\partial\phi}{\partial x} +
+                         \dfrac{\partial}{\partial y}\dfrac{\partial\phi}{\partial y} +
+                         \dfrac{\partial}{\partial z}\dfrac{\partial\phi}{\partial z} +
+        \end{align*} 
+    \end{block}
 }
 
 
