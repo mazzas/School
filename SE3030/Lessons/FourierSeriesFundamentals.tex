@@ -27,29 +27,65 @@
 \frame{{Introduction}
     Fourier series are like power series but are only used to represent periodic functions.
     \begin{center}
-        \includegraphics[height=6cm]{images/fourier.jpg}
+        \includegraphics[scale=0.4]{images/fourier.jpg}
     \end{center}
 }
 
 
 \frame{{Periodic Functions}
-    %TODO
+    \begin{block}{Simple Harmonic Motion}
+        An object executing simple harmonic motion if its displacement from equilibrium can be written as $A \text{ sin } \omega t$ or $A \text{ cos }\omega t$ or $A\text{ sin }\left( \omega t+\phi \right)$.
+    \end{block}
+    \begin{center}
+        \includegraphics[height=4cm]{images/simple-harmonic-motion.jpg}
+    \end{center}
+}
+
+
+\frame{{Periodic Functions (continued)}
+    The $x$ and $y$ components are $\left( A\text{ cos }\omega t, A\text{ sin }\omega t \right)$.  In the complex plane this could be rewritten as
+    \begin{align*}
+        z &= x+iy \\
+        &= A\left( \text{ cos }\omega t+i\text{ sin }\omega t \right) \\
+        &= Ae^{i\omega t}
+    \end{align*}
+
+    The \emph{amplitude} is the maximum displacement from equilibrium and the \emph{period} is the time of one complete oscillation.
 }
 
 
 \frame{{Applications of Fourier Series}
-    %TODO
+    In application,
+    \begin{itemize}
+        \item Fourier series do not tend to converge as rapidly as power series.
+        \item Fourier series can represent discontinuous functions.
+    \end{itemize}
+    Often applied to problems involving,
+    \begin{itemize}
+        \item Sound
+        \item Light
+        \item Radio waves
+    \end{itemize}
+}
+
+
+\frame{{Applications of Fourier Series (continued)}
+    %TODO: get some good example like Fourier's heat equation.
 }
 
 
 \frame{{Average Value of a Function}
-    %TODO
     \begin{block}{Definition}
         \[
             \text{average of } f(x) \text{ on } \left( a,b \right) =
             \dfrac{\int_a^b f(x) dx}{b-a}
         \]
     \end{block}
+    When the average of a function over a period of time is 0 then the average of the square of the function is often of interest.
+    The average value over 1 period of $\text{sin}^2nx$ and $\text{cos}^2nx$ are the same:
+    \begin{equation*}
+        \dfrac{1}{2\pi}\int_{-\pi}^{\pi}\text{sin}^2nx~dx = \dfrac{1}{2\pi}\int_{-\pi}^{\pi}\text{cos}^2nx~dx = \dfrac{\pi}{2\pi} = \dfrac{1}{2}
+    \end{equation*}
 }
 
 
