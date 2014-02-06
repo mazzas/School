@@ -46,7 +46,7 @@
     The $x$ and $y$ components are $\left( A\text{ cos }\omega t, A\text{ sin }\omega t \right)$.  In the complex plane this could be rewritten as
     \begin{align*}
         z &= x+iy \\
-        &= A\left( \text{ cos }\omega t+i\text{ sin }\omega t \right) \\
+        &= A\left( \cos\omega t+i\sin\omega t \right) \\
         &= Ae^{i\omega t}
     \end{align*}
 
@@ -70,8 +70,8 @@
 
 
 \frame{{Applications of Fourier Series (continued)}
-    %TODO: get some good example like Fourier's heat equation.
-    %NOTE: this looks good: http://www.sosmath.com/fourier/fourier1/fourier1.html
+  %TODO: find a good example to use here. (mazzas) Wed Feb  5 07:59:50 2014
+  %NOTE: this looks good: http://www.sosmath.com/fourier/fourier1/fourier1.html
 }
 
 
@@ -91,29 +91,47 @@
 
 
 \frame{{Fourier Coefficients}
-    %TODO
+  We begin by considering only periodic functions of period $2\pi$ in terms of $\sin nx$ and $\cos nx$.
+  \begin{block}{Coefficient Form}
+    \begin{align*}
+      f(x) = \frac{1}{2}a_0 &+ a_1\cos x+a_2\cos 2x+a_3\cos 3x+\cdots \\
+      &+ b_1\sin x+b_2\sin2x+b_3\sin3x+\cdots
+    \end{align*}
+  \end{block}
+  The integrals on page 351 are used to find coefficients $a_n$ and $b_n$.
+  \begin{block}{Coefficient Formulae}
+    \begin{align*}
+      a_n &= \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx~dx \\
+      b_n &= \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx~dx
+    \end{align*}
+  \end{block}
+}
+
+
+\frame{{Fourier Coefficients Example}
+  %TODO: find a simple example to use here. (mazzas) Wed Feb  5 10:53:35 2014
 }
 
 
 \frame{{Dirichlet Conditions}
-    %TODO
+  %TODO: enter content. (mazzas) Wed Feb  5 07:58:51 2014
 }
 
 
-\frame{{Complex Forms of Fourier Series}
-    %TODO
+\frame{{Complex Form of Fourier Series}
+  %TODO: enter content. (mazzas) Wed Feb  5 11:44:10 2014
 }
 
 
 \frame{{Other Intervals}
-    %TODO
+  %TODO: enter content. (mazzas) Wed Feb  5 07:59:25 2014
 }
 
 
-\begin{frame}{Questions?}
+\frame{{Questions?}
 	\begin{center}
 		\includegraphics[width=.7\textwidth]{images/fin.png}
 	\end{center}
-\end{frame}
+}
 
 \end{document}
