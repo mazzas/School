@@ -109,7 +109,18 @@
 
 
 \frame{{Fourier Coefficients Example}
-  %TODO: find a simple example to use here. (mazzas) Wed Feb  5 10:53:35 2014
+	We want to find the coefficients of a $2\pi$ Periodic Square Wave.
+	\[
+		a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)dx = \frac{1}{\pi}\int_{-\pi}^{\pi}dx = 1
+	\]
+	All coefficients $a_n = 0$ since $\sin(0)=0$ and $\sin(\pi)=0$.
+	\[
+		b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nxdx = \frac{1}{\pi}\left(-\frac{\cos nx}{n}\right)\Big\vert_{0}^{\pi} = \frac{1-\cos n\pi}{n\pi}
+	\]
+	But since $\cos n\pi = (-a)^n$, $b_n = \dfrac{1-(-1)^n}{n\pi}$, so\dots
+	\[
+		f(x) = \frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin nx
+	\]
 }
 
 
@@ -136,7 +147,7 @@
   We calculate the coefficients, $c_n$, as follows,
   \begin{block}{Complex Representation of Fourrier Series}
   	\[
-  		c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-inx}~dx
+  		c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-inx}dx
   	\]
   \end{block}
 }
