@@ -114,12 +114,31 @@
 
 
 \frame{{Dirichlet Conditions}
-  %TODO: enter content. (mazzas) Wed Feb  5 07:58:51 2014
+	Our series converges to $f(x)$ if it satisfies the following conditions:
+  \begin{itemize}
+  	\item Is periodic of period $2\pi$
+  	\item Is single-valued between $-\pi$ and $\pi$
+  	\item Has finite number of max and min values
+  	\item $\int_{-\pi}^\pi \lvert f(x)\rvert~dx$ is finite
+  \end{itemize}
+  We often do not  need to evaluate the integral if we can show that $f(x)$ is bounded.
 }
 
 
 \frame{{Complex Form of Fourier Series}
-  %TODO: enter content. (mazzas) Wed Feb  5 11:44:10 2014
+  We can use what we know about the complex representation of sines and cosines to rewrite the Fourrier series.
+  \begin{block}{Complex Representation of Fourrier Series}
+  	\begin{align*}
+  		f(x) &= c_0+c_1e^{ix}+c_{-1}e^{-ix}+c_{2}e^{2ix}+c_{-2}^{-2ix}+\cdots \\
+  		&= \sum_{n=-\infty}^{\infty}c_nd^{inx}
+  	\end{align*}
+  \end{block}
+  We calculate the coefficients, $c_n$, as follows,
+  \begin{block}{Complex Representation of Fourrier Series}
+  	\[
+  		c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-inx}~dx
+  	\]
+  \end{block}
 }
 
 
