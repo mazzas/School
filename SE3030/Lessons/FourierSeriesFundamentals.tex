@@ -70,8 +70,11 @@
 
 
 \frame{{Applications of Fourier Series (continued)}
-  %TODO: find a good example to use here. (mazzas) Wed Feb  5 07:59:50 2014
-  %NOTE: this looks good: http://www.sosmath.com/fourier/fourier1/fourier1.html
+  Fourier series are used to solve real world problems.
+  \begin{itemize}
+    \item Digital compression (of an image, for example) can result from a representation of the underlying data as series of Fourier transorms on that image function.  A nice discussion of this (with illustrations) can be seen here: http://www.cs.unm.edu/~brayer/vision/fourier.html.
+    \item Buildings in earthquake-prone regions could be designed better if we could accurately enough describe the resulting vibrations as a Fourier series, isolating the components of greatest contribution to damage.
+  \end{itemize}
 }
 
 
@@ -121,6 +124,15 @@
 	\[
 		f(x) = \frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin nx
 	\]
+}
+
+
+\frame{{Fourier Coefficients Example Notes}
+  It is usefule to notice something about the Fourier expansion of the square wave.
+ 	\begin{center}
+		\includegraphics[height=.4\textwidth]{images/fourier_series_square.jpg}
+	\end{center}
+  High frequencies are required in order to create sharp corners.  This applies in the most ideal sense to square and triangle waves.
 }
 
 
