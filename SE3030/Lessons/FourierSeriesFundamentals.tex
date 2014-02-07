@@ -166,7 +166,27 @@
 
 
 \frame{{Other Intervals}
-  %TODO: enter content. (mazzas) Wed Feb  5 07:59:25 2014
+  We can easily re-write our interval as,
+  \begin{block}{Fourrier Series Expansion}
+    \begin{align*}
+      f(x) &= \frac{a_0}{2}+a_1\cos\frac{\pi x}{l}+a_2\cos\frac{2\pi x}{l}+\cdots \\
+      &\qquad + b_1\sin\frac{\pi x}{l}+b_2\sin\frac{2\pi x}{l}+\cdots \\
+      &= \frac{a_0}{2}+\sum_1^\infty\left( a_n\cos\frac{n\pi x}{l}+b_n\sin\frac{n\pi x}{l} \right) \\
+      &= \sum_{-\infty}^{\infty}c_ne^{in\pi x/l}
+    \end{align*}
+  \end{block}
+}
+
+
+\frame{{Other Intervals (continued)}
+  And the new formulae for the Fourrier coefficients becomes,
+  \begin{block}{Fourier Coefficients}
+    \begin{align*}
+      a_n &= \frac{1}{l}\int_{-l}^{l}f(x)\cos\frac{n\pi x}{l}dx \\
+      b_n &= \frac{1}{l}\int_{-l}^{l}f(x)\sin\frac{n\pi x}{l}dx \\
+      c_n &= \frac{1}{2l}\int_{-l}^{l}f(x)e^{-in\pi x/l}dx
+    \end{align*}
+  \end{block}
 }
 
 
