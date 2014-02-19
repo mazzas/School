@@ -42,7 +42,33 @@
 
 
 \frame{{Cartesian Tensors}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:28:37 2014
+  Under \emph{passive rotation} the vectors are fixed and the axes are rotated.  We want to know how the components of a displacement vector in one coordinate system are related to its components in a rotated system. A vector $\vec{r}$ has components $x, y, z$ or $x', y', z'$ relative to the two coordinate systems.
+  \begin{table}
+    \centering
+    \begin{tabular}{c|ccc}
+      &$x$&$y$&$z$ \\
+      \hline
+      $x'$&$l_1$&$m_1$&$n_1$ \\
+      $y'$&$l_2$&$m_2$&$n_2$ \\
+      $z'$&$l_3$&$m_3$&$n_3$ \\
+    \end{tabular}
+  \end{table}
+  The table lists the cosines of the nine angles between the $(x,y,z)$ and the $(x',y',z')$ axes.
+}
+
+
+\frame{{Cartesian Tensors (continued)}
+  Let $\vec{i}, \vec{j}, \vec{k}$ be unit vectors along $(x,y,z)$ axes and $\vec{i'}, \vec{j'}, \vec{k'}$ be unit vectors along $(x',y',z')$.  Then we can represent $\vec{r}$ as follows.
+  \begin{align*}
+    r &= \vec{i}x + \vec{j}y + \vec{k}z = \vec{i'}x' + \vec{j'}y' + \vec{k'}z' \\
+    \vec{r}\cdot\vec{i} &= \vec{i}\cdot\vec{i'}x + \vec{j}\cdot\vec{i'}y + \vec{k}\cdot\vec{i'}z = x' \\
+    \text{since } \vec{i'}\cdot\vec{i'} &= 1, \text{ and } \vec{i'}\cdot\vec{j'} = \vec{i'}\cdot\vec{k'} = 0 \\
+    \text{and } \vec{i}\cdot\vec{i'} &= l_1, \vec{j}\cdot\vec{i'} = m_1, \vec{k}\cdot\vec{i'} = n_1 \\
+    x' &= l_1x + m_1y + n_1z \\
+    y' &= l_2x + m_2y + n_2z \\
+    z' &= l_3x + m_3y + n_3z
+  \end{align*}
+  These are the transformation equations from $(x,y,z)$ to $(x', y', z')$.
 }
 
 
@@ -78,14 +104,23 @@
 
 \frame{{Kronecker Delta and Levi-Civita Symbol}
   \begin{block}{Kronecker Delta}
-    \[\delta_{ij} = 1 \text{ if } i=j, 0 \text{ otherwise}\]
+    \[
+    \delta_{ij} =
+    \begin{cases}
+    1 \text{ if } i=j \\
+    0 \text{ otherwise}
+    \end{cases}
+    \]
   \end{block}
   \begin{block}{Levi-Civita Symbol}
-  \begin{align*}
-    \epsilon_{ijk} =\ &1 \text{ for an even permutation, } \\
-    -&1 \text{ for an odd permutation, and } \\
-    &0 \text{ if any indices are repeated.}
-  \end{align*}
+  \[
+    \epsilon_{ijk} = 
+    \begin{cases}
+      1 & \text{ for an even permutation } \\
+      -1 & \text{ for an odd permutation } \\
+      0 & \text{ if any indices are repeated}
+    \end{cases}
+  \]
   \end{block}
 }
 
@@ -107,7 +142,11 @@
 	
 
 \frame{{Pseudovectors and Pseudotensors}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
+  The general case of orthogonal transformations includes reflections.
+  \begin{itemize}
+    \item If $\text{det } A=1$ (rotation), it is called a \emph{polar} or true vector.
+    \item If $\text{det } A=-1$ (reflection), it is called an \emph{axial} or pseudovector.
+  \end{itemize}
 }
 
 
