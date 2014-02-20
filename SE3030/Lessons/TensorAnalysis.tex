@@ -32,6 +32,7 @@
     \item Tensors of order 0 are scalars
     \item Tensors of order 1 are vectors
     \item A second order tensor has $3^2=9$ components
+    \item In general, an $n^\text{th}$ ranked tensor can be described by $3^n$ coefficients.
   \end{itemize}
   \column{.5\textwidth}
     \begin{center}
@@ -150,27 +151,55 @@
 }
 
 
-\frame{{More About Applications}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
+\frame{{Physical Examples}
+   Consider the current density in an anisotropic material like graphite.  In general the current density, $\vec{j}$, will be parallel to the applied electric field, $\vec{E}$ according to Ohm's law ($\vec{j}=\sigma\vec{E}$).  However, due to the crystalline structure, each component of the density vector depend on all other components of the electric field.\footnote{http://www.doitpoms.ac.uk/tlplib/tensors/what\_is\_tensor.php}
+  \begin{align*}
+  	j_1 &= σ_{11}E_1 + σ_{12}E_2 + σ_{13}E_3 \\
+  	j_2 &= σ_{21}E_1 + σ_{22}E_2 + σ_{23}E_3 \\
+  	j_3 &= σ_{31}E_1 + σ_{32}E_2 + σ_{33}E_3 
+  \end{align*}
+  Other second rank tensors include thermal conductivity, stress, and strain (see Boas , p. 519).  Higher order tensors describe properties related to more than one $2^\text{nd}$ rank tensor (e.g., stiffness = stress + strain).
 }
 
 
 \frame{{Curvilinear Coordinates}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
+  Equivalence between rectangular and cylindrical coordinates.  As usual,
+  \begin{align*}
+  	x &= r\cos\theta \\
+  	y &= r\sin\theta \\
+  	z &= z \\
+  	\text{so\dots\ }  dx &= \cos\theta dr - r\sin\theta d\theta \\
+  	dy &= \sin\theta dr + r\cos\theta d\theta \\
+  	dz &= dz
+  \end{align*}
+  Squaring and reducing, we obtain,
+  \[ds^2 = dx^2+dy^2+dz^2 = dr^2+r^2d\theta^2+dz^2\]
+  For orthogonal coordinate systems, all cross products will cancel nicely.
 }
 
 
 \frame{{Vector Operations in Orthogonal Curvilinear Coordinates}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
+  \begin{block}{Gradient}
+  	\[\nabla u = \sum_{i=1}^3e_i\frac{1}{h_i}\frac{\partial u}{\partial x_i}\]
+  \end{block}
+  \begin{block}{Div}
+  	\[\nabla \cdot \vec{V} = \frac{1}{h_1h_2h_3}\left[
+  		\frac{\partial}{\partial x_1}\left(h_2h_3V_1\right) +
+  		\frac{\partial}{\partial x_2}\left(h_1h_3V_2\right) +
+  		\frac{\partial}{\partial x_3}\left(h_1h_2V_3\right)
+  	\right]\]
+  \end{block}
+  \begin{block}{Laplacian}\footnotesize
+  	\[\nabla^2 u = \frac{1}{h_1h_2h_3}\left[
+  		\frac{\partial}{\partial x_1}\left(\frac{h_2h_3}{h_1}\frac{\partial u}{\partial x_1}\right) +
+  		\frac{\partial}{\partial x_2}\left(\frac{h_1h_3}{h_2}\frac{\partial u}{\partial x_2}\right) +
+  		\frac{\partial}{\partial x_3}\left(\frac{h_1h_2}{h_3}\frac{\partial u}{\partial x_3}\right)
+  	\right]\]
+  \end{block}
 }
 
 
 \frame{{Non-Cartesian Tensors}
-  %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
-}
-
-
-\frame{{Miscellaneous Problems}
   %TODO: Enter reminder. (mazzas) Tue Feb 18 07:33:53 2014
 }
 
