@@ -93,28 +93,43 @@
 
 
 \frame{{Another Linear Method}
-	%TODO
+	This method almost always converges but can be painfully slow.
+	\begin{itemize}
+		\item Select two values which you assume to be near the solution of interest.
+		\item Evaluate the function at the two arguments.
+		\item Draw a straight line through the solutions, noting where the line hits the $x$-axis.
+		\item Use the $x$-intercept to replace one of the two original values.
+	\end{itemize}
+	One of two outcomes are possible.
+	\begin{itemize}
+		\item Values of the two arguments have the same sign.  In this case, replace the old argument furthest from the new one.
+		\item Values of the two arguments have different signs.  In this case, replace the old argument with the same sign as the new one.
+	\end{itemize}
+	We approximate the derivative in Newton's method by using values at the previous two guesses, rather than by the last guess and it plus $d$, as in Poor Man's Newton.
 }
 
 
 \frame{{Divide and Conquer}
-	%TODO
+	This method provides some improvement in speed for worst cases over the previous method by replacing one of the old arguments with the \emph{middle} as opposed to the $x$-intercept.  This is only productive after your solutions have achieved opposite signs.
+	\begin{itemize}
+		\item Select two arguments, $a$ and $b$.
+		\item Evaluate $f(a)$, $f(b)$, and $f\left(\dfrac{a+b}{2}\right)$.
+		\item Replace either $a$ or $b$ with the middle value.  Replace the original value with the same sign as the middle value.
+	\end{itemize}
+	This is slow compared to Newton's best case performance, however it guarantees steady progress toward a solution and so generally is an improvement over the previous two methods.
 }
 
 
 \frame{{Solving Two General Equations in Two Variables}
-	%TODO
+	We can generalize Newton's Method in two (or more) dimensions as follows.
+	\begin{itemize}
+		\item Assume two functions, $f$ and $g$, in two variables, $x$ and $y$, such that $f(x,y)=0$ and $g(x,y)=0$.
+		\item Compute the gradients of $f$ and $g$ at some initial point.
+		\item Find a new point at which the linear approximations to $f$ and $g$ defined by the gradients at the initial point are both 0.
+		\item Iterate.
+	\end{itemize}
+	This works just as well as Newton does in one dimension with the additional caveat that there may be no solution to the equations (i.e., the curves for $f$ and $g$ may not intersect).
 }
-
-%TODO: Delete everything below here to the final frame.
-%\frame{{Example of columns 1}
-%    \begin{columns}[c]      % the "c" option specifies center vertical alignment
-%    \column{.5\textwidth}   % column designated by a command
-%     Contents of the first column
-%    \column{.5\textwidth}
-%     Contents split \\ into two lines
-%    \end{columns}
-%}
 
 \frame{{Questions?}
 	\begin{center}
