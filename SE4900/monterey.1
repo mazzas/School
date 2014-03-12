@@ -1,0 +1,37 @@
+%{
+#include <stdio.h>
+#include "y.tab.h"
+%}
+
+%%
+[0-9]+            yylval = atoi( yytext ); return NUMBER;
+\$[a-zA-Z][a-zA-Z0-9]*  yylval=strdup( yypext ); return VAR;
+schema|SCHEMA     return t_SCHEMA;
+root|ROOT         return t_ROOT;
+from|FROM         return t_FROM;
+in|IN             return t_IN;
+all|ALL           return t_ALL;
+within|WITHIN     return t_WITHIN;
+such|SUCH         return t_SUCH;
+that|THAT         return t_THAT;
+foreach|FOREACH   return t_FOREACH;
+coordinate|COORDINATE   return t_COORDINATE;
+share|SHARE       return t_SHARE;
+add|ADD           return t_ADD;
+precedes|PRECEDES return t_PRECEDES;
+satisfies|SATISFIES     return t_SATISFIES;
+include|INCLUDE   return t_INCLUDE;
+extends|EXTENDS   return t_EXTENDS;
+\"                return QUOTE;
+\{                return OBRACE;
+\}                return EBRACE;
+\<                return OANGLE;
+\>                return EANGLE;
+\(                return OPAREN;
+\)                return EPAREN;
+\*                return ITER_ZERO;
+\+                return ITER_ONE;
+\|                return OR;
+\n                /* ignore end of line */
+[ \t]             /* ignore whitespace */
+%%
