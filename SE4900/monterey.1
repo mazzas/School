@@ -6,6 +6,7 @@
 %%
 [0-9]+            yylval = atoi( yytext ); return NUMBER;
 \$[a-zA-Z][a-zA-Z0-9]*  yylval=strdup( yypext ); return VAR;
+[a-zA-Z][a-zA-Z0-9]*    yylval=strdup( yypext ); return IDENTIFIER;
 schema|SCHEMA     return t_SCHEMA;
 root|ROOT         return t_ROOT;
 from|FROM         return t_FROM;
