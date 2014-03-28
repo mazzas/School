@@ -1,0 +1,41 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+[0-9]+            printf("NUMBER\n");
+schema|SCHEMA     printf("t_SCHEMA\n");
+root|ROOT         printf("t_ROOT\n");
+from|FROM         printf("t_FROM\n");
+in|IN             printf("t_IN\n");
+all|ALL           printf("t_ALL\n");
+within|WITHIN     printf("t_WITHIN\n");
+such|SUCH         printf("t_SUCH\n");
+that|THAT         printf("t_THAT\n");
+foreach|FOREACH   printf("t_FOREACH\n");
+coordinate|COORDINATE   printf("t_COORDINATE\n");
+share|SHARE       printf("t_SHARE\n");
+add|ADD           printf("t_ADD\n");
+precedes|PRECEDES printf("t_PRECEDES\n");
+satisfies|SATISFIES     printf("t_SATISFIES\n");
+include|INCLUDE   printf("t_INCLUDE\n");
+extends|EXTENDS   printf("t_EXTENDS\n");
+\$[a-zA-Z][a-zA-Z0-9\_]*  printf("VAR\n");
+[a-zA-Z][a-zA-Z0-9\_]*    printf("IDENTIFIER\n");
+\"                printf("QUOTE\n");
+\{                printf("OBRACE\n");
+\}                printf("EBRACE\n");
+\<                printf("OANGLE\n");
+\>                printf("EANGLE\n");
+\(                printf("OPAREN\n");
+\)                printf("EPAREN\n");
+\*                printf("ITER_ZERO\n");
+\+                printf("ITER_ONE\n");
+\|                printf("OR\n");
+\:                printf("COLON\n");
+\;                printf("SEMICOLON\n");
+\,                printf("COMMA\n");
+\/+.*             /* ignore comments */
+\n                /* ignore end of line */
+[ \t]             /* ignore whitespace */
+%%

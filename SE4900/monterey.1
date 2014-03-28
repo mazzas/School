@@ -5,8 +5,6 @@
 
 %%
 [0-9]+            yylval = atoi( yytext ); return NUMBER;
-\$[a-zA-Z][a-zA-Z0-9]*  yylval=strdup( yypext ); return VAR;
-[a-zA-Z][a-zA-Z0-9]*    yylval=strdup( yypext ); return IDENTIFIER;
 schema|SCHEMA     return t_SCHEMA;
 root|ROOT         return t_ROOT;
 from|FROM         return t_FROM;
@@ -23,6 +21,8 @@ precedes|PRECEDES return t_PRECEDES;
 satisfies|SATISFIES     return t_SATISFIES;
 include|INCLUDE   return t_INCLUDE;
 extends|EXTENDS   return t_EXTENDS;
+\$[a-zA-Z][a-zA-Z0-9\_]*  yylval = strdup( yytext ); return VAR;
+[a-zA-Z][a-zA-Z0-9\_]*    yylval = strdup( yytext ); return IDENTIFIER;
 \"                return QUOTE;
 \{                return OBRACE;
 \}                return EBRACE;
@@ -37,5 +37,6 @@ extends|EXTENDS   return t_EXTENDS;
 \;                return SEMICOLON;
 \,                return COMMA;
 \n                /* ignore end of line */
+\/+.*             /* ignore comments */
 [ \t]             /* ignore whitespace */
 %%
