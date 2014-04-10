@@ -42,22 +42,55 @@
 
 \frame{{Chapter 10}
 	\framesubtitle{Cellular Automata, Life, and the Universe}
-	%TODO
+  Sections:
+	\begin{itemize}
+	  \item Computation in Nature
+    \item Cellular Automata
+    \item The Game of Life
+    \item The Four Classes
+    \item Wolfram's ``A New Kind of Science''
+	\end{itemize}
 }
 
 \frame{{Computation in Nature}
-	%TODO
+  \begin{description}
+    \item[Q: ]
+      In what sense to natural systems \emh{compute}?
+    \item[A: ]
+      ``At a very general level, one might say that \emph{computation} is what a complex system does with \emph{information} in order to succeed or adapt in its environment.''
+  \end{description}
 }
 
 \frame{{Cellular Automata}
-	%TODO
+  \begin{block}{Description}
+    \begin{itemize}
+      \item The CA consists of a regular $n$-dimensional grid of cells.
+      \item Each cell can exist in one of a finite number of states.
+      \item For each cell, a set of cells called its neighborhood is defined relative to the specified cell.
+      \item An initial condition is established by assigning a state for each cell.
+      \item A given cell's state is updated according to some fixed rule that determines that cell's new state in terms of its current state and the states of the cells in its neighborhood.
+    \end{itemize}
+  \end{block}
+
+  Von Neumann was able to show that his cellular automaton was equivalent to a universal Turing machine.
 }
 
 \frame{{The Game of Life}
-	%TODO
+  \begin{block}{Improvement}
+    John Conway introduced a 2-state CA capable of universal computation, being able to carry out all the logical combinations of \emph{and}, \emph{or}, and \emph{not}. 
+  \end{block}
+
+  \begin{alertblock}{Caveat}
+    Despite universality, his CA is not economical in practice.
+  \end{alertblock}
+
+  \begin{block}{Goal}
+    ``What we really want from cellular automata is to harness their parallelism and ability to form complex patterns in order to achieve computations in a nontraditional way.''
+  \end{block}
 }
 
 \frame{{The Four Classes}
+  Wolfram observed that the behavior of CA fell into four classes.
 	\begin{description}
 		\item[Class 1: ]
 			Quickly settle to the same uniform final pattern independent of initial configuration.
@@ -68,9 +101,12 @@
 		\item[Class 4: ]
 			A mixture of order and randomness: simple localized structures are produced which interact with each other in complicated ways.
 	\end{description}
+  Wolfram speculated that all Class 4 CAs are capable of universal computation.
+
+  In the 1990s Matthew Cook proved a special case, Rule 110.
 }
 
-\frame{{Woldfam's ``New Kind of Science''}
+\frame{{Wolfram's ``New Kind of Science''}
 	Wolfram's proposed principle (in four parts):
 	\begin{enumerate}
 		\item The proper way to think about processes in nature is that they are \emph{computing}.
