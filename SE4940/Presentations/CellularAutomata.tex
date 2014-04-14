@@ -118,24 +118,17 @@
 
 \frame{{Chapter 11}
 	\framesubtitle{Computing with Particles}
-	%TODO
+  \begin{itemize}
+    \item This chapter is illustrated through the example of deciding \emph{majority classification}, where the cellular automaton computes whether its initial configuration contains a majority of \emph{on} or \emph{off} states.
+    \item The example represents an interesting class of problems that are, in general, very difficult to solve: those that perform tasks requiring collective decision making among all the cells.
+  \end{itemize}
 }
 
-%TODO: Delete everything below here to the final frame.
-
-\frame{{Block Types}
-    \begin{block}{This is a Block}
-        This is important information
-    \end{block}
- 
-    \begin{alertblock}{This is an Alert block}
-        This is an important alert
-    \end{alertblock}
- 
-    \begin{exampleblock}{This is an Example block}
-        This is an example 
-    \end{exampleblock}
-}
+\frame{{Manual Approach}
+  Mitchell describes a manual attempt that uses the \emph{local majority} to determine the state of any given cell.  While this sounds like it might be a reasonable approach, it fals to resolve boundaries.
+  \begin{center}
+    \incluegraphics[]{}
+  \end{center}
 
 \frame{{Questions?}
 	\begin{center}
