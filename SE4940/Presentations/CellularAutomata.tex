@@ -59,6 +59,13 @@
     \item[A: ]
       ``At a very general level, one might say that \emph{computation} is what a complex system does with \emph{information} in order to succeed or adapt in its environment.''
   \end{description}
+  \begin{block}{A Brief Peek at Chapter 12}
+    \begin{itemize}
+      \item What plays the role of \emph{information} in the system?
+      \item How is it communicated and processed?
+      \item How does this information acquire \emph{meaning}?  And to whom?
+    \end{itemize}
+  \end{block}
 }
 
 \frame{{Cellular Automata}
@@ -102,7 +109,6 @@
 			A mixture of order and randomness: simple localized structures are produced which interact with each other in complicated ways.
 	\end{description}
   Wolfram speculated that all Class 4 CAs are capable of universal computation.
-
   In the 1990s Matthew Cook proved a special case, Rule 110.
 }
 
@@ -126,25 +132,66 @@
 
 \frame{{Manual Approach}
 	\begin{columns}[c]
-    	\column{.5\textwidth}
+    	\column{.4\textwidth}
   Mitchell describes a manual attempt that uses the \emph{local majority} to determine the state of any given cell.  While this sounds like it might be a reasonable approach, it fails to resolve boundaries.
-    	\column{.5\textwidth}
+    	\column{.6\textwidth}
   \begin{center}
-    \includegraphics[scale=0.3]{images/rule4.jpg}
+    \includegraphics[scale=0.5]{images/ManualTry.png}
   \end{center}
   \end{columns}
 }
 
 \frame{{Genetic Approach}
-	%TODO: lay out GA approach
+	\begin{itemize}
+    \item Begin with a population of randomly generated CA rules.
+    \item Each rule is tested against many different initial configurations.
+    \item Fitness is determined on the number of correct final evaluations.
+    \item Successive generations are based on the rules with highest fitness.
+    \item The author does not indicate how successive generations are evolved.
+	\end{itemize}
 }
 
 \frame{{Results}
-	%TODO: explain effectiveness of discovered approach
+  The following figure shows the results of successful rule sets in determining majority black and majority white initial lattice.
+  \begin{center}
+    \includegraphics[scale=0.5]{images/BlackWhiteLattice.png}
+  \end{center}
+
+}
+
+\frame{{Interpretation}
+	\begin{columns}[c]
+  \column{.6\textwidth}
+  Looking closely at the space-time diagram we discover some patterns emerge
+  \begin{itemize}
+    \item Homogeneous regions converge quickly.
+    \item Whenever a black region on the left meets a white region on the right, a vertical boundary results.
+    \item The opposite results in a checkerboard triangle.
+  \end{itemize}
+  Much can be understood by observing the edges marked \emph{Side A} and \emph{Side B}.  Since they grow at the same rate, the one with the shorter distance to travel exerts less influence.
+  \column{.4\textwidth}
+  \begin{center}
+    \includegraphics[scale=0.3]{images/CloseUp.png}
+  \end{center}
+  \end{columns}
+}
+
+\frame{{Signals}
+  ``If we try to understand these patterns as carrying out a computation, then the vertical boundary and the checkerboard region can be thought of as \emph{signals}.  These signals are created and propagated by local interactions among cells.  The signals are what allow the cellular automaton as a whole to determine the relative sizes of the larger-scale adjacent black and white regions, cut off the smaller ones, and allow the larger ones to grow in size.''
+
+  \hfill-- Mitchell
 }
 
 \frame{{Consequences}
-	%TODO: talk about the unanticipated behavior of boundaries as particles
+	\begin{center}
+    \includegraphics[scale=0.35]{images/Particles.png}
+  \end{center}
+  Interactions of the boundaries (or edges) between regions can be explained within this particle metaphor.
+  \begin{itemize}
+    \item The CA produces six types of particles: $\gamma$, $\mu$, $\eta$, $\delta$, $\beta$, and $\alpha$.
+    \item $\beta+\gamma, \mu+\beta,$ and $\eta+\delta$ create a new particle.
+    \item $\eta+\mu$ and $\gamma+\delta$ result in annihilation.
+  \end{itemize}
 }
 
 \frame{{Questions?}
