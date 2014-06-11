@@ -1,0 +1,212 @@
+\documentclass{beamer}
+
+
+\usetheme{AnnArbor}
+\usecolortheme{default}
+
+
+\title{Understanding the Complexity of Design}
+%\subtitle{Complex Systems Engineering}
+\author{Steve Mazza}
+\institute[Naval Postgraduate School]
+{ 
+    Naval Postgraduate School \\
+    Monterey, CA \\
+    \includegraphics[height=3cm]{images/NPS_logo.jpg}
+}
+\date {SE4940, Spring/2014}
+\subject{Complex Systems Engineering}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\frame{{Introduction}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 20:21:36 2014
+}
+
+\frame{{Targeted Approaches to Complexity in Design}
+  \framesubtitle{Computational Complexity}
+  This is almost a purely algorithmic approach which is often applied on computer science.
+}
+
+\frame{{Targeted Approaches to Complexity in Design}
+  \framesubtitle{Complexity in Axiomatic Design}
+  \begin{block}{Real Complexity}
+    A measure of uncertainty in achieving the specified functional requirements.
+  \end{block}
+  \begin{block}{Imaginary Complexity}
+    The uncertainty associated with a designer's lack of knowledge.
+  \end{block}
+}
+
+\frame{{Targeted Approaches to Complexity in Design}
+  \framesubtitle{Measuring Design Problem Complexity}
+  \begin{block}{Underlying Assumption}
+    ``The more coupled the design problem, the more complex it is.''
+  \end{block}
+  
+  \begin{itemize}
+    \item Look for interaction among design variables and targets.
+    \item May be modelled by a series of linear equations where distance of the coefficients from the diagonal is an indicator of complexity.
+  \end{itemize}
+}
+
+\frame{{Targeted Approaches to Complexity in Design}
+  \framesubtitle{Measuring Artifact Complexity}
+  \begin{block}{}
+    Measuring the complexity of engineering artifacts may serve as a surrogate for problem or solution complexity.
+  \end{block}
+
+  In the case where a standard framework (or system) is used, artifact complexity can be gauged based on the effort required to document it.
+}
+
+\frame{{Rosen's Approach}
+  \framesubtitle{Impredicativities in Science}
+  \begin{block}{Formalism}
+    In any apparently predictive formalism the application of certain larger contexts generated impredicativities that the original formalism cannot handle.
+  \end{block}
+
+  \begin{exampleblock}{Classic Example}
+    This statement is false.
+  \end{exampleblock}
+
+  ``If the statement is true, then it is not false, but if it is not false, then it must be true, but it cannot be true because it says it is false, but if that is true, then it \emph{is} false, but, but, but\dots \emph{ad infinitum}.''
+}
+
+\frame{{Rosen's Approach}
+  \framesubtitle{Implications for Technology and Design}
+  \begin{block}{The Human Factor}
+    ``In design, the semantic, non-rational, non-algorithmic, impredicative, subjective, and unpredictable nature of humanity is inescapable, because artifacts are always designed for human use, usually designed by humans themselves, and situated within a larger context of a complex world economy.''
+  \end{block}
+  In the author's view it is not surprising that design based on a Newtonian perspective have failed to achieve sufficient maturity.  The suggested alternative is to assume that design is complex.
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{History and Overview}
+  The emergence of the science of complexity is largely credited to these realizations:
+  \begin{enumerate}
+    \item many interesting and unsolved problems are complex in nature,
+    \item complexity spans a wide variety of problem domains, and
+    \item complexity itself is an area worth studying.
+  \end{enumerate}
+  \begin{block}{Complex System}
+    A large group of strongly interacting parts exhibiting nonlinear dynamical behavior.
+  \end{block}
+  May be classified as non-adaptive or adaptive.
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Complex Adaptive Systems}
+  Complex systems seem to operate in the following cycle:
+  \begin{enumerate}
+    \item coarse graining of information from the real world
+    \item identification of perceived regularities
+    \item compression into a schema
+    \item variation of schema
+    \item use of the schema
+    \item selection pressures affecting competition
+  \end{enumerate}
+  The definition presented seems to indicate that complex adaptive systems violate the law of entropy.  However, it is pointed out that CAS are open systems, exchanging energy with their environment.  And some energy is used to change their internal state.  Lastly it is pointed out that entropy only applies to closed systems, which resolves the apparent contradiction.  CAS can often decrease entropy.
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{The Designer-Artifact-User Complex System}
+  This model encompasses the three major subsystems of a \emph{design system}, 
+  \begin{enumerate}
+    \item the designer(s) of the artifact,
+    \item the artifact(s) being designed, and
+    \item the user(s) of the artifact.
+  \end{enumerate}
+  \begin{itemize}
+    \item DAU system is situated in a larger environment
+    \item Each subsystem (D-A-U) may not be singular
+  \end{itemize}
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{DAU as a CAS}
+  The authors establish the basis for accepting DAU as a complex adaptive system by considering each phase of the cycle.
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Coarse Graining Of Information from the Real World}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+\frame{{Understanding Design}
+  \framesubtitle{Identification Of Perceived Regularities}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Compression Into Schema}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Variation of Schema}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Use Of the Schema}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+
+\frame{{Understanding Design}
+  \framesubtitle{Selection Pressure and Competition}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 22:37:05 2014
+}
+
+\frame{{Properties of Affordances}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 20:21:36 2014
+}
+
+\frame{{Summary}
+  %TODO: Enter reminder. (mazzas) Tue Jun 10 20:21:36 2014
+}
+
+%TODO: Delete everything below here to the final frame.
+\frame{{Example of columns 1}
+    \begin{columns}[c]      % the "c" option specifies center vertical alignment
+    \column{.5\textwidth}   % column designated by a command
+     Contents of the first column
+    \column{.5\textwidth}
+     Contents split \\ into two lines
+    \end{columns}
+}
+ 
+\frame{{Example of columns 2}
+    \begin{columns}[t]      % contents are top vertically aligned
+    \begin{column}[T]{5cm}  % each column can also be its own environment
+        Contents of first column \\ split into two lines
+    \end{column}
+    \begin{column}[T]{5cm}  % alternative top-align that's better for graphics 
+        \includegraphics[height=3cm]{images/NPS_logo.jpg}
+    \end{column}
+    \end{columns}
+}
+
+\frame{{Block Types}
+    \begin{block}{This is a Block}
+        This is important information
+    \end{block}
+ 
+    \begin{alertblock}{This is an Alert block}
+        This is an important alert
+    \end{alertblock}
+ 
+    \begin{exampleblock}{This is an Example block}
+        This is an example 
+    \end{exampleblock}
+}
+
+\frame{{Questions?}
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{images/fin.png}
+	\end{center}
+}
+
+\end{document}
