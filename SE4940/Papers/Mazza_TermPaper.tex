@@ -1,6 +1,6 @@
 \documentclass[jou,apacite]{apa6}
 
-\title{Using Recursion To Understand Complexity: A Systems Engineer's Approach to Fractals}
+\title{Applying Recursion and Fractals As Design Patterns In Complex Systems}
 \shorttitle{Term Paper}
 
 \author{Steve Mazza}
@@ -14,26 +14,82 @@
 \begin{document}
 \maketitle    
                         
-\section{Introduction}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.~\cite[page 112]{Axelrod}
+\section{Introduction}  % Target: 1 page
+Present what I am going to say.~\cite[page 112]{Mandelbrot}
 
-\section{Engineering Concerns}
+I will show how applying recursive design patterns to complex systems reduces the complexity of their description.  Furthermore, patterns for the recursive descriptions can be found in some classes of fractals.  There exists an analog between certain fractals and the recursive descriptions for complex problems.
 
+\section{Background}  % Target: 2 pages
+Discuss descriptions of complex problems.  Introduce methods of simplifying complexity.  Introduce recursion as a solution to some classes of problems.
+\subsection{Definition of Complexity}  % Target: 1/2 page.
+\begin{enumerate}
+  \item Introduce the term
+  \item Provide (and cite) a definition
+  \item Discuss interactions and how they lead to complexity
+  \item Provide an example showing the difference between complex and non-complex systems.
+\end{enumerate}
 
-\subsection{Simplification Through Recursion.}
-Discuss the differences in how the descriptions of problems are significantly reduced under recursive soltuions.
+\subsection{How to Describe Complex Systems}  % Target: 1/2 page.
+\begin{enumerate}
+  \item Discuss the importance of formal methods.
+  \item Talk about frameworks and discuss some standards.
+  \item Briefly talk about design patterns.
+  \item Talk about abstraction and simplification.
+\end{enumerate}
 
-\subsection{Measurement}
-Talk about how things are measured at different scales.  Bring this discussion to the Koch Snowflake.  Explain the snowflake in detail and show lots of figures.  Tie it to differences in measurement, accuracy, significant digits, etc.  Show how this is a systems engineering concern.
+\subsection{Methods Of Simplifying Complexity}  % Target: 1/2 page.
+\begin{enumerate}
+  \item Introduce abstraction and discuss (definition and examples).
+  \item Introduce encapsulation and discuss (definition and examples).
+  \item Discuss interface definition and contracts.
+  \item Discuss black box architecture.
+\end{enumerate}
 
-\section{Conclusion}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{Introducing Recursion}  % Target: 1/2 page.
+\begin{enumerate}
+  \item Provide (and cite) a definition.
+  \item Introduce the concept through example.  Consider the description of some algorithm from computer science such as \emph{factorial}.
+  \item Introduce the idea that recursion can be applied to the physical world and provide an example.
+\end{enumerate}
+
+\section{Fractals}  % Target: 3 pages
+\subsection{Introduction}
+Introduce several classes of fractals (with figures).
+\begin{enumerate}
+  \item Koch snowflake
+  \item Sieve 
+\end{enumerate}
+Consult Benoit Mandelbrot for examples and explanation.
+
+\subsection{Constructing Fractals}
+Describe and demonstrate their construction, emphasizing self-similarity and recursion.
+
+\subsection{Self-similarity and Fractals}
+Discuss self-similarity and its connection to fractals.  Discuss how we can describe fractals at all levels of magnification by describing their construction at one given level.  Show how simple rules can lead to complexity.
+
+\section{Design Patterns}  % Target: 3 pages
+Introduce the notion of using design patterns to describe solutions to problems.  Point out that traditional patterns don't adequately encode recursion.  Propose the use of some classes of fractals in describing recursive solutions to complex problems.
+\subsection{Use Of Design Patterns}
+Introduce the history and use of design patterns.
+
+\subsection{Shortcomings Of Traditional Design Patterns}
+Show the shortcomings of traditional design patterns in modeling complex systems.
+
+\subsection{Use of Fractals as Design Patterns}
+Propose the use of some classes of fractals as design patterns.
+
+\subsection{Example}
+Work through an example (with figures)
+
+\subsection{From Simplicity, Complexity}
+Discuss how simple rules can quickly lead to complexity.
+
+\section{Conclusion}  % Target: 1 page
+Wrap up.  Summarize what was covered.  Restate the proposal to use certain classes of fractals to describe recursive solutions to complex problems.
+\begin{enumerate}
+  \item Summarize and wrap up.
+  \item Restate the proposal
+\end{enumerate}
 
 \bibliography{Mazza_TermPaper}
 
