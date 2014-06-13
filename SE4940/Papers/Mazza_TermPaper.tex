@@ -20,7 +20,8 @@ Present what I am going to say.~\cite[page 112]{Mandelbrot}
 I will show how applying recursive design patterns to complex systems reduces the complexity of their description.  Furthermore, patterns for the recursive descriptions can be found in some classes of fractals.  There exists an analog between certain fractals and the recursive descriptions for complex problems.
 
 \section{Background}  % Target: 2 pages
-Discuss descriptions of complex problems.  Introduce methods of simplifying complexity.  Introduce recursion as a solution to some classes of problems.
+The paper that follows is predicated on developing a working understanding of complexity in the context in which we intend.  Furthermore, we arrive at a common understanding of how to describe complex systems.  And lastly, we introduce the idea of recursion and show how it is able to simplify our description of systems (or problems) in many instances.
+
 \subsection{What Is Complexity?}  % Target: 1/2 page.
 What is complexity?  What is the character that makes some systems complex and others not?  Is there a hard line between complexity and non-complexity or do we just know it when we see it?\footnote{This is a clear reference to Justice Stewart's description of pornography.  The point is, can complexity be definitely identified (as in the legal sense) or is its character more elusive?}
 
@@ -34,27 +35,58 @@ Miller counters that there should possibly not be any single unified definition 
 
 Miller is, of course not wrong.  But despite the fact that there are several ways in which we can think about complexity, we will still benefit from a working definition.  So we will adopt the definition proposed by Mitchell in which, ``large networks of components with no central control and simple rules of operation give rise to complex collective behavior, sophisticated information processing, and adaptation via learning or evolution.''~\cite[page 13]{Mitchell}
 
-Many researchers will agree that it is the interactions among the moving parts of a system that are instrumental in giving rise to complexity.  Axelrod and Cohen argue that it is interactions that, ``make a Complex Adaptive System come alive.''~\cite[page 63]{Axelrod} They devote an entire chapter to their importance, arguing that interactions afford opportunities for information exchange, without which system complexity is significantly reduced.  
+Many researchers will agree that it is the interactions among the moving parts of a system that are instrumental in giving rise to complexity.  Langford characterizes interaction as, ``the transfer of something from one object (sender) to another object (receiver).''~\cite[page 48]{Langford}  This is a transfer of information which can be used to influence behavior or decisions or to affect internal change (i.e., state change).  Axelrod and Cohen argue that it is interactions that, ``make a Complex Adaptive System come alive.''~\cite[page 63]{Axelrod} They devote an entire chapter to their importance, arguing that interactions afford opportunities for information exchange, without which system complexity is significantly reduced.  
+
+%TODO: Add citation for Langford: Langford, G. O. (2012). Engineering systems integration: Theory, metrics, and methods. CRC Press.
 
 %TODO: Provide an example showing the difference between complex and non-complex systems. (mazzas) Thu Jun 12 18:39:37 2014
 
 \subsection{How to Describe Complex Systems}  % Target: 1/2 page.
-Formal methods are the basis by which we achieve repeatability in engineering.
+Formal methods are the basis by which we achieve repeatability in engineering.  Without them we are doomed to fumble around in the dark, revisiting the same mistakes on successive efforts.  Frameworks such as the Department of Defense Architecture Framework (DoDAF) and The Open Group Architecture Framework (TOGAF).  
 
-\begin{enumerate}
-  \item Discuss the importance of formal methods.
-  \item Talk about frameworks and discuss some standards.
-  \item Briefly talk about design patterns.
-  \item Talk about abstraction and simplification.
-\end{enumerate}
+These provide the basis for structured, disciplined engineering and help guide and support the full life cycle of development.  They help us to manage and understand our engineering design problems within the context of the broader support for their development, use, and disposal but they do not contain tools that are specific to decomposing the understanding of and communicating the complexity at the root of our design challenges.
+
+The design patterns that we use are tools that help us visualize, understand, and communicate complexity in a relatively standardized manner.  They describe recurring problems along with the core of their solution.  Inasmuch they provide an easy way of rapidly transferring large amounts of information about a problem in an accessible way.  In order to keep pattens useful in a standardized way, the Gang of Four\footnote{This is a commonly used reference to Gamma, Helm, Johnson, and Vissides and to their 1994 treatise on design patterns.} describe four essential elements of any design pattern: the pattern name, the problem, the solution, and the consequences.~\cite[page 3]{Gamma}
+
+\subsubsection{Pattern Name}
+Providing a name for our pattern facilitates rapid communication of complex ideas by increasing our design vocabulary.  Agreeing on a name means that engineers across many different problem domains can refer to the same problem and solution without ambiguity.
+
+\subsubsection{Problem}
+Very simply, the problem describes when and how we can apply the pattern.  It provides the context for the pattern's use and may also set some conditions which must be met in order to do so.  The problems to which patterns apply may occur at any level of design.  The problem may be specific or may be descriptive of a whole class of design ideas.
+
+\subsubsection{Solution}
+The solution is sufficiently abstract such that it can be applied to a a range of implementations.  The solution should describe the elements of the design and their interactions.\footnote{Recall the importance of interactions in complex systems.}  It may also describe the relationships and responsibilities of elements within the design.
+
+\subsubsection{Consequences}
+These are the critical basis for evaluating design decisions and involve trade offs such as flexibility, adaptability, speed, cost, and time.  They are critical for choosing the correct alternatives when using patterns.  Because consequences are not always  listed explicitly within the description of a pattern, a thorough understanding of that pattern is necessary in order to evaluate its use.
+
+The use of design patterns in software engineering is fairly ubiquitous.  Design patterns in other disciplines varies, but is potentially equally as applicable.  The emerging field of systems engineering has many analogs in software engineering and, consequently, may benefit equally from the establishment of a set of commonly accepted design patterns as the basis for a design vocabulary.
+
+Design patterns provide a way of simplifying difficult problems by packaging the problem, solution, and consequences into a neat package and providing a name (a handle) by which to refer to it.  This is a mechanism of abstraction and provides us with a very powerful tool for helping us deal with difficult and complex designs.
 
 \subsection{Methods Of Simplifying Complexity}  % Target: 1/2 page.
-\begin{enumerate}
-  \item Introduce abstraction and discuss (definition and examples).
-  \item Introduce encapsulation and discuss (definition and examples).
-  \item Discuss interface definition and contracts.
-  \item Discuss black box architecture.
-\end{enumerate}
+There are two tools in our arsenal that gain us a lot of ground toward simplifying complexity.  They are abstraction and encapsulation and we introduce and discuss them here, first individually, and then show how we can put them together to provide a powerful way of thinking about difficult and complex problems.  The distinction between abstraction and encapsulation requires some working out since they are almost always used in conjunction.
+
+\subsubsection{Abstraction}
+Abstraction is the mechanism by which an interface to a potentially complex entity is simplified.  The term \emph{abstract} used as an adjective means existing in thought or as an idea but not having a physical or concrete existence.  This separation between the idea (or essence) of something and its implementation gets at the core of why we care about abstraction at all.  
+
+It is very nice when trying to simplify a difficult problem to just concern ourselves with the interface, or contract, (see below) or even an idealized interface (at first) in order to gain an appropriate conceptual foothold on the complexity.  Since abstraction refers to showing only the necessary details of an interface to the consumer, it also provides us a mechanism by which we can ratchet up the complexity as our understanding of the problem space increases.
+
+As an example, consider the act of shipping a parcel to a relative in another state.  Your responsibility as the consumer begins and ends with providing a valid shipping and return address and making payment.  You need not concern yourself with the underlying implementation of \emph{by what means} the package will arrive to your relative.  It could be conveyed via ground freight or travel by air or even be strapped to a donkey.  Assuming it arrives on time and in tact, you are afforded the luxury of not caring about the details\dots the implementation of its delivery.  If the shipper invented a teleportation machine, you would be none the wiser.\footnote{Although one would assume that the rates would go up in order to cover the research and development}.  The idea of \emph{shipping a parcel} is an abstraction on the mechanism of actually getting it to its destination.
+
+\subsubsection{Encapsulation}
+In contrast, encapsulation hides  data as well as complexity.  However the emphasis is not on the interface, but on providing \emph{data protection.}  Encapsulation literally means \emph{to surround.}  While the complexity of an entity is a function of its implementation, it is not the implementation details that are important to encapsulation, rather the data and complexity.  Protection in this case often refers to the prevention of access of data by users in unintended ways.  The mechanism of encapsulation enforces integrity of the type, entity, or object.
+
+Proper encapsulation enforces the contract with the user regarding how an entity or artifact will respond to interaction with its interface.  Abstraction is the simplification of the interface; encapsulation is the hiding and protection of the data behind the interface.  It controls the means by which the artifact may be used.  Unlike abstraction, encapsulation often refers to a specific concrete implementation.
+
+Consider the example of my morning coffee.\footnote{The author presents this statement as if there is only one morning coffee.  Subscription to this tenant is pure folly.}  Since the installation of the Kureg machine in our break room, the production of coffee requires me only to select the type of coffee I want, insert the capsule into the machine, and press the large \emph{Brew} button on the front.  I need not care about how much water is required,\footnote{The Kureg machine in our break room has a water line from the sink water supply so there is no reservoir to fill.} the temperature of that water, how to grind the coffee, or how long to steep the grounds.  Fortunately for me, the button on the face of the machine is an encapsulation of how to brew coffee.
+
+\subsubsection{Putting Them Together}
+Abstraction and encapsulation are natural partners in simplifying our understanding of complexity.  Taken together, they afford us a simultaneous simplification of the interface (i.e., contract with the user) and a protection of the implementation details.  This allows us to focus on the \emph{what} and temporarily ignore the \emph{how} of an entity or artifact.
+
+In a more practical manner, the use of abstraction and encapsulation together allows the distributed design and development of a solution to a complex problem in a way that accommodates the natural development life cycles of individual component parts to progress at their own pace and schedule.  So long as the interface contract (abstraction) is maintained, the implementation details (encapsulation) are free to evolve as appropriate.
+
+This leads us to a concept that is often referred to as \emph{black box} architecture.  It is a powerful mechanism for dealing with complexity and complex systems.  Design patterns are used by engineers to create an understanding of difficult systems (or problems) and to create a conceptual framework around that problem space that is descriptive of a solution.  The design patterns usually suggest natural divisions where interfaces can be created but remain agnostic of the details of implementation, leading to the black box architecture.  Thus abstraction and encapsulation naturally flow from the effective use of design patterns, making them well suited to reducing complexity.
 
 \subsection{Introducing Recursion}  % Target: 1/2 page.
 \begin{enumerate}
