@@ -15,8 +15,6 @@
 \maketitle    
                         
 \section{Introduction}  % Target: 1 page
-Present what I am going to say.~\cite[page 112]{Mandelbrot}
-
 I will show how applying recursive design patterns to complex systems reduces the complexity of their description.  Furthermore, patterns for the recursive descriptions can be found in some classes of fractals.  There exists an analog between certain fractals and the recursive descriptions for complex problems.
 
 \section{Background}  % Target: 2 pages
@@ -37,7 +35,8 @@ Miller is, of course not wrong.  But despite the fact that there are several way
 
 Many researchers will agree that it is the interactions among the moving parts of a system that are instrumental in giving rise to complexity.  Langford characterizes interaction as, ``the transfer of something from one object (sender) to another object (receiver).''~\cite[page 48]{Langford}  This is a transfer of information which can be used to influence behavior or decisions or to affect internal change (i.e., state change).  Axelrod and Cohen argue that it is interactions that, ``make a Complex Adaptive System come alive.''~\cite[page 63]{Axelrod} They devote an entire chapter to their importance, arguing that interactions afford opportunities for information exchange, without which system complexity is significantly reduced.  
 
-%TODO: Provide an example showing the difference between complex and non-complex systems. (mazzas) Thu Jun 12 18:39:37 2014
+The concept of complexity might be best illustrated with a counter-example.  At first glance, one might consider a mechanical wrist watch to be a highly complex instrument.  In fact, it is not complex at all; merely complicated.  The interactions among its parts is so highly constrained (pre-ordained) that complexity cannot arise.  Robustness, a hallmark of complexity, is missing entirely.  If one were to remove a piece of the instrumentation (e.g., a gear or spring) the wrist watch
+would cease to operate.
 
 \subsection{How to Describe Complex Systems}  % Target: 1/2 page.
 Formal methods are the basis by which we achieve repeatability in engineering.  Without them we are doomed to fumble around in the dark, revisiting the same mistakes on successive efforts.  Frameworks such as the Department of Defense Architecture Framework (DoDAF) and The Open Group Architecture Framework (TOGAF).  
@@ -87,13 +86,24 @@ In a more practical manner, the use of abstraction and encapsulation together al
 This leads us to a concept that is often referred to as \emph{black box} architecture.  It is a powerful mechanism for dealing with complexity and complex systems.  Design patterns are used by engineers to create an understanding of difficult systems (or problems) and to create a conceptual framework around that problem space that is descriptive of a solution.  The design patterns usually suggest natural divisions where interfaces can be created but remain agnostic of the details of implementation, leading to the black box architecture.  Thus abstraction and encapsulation naturally flow from the effective use of design patterns, making them well suited to reducing complexity.
 
 \subsection{Introducing Recursion}  % Target: 1/2 page.
+The joke goes that in order to understand recursion\footnote{See Recursion}, you must understand recursion.
+
 \subsubsection{Definition of Recursion} % http://mathworld.wolfram.com/Recursion.html
     \begin{quote}
-      ``A recursive process is one in which objects are defined in terms of other objects of the same type. Using some sort of recurrence relation, the entire class of objects can then be built up from a few initial values and a small number of rules. The Fibonacci numbers are most commonly defined recursively. Care, however, must be taken to avoid self-recursion, in which an object is defined in terms of itself, leading to an infinite nesting.''~\cite{Wolfram}
+      ``A recursive process is one in which objects are defined in terms of other objects of the same type.''~\cite{Wolfram} 
     \end{quote}
+    Very often the object of the same type is actually an exact copy of the first instance of the object but with a slightly different value, as in the case of a recursive algorithm in computer science.  Another instance of a given function gets pushed on the call stack but is passed a different parameter.
+
+    The essence of recursion is that you may solve a large or difficult problem by first solving smaller versions of that same problem and applying those results to the larger problem.  Developing a recursive solution to a problem hinges on identifying a base case so that you know where to start or end. 
 
 \subsubsection{Recursion in the Classroom}   % http://www.go4expert.com/articles/calculating-factorial-recursively-t1757/
-A classic example of recursion can be shown in the implementation of the factorial algorithm, which calculates $n!$ where $n$ is some positive integer.  For example, $3! = 3\times2\times1 = 6$.
+This may be easiest to understand if we walk through an example.  We will first select an algorithmic example so that we can keep our discussion tidy.
+
+A classic example of recursion can be shown in the implementation of the factorial algorithm, which calculates $n!$ where $n$ is some positive integer.  The factorial of $n$ is the product of $n$ and all the positive integers below it such that  
+
+\[n!\equiv n(n-1)\cdots 2\cdot 1\]
+
+For example, $3! = 3\times2\times1 = 6$.
 
 Implementing this algorithm in the C programming language, we have
 \begin{verbatim}
@@ -114,13 +124,17 @@ unsigned int recursive_factorial(int n) {
   return n>=1 ? n * recr_factorial(n-1) : 1;
 }
 \end{verbatim}
-In this version, we are either multiplying $n$ by the previous result of the function call or returning the value 1.  Notice in this construction, we are calling the function from within the function, itself.\footnote{Within a typical computing environment this is possible because each successive call to the function pushes the previous calls one level deeper on the stack and so variable name space is preserved.}
+In this version, we are either multiplying $n$ by the previous result of the function call or returning the value 1.  The ternary operator looks menacing if you have not seen it, but what is happening (from left to right) is that $n$ is compared against 1 and while it is still greater than or equal to 1, another copy of the function is pushed onto the call stack with the new value $n-1$.  In this way the values passed to the successive copies of the function march inexorably toward
+the terminal state, 1, at which point the final value is eventually returned.
+
+Notice in this construction, we are calling the function from within the function, itself.\footnote{Within a typical computing environment this is possible because each successive call to the function pushes the previous calls one level deeper on the stack and so variable name space is preserved.}
 
 \subsubsection{Recursion in the Real World}  % http://sob.apotheon.org/?p=1814
+While we will discuss the applicability of different proposed patterns later, we present here a common example in the interest of exposition.  Consider the task of processing a bill-of-materials, as in the case of manufacturing. The cost of a manufactured assembly (component) is the sum of the cost of component parts plus any associated labor and other overhead. However, the component parts themselves may be manufactured assemblies.  For example, an electric drill, made up
+of a motor, chuck, bearings, housing, switch, and a cord. A motor is made up of a frame, stator, rotor, and bearings.  A rotor is made up of a shaft, stampings, wire, etcetera.
 
-My favorite example of a nicely recursive "real-world" task is bill-of-materials processing, often encountered in a manufacturing context. The cost of a manufactured assembly is the sum of the cost of component parts plus associated labor. However, the component parts themselves may be manufactured assemblies. (e.g. a hand-held electric drill, made up of motor, chuck, bearings, housing, switch, and cord; motor is made up of frame, stator, rotor, and bearings; rotor is made up of shaft, stampings, wire, etc.) I remember hearing an IT guy from a manufacturing plant describing proudly how they solved it in RPG; they "simply" gave assigned part numbers so that the part number of an assembly was constrained to be greater than the part number of any sub-assemblies, then computed costs in a single, key-ordered sweep of the database. (Hmmmm. I hope their part numbers were assigned sparsely enough to allow for versioning...)
-
-There are actually many good examples of business processes that can be naturally expressed as recursively walking a hierarchical data structure; given that most organizations draw their org charts as trees, you can probably think of many HR-related examples (tallying salaries within all hierarchies, tallying awards received within all hierarchies, etc.)
+There are many examples of business processes that can be naturally expressed recursively.  Organizational charts, directories, and call trees are some.  The underlying implementations on which enterprise relational database management systems (RDBMS) are constructed are self-similar.  While B-Trees and B+Trees\footnote{These are simpler constructs which are often introduced in undergraduate computer science curricula.} are overly simple for robust commercial RDBMS, they are
+exemplary of recursive constructs in the real world.
 
 \section{Fractals}  % Target: 3 pages
 \subsection{Introduction}
