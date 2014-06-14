@@ -37,8 +37,6 @@ Miller is, of course not wrong.  But despite the fact that there are several way
 
 Many researchers will agree that it is the interactions among the moving parts of a system that are instrumental in giving rise to complexity.  Langford characterizes interaction as, ``the transfer of something from one object (sender) to another object (receiver).''~\cite[page 48]{Langford}  This is a transfer of information which can be used to influence behavior or decisions or to affect internal change (i.e., state change).  Axelrod and Cohen argue that it is interactions that, ``make a Complex Adaptive System come alive.''~\cite[page 63]{Axelrod} They devote an entire chapter to their importance, arguing that interactions afford opportunities for information exchange, without which system complexity is significantly reduced.  
 
-%TODO: Add citation for Langford: Langford, G. O. (2012). Engineering systems integration: Theory, metrics, and methods. CRC Press.
-
 %TODO: Provide an example showing the difference between complex and non-complex systems. (mazzas) Thu Jun 12 18:39:37 2014
 
 \subsection{How to Describe Complex Systems}  % Target: 1/2 page.
@@ -89,11 +87,40 @@ In a more practical manner, the use of abstraction and encapsulation together al
 This leads us to a concept that is often referred to as \emph{black box} architecture.  It is a powerful mechanism for dealing with complexity and complex systems.  Design patterns are used by engineers to create an understanding of difficult systems (or problems) and to create a conceptual framework around that problem space that is descriptive of a solution.  The design patterns usually suggest natural divisions where interfaces can be created but remain agnostic of the details of implementation, leading to the black box architecture.  Thus abstraction and encapsulation naturally flow from the effective use of design patterns, making them well suited to reducing complexity.
 
 \subsection{Introducing Recursion}  % Target: 1/2 page.
-\begin{enumerate}
-  \item Provide (and cite) a definition.
-  \item Introduce the concept through example.  Consider the description of some algorithm from computer science such as \emph{factorial}.
-  \item Introduce the idea that recursion can be applied to the physical world and provide an example.
-\end{enumerate}
+\subsubsection{Definition of Recursion} % http://mathworld.wolfram.com/Recursion.html
+    \begin{quote}
+      ``A recursive process is one in which objects are defined in terms of other objects of the same type. Using some sort of recurrence relation, the entire class of objects can then be built up from a few initial values and a small number of rules. The Fibonacci numbers are most commonly defined recursively. Care, however, must be taken to avoid self-recursion, in which an object is defined in terms of itself, leading to an infinite nesting.''~\cite{Wolfram}
+    \end{quote}
+
+\subsubsection{Recursion in the Classroom}   % http://www.go4expert.com/articles/calculating-factorial-recursively-t1757/
+A classic example of recursion can be shown in the implementation of the factorial algorithm, which calculates $n!$ where $n$ is some positive integer.  For example, $3! = 3\times2\times1 = 6$.
+
+Implementing this algorithm in the C programming language, we have
+\begin{verbatim}
+unsigned int iter_factorial(int n) {
+  int f = 1;
+  int i;
+  for(i = 1; i <= n; i++) {
+    f *= i;
+  }
+  return f;
+}
+\end{verbatim}
+The implementation of this algorithm takes the integer argument $n$ and uses the loop variable $i$ to count from 1 to $n$, multiplying and collecting the loop variable in $f$.
+
+Notice how much more streamlined the implementation and subsequent description are under a recursive version of the algorithm.
+\begin{verbatim}
+unsigned int recursive_factorial(int n) {
+  return n>=1 ? n * recr_factorial(n-1) : 1;
+}
+\end{verbatim}
+In this version, we are either multiplying $n$ by the previous result of the function call or returning the value 1.  Notice in this construction, we are calling the function from within the function, itself.\footnote{Within a typical computing environment this is possible because each successive call to the function pushes the previous calls one level deeper on the stack and so variable name space is preserved.}
+
+\subsubsection{Recursion in the Real World}  % http://sob.apotheon.org/?p=1814
+
+My favorite example of a nicely recursive "real-world" task is bill-of-materials processing, often encountered in a manufacturing context. The cost of a manufactured assembly is the sum of the cost of component parts plus associated labor. However, the component parts themselves may be manufactured assemblies. (e.g. a hand-held electric drill, made up of motor, chuck, bearings, housing, switch, and cord; motor is made up of frame, stator, rotor, and bearings; rotor is made up of shaft, stampings, wire, etc.) I remember hearing an IT guy from a manufacturing plant describing proudly how they solved it in RPG; they "simply" gave assigned part numbers so that the part number of an assembly was constrained to be greater than the part number of any sub-assemblies, then computed costs in a single, key-ordered sweep of the database. (Hmmmm. I hope their part numbers were assigned sparsely enough to allow for versioning...)
+
+There are actually many good examples of business processes that can be naturally expressed as recursively walking a hierarchical data structure; given that most organizations draw their org charts as trees, you can probably think of many HR-related examples (tallying salaries within all hierarchies, tallying awards received within all hierarchies, etc.)
 
 \section{Fractals}  % Target: 3 pages
 \subsection{Introduction}
@@ -117,6 +144,12 @@ Introduce the history and use of design patterns.~\cite{Gamma}
 
 \subsection{Shortcomings Of Traditional Design Patterns}
 Show the shortcomings of traditional design patterns in modeling complex systems.
+
+http://sob.apotheon.org/?p=1814
+
+\begin{quote}
+IMHO, the alleged "complexity" (or fragility) of many business programs is directly due to the attempt to solve the problem with non-recursive thinking.
+\end{quote}
 
 \subsection{Use of Fractals as Design Patterns}
 Propose the use of some classes of fractals as design patterns.
