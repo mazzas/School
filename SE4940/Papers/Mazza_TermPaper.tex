@@ -183,7 +183,7 @@ We will be looking at the Koch Curve whose base case is a single line segment, u
 The iterator rule says to remove the center third of the line segment and replace it with an equilateral triangle.  Then take away its base.  This can be seen in figure~\ref{fig:kochiter}.
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.5\columnwidth]{images/KochIterationRule.png}
+  \includegraphics[scale=1.0]{images/KochIterationRule.png}
   \caption{Iteration rule for the Koch Curve.}
   \label{fig:kochiter}
 \end{figure}
@@ -194,7 +194,7 @@ This obviously results in the curve shown in figure~\ref{fig:koch1}.
   \caption{Koch Curve after one iteration.}
   \label{fig:koch1}
 \end{figure}
-Continuing to apply the iterator, we find the progression shown in figure~\ref{fig:koch2}.
+After the first iteration we continue to apply the rule individually to the four line segments, removing their center third, adding the equilateral triangle, and removing the base as shown in figure~\ref{fig:koch2}.
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=0.75\columnwidth]{images/Koch2.png}
@@ -208,13 +208,12 @@ Successive iterations continue to result in a bumpier curve as illustrated in fi
   \caption{Koch Curve after five iterations.}
   \label{fig:koch5}
 \end{figure}
-Notice that we are only continuing to apply the to each successively smaller line segment in the curve.  It is the same rule applied over and over.
 
-We can see how the simple iterator rule transforms a simple line segment into a very interesting curve with self-similar properties at all levels of magnification.
+Notice that we are only continuing to apply the iterator to each successively smaller line segment in the curve.  It is the same rule applied over and over.  We can see how the simple iterator rule transforms a simple line segment into a very interesting curve with self-similar properties at all levels of magnification.
 
-Of further interesting note is the observation that if the Koch Curve is drawn as three connected curves into a closed form, it creates a shape called a Koch Snowflake in which a boundary of infinite length\footnote{The iterator rule can always be applied between any two points of arbitrarily close proximity, creating new intermediate points.} surrounding a finite area.
+Of further interesting note is the observation that if the Koch Curve is drawn as three connected curves into a closed form, it creates a shape called a Koch Snowflake in which a boundary of infinite length\footnote{The iterator rule can always be applied between any two points of arbitrarily close proximity, creating new intermediate points.} surrounding a finite area\footnote{Since it is a closed curve, the area must be finite.}.
 
-Since this is merely interesting and not crucial to our progress, we will leave the derivation of the following results to the reader.  The perimeter, $P$, grows to infinity as the number of iterations, $n$, approaches infinity.
+Since this is merely interesting and not crucial to our progress, we will leave the derivation of the following results to the reader.  The perimeter, $P$, a function of the length of a side, $s$, grows to infinity as the number of iterations, $n$, approaches infinity.
 
 \[\lim_{n \to +\infty}P_n = \lim_{n \to +\infty} 3\cdot s\cdot\left(\frac{4}{3}\right)^n\to\infty\]
 
@@ -224,12 +223,101 @@ And the area, $A$, is finitely bound as the number of iterations, $n$, approache
 where $a_0$ is the original area of the equilateral triangle.
 
 \subsection{Selected Fractals}
-We briefly introduce several of the more useful fractals, describe their construction, and provide illustrations.  We also provide a brief glimpse into the natural world constructs to which they may be applicable.~\cite{Peitgen}
+We briefly introduce several of the more useful fractals, describe their construction, and provide illustrations.  We also provide a brief glimpse into the natural world constructs to which they may be applicable.~\cite{Peitgen} Consider each of the following examples and notice the role that recursive iteration plays.
+
 \subsubsection{The Cantor Set}
+The Cantor Set belongs to a class known as line elimination fractals.  We begin with a single horizontal line and continually remove the middle third (as in the Koch Curve), except that we do not add anything in its place.  Continuing to iterate this idea, the original line disappears into dust as more and more of it are continually removed.  The result is an uncountable set of measure zero.  Its construction is shown in figure~\ref{fig:cantor}.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/cantorset.png}
+  \caption{Cantor Set showing six iterations.}
+  \label{fig:cantor}
+\end{figure}
+
+The Cantor Set constructed on the interval $[0, 1]$ has the same cardinality as the real numbers on that same interval.  Inasmuch, we will find this pattern to be useful in representing closed, uncountable sets.  While the physical manifestation of these are few, the idea is quite a common theme, conceptually, in engineered systems of nontrivial complexity.
+
 \subsubsection{The Sierpinski Gasket}
+The Sierpinski Gasket belongs to a class known as area elimination fractals.  An equilateral triangle is divided into quarters by bisecting the midpoints of its line segments (sides) and the middle triangle is removed, leaving three equilateral triangles in its place.  The process is repeated \emph{ad infinitum} leaving something that looks like a gasket.  See figure~\ref{fig:sierpinski}.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/sierpinski.png}
+  \caption{Sierpinski Gasket after five iterations.}
+  \label{fig:sierpinski}
+\end{figure}
+
+Like the Cantor Set, there will always remain definite and identifiable points (endpoints, or boundaries) along the edges of the triangles.  As a pattern, there are potential applications in population growth and resource usage in biological systems, among others.
+
 \subsubsection{The Pascal Triangle}
+The Pascal Triangle is somewhat different in nature than the previous (or successive) examples in that its construction is purely computational and not as visually compelling, geometrically. An example is shown in figure~\ref{fig:pascal}. You can verify that it has the following three properties:
+\begin{itemize}
+  \item The sum of the $n^{\mbox{th}}$ row is $2^n$.
+  \item The sum of rows 0 through $n$ is $-1+2^{n+1}$.
+  \item The generating function of the $n^{\mbox{th}}$ row is $(x+1)^n$.
+\end{itemize}
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/pascal.png}
+  \caption{Pascal Triangle at $n=6$.}
+  \label{fig:pascal}
+\end{figure}
+
+In 1654 Pascal, along with Pierre do Fermat, used his triangle to help solve some problems of chance as they related to gambling.  There are likely many similar applications of this pattern to stochastic outcomes in complex systems.
+
 \subsubsection{Koch Curve}
+Since we've already discussed this at some length above, we will simply mention that the Koch Curve belongs to a class called line replacement fractals.  This is one of the more recognizable and fascinating fractal structures and, in its closed form, bares a remarkable resemblance to a range of organic and natural structures, most notably snowflakes.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/Koch5.png}
+  \caption{Koch Curve after five iterations.}
+  \label{fig:koch52}
+\end{figure}
+
+Because of its construction and infinitely increasing perimeter, it is an excellent analog (or pattern) for representing how accuracy in measurement, especially of organic or naturally occurring boundaries, impacts the results of that measurement.  Accuracy and an increase in length go proportionally, for example.  The classic illustration of this can be found in the 1967 article published in the journal \emph{Science}, titled, ``How Long is the Coast of
+Britain?''\cite{Britain}
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/britain.png}
+  \caption{From ``How Long is the Coast of Britain?'' this graphic is illustrative of how precision in measurement can affect its outcome.}
+  \label{fig:britain}
+\end{figure}
+
+As illustrated in figure~\ref{fig:britain}, notice how the outcome of measurement of highly irregular shapes can be significantly affected by the accuracy, or precision, applied to that measurement.  At the risk of hyperbole, consider how the coastline would expand if one were able to account for irregularities as small as a grain of sand.
+
 \subsubsection{Space Filling Curves}
+The example shown in figure~\ref{fig:hilbert} is a Hilbert Curve, a member of the space filling curves.  Its construction can be seen in figure~\ref{fig:hilbert2}.  
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/hilbert.png}
+  \caption{Hilbert Curve after five iterations.}
+  \label{fig:hilbert}
+\end{figure}
+
+One can see that the density increases rapidly with successive iterations.  For any arbitrary point in the plane, we can show that it will eventually be covered by the curve.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/hilbert2.png}
+  \caption{Construction of the Hilbert Curve.}
+  \label{fig:hilbert2}
+\end{figure}
+
+Other examples of space filling curves include the Paeno Curve, Dragon Curve, Gosper Curve, and the Sierpinski\footnote{There's that name again!} Curve.   These may even be constructed outside of the plane in three dimensions, as seen in figure~\ref{fig:hilbert3d}.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/hilbert3d.jpg}
+  \caption{An example of a Hilbert Curve in three dimensions.}
+  \label{fig:hilbert3d}
+\end{figure}
+
+Space filling curves have direct application in some aspects of image processing and can also be used as patterns for compression or packing.  Used in algorithms for dithering photographs, the Hilbert Curve offers an alternative to scanning and processing the image line by line.  This technique is free of directional features that may be evident in more traditional methods.~\cite[page 103]{Peitgen}.  It also results in aperiodic patterns of clustered dots that are characteristic of
+photographic grain.\footnote{Does anyone besides me remember film???}
 
 \section{Design Patterns}  % Target: 3 pages
 Introduce the notion of using design patterns to describe solutions to problems.  Point out that traditional patterns don't adequately encode recursion.  Propose the use of some classes of fractals in describing recursive solutions to complex problems.
