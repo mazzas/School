@@ -101,44 +101,31 @@ According to Mitchell (page 103, ``Complexity as Fractal Dimension''), the fract
 \item[Question 8:]
 Define what an adaptive agent-based model is and briefly describe its characteristics.
 
-Agent based models.
-\begin{itemize}
-  \item Ideas drive the development of tools (quarks drive accelerators) or tools may drive the development of ideas (microscopes drive microbiology).
-  \item Agent-based models are computer models that permit the exploration of complex systems in more detail.
-  \item Agent-based models consist of entities of various types (the agents) endowed with limited memory and cognitive ability that are embedded in a network (connected to other agents) and whose behaviors are interdependent (usually locally).
-  \item Agents follow rules.  The rules may be simple and fixed or complicated and adaptive.
-  \item Adaptive agents follow metarules, which are rules about how rules can be changed.
-  \item Agents often take discrete actions such as changing location, switching strategy (cooperation vs. defection), or joining or exiting a particular activity.
-  \item Rules are often threshold-based, that is, rules in which the agent’s behavior remains the same until some threshold is met.
-  \item Threshold effects can cause positive (more of the same) or negative (less of the same) feedbacks.
-  \item Agent-based systems often exhibit complex, emergent behavior.
-\end{itemize}
+Agent-based models are network computer models  were the agents play a central role in the modeling. They facilitate the exploration of complex systems in great detail.  Agents of various types (of classes) may have different properties regarding memory, movement, and cognitive ability.  Behaviors of agents are interdependent.
 
-%TODO: Answer question. (mazzas) Fri Jun 13 18:22:45 2014
-% Slide deck 1, slide 84.
+While there may be several (or many) classes of agents, they all behave based on a set of rules which may be either fixed (as in Conway's Game of Life) or adaptive.  Either way, the agents themselves drive the evolution of the model through actions (or non-action) and interactions.  Actions might look spacial as in changing location or may be logical as in changing a strategy (e.g., from cooperation to defection).
+
+The rules in an agent-based model are often threshold-based.  When a critical level is reached (high or low), a rule is triggered.  This may have either positive or negative feedback, encouraging either more or less of the same action.
+
+In the case of adaptive agents, the rules are not fixed.  Rather the agents follow meta-rules that determine the ways in which the current rule set may be altered.  Especially under these conditions, but also true in general, agent-based systems often exhibit complex and emergent behavior.
 
 \item[Question 9:]
 In an engineering system consisting of various parts and mechanisms, what kinds of diversity are most applicable to determining complexity?  How might that diversity be measured?
 
-Complexity (from slide 62)
+There are three rules of thumb that inform our understanding of diversity with respect to how it determines complexity.
 \begin{itemize}
-  \item Variation within a type seldom results in complexity
-  \item Differences between types is often associated with complexity
-  \item Diversity in composition is often associated with complexity
+  \item Variation within a type seldom results in complexity.
+  \item Differences between types is often associated with complexity.
+  \item Diversity in composition is often associated with complexity.
 \end{itemize}
 
-Five kinds of diversity measures (from slide 59)
-\begin{itemize}
-  \item Variation measures
-  \item Entropy measures
-  \item Distance measures
-  \item Attribute measures
-  \item Disjoint population measures
-\end{itemize}
-Also see slides 60 \& 61
-
-%TODO: Answer question. (mazzas) Fri Jun 13 18:22:57 2014
-% Slide deck 1, slides 58-62, focusing on slide 62.
+In addition, there are four types of problems where exploration (increased diversity) is particularly useful.
+\begin{enumerate}
+  \item Long-term or widespread problems.  Assuming there is an investment cost in encouraging diversity, the longer you have to amortize the cost of finding a solution, the greater the payoff.
+  \item Problems that provide fast, reliable feedback.  These are almost always worth pursuing and are often characterized as low hanging fruit.  Improvements tend to happen quickly under conditions of rapid and reliable feedback.  And the early win afforded such a solution provides more time for the solution to work.
+  \item Problems that are unlikely to result in catastrophe.  This establishes the premise for basing exploration (encouraging diversity) on a risk for reward basis.  If the risk of extending diversity is low then we may be more willing to pursue this strategy.
+  \item Problems that have looming disasters. When in a situation where the status quo will eventually lead to a disastrous end then the risk of encouraging diversity should be weighed against the risk of \emph{not} encouraging diversity.
+\end{enumerate}
 
 \item[Question 10:]
 What approaches are likely to [be] part of any attempt to harness complexity in an inherently complex system?
