@@ -137,19 +137,99 @@ There are many examples of business processes that can be naturally expressed re
 exemplary of recursive constructs in the real world.
 
 \section{Fractals}  % Target: 3 pages
-\subsection{Introduction}
-Introduce several classes of fractals (with figures).
-\begin{enumerate}
-  \item Koch snowflake
-  \item Sieve 
-\end{enumerate}
-Consult Benoit Mandelbrot for examples and explanation.
+In his 1983 treatise on fractal geometry, Benoit Mandelbrot introduced the scientific community to the greatest exposition on fractals to date, bringing fractal geometry into the collective scientific conscience.
+\begin{quote}
+  ``I conceived and developed a new geometry of nature and implemented its use in a number of diverse fields.  It describes many of the irregular and fragmented patterns around us, and leads to full-fledged theories, by identifying a family of shapes I call \emph{fractals}.''~\cite{Mandelbrot}
+\end{quote}
 
-\subsection{Constructing Fractals}
-Describe and demonstrate their construction, emphasizing self-similarity and recursion.
+Notice his use of language.  Mandelbrot talks about how fractals describe many of the things (ideas, systems, patterns) around us.  
 
 \subsection{Self-similarity and Fractals}
-Discuss self-similarity and its connection to fractals.  Discuss how we can describe fractals at all levels of magnification by describing their construction at one given level.  Show how simple rules can lead to complexity.
+Fractals are self-similar in nature.  It is an underlying theme with fractals.  That is, their construction looks the same (or similar) at varying levels of magnification.  As an illustration of this point, let us consider something with which we are all likely familiar.  Cauliflower offers an easy and accessible means to demonstrate self-similarity.  
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=\columnwidth]{images/cauliflower.png}
+  \caption{The self-similarity of cauliflower demonstrated at three magnifications.}
+  \label{fig:cauliflower}
+\end{figure}
+
+What is striking in figure~\ref{fig:cauliflower} is how remarkably alike each of the images is to the others.  Only the scale indicated on each frame gives away how large or small each piece of cauliflower is.
+
+It is the same with fractals.  Each successive level of magnification reveals the same (or remarkably similar, in some cases) image as previously seen.  What we see in figure~\ref{fig:fractalmag} is a Sierpinski Gasket.  One third of it has been enlarged to show that it is indistinguishable from the whole, of which it is only a part.  
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=\columnwidth]{images/GasketMag.png}
+  \caption{Sierpinski Gasket illustrating self-similarity at different levels of magnification.}
+  \label{fig:fractalmag}
+\end{figure}
+
+In fact, we have no real way of knowing (short of some external context) of we are looking at a whole or a small part or even a very, very tiny part of many fractals.  The self-similarity of fractals naturally lends itself to recursive description.
+
+\subsection{Constructing Fractals}
+Let us illustrate the self-similarity of fractals by constructing one in detail.  We will be developing the high level construction of others below, but it is useful to walk through a representative example.
+
+For most fractal constructions what we require is a base case and an iterator, or rule, which we continually apply.  The iterator transforms the base case into something which often bares little resemblance to the original thing.
+
+We will be looking at the Koch Curve whose base case is a single line segment, usually drawn horizontally as in figure~\ref{fig:koch0}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/Koch0.png}
+  \caption{Base case for the Koch Curve.}
+  \label{fig:koch0}
+\end{figure}
+
+The iterator rule says to remove the center third of the line segment and replace it with an equilateral triangle.  Then take away its base.  This can be seen in figure~\ref{fig:kochiter}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.5\columnwidth]{images/KochIterationRule.png}
+  \caption{Iteration rule for the Koch Curve.}
+  \label{fig:kochiter}
+\end{figure}
+This obviously results in the curve shown in figure~\ref{fig:koch1}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/Koch1.png}
+  \caption{Koch Curve after one iteration.}
+  \label{fig:koch1}
+\end{figure}
+Continuing to apply the iterator, we find the progression shown in figure~\ref{fig:koch2}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/Koch2.png}
+  \caption{Koch Curve after two iterations.}
+  \label{fig:koch2}
+\end{figure}
+Successive iterations continue to result in a bumpier curve as illustrated in figure~\ref{fig:koch5}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/Koch5.png}
+  \caption{Koch Curve after five iterations.}
+  \label{fig:koch5}
+\end{figure}
+Notice that we are only continuing to apply the to each successively smaller line segment in the curve.  It is the same rule applied over and over.
+
+We can see how the simple iterator rule transforms a simple line segment into a very interesting curve with self-similar properties at all levels of magnification.
+
+Of further interesting note is the observation that if the Koch Curve is drawn as three connected curves into a closed form, it creates a shape called a Koch Snowflake in which a boundary of infinite length\footnote{The iterator rule can always be applied between any two points of arbitrarily close proximity, creating new intermediate points.} surrounding a finite area.
+
+Since this is merely interesting and not crucial to our progress, we will leave the derivation of the following results to the reader.  The perimeter, $P$, grows to infinity as the number of iterations, $n$, approaches infinity.
+
+\[\lim_{n \to +\infty}P_n = \lim_{n \to +\infty} 3\cdot s\cdot\left(\frac{4}{3}\right)^n\to\infty\]
+
+And the area, $A$, is finitely bound as the number of iterations, $n$, approaches infinity.
+
+\[\lim_{n \to +\infty}A_n = \lim_{n \to +\infty}\frac{a_0}{5}\cdot\left(8-3\left(\frac{4}{9}\right)^n\right)=\frac{8}{5}\cdot a_0\]
+where $a_0$ is the original area of the equilateral triangle.
+
+\subsection{Selected Fractals}
+We briefly introduce several of the more useful fractals, describe their construction, and provide illustrations.  We also provide a brief glimpse into the natural world constructs to which they may be applicable.~\cite{Peitgen}
+\subsubsection{The Cantor Set}
+\subsubsection{The Sierpinski Gasket}
+\subsubsection{The Pascal Triangle}
+\subsubsection{Koch Curve}
+\subsubsection{Space Filling Curves}
 
 \section{Design Patterns}  % Target: 3 pages
 Introduce the notion of using design patterns to describe solutions to problems.  Point out that traditional patterns don't adequately encode recursion.  Propose the use of some classes of fractals in describing recursive solutions to complex problems.
