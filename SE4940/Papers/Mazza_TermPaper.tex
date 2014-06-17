@@ -6,7 +6,9 @@
 \author{Steve Mazza}
 \affiliation{Naval Postgraduate School}
 
-\abstract{The term paper must be at least ten pages in length (single-spaced, normal font size, graphics are included in page count).  There is no maximum length, although a concise, well-crafted analysis is clearly superior to a lengthy, rambling narrative.  The subject of the term paper will be the student's synthesis of how some aspect of complexity, chaos, and other related topics relates to engineering of complex systems.  That is, how does each student think at least one of these topics can be integrated into a general approach to systems engineering.  The term paper will be due in class during Week 12.}
+\abstract{
+  We introduce complexity and show some common methods for dealing with it, namely abstraction and encapsulation.  We then show how applying recursive thinking to complex systems reduces the complexity of their description, illustrated with an example from computer science.  We make a connection from recursion to fractals, introducing some common types and showing how they relate to real world concepts.  Introducing the use of design patterns in architecture, we discuss some of its history and applicability to systems engineering.  We show how shortcomings in traditional design patterns fail to adequately deal with complex systems in a highly effective manner.  We make the link to recursive descriptions of patterns which can be found in some classes of fractals.  Fractal-based patterns that are specifically designed to address the unique needs of the systems engineer regarding the architecture of complex systems will shorten the gap between problem observation and problem solution while also increasing the reliability and repeatability of success in these domains.
+}
 
 \rightheader{Term Paper}
 \leftheader{Steve Mazza}
@@ -15,7 +17,12 @@
 \maketitle    
                         
 \section{Introduction}  % Target: 1 page
-I will show how applying recursive design patterns to complex systems reduces the complexity of their description.  Furthermore, patterns for the recursive descriptions can be found in some classes of fractals.  There exists an analog between certain fractals and the recursive descriptions for complex problems.
+We introduce complexity and show some common methods for dealing with it, namely abstraction and encapsulation.  We then show how applying recursive thinking to complex systems reduces the complexity of their description, illustrated with an example from computer science.  We make a connection from recursion to fractals, introducing some common types and showing how they relate to real world concepts.
+
+Introducing the use of design patterns in architecture, we discuss some of its history and applicability to systems engineering.  We show how shortcomings in traditional design patterns fail to adequately deal with complex systems in a highly effective manner.  We make the link to recursive descriptions of patterns which can be found in some classes of fractals.  There exists an analog between certain fractals and the recursive descriptions for complex problems that we can leverage in
+the interest of taming complexity on some levels.
+
+The natural extension is the full development of useful and descriptive recursive fractal-based patterns that are specifically designed to address the unique needs of the systems engineer regarding the architecture of complex systems.  While this will take time and research, the benefits of this endeavor promise to shorten the gap between problem observation and problem solution while also increasing the reliability and repeatability of success in these domains.
 
 \section{Background}  % Target: 2 pages
 The paper that follows is predicated on developing a working understanding of complexity in the context in which we intend.  Furthermore, we arrive at a common understanding of how to describe complex systems.  And lastly, we introduce the idea of recursion and show how it is able to simplify our description of systems (or problems) in many instances.
@@ -348,17 +355,30 @@ There are several things which patterns do for us.  Buschmann, et.\ al., lay out
 
 \emph{Patterns help manage complexity.}  By remaining implementation agnostic, patterns provide a plan for how to solve a problem in a way that both breaks down complexity inherent in the problem space and avoids getting mired in implementation details.
 
-So it is no wonder that patterns have such a foothold in the often complex world of software engineering.  We can see how these characteristics also benefit the broader, more abstract domain of complex systems engineering.  Establishment and use of appropriate patterns helps us to arrive at and communicate good architectural solutions more quickly by allowing us to leverage the packaged wisdom and experience of tested approaches to recurring problems.
+So it is no wonder that patterns have such a foothold in the complex world of software engineering.  We can see how these characteristics also benefit the broader, more abstract domain of complex systems engineering.  Establishment and use of appropriate patterns helps us to arrive at and communicate good architectural solutions more quickly by allowing us to leverage the packaged wisdom and experience of tested approaches to recurring problems.
+
+This efficiency affords us do develop more reliable architectures more quickly, with which we can implement solutions to complex problems.  The natural language extension of patterns allows more rapid and accurate communication of complex ideas, independent of implementation details, facilitating the distribution of work across people and organizations.
 
 \subsection{Shortcomings Of Traditional Design Patterns}
-Show the shortcomings of traditional design patterns in modeling complex systems.
+The patterns that have been developed mostly to support software architecture are a great place to start and have broad applicability to complex systems engineering and architecture, especially considering that software is often a large component of complex systems.  And like all languages, design patterns are living and organic. So it is natural to extend them in ways that are useful to us.
+
+Despite the wealth of proven design patterns in software architecture, there are plenty of opportunities to improve on and add to the corpus.  Especially given the dynamic nature of the emerging field of complex systems engineering, we are likely to find many new ways to think about and communicate that complexity by applying familiar and relatable patterns.
+
+Since the domain of systems architecture is a proper superset of software architecture, it is likely that the set of design patterns so well suited to the latter would need to be extended to accommodate the former.  In addition, the domain of complex systems likely requires its own design patterns. 
+
+Lastly, traditional patterns tend to address atomic problems in straightforward ways.  While this often makes the patterns easier to read, it creates some unnecessarily complicated architectures.
 
 \begin{quote}
-``IMHO, the alleged `complexity' (or fragility) of many business programs is directly due to the attempt to solve the problem with non-recursive thinking.'' -- Joel Neeley
+  ``IMHO [sic], the alleged `complexity' (or fragility) of many systems is directly due to the attempt to solve the problem with non-recursive thinking.'' -- Joel Neeley
 \end{quote}
 
+Applying recursive thinking through the development of design patterns that are based on fractal structures, we stand to benefit from a significant reduction in complexity.  This reduction in complexity should be on the same order as the reduction characteristic of recursive algorithms like the one presented above.
+
 \subsection{Use of Fractals as Design Patterns}
-Propose the use of some classes of fractals as design patterns.
+We have already suggested some of the applicability of fractals to common design problems.  
+%TODO: Restate these. (mazzas) Tue Jun 17 11:37:00 2014
+
+What remains is to select some of these that are appropriate and crate full-fledged design patterns around them.
 
 \subsection{Example} % optionally just make a case for further investigation
 Work through an example (with figures)
@@ -367,11 +387,11 @@ Work through an example (with figures)
 Discuss how simple rules can quickly lead to complexity.
 
 \section{Conclusion}  % Target: 1 page
-Wrap up.  Summarize what was covered.  Restate the proposal to use certain classes of fractals to describe recursive solutions to complex problems.
-\begin{enumerate}
-  \item Summarize and wrap up.
-  \item Restate the proposal
-\end{enumerate}
+We have discussed the nature of complexity in engineering and architecture and shown some common methods for dealing with it.  Abstraction and encapsulation provide powerful tools for taming complex systems.  Coding that abstraction and encapsulation into design patterns has been a useful method applied in software architecture for the last two decades and has conspicuous merit in complex systems architecture as well.
+
+Developing recursive design patterns and using fractal structures to represent common and recurring elements of complex architectures offers a way to address the inherent complexity of these problem spaces and extend our vocabulary in meaningful ways that address coordination, communication, and help make success repeatable.
+
+The challenge is to continue to investigate this area and to cultivate a culture of reuse.  There is no reason to derive every solution from first principles when so much experience is available.  Complex problems require complex solutions in order to make them tractable.  Developing recursive, fractal design patterns may significantly reduce this complexity and facilitate communication of complex architectures across domains among practicing engineers.
 
 \bibliography{Mazza_TermPaper}
 
