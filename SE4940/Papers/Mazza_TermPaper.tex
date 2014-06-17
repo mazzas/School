@@ -320,23 +320,45 @@ Space filling curves have direct application in some aspects of image processing
 photographic grain.\footnote{Does anyone besides me remember film???}
 
 \section{Design Patterns}  % Target: 3 pages
-Introduce the notion of using design patterns to describe solutions to problems.  Point out that traditional patterns don't adequately encode recursion.  Propose the use of some classes of fractals in describing recursive solutions to complex problems.
-\subsection{Use Of Design Patterns}
-Introduce the history and use of design patterns.~\cite{Gamma}
+After a brief introduction to design patterns and their typical use, we will discuss some of the shortcomings of traditional design patterns.  Lastly, we will show how the appropriate use of fractals in design patterns can lead to simpler descriptions of complex systems.
+
+\subsection{Use of Design Patterns}
+\subsubsection{History of Design Patterns}
+The history of design pattens is most often traced back to Alexander, an architect, who coined the phrase and introduced their use in design and construction of buildings.  
+\begin{quote}
+  ``Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice.''~\cite{Alexander}
+\end{quote}
+
+While patterns are most often described in terms of software engineering~\cite{Gamma}, it is clearly the case that they have applicability beyond this traditional domain.  From building architecture to software architecture to systems architecture, pattens simplify our understanding of complex systems in a way that facilitates their decomposition and communication to others.
+
+\subsubsection{Why Use Design Patterns}
+There are several things which patterns do for us.  Buschmann, et.\ al., lay out seven characteristics of patterns in the context of software architecture.~\cite{Buschmann}, but they are equally suited to complex systems in general.
+
+\emph{Patterns document proven design experience.}  They don't exist without applicable purpose.  They codify the information that might otherwise exist only among a few experts and allow the novice engineer to apply that knowledge without having to first rediscover it.
+
+\emph{Patterns are abstract.}  Patterns do not map directly onto single components of complex systems. Rather they are representative and descriptive of working ideas within the system.  They are usually not applicable at the component level and may represent several components or subsystems, actions, interactions, and information classes.
+
+\emph{Patterns provide a common vocabulary.}  Especially after a pattern becomes widely adopted, the mere invocation of its name (especially if the name is chosen wisely) conveys a wealth of information quickly, often alleviating the need for one designer to explain the details of a particular solution to another.
+
+\emph{Patterns document architectures.}
+
+\emph{Patterns support implementation with predefined properties.}
+
+\emph{Patterns help build complex heterogeneous architectures.}
+
+\emph{Patterns help manage complexity.}
 
 \subsection{Shortcomings Of Traditional Design Patterns}
 Show the shortcomings of traditional design patterns in modeling complex systems.
 
-http://sob.apotheon.org/?p=1814
-
 \begin{quote}
-IMHO, the alleged "complexity" (or fragility) of many business programs is directly due to the attempt to solve the problem with non-recursive thinking.
+``IMHO, the alleged `complexity' (or fragility) of many business programs is directly due to the attempt to solve the problem with non-recursive thinking.'' -- Joel Neeley
 \end{quote}
 
 \subsection{Use of Fractals as Design Patterns}
 Propose the use of some classes of fractals as design patterns.
 
-\subsection{Example}
+\subsection{Example} % optionally just make a case for further investigation
 Work through an example (with figures)
 
 \subsection{From Simplicity, Complexity}
