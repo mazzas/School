@@ -38,13 +38,17 @@ The Maxwell-Bloch equations are a sophisticated model for a laser and describe t
 where $\gamma_1$ and $\gamma_2$ are decay rates of the atomic polarization and population inversion, respectively, and $\lambda$ is a pumping energy parameter.  The parameter $\lambda$ may be positive, negative, or zero; all other parameters are positive.  In the simplest case, $P$ and $D$ relax rapidly to steady values, and hence may be eliminated as follows.
 \begin{enumerate}
 \item Assuming $\dot{D}\approx 0$\ $\dot{P}\approx 0$, express $P$ and $D$ in terms of $E$, and thereby derive a first-order equation for the evolution of $E$.
-\item Find all the fixed points of $E$.
+\begin{align*}
+	\gamma_1(ED-P)\approx0 &\implies ED-P\approx0 \\
+	\gamma_2(\lambda+1-D-EP)\approx0 &\implies \lambda+1-D-EP\approx0 \\
+	\mbox{So,\ } P\approx E\left(\frac{1+\lambda}{E^2+1}\right) &\mbox{and\ } D\approx\frac{1+\lambda}{E^2+1} \\
+	\mbox{Applying\ } \dot{E} &= P-E \\ 
+	\mbox{We obtain\ } \frac{dE}{dt} &= E\left(\frac{\lambda-E^2}{E^2+1}\right)
+\end{align*}
+\item Find all the fixed points of $E$.  \\ These occur at $\pm\sqrt{\lambda}\ \forall\ \lambda\geq0$ and $E=0$.
 \item Draw the bifurcation diagram of $E^*$ versus $\lambda$.  Distinguish between stable and unstable branches.
+%TODO: Create a decent bifurcation diagram. (mazzas) Fri Jun 13 18:21:02 2014
 \end{enumerate}
-
-%TODO: Answer question. (mazzas) Fri Jun 13 18:21:02 2014
-% Slide deck 4, slides 31 \& 39 talks about fixed points.
-% This is Strogatz problem 3.3.2, page 82.
 
 \item[Question 3:]
 What is this an example of?  What features are represented?
