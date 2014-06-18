@@ -46,8 +46,33 @@ where $\gamma_1$ and $\gamma_2$ are decay rates of the atomic polarization and p
 	\mbox{We obtain\ } \frac{dE}{dt} &= E\left(\frac{\lambda-E^2}{E^2+1}\right)
 \end{align*}
 \item Find all the fixed points of $E$.  \\ These occur at $\pm\sqrt{\lambda}\ \forall\ \lambda\geq0$ and $E=0$.
-\item Draw the bifurcation diagram of $E^*$ versus $\lambda$.  Distinguish between stable and unstable branches.
-%TODO: Create a decent bifurcation diagram. (mazzas) Fri Jun 13 18:21:02 2014
+\item Draw the bifurcation diagram of $E^*$ versus $\lambda$.  Distinguish between stable and unstable branches. \\
+  I'm not completely convinced I've gotten this code right and so the resulting plot may also be slightly incorrect, but it should not be too far off.  The graphic was generated in Mathematica.
+  \begin{verbatim}
+f[x_][a_] := a*((x - a^2)/(a^2 + 1));
+
+cps[a_] =  x /. Quiet[Solve[D[f[a][x], x] == 0, x], 
+   Solve::ratnz]
+
+criticalOrbits[a_, cp_] := Module[{try},
+   If[Head[cp] === Real,
+    try = NestWhileList[f[a], cp, Abs[#] < 100 &, 1, 500];
+    If[Abs[Last[try]] >= 100, try = {},
+     try = Drop[{a, #} & /@ try, 100]
+     ], {}]];
+points[k_] := Partition[Flatten[Table[criticalOrbits[a, cps[a][[k]]],
+    {a, -2, 4, 0.002}]], 2]
+
+Graphics[{Opacity[0.02], PointSize[0.002],
+  Table[{ColorData[1, l], Point[points[l]]},
+   {l, 1, Length[cps[a]]}]}, Axes -> True, 
+ AxesLabel -> {\[Lambda], \[CapitalEpsilon]}, 
+ LabelStyle -> Directive[Blue, Bold]
+  \end{verbatim}
+  \begin{center}
+    \includegraphics[scale=0.75]{images/problem2.png}
+  \end{center}
+  Stable regions should be near the zero at E.  The area beyond the first bifurcation between the $\lambda$-axis and the graph lines is unstable.
 \end{enumerate}
 
 \item[Question 3:]
