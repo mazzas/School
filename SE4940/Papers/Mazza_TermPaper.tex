@@ -392,10 +392,49 @@ Space filling curves show up often in mathematical and computer algorithms.  In 
 What remains is to select some of these that are appropriate and create full-fledged design patterns around them.  This is a nontrivial task in that good design pattens should be well tested.  The more they are used under different circumstances, the more likely they are to be more broadly adopted, adjusted, and ultimately included in the lexicon of complex systems architecture and engineering.
 
 \subsection{Example} % optionally just make a case for further investigation
-Work through an example (with figures)
+By precedent, a fully developed design pattern requires several things, depending on the source.  Some authors have suggested including detained sections for \emph{examples, context, problem description, solution, structure, dynamics, implementation, variants, known uses, consequences}, and cross references to other patterns.~\cite{Buschmann}.  Other authors follow a slightly different structure in defining design patterns including \emph{intent, motivation, applicability, structure, participants, collaborations, consequences, implementation, sample code, known uses}, and \emph{related patterns}.~\cite{Gamma}
 
-\subsection{From Simplicity, Complexity}
-Discuss how simple rules can quickly lead to complexity.
+Since time and space do not permit, we will develop a simple example around the simplified scheme of providing a brief discussion on \emph{how it works} and \emph{when to use it}.~\cite{Fowler}
+%TODO: add Fowler to the bibliography: Fowler, M. (2002). Patterns of enterprise application architecture. Addison-Wesley Longman Publishing Co., Inc..
+
+The example we develop here will be cursory and will require maturity and refinement in order to be used.  But it may serve as an example of how to begin thinking about how to create use recursive fractal design patterns.  To keep the reader's interest, we will develop a fractal design pattern not previously presented.  The fractal tree (see figure~\ref{fig:tree2}) is a common and easy to understand structure that naturally works to represent the recursive containership found in many implementations of persistent storage and and in the nested development of most user interface designs.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/tree2.png}
+  \caption{Typical fractal tree drawn to ten levels.}
+  \label{fig:tree2}
+\end{figure}
+
+The tree in figure~\ref{fig:tree2} bifurcates at each iteration.  Different classes of fractal trees grow in different manners and, consequently, have different properties, appearances, and applications.  We will restrict ourselves to this fairly simple example.
+
+\subsubsection{How It Works}
+The construction of different classes of fractal lend their structures to be differentially suited to various problems.  Focusing on the example provided in figure~\ref{fig:tree2}, we will accept the method of construction set forth by Benoit Mandelbrot.
+\begin{quote}
+``A trunk of length 1 divides into two branches of length $r$, each of which makes an angle $\theta > 0^{\circ}$  with the linear extension of the trunk. Each branch then divides by the same rule.''~\cite{Mandelbrot}
+\end{quote}
+We do not need to belabor the mathematical construction with any further formality as it is fairly evident from the description and the figure.  Since this is a fully connected graph, all of the standard traversal algorithms hold along with the optimization the the graph also contains no cycles\footnote{Although in another construction, it could.  An example would be a B+ Tree.}.
+
+\subsubsection{When to Use It}
+We have already mentioned two obvious and easy cases where fractal trees can be applied as a design pattern.  One being the representation of recursively defined persistent storage, and the other being the conteinership structure of user interface elements in design.  It is worth mentioning that while the user interface elements are often software defined (see figure~\ref{fig:container}), the same containership exists in physical design as well.  
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/container.png}
+  \caption{Hierarchical containership of user interface elements implemented in Java.}
+  \label{fig:container}
+\end{figure}
+
+For example, a set of dials or buttons may be grouped together on the control panel of a vehicle because they logically belong together.  The control panel,  itself, may be part of a larger installation of mechanical components that serves a common function.  The mechanical component might be part of a modular assembly on the vehicle, and so on.  This nested containership is not just common, it is typical.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.75\columnwidth]{images/BTree.png}
+  \caption{Persistent storage implemented as a B-Tree structure.}
+  \label{fig:btree}
+\end{figure}
+
+As is evident in figure~\ref{fig:btree}, the structure of persistent storage appears consistent with our design pattern.  This is commonly representative of most relational database models but could also easily represent any hierarchical structure, whether chain of command or data storage and retrieval such as the Domain Name Service implemented by the Internet Corporation for Assigned Names and Numbers (ICANN) on the Internet.
 
 \subsection{The Case for More Work}
 As the world continues to shrink under the weight of increasing connectivity, interactions among people, events, organizations, corporations, countries, wildlife, and other entities will continue to foster emergence in new and unexpected ways.  The problems (opportunities?) that arise will create engineering challenges that will last for the foreseeable future and will require new and novel ways of approaching solutions to them.
