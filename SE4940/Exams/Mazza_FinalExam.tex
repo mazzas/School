@@ -25,8 +25,16 @@
 \item[Question 1:]
 Given the differential equation $\dfrac{d^4y}{dx^4}+\dfrac{d^2y}{dx^2}=0\equiv y''''+Ay''$ derive the equivalent system of first-order ordinary differential equations.  This is a fourth order differential equation.  What order is the system of equations?  Is the system linear or nonlinear?  What does such a system of first-order ordinary differential equations represent?
 
-%TODO: Answer question. (mazzas) Fri Jun 13 18:20:42 2014
-% Based on slide deck 2, slide 7, I assume this is a linear system since it can be broken up into parts.
+% On problem 1 try treating the x derivatives like time derivatives.  That is, change x to t, and see if that makes it any clearer what to do.  When you have an answer change t back to x.  I believe this kind of problem is treated in either chapter 1 or 2 of Strogatz.
+
+Change the variables as follows:
+\begin{align*}
+  y_1 &= y'' \\
+  y_2 &= y'''' \\
+  y_1'' &= y_2 \\
+  y_2'' &= y_2 + Ay_1
+\end{align*}
+The system is second order since there are two variables.  This system is linear since all of the $y$-values on the right hand side of the equations are first order.  This looks a little like the equation for a dampened harmonic oscillator.
 
 \item[Question 2:]
 The Maxwell-Bloch equations are a sophisticated model for a laser and describe the dynamics of the electric field $E$, the mean polarization of the atoms $P$, and the population inversion $D$:
@@ -100,8 +108,7 @@ For the Lorenz equations
 with $\sigma=10, r=28$, and $b=2.66666$, and initial condition $x=1.0+\delta, y=1.0$, and $z=10$, determine how long it takes the absolute error between the ``true $x$ solution'' $(\delta=0)$ to grow from $\delta$ to 0.1. Calculate for $\delta$ values of 0.01, $10^{-4}, 10^{-6}, 10^{-8}$, and $10^{-10}$.  What does this tell you about the predictability versus measurement error?  Can you estimate the Liapunov exponent? (Strogatz, 366)
 
 %TODO: Answer question. (mazzas) Fri Jun 13 18:21:38 2014
-% Slide deck 4, slide 45 talks about Liapunov exponents.
-% This looks just like Strogatz, page 339.
+% On problem 4, the solution using the initial conditions gives you the “true” result.  When those initial conditions are varied by adding 0.01, 0.0001, etc., the difference between the resulting solution and the true solution is the error.  Absolute error is the absolute value of the error.
 
 \item[Question 5:]
 Consider the iterated map given by
@@ -115,6 +122,7 @@ Consider the iterated map given by
 where $0<r<2$.  What properties do you expect to see in the orbit diagram?  Is there any condition that might cause different behavior?  The Liapunov exponent is $\lambda=\mbox{ln\ }r$. (Strogatz, 366)  What does this tell you about the behavior?
 
 %TODO: Answer question. (mazzas) Fri Jun 13 18:21:59 2014
+% On problem 5 think about the similarity of the tent map to the logistics map.  The orbit diagram is the plot of the allowed values of the function as a function of the parameter r.
 
 \item[Question 6:]
   In your own words and using no more than one paragraph, describe the difference between complex and complicated systems.  That is, in your own opinion what distinguishes the two?
