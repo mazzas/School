@@ -105,24 +105,60 @@ For the Lorenz equations
 \dot{y} &= rx-y-xz \\
 \dot{z} &= xy-bz
 \end{align*}
-with $\sigma=10, r=28$, and $b=2.66666$, and initial condition $x=1.0+\delta, y=1.0$, and $z=10$, determine how long it takes the absolute error between the ``true $x$ solution'' $(\delta=0)$ to grow from $\delta$ to 0.1. Calculate for $\delta$ values of 0.01, $10^{-4}, 10^{-6}, 10^{-8}$, and $10^{-10}$.  What does this tell you about the predictability versus measurement error?  Can you estimate the Liapunov exponent? (Strogatz, 366)
+with $\sigma=10, r=28$, and $b=2.66666$, and initial condition $x=1.0+\delta, y=1.0$, and $z=10$, determine how long it takes the absolute error between the ``true $x$ solution'' $(\delta=0)$ to grow from $\delta$ to 0.1. Calculate for $\delta$ values of 0.01, $10^{-4}, 10^{-6}, 10^{-8}$, and $10^{-10}$.  What does this tell you about the predictability versus measurement error?  Can you estimate the Liapunov exponent?
 
-%TODO: Answer question. (mazzas) Fri Jun 13 18:21:38 2014
 % On problem 4, the solution using the initial conditions gives you the “true” result.  When those initial conditions are varied by adding 0.01, 0.0001, etc., the difference between the resulting solution and the true solution is the error.  Absolute error is the absolute value of the error.
+
+Solution with unaltered initial conditions.
+\begin{verbatim}
+NDSolve[{x'[t] == 10*(y[t] - x[t]), 
+   y'[t] == -x[t] z[t] + 28* x[t] - y[t], 
+   z'[t] == x[t] y[t] - (8/3)*z[t], x[0] == 1.0, z[0] == 10, 
+   y[0] == 1.0}, {x, y, z}, {t, 0, 200}, MaxSteps -> Infinity];
+\end{verbatim}
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz0.png}
+\end{center}
+Iterated with $\delta=0.1$, the map looks considerably different.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz1.png}
+\end{center}
+Iterated with $\delta=0.01$.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz2.png}
+\end{center}
+Iterated with $\delta=10^{-4}$.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz3.png}
+\end{center}
+Iterated with $\delta=10^{-6}$.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz4.png}
+\end{center}
+Iterated with $\delta=10^{-8}$.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz5.png}
+\end{center}
+Iterated with $\delta=10^{-10}$.
+\begin{center}
+  \includegraphics[scale=0.5]{images/lorenz6.png}
+\end{center}
+This seems to indicate that measurement error greatly affects predictability.
 
 \item[Question 5:]
 Consider the iterated map given by
 \[x_{n+1} = \left\{
   \begin{array}{lr}
     rx_n &  0\le x_n \le 0.5 \\
-    f(1-x_n) &  0.5\le x_n \le 1
+    r(1-x_n) &  0.5\le x_n \le 1
   \end{array}
 \right.
 \]
-where $0<r<2$.  What properties do you expect to see in the orbit diagram?  Is there any condition that might cause different behavior?  The Liapunov exponent is $\lambda=\mbox{ln\ }r$. (Strogatz, 366)  What does this tell you about the behavior?
+where $0<r<2$.  What properties do you expect to see in the orbit diagram?  Is there any condition that might cause different behavior?  The Liapunov exponent is $\lambda=\mbox{ln\ }r$. What does this tell you about the behavior?
 
-%TODO: Answer question. (mazzas) Fri Jun 13 18:21:59 2014
 % On problem 5 think about the similarity of the tent map to the logistics map.  The orbit diagram is the plot of the allowed values of the function as a function of the parameter r.
+
+This is (obviously) a piecewise function and so its behavior is highly dependent on the values of $x$.  Inasmuch, it behaves similarly to the tent map.  Because the Liapunov exponent is positive, it suggests that there are chaotic solutions for $r>1$.
 
 \item[Question 6:]
   In your own words and using no more than one paragraph, describe the difference between complex and complicated systems.  That is, in your own opinion what distinguishes the two?
