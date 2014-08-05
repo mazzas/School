@@ -24,24 +24,175 @@
 
 
 \frame{{Introduction}
-  We will\dots
+  \begin{block}{Intent}
+    ``\dots to describe the research being performed to investigate the application of patterns to the practice of systems architecting.''
+  \end{block}
+  Goal of the enterprise architect: develop and implement a complex system using a methodical and repeatable approach.
+
+  \begin{block}{Definition}
+    ``A pattern is a model or facsimile of an actual thing or action, which provides some degree of representation (an abstraction) to enable the recreation of that entity over and over again.''
+  \end{block}
+}
+
+\frame{{Frameworks}
+  Considerations:
   \begin{itemize}
-    \item Briefly discuss some ideas about problem solving
-    \item Compare novice and expert problem solvers
-    \item Propose a strategy for problem solving
-    \item Discuss teaching problem solving
-    \item Discuss creativity
+    \item strategic business goals
+    \item business rules
+    \item existing and legacy systems
+    \item applicable technologies
+  \end{itemize}
+
+  Frameworks (contain many similarities)
+  \begin{itemize}
+    \item Zachman
+    \item EA$^3$Cube
+    \item DoDAF
   \end{itemize}
 }
 
-\frame{{Summary}
-  We should now be able to\dots
+\frame{{A Short History Of Patterns}
+  Christopher Alexander (Architect) pioneered the use and documentation of patterns. He was the first to recognize their value.
+
+  Documentation of patterns consists of:
   \begin{itemize}
-    \item Describe differences between novice and experts with regard to problem solving.
-    \item List the steps of a problem solving strategy.
-    \item Propose methods for getting started or unstuck.
-    \item Relate problem solving to engineering.
-    \item Relate creativity to problem solving and engineering.
+    \item Name: should be descriptive and represent the proposed solution
+    \item Context: addresses the setting for the problem
+    \item Problem: describes what the pattern addresses (the challenge or solution)
+    \item Solution: describes the application of the pattern
+  \end{itemize}
+
+  His establishment of patterns tried to lower the cognitive burden of design ``by exploring large design spaces on behalf of the architect.''
+  Making useful generalizations about reusable elements helps reduce the difficulty in thinking about architecting solutions.
+} 
+
+\frame{{History}
+  \framesubtitle{Patterns In Information Technology}
+  IBM established the following steps in using patterns to address eBusiness:
+  \begin{enumerate}
+    \item Develop a high-level business description
+    \item Develop a solution overview diagram
+    \item Identify business patterns
+    \item Identify integration patterns
+    \item Identify composite patterns
+    \item Identify application patterns
+    \item Integrate a package into a solution
+    \item Identify run-time patterns
+    \item Identify run-time and product mappings
+  \end{enumerate}
+}
+
+\frame{{History}
+  \framesubtitle{Patterns In Software Development}
+  \begin{itemize}
+    \item Introduced by the Gang Of Four (Gamma, Helm, Johnson, and Vlissides
+    \item Considerably furthered by Martin Fowler
+    \item Establish common vocabulary
+    \item Reduce costly late cycle changes
+    \item Weave parts of the overall software system architecture into a whole
+  \end{itemize}
+}
+
+\frame{{Documenting Software Patterns}
+  \begin{block}{Fowler (2003)}
+    ``When people write patterns, they typically write them in some standardized format -- as befits a reference.  However, there's no agreement as to what sections are needed because every author has his or her own ideas\dots''
+  \end{block}
+}
+
+\frame{{Discovering Patterns}
+  Patterns are usually discovered through our brain's natural tendency to create abstractions on complexity.
+
+  Abstractions tend to suggest more general solutions which, if sufficiently developed and documented, can lead to more broadly applicable solutions.
+}
+
+\frame{{Capturing Implicit Knowledge With Patterns}
+  \begin{itemize}
+    \item Implicit knowledge is only useful if it is shared usefully (in a manner that allows its application).
+    \item Patterns offer a formal method to capture key aspects of that knowledge and facilitate its transfer and reuse.
+    \item Patterns are only useful if they can be used by others.
+    \item Formal means of documentation ensure accurate transfer of implicit knowledge.
+  \end{itemize}
+}
+
+\frame{{Potential Benefits Of Architectural Patterns}
+  Benefits include:
+  \begin{itemize}
+    \item Improved communications with stakeholders and design teams
+    \item Application of sound architectural concepts and implementations.
+    \item Reuse
+    \item Reduced effort with regard to system testing, integration, and maintenance
+    \item Improved development efficiency and productivity
+    \item Reduced cost of documentation (example)
+    \item Control of complexity through use of well known patterns
+  \end{itemize}
+}
+
+\frame{{Architectural Pattern Research}
+  Two issues applying patterns to systems architecture
+  \begin{itemize}
+    \item Architecture of a system requires a higher level of abstraction than that found in the software that may be part of the system.
+    \item Patterns need to address interfaces to non-software parts in the pattern description.
+  \end{itemize}
+}
+
+\frame{{Documenting Architecture Patterns}
+  Minimal sections (just like Alexander):
+  \begin{itemize}
+    \item Name
+    \item Context
+    \item Problem
+    \item Solution
+  \end{itemize}
+
+  Other useful sections:
+  \begin{table}
+    \centering
+    \begin{tabular}{lll}
+      Aliases & Resulting context & Known issues \\
+      Email & Keywords & Forces \\
+      Related patterns & Sketch & Rationale \\
+      Example & Interfaces & Date documented \\
+      Authors & References &
+    \end{tabular}
+  \end{table}
+}
+
+\frame{{A Proposed Pattern Hierarchy}
+  System architecture patterns are broken into:
+  \begin{enumerate}
+    \item Structural patterns: physical part of the architecture
+    \item System requirements patterns: format of a properly formed requirement
+    \item Systems engineering activities patterns: indicate how the process of engineering activity is performed
+    \item Systems engineering roles patterns: describe how the engineering role is performed
+    \item Systems process patterns
+  \end{enumerate}
+}
+
+\frame{{When Not To Use Architecture Patterns}
+  Downfalls:
+  \begin{itemize}
+    \item Structural constraints inherent in patterns limits creativity
+    \item Experts within their domain see patterns as having little use
+  \end{itemize}
+
+  When to avoid using patterns:
+  \begin{itemize}
+    \item New or unique requirements preclude the existence of a pattern
+    \item Looking for a unique solution
+    \item Technological innovation out-paces developed patterns
+  \end{itemize}
+  ``For designs that are proven and effective, and addressing problems common across multiple systems an domains, there should be a strong motivation to leverage the benefits that can accrue from the application of patterns.''
+}
+
+\frame{{Summary}
+  \begin{itemize}
+    \item Patterns are models or abstractions of reality
+    \item Complexity exceeds mental capacity
+    \item Patterns can exist at multiple levels
+    \item Patterns are a powerful part of the architect's toolbox
+    \item Patterns help solve difficult problems by leveraging existing knowledge
+    \item Patterns help minimize the possibility that details will fall through the cracks
+    \item Patterns expedite knowledge transfer
   \end{itemize}
 }
 
